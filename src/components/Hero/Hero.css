@@ -1,0 +1,38 @@
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #F5FAFF 0.08%, #C7E8DF 106.42%);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* ── Rays ────────────────────────────────────────────────── */
+
+.hero__rays {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ── Globe image ─────────────────────────────────────────── */
+
+.hero__globe {
+  position: absolute;
+  left: 250px;
+  top: 836px;
+  width: 1430px;
+  height: 423px;
+  background: url('/src/assets/globe.png') lightgray -90.727px 0px / 110.013% 100% no-repeat;
+  overflow: hidden;
+}
+
+.hero__ray {
+  flex: 1 0 0;
+  align-self: stretch;
+  background: rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(23px);
+  -webkit-backdrop-filter: blur(23px);
+}
