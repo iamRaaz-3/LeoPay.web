@@ -5,6 +5,7 @@ import Features from './components/Features/Features.jsx'
 import Partners from './components/Partners/Partners.jsx'
 import Comparison from './components/Comparison/Comparison.jsx'
 import Faq from './components/Faq/Faq.jsx'
+import Testimonials from './components/Testimonials/Testimonials.jsx'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <Features />
       <Comparison />
       <Faq />
+      <Testimonials />
     </>
   );
 }
