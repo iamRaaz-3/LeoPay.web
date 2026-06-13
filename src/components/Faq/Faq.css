@@ -1,0 +1,281 @@
+/* =====================================================
+   FAQ SECTION — Figma 22:4515  Container  1920×1190
+   abs(2112, 6999)
+
+   22:4516  Background  1920×1190  fill rgba(251,251,251)
+     22:4518  SVG grid top     1440×505  rel(240,0)
+     22:4526  SVG grid bottom  1440×505  rel(240,685)
+   All baked into faq-bg-full.png
+   ===================================================== */
+
+.faq-section {
+  position: relative;
+  width: 100%;
+  height: 1021px;
+  padding: 119px 0 118px;
+  background-color: #fff;
+  background-image: url('./assets/faq-grid-top.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ── 1920px canvas for bg image — same as Hero/CTA/Coverage —
+   22:4516 Background  1920×1190  rel(0,0)
+   ─────────────────────────────────────────────────── */
+
+/* Bottom bg — Figma 298:27012  1920×264  y=757 */
+.faq-bg-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 264px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.faq-bg-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* ── Main container ─────────────────────────────── ─────
+   Figma: flex, column, gap 56px between title & list
+   max-width ≈ 1078px (1920 – 2×240px side padding)
+   ─────────────────────────────────────────────────── */
+.faq-container {
+  position: relative;
+  z-index: 1;          /* sits above faq-canvas */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 56px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* ── Title block ───────────────────────────────────────
+   Figma: flex column, center-aligned, gap 20px
+   ─────────────────────────────────────────────────── */
+.faq-title-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  align-self: stretch;
+  width: 100%;
+}
+
+/* Badge — Figma exact specs
+   59×33px, border-radius 100px, Geist Medium 14px/16.8px */
+.faq-badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  width: 59px;
+  height: 33px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 12px rgba(82, 88, 112, 0.04);
+  border-radius: 100px;
+  border: 1px solid rgba(82, 88, 112, 0.15);
+  /* Figma: Geist Medium */
+  font-family: 'Geist', 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16.8px; /* 120% */
+  color: #162755;
+  box-sizing: border-box;
+}
+
+/* Heading wrapper */
+.faq-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* "Frequently Asked" — Figma exact specs */
+.faq-heading-light {
+  display: flex;
+  width: 481.728px;
+  height: 48px;
+  flex-direction: column;
+  justify-content: center;
+  color: #162755;
+  text-align: center;
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px; /* 100% */
+  letter-spacing: -1px;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* "Questioned" — Figma exact specs */
+.faq-heading-bold {
+  display: flex;
+  width: 424.137px;
+  height: 48px;
+  flex-direction: column;
+  justify-content: center;
+  color: #162755;
+  text-align: center;
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: var(--font-size-48,48px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--line-height-48,48px);
+  letter-spacing: -1px;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtitle */
+.faq-subtitle {
+  width: 574px;
+  max-width: 100%;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0.04px;
+  color: #525870;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── FAQ Accordion list ────────────────────────────────
+   Figma: flex column, gap 20px, full width
+   ─────────────────────────────────────────────────── */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 1078px;
+  max-width: 100%;
+  align-self: center;
+}
+
+/* ── FAQ Item ──────────────────────────────────────────
+   Figma: padding 24px, border-radius 16px,
+   border 1px solid #E8E8E8, bg #FFF
+   open → box-shadow: 0 2px 2px 0 rgba(72,80,88,0.08)
+   ─────────────────────────────────────────────────── */
+.faq-item {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  align-self: stretch;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid #E8E8E8;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s;
+}
+
+.faq-item.open {
+  box-shadow: 0 2px 2px 0 rgba(72, 80, 88, 0.08);
+}
+
+/* ── Question row ──────────────────────────────────── */
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Question text — Figma 135:5505 Britti Sans Trial 20/600 lh=20 ls=0.2 #162755 */
+.faq-question-text {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  color: #162755;
+  flex: 1;
+}
+
+/* +/- icon — Iconsax/Linear/add, 24×24, color #162755 */
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+/* ── Answer ────────────────────────────────────────── */
+.faq-answer {
+  animation: fadeDown 0.22s ease;
+  width: 100%;
+}
+
+.faq-answer p {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.09px;
+  color: #525870;
+  margin: 0;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .faq-container { padding: 0 24px; gap: 40px; }
+  .faq-heading-light,
+  .faq-heading-bold {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .faq-subtitle { width: 100%; font-size: 16px; }
+  .faq-question-text { font-size: 16px; letter-spacing: -0.4px; }
+}
+
+@media (max-width: 480px) {
+  .faq-section { height: auto; padding: 60px 0; }
+  .faq-heading-light,
+  .faq-heading-bold { font-size: 28px; line-height: 34px; }
+  .faq-item { padding: 16px; }
+  .faq-question-text { font-size: 15px; }
+}
