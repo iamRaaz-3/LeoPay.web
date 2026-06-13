@@ -1,11 +1,11 @@
 import Hero from './components/Hero/Hero.jsx'
-import Features from './components/Features/Features.jsx'
+import Ticker from './components/Ticker/Ticker.jsx'
 
 export default function App() {
   return (
     <>
-      {/* <Hero /> */}
-      <Features />
+      <Hero />
+      <Ticker />
     </>
   )
 }
