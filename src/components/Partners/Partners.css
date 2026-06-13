@@ -1,0 +1,197 @@
+/* ═══════════════════════════════════════════════════════
+   Partners Section — Figma 22:334  Group 770777
+   1924×369  abs (2110, 1366)
+
+   FULL-WIDTH layout — no 1920px canvas scaling.
+   Two rows:
+     TOP    (22:407): card left  + logo marquee right
+     BOTTOM (22:344): logo marquee left  + card right
+   ═══════════════════════════════════════════════════════ */
+
+/* ── OLD PNG approach — commented out ──────────────────
+.partners-section { ... }
+.partners-inner { width: 1920px; margin: 0 auto; transform-origin: top center; }
+.partners-img { display: block; width: 1924px; height: 369px; }
+   ────────────────────────────────────────────────────── */
+
+/* ── Section wrapper ─────────────────────────────────── */
+.partners-section {
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* ── Each row — Figma height 185px ──────────────────── */
+.partners-row {
+  display: flex;
+  align-items: stretch;
+  height: 185px;
+  border-top: 1px solid rgb(224, 224, 224);   /* Figma 22:409 / 22:346 Line */
+  border-bottom: 1px solid rgb(224, 224, 224); /* Figma 22:410 / 22:347 Line */
+  overflow: hidden;
+}
+
+.partners-row--bottom {
+  border-top: none; /* avoid double border between rows */
+}
+
+/* ═══════════════════════════════════════════════════════
+   STAT CARDS
+   22:433  492×185  (top-left)   bg white, border-right
+   22:370  492×185  (bottom-right) bg white, border-left
+   Internal: Sub Container 372×81 inset from (60px left)
+
+   Badge:  Geist 12px/600  rgb(3,126,91)  bg rgba(204,242,231,0.8)  h=24px
+   Stat:   Britti Sans Trial 29.8px/600  lh=45  rgb(26,26,26)
+   Sub:    Britti Sans Trial 16px/400    lh=24  rgb(82,88,112)
+   ═══════════════════════════════════════════════════════ */
+.partners-card {
+  flex: 0 0 492px;
+  width: 492px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-right: 1px solid rgb(224, 224, 224); /* VerticalBorder 22:369 */
+}
+
+.partners-card--right {
+  border-right: none;
+  border-left: 1px solid rgb(224, 224, 224);  /* VerticalBorder 22:394 */
+}
+
+/* Badge — Figma 22:436 / 22:373 */
+.partners-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 8px;
+  background: rgba(204, 242, 231, 0.8);
+  border-radius: 4px;
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(3, 126, 91);
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  width: fit-content;
+}
+
+/* Stat — Figma 22:452 / 22:389 */
+.partners-stat {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 29.8px;
+  font-weight: 600;
+  line-height: 45px;
+  color: rgb(26, 26, 26);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Sub — Figma 22:455 / 22:392 */
+.partners-sub {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgb(82, 88, 112);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════════
+   LOGO MARQUEE
+   22:348  bottom logos  — masked container 1094×184
+   22:411  top logos     — masked container 1094×183
+   Section track is 3020–3040px wide → infinite scroll
+   ═══════════════════════════════════════════════════════ */
+.partners-marquee-wrap {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Fade masks matching Figma gradient rectangles 22:335 / 27:5003
+   rgba(220,238,232) fades on left and right edges */
+.partners-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+.partners-fade--left {
+  left: 0;
+  background: linear-gradient(to right, rgba(220,238,232,0.9), rgba(255,255,255,0));
+}
+.partners-fade--right {
+  right: 0;
+  background: linear-gradient(to left, rgba(220,238,232,0.9), rgba(255,255,255,0));
+}
+
+/* Track — 4 copies of the strip for seamless infinite loop */
+.partners-marquee {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee-left 30s linear infinite;
+}
+
+/* Bottom row logos go in reverse direction */
+.partners-marquee--reverse {
+  animation: marquee-right 34s linear infinite;
+}
+
+/* Pause on hover */
+.partners-marquee-wrap:hover .partners-marquee {
+  animation-play-state: paused;
+}
+
+/* Logo strip image — Figma Item height 38px */
+.partners-logos-strip {
+  display: block;
+  height: 38px;
+  width: auto;
+  max-width: none;
+  flex-shrink: 0;
+}
+
+/* ── Animations ──────────────────────────────────────── */
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ── Responsive: at smaller screens shrink the card ──── */
+@media (max-width: 768px) {
+  .partners-card {
+    flex: 0 0 260px;
+    width: 260px;
+    padding: 0 24px;
+  }
+  .partners-stat { font-size: 20px; line-height: 30px; }
+  .partners-sub  { font-size: 13px; }
+  .partners-row  { height: 140px; }
+}
+
+@media (max-width: 480px) {
+  .partners-card {
+    flex: 0 0 180px;
+    width: 180px;
+    padding: 0 16px;
+  }
+  .partners-stat { font-size: 16px; line-height: 24px; }
+  .partners-badge { font-size: 10px; }
+  .partners-row   { height: 120px; }
+}
