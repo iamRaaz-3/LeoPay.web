@@ -1,0 +1,419 @@
+/* =====================================================
+   FOOTER DESKTOP
+   ===================================================== */
+
+.footer-desktop {
+  width: 100%;
+  background: linear-gradient(180deg, #f2f7f7 0%, #eff4f8 100%);
+  padding-top: 169px;
+  padding-bottom: 168px;
+  box-sizing: border-box;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* ── Lines layer — all lines absolutely positioned ── */
+/* Positions are relative to footer-inner (1260×762px content box).
+   Figma footer frame origin (10688,8940). footer-inner starts at y=169 of footer frame.
+   x_rel = figma_x - 330 (footer-inner left = x330 in frame)
+   y_rel = figma_y - 8940 - 169 (footer-inner top) */
+.footer-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 1;
+}
+
+.fl {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Horizontal lines */
+/* Top border — rel=(330,169) w=1260 h=1 → y=0, x=0 in footer-inner */
+.fl-top {
+  top: 0;
+  left: 0;
+  width: 1260px;
+  height: 1px;
+  background: #E0E0E0;
+}
+
+/* Section divider — rel=(330,528) w=1260 h=1 → y=359, x=0 */
+.fl-divider {
+  top: 359px;
+  left: 0;
+  width: 1260px;
+  height: 1px;
+  background: #E0E0E0;
+}
+
+/* Extension left — rel=(240,528) w=90 h=1 → y=359, x=-90 */
+.fl-ext-left {
+  top: 359px;
+  left: -90px;
+  width: 90px;
+  height: 1px;
+  background: #E0E0E0;
+}
+
+/* Extension right — rel=(1590,528) w=90 h=1 → y=359, x=1260 */
+.fl-ext-right {
+  top: 359px;
+  left: 1260px;
+  width: 90px;
+  height: 1px;
+  background: #E0E0E0;
+}
+
+/* Vertical outer borders — span full height: top (360) + logo (402) = 762px */
+/* Left border — rel=(330,169) w=1 h=762 → x=0, y=0 */
+.fl-border-left {
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 762px;
+  background: #E0E0E0;
+  box-shadow: 1px 0 0 0 #FFF;
+}
+
+/* Right border — rel=(1589,169) w=1 h=762 → x=1259, y=0 */
+.fl-border-right {
+  top: 0;
+  left: 1259px;
+  width: 1px;
+  height: 762px;
+  background: #E0E0E0;
+  box-shadow: 1px 0 0 0 #FFF;
+}
+
+/* Column separators — top section only (360.26px) */
+/* Brand/nav — rel=(851,169) → x=521 in footer-inner */
+.fl-sep-brand {
+  top: 0;
+  left: 521px;
+  width: 1px;
+  height: 360.26px;
+  background: #E0E0E0;
+  box-shadow: 1px 0 0 0 #FFF;
+}
+
+/* Home/Help — rel=(1077,169) → x=747 */
+.fl-sep-home {
+  top: 0;
+  left: 747px;
+  width: 1px;
+  height: 360.26px;
+  background: #E0E0E0;
+  box-shadow: 1px 0 0 0 #FFF;
+}
+
+/* Help/Socials — rel=(1303,169) → x=973 */
+.fl-sep-help {
+  top: 0;
+  left: 973px;
+  width: 1px;
+  height: 360.26px;
+  background: #E0E0E0;
+  box-shadow: 1px 0 0 0 #FFF;
+}
+
+/* Corner dots — 9×9, centered on top-border intersections (y=0 line)
+   Figma: rel=(326,165)→(-4,-4), (1585,165)→(1255,-4), (326,524)→(-4,355), (1585,524)→(1255,355) */
+.fl-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: #FFF;
+  box-shadow:
+    0 5px 2px 0 rgba(143, 143, 143, 0.01),
+    0 3px 2px 0 rgba(143, 143, 143, 0.05),
+    0 1px 1px 0 rgba(143, 143, 143, 0.09),
+    0 0   1px 0 rgba(143, 143, 143, 0.10);
+}
+.fl-dot-tl { top: -4px;  left: -4px;   }
+.fl-dot-tr { top: -4px;  left: 1255px; }
+.fl-dot-bl { top: 355px; left: -4px;   }
+.fl-dot-br { top: 355px; left: 1255px; }
+
+
+/* ── TOP ROW ─────────────────────────────────────── */
+.footer-top-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 60px;
+  height: 360px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Brand column ─────────────────────────────────── */
+.footer-brand-outer {
+  display: flex;
+  width: 462px;
+  flex-shrink: 0;
+  padding: 40px 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 100px;
+  box-sizing: border-box;
+}
+
+.footer-brand-inner {
+  display: flex;
+  padding-right: 100px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  align-self: stretch;
+}
+
+.footer-logo-tagline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 19px;
+  align-self: stretch;
+}
+
+.footer-logo-link {
+  text-decoration: none;
+  display: flex;
+  width: 135px;
+  height: 32px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-logo-text {
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 77px;
+  letter-spacing: -1px;
+}
+
+.footer-tagline {
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 25.5px;
+  color: #262626;
+  margin: 0;
+  align-self: stretch;
+}
+
+.footer-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  background: #162755;
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  letter-spacing: 0.04px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 0 0 1.4px #4A4A4A, inset 0 1.4px 1px rgba(255, 255, 255, 0.08);
+  transition: background 0.2s;
+}
+
+.footer-contact-btn:hover { background: #1e3a8a; }
+
+.footer-company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-company-text {
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.7px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #4d4d4d;
+  margin: 0;
+}
+
+.footer-company-email {
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.7px;
+  font-weight: 500;
+  color: #262626;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-company-email:hover { color: #000000; }
+
+/* ── Nav columns ─────────────────────────────────── */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  width: 226px;
+  flex-shrink: 0;
+  padding: 39px 40px;
+  box-sizing: border-box;
+}
+
+.footer-col-heading {
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 13.9px;
+  line-height: 1.5;
+  color: #000000;
+  margin: 0;
+}
+
+.footer-link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.7px;
+  font-weight: 400;
+  color: #4d4d4d;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-nav-link:hover { color: #000000; }
+
+.footer-new-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  background: #1a1a1a;
+  color: #FFFFFF;
+  border-radius: 100px;
+  font-family: 'Geist', sans-serif;
+  font-size: 10.3px;
+  font-weight: 500;
+}
+
+/* Social icons */
+.footer-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: #4d4d4d;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+}
+
+.footer-social-icon:hover {
+  color: #000000;
+  background: #f0f0f0;
+}
+
+.footer-legal-link {
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.7px;
+  font-weight: 400;
+  line-height: 22.5px;
+  letter-spacing: 0.5px;
+  color: #4d4d4d;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.footer-legal-link:hover { color: #000000; }
+
+/* ── Logo footer — Figma: Leopay logo footer 1260×402 ── */
+.footer-logo-footer {
+  width: 100%;
+  height: 402px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* Legal row — Figma: Container 1260×62, links right-aligned at 60px from right */
+.footer-logo-footer-legal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  height: 62px;
+  padding: 0 60px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Watermark image — Figma: rel=(352,566) within logo footer (529), so y=37px from top.
+   Legal row is 62px, so pull up by 25px to land at y=37 matching Figma */
+.footer-watermark-img {
+  width: 1216px;
+  height: 365px;
+  display: block;
+  align-self: center;
+  margin-top: 30px;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 1100px) {
+  .footer-top-row { padding: 0 32px; }
+  .footer-brand-outer { width: auto; flex: 1; }
+  .footer-col { width: auto; flex: 1; min-width: 140px; }
+  .footer-legal-row { padding: 16px 32px; }
+  .footer-lines { display: none; }
+}
+
+@media (max-width: 768px) {
+  .footer-top-row { flex-wrap: wrap; padding: 0 24px; }
+  .footer-brand-outer { width: 100%; padding: 32px 0; gap: 32px; }
+  .footer-brand-inner { padding-right: 0; }
+  .footer-col { width: 50%; padding: 24px 16px; }
+  .footer-legal-row { padding: 14px 24px; gap: 20px; }
+}
+
+@media (max-width: 480px) {
+  .footer-top-row { padding: 0 16px; }
+  .footer-col { width: 100%; }
+  .footer-legal-row { padding: 12px 16px; }
+  .footer-watermark-wrap { height: 120px; }
+}

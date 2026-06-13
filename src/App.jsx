@@ -6,6 +6,7 @@ import Partners from './components/Partners/Partners.jsx'
 import Comparison from './components/Comparison/Comparison.jsx'
 import Faq from './components/Faq/Faq.jsx'
 import Testimonials from './components/Testimonials/Testimonials.jsx'
+import Footer from './components/Footer/Footer.jsx'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <Comparison />
       <Faq />
       <Testimonials />
+      <Footer />
     </>
   );
 }
