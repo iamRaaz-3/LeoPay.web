@@ -3,6 +3,12 @@ import "./Footer.css";
 import watermarkImg from "./assets/footer-watermark.png";
 
 
+const ArrowIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none" style={{width:23,height:23,flexShrink:0,opacity:1}}>
+    <path d="M9.08301 7.66634L12.9163 11.4997L9.08301 15.333" stroke="#162755" strokeWidth="1.91667" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
 const LinkedInIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -26,18 +32,11 @@ const Footer = () => (
     <div className="footer-inner">
       {/* Lines layer — all lines/dots positioned absolutely using exact Figma coords */}
       <div className="footer-lines" aria-hidden="true">
-        {/* Horizontal */}
-        <div className="fl fl-top" />
-        <div className="fl fl-divider" />
-        <div className="fl fl-ext-left" />
-        <div className="fl fl-ext-right" />
-        {/* Vertical outer borders — full height (top 360 + logo 402 = 762px) */}
-        <div className="fl fl-border-left" />
-        <div className="fl fl-border-right" />
-        {/* Column separators — top section only */}
+        {/* Column separators — exact Figma x: 521, 747, 973 */}
         <div className="fl fl-sep-brand" />
         <div className="fl fl-sep-home" />
         <div className="fl fl-sep-help" />
+        {/* Horizontal */}
         {/* Corner dots */}
         <div className="fl fl-dot fl-dot-tl" />
         <div className="fl fl-dot fl-dot-tr" />
@@ -46,6 +45,10 @@ const Footer = () => (
       </div>
 
       <div className="footer-top-row">
+        <div className="footer-vborder footer-vborder--left" />
+        <div className="footer-vborder footer-vborder--right" />
+        <div className="footer-ext footer-ext--left" />
+        <div className="footer-ext footer-ext--right" />
         <div className="footer-brand-outer">
           <div className="footer-brand-inner">
             <div className="footer-logo-tagline">
@@ -62,22 +65,15 @@ const Footer = () => (
           </div>
           <div className="footer-company-info">
             <p className="footer-company-text">
-              LeoPay is operated by MAXI-PAY INC (Company No. BC1523499),
-              incorporated in Canada. MAXI-PAY INC is a registered Money
-              Services Business (MSB) regulated by FINTRAC (C100000747).
-              LeoPay entities provide access to payment services across
-              multiple jurisdictions.
-            </p>
-            <p className="footer-company-text">
               Partnerships:&nbsp;
               <a href="mailto:partnership@leopay.tech" className="footer-company-email">
-                partnership@leopay.tech
+                partnership@leopay.tech<ArrowIcon />
               </a>
             </p>
             <p className="footer-company-text">
               Compliance &amp; Support:&nbsp;
               <a href="mailto:compliance@leopay.tech" className="footer-company-email">
-                compliance@leopay.tech
+                compliance@leopay.tech<ArrowIcon />
               </a>
             </p>
           </div>
