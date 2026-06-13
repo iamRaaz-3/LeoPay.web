@@ -1,0 +1,470 @@
+/* =================================================================
+   TESTIMONIALS — pixel-perfect from Figma Page 3 (2cdyl8wIqgKAt9dVc5LDt2)
+   Desktop Section: 5665:1807 — 1882×823 | border-radius 24px | 19px margins
+   Mobile Section:  5624:2168 — 370×1280  | border-radius 24px
+   Desktop carousel: center card 488×206 active, side cards 442×186
+   Mobile: stacked single card 316px wide
+   ================================================================= */
+
+/* ── Outer wrapper — 19px margins → 1882px in 1920px ── */
+.t-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 0 19px;
+  box-sizing: border-box;
+}
+
+/* ── Dark rounded block ── */
+/* Figma: Section 1882×823, border-radius 24px, dark bg */
+/* Decorative ellipses (Ellipse 9 & 10) replicated via pseudo-elements */
+.t-bg {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  background: #13121a;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Decorative blur ellipses — Figma: Ellipse 9 & 10, 403×372, rgba(20,19,23)
+   Section: 1882×823 | Ellipse 9 at x=49 y=339 | Ellipse 10 at x=1448 y=339 */
+.t-ellipse {
+  position: absolute;
+  width: 403px;
+  height: 372px;
+  border-radius: 50%;
+  background: rgba(20, 19, 23, 1);
+  filter: blur(80px);
+  top: 339px;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Figma x=49 — left ellipse sits at the extreme left edge */
+.t-ellipse--left  { left: 0; }
+/* Figma x=1448 — right ellipse sits at the extreme right edge */
+.t-ellipse--right { right: 0; }
+
+/* ── Content area — sits above ellipses ── */
+/* Figma desktop: 120px top padding from section to title (5732-5612=120) */
+.t-content {
+  position: relative;
+  z-index: 1;
+  padding: 80px 0 80px;
+  box-sizing: border-box;
+}
+
+/* ── Title block — 1200px centered ── */
+/* Figma: Title 1200×223, gap 20px */
+.t-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* Badge — Figma: Geist 500 14px/16.8px #162755 bg #FFF radius 100px pad 8px 16px */
+.t-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Geist', 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  color: #162755;
+  background: #ffffff;
+  border-radius: 100px;
+  border: 1px solid rgba(82, 88, 112, 0.12);
+  padding: 8px 16px;
+  box-shadow: 0 4px 12px 0 rgba(82, 88, 112, 0.04);
+  white-space: nowrap;
+}
+
+/* Heading block */
+.t-heading-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* "See what our" — Figma: Britti Sans Trial 400 48px/48px white */
+.t-heading-light {
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -1px;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+}
+
+/* "Customers are saying" — Figma: Britti Sans Trial 600 48px/48px white */
+.t-heading-bold {
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -1px;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+}
+
+/* Subtitle — Figma: Britti Sans Trial 400 18px/27px #B0B0B0 */
+.t-subtitle {
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #b0b0b0;
+  margin: 0;
+  text-align: center;
+  max-width: 600px;
+}
+
+
+/* ── Desktop Carousel ── */
+/* Figma: left 442×186 | center 488×206 | right 442×186 | gap 32px */
+/* Total: 442+32+488+32+442 = 1436px, centered in 1882px → 223px each side */
+.t-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 0 24px;
+}
+
+/* Mobile single-card view — hidden on desktop */
+.t-carousel-mobile {
+  display: none;
+}
+
+
+/* ── Card base ── */
+.t-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 12px;
+  background: linear-gradient(155deg, #1a3b31 0%, #181f23 100%);
+  box-sizing: border-box;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inner cyan light — behind content, invisible by default */
+.t-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: radial-gradient(ellipse 90% 55% at 50% 0%, rgba(164,239,251,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 0;
+}
+
+/* Keep card content above the glow pseudo-element */
+.t-card-paragraph,
+.t-card-author {
+  position: relative;
+  z-index: 1;
+}
+
+/* Side (inactive) cards */
+.t-card--side {
+  width: 442px;
+  max-width: 442px;
+  flex: 1 1 0;
+  padding: 27px 32px;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Active (center) card */
+.t-card--active {
+  width: 488px;
+  max-width: 488px;
+  flex: 1.1 1 0;
+  padding: 27px 32px;
+  opacity: 1;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Hover effects */
+.t-card:hover::before {
+  opacity: 1;
+}
+.t-card--side:hover {
+  opacity: 0.9;
+  transform: translateY(-20px) scale(1.04);
+  box-shadow: 0 28px 60px rgba(0,186,133,0.2), 0 0 0 1.5px rgba(164,239,251,0.3);
+}
+.t-card--active:hover {
+  transform: translateY(-20px) scale(1.04);
+  box-shadow: 0 28px 60px rgba(0,186,133,0.22), 0 0 0 1.5px rgba(164,239,251,0.3);
+}
+
+/* Paragraph section */
+.t-card-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Card title — Figma: Britti Sans Trial 600 16.172px/28.8px white */
+.t-card-title {
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: 16.172px;
+  font-weight: 600;
+  line-height: 28.8px;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Card body — Figma: Britti Sans Trial 400 14px/23.8px #BCBCBC */
+.t-card-body {
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 23.8px;
+  letter-spacing: -0.09px;
+  color: #bcbcbc;
+  margin: 0;
+}
+
+/* Author row — Figma: Container 424×48, flex row, space-between */
+.t-card-author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Left: avatar + company name */
+.t-author-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+/* Avatar group — 4px gap between avatars (Figma: x1=10918 x2=10954, gap=4px) */
+.t-avatars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Avatar wrapper — Figma: Background 32×32, radius 999px */
+.t-avatar-wrap {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.t-avatar {
+  width: 32px;
+  height: 32px;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Author/Company name — Figma: Britti 600 12px/23.8px white */
+.t-author-name {
+  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 23.8px;
+  letter-spacing: -0.09px;
+  color: #ffffff;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Stars pill — Figma Group 21 (107×23): pill bg + 5 green stars */
+.t-stars-img {
+  display: block;
+  flex-shrink: 0;
+}
+.t-stars-desktop { width: 107px; height: 23px; }
+.t-stars-mob     { width: 85px;  height: 23px; display: none; }
+
+
+/* ── Navigation row ── */
+.t-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* Arrow group — Figma Group 36 (96×40) */
+.t-nav-arrows {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.t-nav-svg {
+  width: 96px;
+  height: 40px;
+  display: block;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.t-nav-btn {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 1;
+}
+.t-nav-prev { left: 0; }
+.t-nav-next { right: 0; }
+
+.t-nav-btn:hover {
+  transform: scale(1.12);
+}
+
+.t-nav-btn:active {
+  transform: scale(0.84);
+  transition-duration: 0.08s;
+}
+
+/* Ripple flash on click */
+.t-nav-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(164, 239, 251, 0.35) 0%, transparent 68%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.t-nav-btn:active::after {
+  opacity: 1;
+  transition: none;
+}
+
+/* SVG glow on hover */
+.t-nav-arrows:hover .t-nav-svg {
+  filter: drop-shadow(0 0 8px rgba(164, 239, 251, 0.3));
+  transition: filter 0.3s ease;
+}
+
+
+
+/* ── Responsive ── */
+
+@media (max-width: 1200px) {
+  .t-carousel { gap: 20px; }
+  .t-card--active { width: 440px; }
+  .t-card--side  { width: 380px; }
+}
+
+@media (max-width: 1024px) {
+  .t-carousel { display: none; }
+  .t-carousel-mobile { display: flex; justify-content: center; padding: 0 24px; }
+  .t-carousel-mobile .t-card--active {
+    width: 100%;
+    max-width: 560px;
+    padding: 27px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .t-section { padding: 0 12px; }
+  .t-bg { border-radius: 20px; }
+  .t-content { padding: 64px 0 64px; }
+  .t-header { margin-bottom: 48px; }
+  .t-badge {
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid rgba(82, 88, 112, 0.12);
+    background: #ffffff;
+    box-shadow: 0 4px 12px 0 rgba(82, 88, 112, 0.04);
+    color: #162755;
+    font-family: 'Geist', 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16.8px;
+  }
+  .t-heading-light,
+  .t-heading-bold { font-size: 36px; line-height: 40px; letter-spacing: -1px; }
+  .t-subtitle { font-size: 16px; line-height: 24px; color: #cacaca; }
+  .t-carousel-mobile { padding: 0 16px; }
+  .t-carousel-mobile .t-card-title {
+    font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+    font-size: 16.172px;
+    font-weight: 600;
+    line-height: 28.8px;
+    color: #ffffff;
+  }
+  .t-carousel-mobile .t-card-body {
+    font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23.8px;
+    letter-spacing: -0.09px;
+    color: #bcbcbc;
+  }
+  .t-carousel-mobile .t-author-name {
+    font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 23.8px;
+    letter-spacing: -0.09px;
+    color: #ffffff;
+  }
+  .t-stars-desktop { display: none; }
+  .t-stars-mob     { display: block; }
+}
+
+/* Mobile — matches Figma 370px frame, Section 5624:2168 */
+/* Cards: 316×250, stacked, 16px gap in a 370px section */
+@media (max-width: 480px) {
+  .t-section { padding: 0 10px; }
+  .t-bg { border-radius: 16px; }
+  .t-content { padding: 48px 0 56px; }
+  .t-header { margin-bottom: 36px; gap: 16px; padding: 0 18px; }
+  .t-heading-light,
+  .t-heading-bold { font-size: 36px; line-height: 40px; letter-spacing: -1px; }
+  .t-subtitle { font-size: 16px; line-height: 24px; color: #cacaca; }
+  .t-carousel-mobile { padding: 0 12px; }
+  .t-carousel-mobile .t-card--active {
+    width: 316px;
+    max-width: 316px;
+    padding: 27px 32px;
+    gap: 40px;
+  }
+  .t-nav { margin-top: 28px; }
+}
