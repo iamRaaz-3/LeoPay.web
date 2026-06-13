@@ -1,0 +1,273 @@
+/* ═══════════════════════════════════════════════════════
+   Comparison Section — Figma 298:22974
+   1920×882  bg: linear-gradient(180deg, #FFF 0%, #E0F4EF 100%)
+   ═══════════════════════════════════════════════════════ */
+
+.comparison-section {
+  width: 1920px;
+  height: 882px;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,1) 1px, transparent 1px),
+    linear-gradient(180deg, #FFF 0%, #E0F4EF 100%);
+  background-size: 80px 100%, 100% 80px, 100% 100%;
+  background-position: 33px 0, 0 35px, 0 0;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 129px;
+}
+
+/* ── Container ─────────────────────────────────────────── */
+.comparison-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1920px;
+  box-sizing: border-box;
+}
+
+/* ── Title block ───────────────────────────────────────── */
+.comparison-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Badge — 298:23022  111×33  radius=100  white bg */
+.comparison-badge-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.comparison-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 111px;
+  height: 33px;
+  background: #fff;
+  border-radius: 100px;
+  box-shadow: 0px 4px 12px rgba(82, 88, 112, 0.04);
+  box-sizing: border-box;
+}
+
+.comparison-badge span {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  color: #162755;
+  position: relative;
+  z-index: 1;
+}
+
+.comparison-badge-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Heading — 298:23028  500×96 */
+.comparison-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.cmp-heading-light {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -1px;
+  color: #162755;
+  display: block;
+  text-align: center;
+}
+
+.cmp-heading-bold {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -1px;
+  color: #162755;
+  display: block;
+  text-align: center;
+}
+
+/* Subtitle — 298:23033  574×53  Britti 20/27 #525870 */
+.comparison-subtitle {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.04px;
+  color: #525870;
+  text-align: center;
+  max-width: 574px;
+  margin: 0;
+}
+
+/* ── Card wrap ─────────────────────────────────────────── */
+.comparison-card-wrap {
+  width: 1372px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Desktop card — 298:23034  1372×347  radius=30 shadow */
+.comparison-desktop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 1372px;
+  height: 347px;
+  padding: 10px;
+  gap: 20px;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+
+/* ── Columns ───────────────────────────────────────────── */
+.cmp-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 656px;
+  flex-shrink: 0;
+  padding: 19px 20px 20px;
+  box-sizing: border-box;
+}
+
+/* Others — 298:23035  656×293  radius=12 */
+.cmp-others {
+  background: #fff;
+  border-radius: 12px;
+  height: 293px;
+}
+
+/* LeoPay — 298:23100  656×287  radius=20  border #00BA85 2px */
+.cmp-leopay {
+  background: #fff;
+  border: 2px solid #00BA85;
+  border-radius: 20px;
+  height: 287px;
+  box-shadow: -12px 0px 12px -3.5px rgba(18, 109, 251, 0.08);
+}
+
+/* Column title — 298:23038  Britti 32/38.4 w600 #162755 */
+.cmp-col-title {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 38.4px;
+  color: #162755;
+  margin: 0;
+}
+
+/* LeoPay logo — 298:23101  Britti 36/77 w600 #00BA85 ls=-1 */
+.cmp-leopay-logo {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.cmp-leopay-text {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -1px;
+  color: #00BA85;
+}
+
+/* List — 298:23039 / 298:23102 */
+.cmp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.cmp-point {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Icon wrap */
+.cmp-icon-wrap {
+  width: 18px;
+  height: 18px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.x-icon {
+  background: rgba(253, 103, 103, 0.3);
+  box-shadow: 0px 0px 0px 1.3px #FFE4E4;
+}
+
+.check-icon {
+  background: #00BA85;
+  box-shadow: 0px 0px 0px 1px #E1EAF8;
+}
+
+/* List item text — 298:23051  Britti 18/22.4 w400 #505670 */
+.cmp-text {
+  flex: 1;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.4px;
+  color: #505670;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 1440px) {
+  .comparison-section { width: 100%; height: auto; padding-bottom: 80px; }
+  .comparison-card-wrap { width: 100%; padding: 0 24px; box-sizing: border-box; }
+  .comparison-desktop { width: 100%; height: auto; }
+  .cmp-col { width: 50%; height: auto; }
+}
+
+@media (max-width: 860px) {
+  .comparison-desktop { flex-direction: column; height: auto; }
+  .cmp-col { width: 100%; }
+  .cmp-others, .cmp-leopay { height: auto; }
+  .cmp-heading-light, .cmp-heading-bold { font-size: 36px; line-height: 40px; }
+  .comparison-subtitle { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .cmp-heading-light, .cmp-heading-bold { font-size: 28px; line-height: 34px; }
+  .cmp-col-title { font-size: 24px; }
+  .cmp-text { font-size: 15px; }
+}
