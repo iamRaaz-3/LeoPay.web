@@ -7,6 +7,7 @@ import Partners from './components/Partners/Partners.jsx'
 import Comparison from './components/Comparison/Comparison.jsx'
 import Faq from './components/Faq/Faq.jsx'
 import Testimonials from './components/Testimonials/Testimonials.jsx'
+import Cta from './components/Cta/Cta.jsx'
 import Footer from './components/Footer/Footer.jsx'
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
       <Comparison />
       <Faq />
       <Testimonials />
+      <Cta />
       <Footer />
     </>
   );
