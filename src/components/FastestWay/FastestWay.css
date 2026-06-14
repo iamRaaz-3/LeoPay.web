@@ -1,0 +1,568 @@
+.fw-section {
+  width: 100%;
+  height: 1100px;
+  background: linear-gradient(180deg, #EFF7FC 0%, #F9F9F9 96.02%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.fw-bg-grid {
+  position: absolute;
+  top: -116px;
+  left: 0;
+  display: flex;
+  width: 1920px;
+  height: 449px;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.fw-inner {
+  display: flex;
+  width: 1720px;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  margin-top: 140px;
+  box-sizing: border-box;
+}
+
+.fw-heading-group {
+  display: flex;
+  width: 500px;
+  max-width: 500px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fw-title-area {
+  display: flex;
+  width: 1578px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.fw-badge {
+  position: relative;
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: #FFF;
+  box-shadow: 0 4px 12px 0 rgba(82, 88, 112, 0.04);
+}
+
+.fw-badge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 88px;
+  height: 33px;
+  border-radius: 100px;
+  border: 1px solid rgba(82, 88, 112, 0.12);
+  pointer-events: none;
+}
+
+.fw-badge-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fw-badge-text {
+  color: #162755;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16.8px;
+}
+
+.fw-heading {
+  display: flex;
+  height: 96px;
+  padding: 0 9.273px 0 9px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -1px;
+  color: #162755;
+  text-align: center;
+  margin: 0;
+}
+
+.fw-heading-line {
+  display: flex;
+  height: 48px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #162755;
+  text-align: center;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -1px;
+}
+
+.fw-heading-line--1 {
+  width: 481.728px;
+}
+
+.fw-heading-line--2 {
+  width: 424.137px;
+  font-weight: 600;
+}
+
+.fw-heading strong {
+  font-weight: 600;
+}
+
+.fw-para {
+  display: flex;
+  width: 600px;
+  max-width: 600px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fw-para-wrap {
+  display: flex;
+  height: 54px;
+  padding: 0 32px 1px 37px;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: stretch;
+}
+
+.fw-para-text {
+  width: 531px;
+  height: 53px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #505670;
+  text-align: center;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.04px;
+  margin: 0;
+}
+
+.fw-cards-row {
+  display: flex;
+  width: 1388px;
+  height: 538px;
+  gap: 29px;
+  align-items: flex-start;
+}
+
+.fw-card-wrap {
+  position: relative;
+  padding-top: 21px;
+  width: 679.475px;
+  flex-shrink: 0;
+}
+
+.fw-card-label {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  padding: 10.555px 17.592px 10.555px 14.074px;
+  justify-content: center;
+  align-items: center;
+  gap: 8.796px;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.fw-card-label-icon {
+  display: flex;
+  width: 17.592px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fw-card-label-outer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fw-card-label-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+}
+
+.fw-card-label-text {
+  color: #FFF;
+  text-align: center;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21.11px;
+}
+
+.fw-card-label--others {
+  background: #525870;
+  border-radius: 10.555px;
+  box-shadow: 0 3.518px 10.555px 0 rgba(82, 88, 112, 0.12), 0 1.759px 1.759px 0 rgba(255, 255, 255, 0.08) inset;
+}
+
+.fw-card-label--leopay {
+  background: #00BA85;
+  border-radius: 10.555px;
+  box-shadow: 0 3.518px 10.555px 0 rgba(82, 88, 112, 0.12), 0 1.759px 1.759px 0 rgba(255, 255, 255, 0.08) inset;
+}
+
+.fw-card {
+  width: 679.475px;
+  height: 538px;
+  border-radius: 28.147px;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.fw-card--others {
+  border: 5px solid #FFF;
+  background: #FFF;
+}
+
+.fw-card--others::before {
+  content: '';
+  position: absolute;
+  left: -17.75px;
+  top: 359.91px;
+  width: 710.14px;
+  height: 445.451px;
+  border-radius: 710.14px;
+  background: linear-gradient(180deg, #C6CFD5 16.68%, #E4EAED 63.07%);
+  filter: blur(60.523277282714844px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fw-card--leopay {
+  border: 5px solid #fff;
+  background: #EEFFFB;
+}
+
+.fw-others-flow {
+  position: absolute;
+  left: 43.54px;
+  top: 240px;
+  width: 593px;
+  height: 210px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+.fw-others-globe {
+  position: absolute;
+  left: -5px;
+  top: 220px;
+  width: 684px;
+  height: 324px;
+  background: url('./assets/fw-others-globe.png') transparent -14.286px 48px / 102.089% 83.258% no-repeat;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.fw-leopay-avatar {
+  position: absolute;
+  left: 61.47px;
+  top: 340px;
+  width: 91.013px;
+  height: 91.013px;
+  z-index: 2;
+}
+
+.fw-leopay-avatar-img {
+  position: relative;
+  width: 91.013px;
+  height: 91.013px;
+  aspect-ratio: 1/1;
+  background: url('./assets/image 29.png') transparent 50% / cover no-repeat;
+  z-index: 1;
+}
+
+.fw-leopay-avatar-shadow {
+  position: absolute;
+  left: 5.5px;
+  top: 66.01px;
+  width: 66.979px;
+  height: 19.367px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fw-leopay-avatar--right {
+  left: 527.47px;
+  top: 340px;
+}
+
+.fw-leopay-avatar--right .fw-leopay-avatar-img {
+  background-image: url('./assets/image 29 (1).png');
+}
+
+.fw-leopay-avatar-shadow--right {
+  left: 5.5px;
+  top: 66.01px;
+}
+
+.fw-leopay-center-logo {
+  position: absolute;
+  left: 301.47px;
+  top: 242px;
+  width: 76px;
+  height: 76px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fw-leopay-badge {
+  position: absolute;
+  display: inline-flex;
+  height: 29.292px;
+  padding: 4.842px 8.07px;
+  justify-content: center;
+  align-items: center;
+  gap: 4.842px;
+  border-radius: 80.698px;
+  background: #fff;
+  box-shadow: 0 0 4.035px 0 rgba(6, 6, 18, 0.18) inset;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.fw-leopay-badge--left {
+  left: 148.36px;
+  top: 303.18px;
+  transform: rotate(-16deg);
+}
+
+.fw-leopay-badge--right {
+  left: 419.98px;
+  top: 302.70px;
+  transform: rotate(16deg);
+}
+
+.fw-leopay-badge-connector {
+  display: flex;
+  width: 4.842px;
+  height: 8.07px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.fw-leopay-badge-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fw-leopay-badge-label-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.fw-leopay-badge-text {
+  color: #000;
+  font-family: 'Geist', sans-serif;
+  font-size: 9.684px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 9.684px;
+  letter-spacing: 1.453px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.fw-card--leopay::before {
+  content: '';
+  position: absolute;
+  left: -17.75px;
+  top: 359.91px;
+  width: 710.14px;
+  height: 445.451px;
+  border-radius: 710.14px;
+  background: linear-gradient(180deg, rgba(171,200,192,1) 35.1%, rgba(180,231,217,1) 100%);
+  filter: blur(60.523277282714844px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fw-leopay-globe {
+  position: absolute;
+  left: -4.53px;
+  top: 259px;
+  width: 684px;
+  height: 324px;
+  background: url('./assets/fw-leopay-globe.png') transparent -14.286px 48px / 102.089% 83.258% no-repeat;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.fw-card-stats {
+  position: absolute;
+  left: 50px;
+  top: 50.5px;
+  display: flex;
+  width: 580.5px;
+  height: 145.5px;
+  gap: 30px;
+  z-index: 1;
+}
+
+.fw-stat-col {
+  display: flex;
+  width: 173.5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.fw-stat-val {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 38.735px;
+  letter-spacing: -0.807px;
+  display: block;
+}
+
+.fw-stat-val--others { color: #9397A5; }
+.fw-stat-val--leopay { color: #162755; }
+
+.fw-stat-label-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  align-self: stretch;
+}
+
+.fw-stat-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fw-stat-label-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fw-stat-label {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 17.431px;
+  color: #162755;
+  white-space: nowrap;
+}
+
+.fw-stat-desc-wrap {
+  display: flex;
+  width: 174px;
+  height: 60px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fw-stat-desc-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.fw-stat-desc {
+  width: 173.5px;
+  color: #525870;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.032px;
+  margin: 0;
+}
+
+
+@media (max-width: 1720px) {
+  .fw-inner { width: 100%; padding-left: 60px; padding-right: 60px; }
+}
+
+@media (max-width: 1440px) {
+  .fw-card-wrap { width: auto; flex: 1; min-width: 0; }
+  .fw-card { width: 100%; }
+}
+
+@media (max-width: 1100px) {
+  .fw-section { height: auto; padding-bottom: 80px; }
+  .fw-inner { margin-top: 80px; }
+  .fw-card { height: auto; }
+  .fw-card-stats { padding: 40px 32px 0; gap: 16px; }
+  .fw-stat-col { width: auto; flex: 1; }
+}
+
+@media (max-width: 768px) {
+  .fw-cards-row { flex-direction: column; align-items: center; gap: 40px; }
+  .fw-card-wrap { width: 100%; max-width: 480px; }
+  .fw-card { width: 100%; }
+  .fw-heading { font-size: 36px; line-height: 40px; }
+  .fw-para { font-size: 16px; }
+  .fw-inner { padding-left: 24px; padding-right: 24px; }
+  .fw-card-stats { flex-direction: column; gap: 20px; padding: 32px 24px 0; }
+  .fw-stat-col { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .fw-heading { font-size: 28px; line-height: 34px; }
+  .fw-inner { padding-left: 16px; padding-right: 16px; margin-top: 48px; }
+}
