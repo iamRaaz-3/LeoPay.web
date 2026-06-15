@@ -1,0 +1,569 @@
+.cov-section {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 1012px;
+  padding: 0 4.532px 0 3px;
+  justify-content: center;
+  align-items: center;
+  background: url('./assets/Background@3x (1).png') lightgray 50% / cover no-repeat;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.cov-grid-top {
+  position: absolute;
+  top: 0;
+  left: 240px;
+  width: 1440px;
+  height: 505px;
+  display: block;
+  max-width: none;
+}
+
+.cov-map-wrap {
+  position: relative;
+  width: 1256.012px;
+  height: 268px;
+  flex-shrink: 0;
+}
+
+.cov-map {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 1;
+}
+
+.cov-markers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cov-marker {
+  position: absolute;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: cov-marker-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.cov-marker__badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 9px 5px 6px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 186, 133, 0.2);
+  border-radius: 20px;
+  box-shadow:
+    0 2px 12px rgba(0, 186, 133, 0.14),
+    0 1px 4px rgba(0, 0, 0, 0.07);
+  white-space: nowrap;
+  animation: cov-float 3.8s ease-in-out infinite;
+}
+
+.cov-marker__flag {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.cov-marker__code {
+  font-family: 'Geist', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #162755;
+  letter-spacing: 0.5px;
+}
+
+.cov-marker__stem {
+  width: 1px;
+  background: linear-gradient(to top, rgba(0, 186, 133, 0.5), transparent);
+  flex-shrink: 0;
+}
+
+.cov-marker__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00BA85;
+  box-shadow:
+    0 0 0 2.5px rgba(0, 186, 133, 0.2),
+    0 0 10px 2px rgba(0, 186, 133, 0.55);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.cov-marker__pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 186, 133, 0.6);
+  transform: translate(-50%, -50%) scale(1);
+  animation: cov-pulse 2.6s ease-out infinite;
+}
+
+@keyframes cov-marker-enter {
+  from { opacity: 0; transform: translateX(-50%) translateY(6px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes cov-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-4px); }
+}
+
+@keyframes cov-pulse {
+  0%   { transform: translate(-50%, -50%) scale(1);   opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(4.5); opacity: 0; }
+}
+
+.cov-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 1256.01px;
+  height: 771px;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.cov-features {
+  display: flex;
+  width: 1200px;
+  height: 439px;
+  max-width: 1200px;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.cov-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  align-self: stretch;
+}
+
+.cov-heading {
+  display: flex;
+  width: 500px;
+  max-width: 500px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cov-heading__line1 {
+  display: flex;
+  width: 481.728px;
+  height: 48px;
+  flex-direction: column;
+  justify-content: center;
+  color: #162755;
+  text-align: center;
+  font-family: "Britti Sans Trial";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -1px;
+}
+
+.cov-heading__line2 {
+  display: flex;
+  width: 485px;
+  height: 48px;
+  flex-direction: column;
+  justify-content: center;
+  color: #162755;
+  text-align: center;
+  font-family: "Britti Sans Trial";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -1px;
+}
+
+.cov-badge {
+  width: 95px;
+  height: 33px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  border: 1px solid rgba(82, 88, 112, 0.12);
+  background: #ffffff;
+  padding: 8px 16px;
+  box-sizing: border-box;
+}
+
+.cov-badge__text {
+  display: block;
+  color: #162755;
+  font-family: Geist, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16.8px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cov-paragraph-wrap {
+  display: flex;
+  padding: 0 300px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.cov-paragraph {
+  display: flex;
+  width: 600px;
+  max-width: 600px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cov-paragraph-text {
+  display: flex;
+  width: 574px;
+  height: 53px;
+  flex-direction: column;
+  justify-content: center;
+  color: #525870;
+  text-align: center;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.04px;
+  margin: 0;
+}
+
+.cov-chips {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.cov-chips-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.cov-chips-row--active {
+  margin-top: 0;
+  width: 938.964px;
+}
+.cov-chips-row--beta {
+  margin-top: 33.74px;
+  width: auto;
+  flex-wrap: nowrap;
+}
+.cov-chips-row--soon   { margin-top: 16px; }
+
+.cov-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 13.087px;
+  height: 39.26px;
+  padding: 8.724px 10.905px;
+  border-radius: 109.055px;
+  background: #FFF;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.cov-chip--active {
+  border: 1.091px solid rgba(0, 186, 133, 0.47);
+  box-shadow: inset 0 0 0 1px rgba(177, 193, 255, 0.2);
+}
+
+.cov-chip--beta {
+  border: none;
+}
+
+.cov-chip--soon {
+  display: flex;
+  width: 184.303px;
+  background: #FFF;
+  border: none;
+}
+
+.cov-chip__star {
+  position: absolute;
+  left: 33.44px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 33.44px;
+  height: 33.44px;
+  display: flex;
+  padding: 8.724px;
+  align-items: center;
+  gap: 10.905px;
+  border-radius: 109.055px;
+  border: 1.091px solid #7E94E8;
+  background: #0039C0;
+  box-shadow: 0 0 8.724px 0 #FFF inset;
+  box-sizing: border-box;
+  z-index: 0;
+  flex-shrink: 0;
+}
+
+.cov-chip__star-icon {
+  width: 14px;
+  height: 14px;
+  color: #ffffff;
+}
+
+.cov-chip__flag {
+  width: 21.811px;
+  height: 21.811px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.cov-chip__flag-emoji {
+  width: 21.811px;
+  height: 21.811px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  line-height: 1;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.cov-chip__code {
+  display: flex;
+  height: 21.811px;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 17.449px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  color: #162755;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cov-chip--beta .cov-chip__code {
+  color: #525870;
+}
+
+.cov-chip--soon .cov-chip__code {
+  color: #525870;
+}
+
+.cov-chip__status {
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.12px;
+  position: relative;
+  z-index: 1;
+}
+
+.cov-chip__status--active {
+  color: #27AA7B;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 13.087px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.131px;
+}
+
+.cov-chip__status--beta {
+  display: flex;
+  width: 31.626px;
+  height: 21.811px;
+  flex-direction: column;
+  justify-content: center;
+  color: #80869E;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 13.087px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.131px;
+}
+
+.cov-chip__status--soon {
+  display: flex;
+  width: 31.626px;
+  height: 21.811px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #80869E;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 13.087px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.131px;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+  .cov-inner {
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .cov-features {
+    width: 100%;
+  }
+
+  .cov-chips {
+    width: 100%;
+  }
+
+  .cov-map-wrap {
+    width: 100%;
+  }
+
+  .cov-map {
+    width: 100%;
+    height: auto;
+  }
+
+  .cov-markers {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .cov-section {
+    height: auto;
+    padding: 80px 0;
+  }
+
+  .cov-inner {
+    height: auto;
+    gap: 40px;
+  }
+
+  .cov-features {
+    height: auto;
+    gap: 32px;
+  }
+
+  .cov-heading__line1,
+  .cov-heading__line2 {
+    display: block;
+    width: auto;
+    height: auto;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -1px;
+  }
+
+  .cov-heading__line2 {
+    letter-spacing: -2px;
+  }
+
+  .cov-paragraph-wrap {
+    padding: 0 24px;
+  }
+
+  .cov-paragraph {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .cov-chips-row--active { margin-top: 0; }
+  .cov-chips-row--beta   { margin-top: 12px; }
+  .cov-chips-row--soon   { margin-top: 12px; }
+
+  .cov-chips-row {
+    gap: 8px;
+  }
+
+  .cov-chip {
+    height: 36px;
+    padding: 7px 10px;
+    gap: 8px;
+  }
+
+  .cov-chip__flag,
+  .cov-chip__flag-emoji {
+    width: 18px;
+    height: 18px;
+    font-size: 13px;
+  }
+
+  .cov-chip__code {
+    font-size: 14px;
+  }
+
+  .cov-chip__star {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .cov-chips-row--active,
+  .cov-chips-row--beta,
+  .cov-chips-row--soon {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cov-chips-row--active .cov-chip,
+  .cov-chips-row--beta .cov-chip,
+  .cov-chips-row--soon .cov-chip {
+    width: calc(50% - 4px);
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .cov-chip {
+    height: 34px;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .cov-chip__code {
+    font-size: 13px;
+  }
+}
