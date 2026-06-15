@@ -7,6 +7,7 @@ import Partners from './components/Partners/Partners.jsx'
 import Comparison from './components/Comparison/Comparison.jsx'
 import Faq from './components/Faq/Faq.jsx'
 import Testimonials from './components/Testimonials/Testimonials.jsx'
+import GlobalPresence from './components/GlobalPresence/GlobalPresence.jsx'
 import Cta from './components/Cta/Cta.jsx'
 import Footer from './components/Footer/Footer.jsx'
 
@@ -16,12 +17,14 @@ export default function App() {
       <Navbar />
       <Hero />
       <Ticker />
-      <FastestWay />
       <Partners />
-      <Features />
+      <FastestWay />
       <Comparison />
-      <Faq />
+      <Features />
+      <GlobalPresence />
       <Testimonials />
+
+      <Faq />
       <Cta />
       <Footer />
     </>
