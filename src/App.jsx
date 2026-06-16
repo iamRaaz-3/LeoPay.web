@@ -11,7 +11,6 @@ import Testimonials from './components/Testimonials/Testimonials.jsx'
 import Faq from './components/Faq/Faq.jsx'
 import Cta from './components/Cta/Cta.jsx'
 import Footer from './components/Footer/Footer.jsx'
-import Payouts from './pages/Payouts.jsx'
 import Privacy from './pages/Privacy.jsx'
 
 const Landing = () => (
@@ -35,7 +34,6 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
-      <Route path="/payouts" element={<Payouts />} />
       <Route path="/privacy" element={<Privacy />} />
     </Routes>
   );
