@@ -1,13 +1,3 @@
-/* =====================================================
-   FAQ SECTION — Figma 22:4515  Container  1920×1190
-   abs(2112, 6999)
-
-   22:4516  Background  1920×1190  fill rgba(251,251,251)
-     22:4518  SVG grid top     1440×505  rel(240,0)
-     22:4526  SVG grid bottom  1440×505  rel(240,685)
-   All baked into faq-bg-full.png
-   ===================================================== */
-
 .faq-section {
   position: relative;
   width: 100%;
@@ -22,11 +12,6 @@
   box-sizing: border-box;
 }
 
-/* ── 1920px canvas for bg image — same as Hero/CTA/Coverage —
-   22:4516 Background  1920×1190  rel(0,0)
-   ─────────────────────────────────────────────────── */
-
-/* Bottom bg — Figma 298:27012  1920×264  y=757 */
 .faq-bg-bottom {
   position: absolute;
   bottom: 0;
@@ -50,13 +35,9 @@
   display: block;
 }
 
-/* ── Main container ─────────────────────────────── ─────
-   Figma: flex, column, gap 56px between title & list
-   max-width ≈ 1078px (1920 – 2×240px side padding)
-   ─────────────────────────────────────────────────── */
 .faq-container {
   position: relative;
-  z-index: 1;          /* sits above faq-canvas */
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -68,9 +49,6 @@
   box-sizing: border-box;
 }
 
-/* ── Title block ───────────────────────────────────────
-   Figma: flex column, center-aligned, gap 20px
-   ─────────────────────────────────────────────────── */
 .faq-title-block {
   display: flex;
   flex-direction: column;
@@ -81,8 +59,6 @@
   width: 100%;
 }
 
-/* Badge — Figma exact specs
-   59×33px, border-radius 100px, Geist Medium 14px/16.8px */
 .faq-badge {
   display: inline-flex;
   justify-content: center;
@@ -94,17 +70,15 @@
   box-shadow: 0px 4px 12px rgba(82, 88, 112, 0.04);
   border-radius: 100px;
   border: 1px solid rgba(82, 88, 112, 0.15);
-  /* Figma: Geist Medium */
   font-family: 'Geist', 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 16.8px; /* 120% */
+  line-height: 16.8px;
   color: #162755;
   box-sizing: border-box;
 }
 
-/* Heading wrapper */
 .faq-heading {
   display: flex;
   flex-direction: column;
@@ -112,13 +86,11 @@
   gap: 0;
 }
 
-/* "Frequently Asked" — Figma exact specs */
 .faq-heading-light {
   display: flex;
-  /* was 481.728px fixed — fluid so it never overflows at narrow viewports */
   width: 100%;
   max-width: 482px;
-  height: auto;         /* was 48px fixed — grows if text wraps */
+  height: auto;
   flex-direction: column;
   justify-content: center;
   color: #162755;
@@ -134,13 +106,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* "Questions" — Figma exact specs */
 .faq-heading-bold {
   display: flex;
-  /* was 424.137px fixed */
   width: 100%;
   max-width: 425px;
-  height: auto;         /* was 48px fixed */
+  height: auto;
   flex-direction: column;
   justify-content: center;
   color: #162755;
@@ -156,7 +126,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtitle */
 .faq-subtitle {
   width: 574px;
   max-width: 100%;
@@ -174,9 +143,6 @@
   display: none;
 }
 
-/* ── FAQ Accordion list ────────────────────────────────
-   Figma: flex column, gap 20px, full width
-   ─────────────────────────────────────────────────── */
 .faq-list {
   display: flex;
   flex-direction: column;
@@ -187,11 +153,6 @@
   align-self: center;
 }
 
-/* ── FAQ Item ──────────────────────────────────────────
-   Figma: padding 24px, border-radius 16px,
-   border 1px solid #E8E8E8, bg #FFF
-   open → box-shadow: 0 2px 2px 0 rgba(72,80,88,0.08)
-   ─────────────────────────────────────────────────── */
 .faq-item {
   display: flex;
   padding: 24px;
@@ -211,7 +172,6 @@
   box-shadow: 0 2px 2px 0 rgba(72, 80, 88, 0.08);
 }
 
-/* ── Question row ──────────────────────────────────── */
 .faq-question {
   width: 100%;
   display: flex;
@@ -225,7 +185,6 @@
   cursor: pointer;
 }
 
-/* Question text — Figma 135:5505 Britti Sans Trial 20/600 lh=20 ls=0.2 #162755 */
 .faq-question-text {
   font-family: 'Britti Sans Trial', sans-serif;
   font-size: 20px;
@@ -236,7 +195,6 @@
   flex: 1;
 }
 
-/* +/- icon — Iconsax/Linear/add, 24×24, color #162755 */
 .faq-icon {
   width: 24px;
   height: 24px;
@@ -246,8 +204,6 @@
   flex-shrink: 0;
 }
 
-
-/* ── Answer ────────────────────────────────────────── */
 .faq-answer {
   animation: fadeDown 0.22s ease;
   width: 100%;
@@ -277,7 +233,6 @@
   .faq-subtitle { font-size: clamp(16px, 2vw, 20px); }
 }
 
-/* ─── Tablet: ≤900px ─────────────────────────────────── */
 @media (max-width: 900px) {
   .faq-container { padding: 0 24px; gap: 40px; }
   .faq-heading-light,
