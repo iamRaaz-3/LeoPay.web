@@ -1,0 +1,327 @@
+.cta-section {
+  width: 100%;
+  height: 685px;
+  position: relative;
+  overflow: hidden;
+  background: url('./assets/cta-bg.png') lightgray 50% / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.cta-rect {
+  position: absolute;
+  transform: rotate(27.588deg);
+}
+
+.cta-rect--1 {
+  left: 399.26px;
+  top: -217.02px;
+  width: 1171px;
+  height: 1238.78px;
+  background: linear-gradient(182deg, rgba(25, 100, 59, 0.00) 0%, rgba(0, 181, 129, 0.80) 95.53%);
+  filter: blur(50px);
+}
+
+.cta-rect--2 {
+  left: -463.42px;
+  top: 84.58px;
+  width: 1171px;
+  height: 1171px;
+  background: linear-gradient(180deg, rgba(25, 100, 59, 0.00) 0%, rgba(21, 198, 148, 0.80) 100%);
+  filter: blur(50px);
+}
+
+.cta-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-logo {
+  display: flex;
+  width: 141px;
+  height: 139.5px;
+  padding: 23.745px 24px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.cta-logo-bg {
+  display: flex;
+  width: 93px;
+  height: 92.011px;
+  padding: 7.915px;
+  justify-content: center;
+  align-items: center;
+  gap: 7.915px;
+  flex-shrink: 0;
+  border-radius: 23.745px;
+  border: 1.979px solid #53EFC3;
+  background: #13A178;
+  box-shadow: -7.915px 2.638px 17.281px 0 #185C49 inset;
+  box-sizing: border-box;
+}
+
+.cta-logo-icon--mobile {
+  display: none;
+}
+
+.cta-top {
+  display: flex;
+  width: 761px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cta-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+}
+
+.cta-heading {
+  color: #fff;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 70px;
+  font-style: normal;
+  line-height: 77px;
+  letter-spacing: -2.1px;
+  text-align: center;
+  margin: 0;
+}
+
+.cta-heading--semibold { font-weight: 600; white-space: nowrap; }
+.cta-heading--regular { font-weight: 400; white-space: nowrap; }
+
+.cta-desc-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+}
+
+.cta-desc {
+  width: 545px;
+  color: #fff;
+  text-align: center;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.04px;
+  margin: 0;
+}
+
+.cta-buttons {
+  display: flex;
+  height: 87px;
+  padding-top: 10px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0 20px;
+  align-self: stretch;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.cta-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cta-btn-wrap--secondary {
+  align-self: stretch;
+}
+
+.cta-btn-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19.2px;
+  letter-spacing: 0.04px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cta-btn--primary {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 1.4px 1px 0 rgba(255, 255, 255, 0.12) inset, 0 1.4px 4px 0 rgba(6, 6, 18, 0.30);
+}
+
+.cta-btn--secondary {
+  background: #000;
+  color: #fff;
+  box-shadow: 0 1.4px 1px 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 1.4px #4A4A4A;
+}
+
+.cta-heading-period {
+  display: none;
+}
+
+@media (max-width: 950px) and (min-width: 481px) {
+  .cta-inner {
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  .cta-top {
+    width: 100%;
+  }
+  .cta-heading {
+    font-size: clamp(40px, 8.75vw, 70px);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+  }
+  .cta-heading--semibold,
+  .cta-heading--regular {
+    white-space: normal;
+  }
+  .cta-desc {
+    width: 100%;
+    max-width: 545px;
+    font-size: clamp(16px, 2.5vw, 20px);
+    line-height: 1.4;
+  }
+  .cta-buttons {
+    height: auto;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .cta-section {
+    height: 700px;
+    background: #000 url('./assets/cta-bg-mobile.png') 50% / cover no-repeat;
+  }
+
+  .cta-rect--2 {
+    display: none;
+  }
+
+  .cta-rect--1 {
+    left: -145.8px;
+    top: 103.05px;
+    width: 479.77px;
+    height: 818.433px;
+    transform: rotate(18.454deg);
+    background: linear-gradient(182deg, rgba(25, 100, 59, 0.00) 5.02%, rgba(0, 180, 129, 0.80) 84.22%);
+    filter: blur(25px);
+  }
+
+  .cta-inner {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .cta-logo {
+    width: 88.76px;
+    height: 87.82px;
+    padding: 0;
+    margin-bottom: 48px;
+  }
+
+  .cta-logo-bg {
+    width: 88.76px;
+    height: 87.82px;
+    padding: 7.554px;
+    gap: 7.554px;
+    border-radius: 22.663px;
+    border-width: 1.889px;
+    box-shadow: -7.554px 2.518px 16.49px 0 #185C49 inset;
+  }
+
+  .cta-logo-icon--desktop {
+    display: none;
+  }
+
+  .cta-logo-icon--mobile {
+    display: block;
+    width: 51.036px;
+    height: 50.947px;
+  }
+
+  .cta-top {
+    width: 100%;
+    max-width: 335px;
+    gap: 20px;
+  }
+
+  .cta-heading {
+    font-family: Inter, sans-serif;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -2px;
+  }
+
+  .cta-heading--semibold,
+  .cta-heading--regular {
+    font-weight: 600;
+    white-space: normal;
+  }
+
+  .cta-heading-period {
+    display: inline;
+  }
+
+  .cta-desc-wrap {
+    padding: 0 32px;
+    box-sizing: border-box;
+  }
+
+  .cta-desc {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .cta-btn--primary {
+    position: relative;
+  }
+
+  .cta-btn--primary::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 9px;
+    background: linear-gradient(180deg, rgba(6, 6, 18, 0.30) 0%, rgba(6, 6, 18, 0) 100%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .cta-btn--secondary {
+    background: #060612;
+  }
+
+  .cta-buttons {
+    height: auto;
+  }
+}
+

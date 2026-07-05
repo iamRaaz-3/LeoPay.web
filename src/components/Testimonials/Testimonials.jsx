@@ -85,7 +85,14 @@ const TestimonialCard = ({ t, avatars, active, onClick }) => (
     }
   >
     <div className="t-card-paragraph">
-      <h6 className="t-card-title">{t.name}</h6>
+      <div className="t-card-title-row">
+        <h6 className="t-card-title">{t.name}</h6>
+        <img
+          src={starsMobSvg}
+          alt="5 stars"
+          className="t-stars-img t-stars-mob-inline"
+        />
+      </div>
       <p className="t-card-body">{t.body}</p>
     </div>
     <div className="t-card-author">
@@ -132,12 +139,19 @@ const Testimonials = () => {
         <div className="t-content">
           <div className="t-header">
             <span className="t-badge">Testimonials</span>
-            <div className="t-heading-block">
+            <div className="t-heading-block t-heading-block--desktop">
               <span className="t-heading-light">See what our</span>
               <span className="t-heading-bold">Customers are saying</span>
             </div>
-            <p className="t-subtitle">
+            <div className="t-heading-block t-heading-block--mobile">
+              <span className="t-heading-light">Lowest Costs,</span>
+              <span className="t-heading-bold">Highest Efficiency</span>
+            </div>
+            <p className="t-subtitle t-subtitle--desktop">
               Discover how businesses simplify international payments through the Leopay platform.
+            </p>
+            <p className="t-subtitle t-subtitle--mobile">
+              Reduce costs while improving operational speed, efficiency, and scalability across global payment operations.
             </p>
           </div>
 

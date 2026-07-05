@@ -128,6 +128,11 @@
   max-width: 600px;
 }
 
+.t-heading-block--mobile,
+.t-subtitle--mobile {
+  display: none;
+}
+
 
 /* ── Desktop Carousel ── */
 /* Figma: left 442×186 | center 488×206 | right 442×186 | gap 32px */
@@ -221,6 +226,10 @@
   gap: 8px;
 }
 
+.t-card-title-row {
+  display: block;
+}
+
 /* Card title — Figma: Britti Sans Trial 600 16.172px/28.8px white */
 .t-card-title {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
@@ -302,7 +311,8 @@
   flex-shrink: 0;
 }
 .t-stars-desktop { width: 107px; height: 23px; }
-.t-stars-mob     { width: 85px;  height: 23px; display: none; }
+.t-stars-mob     { width: 98px;  height: 28px; display: none; }
+.t-stars-mob-inline { width: 98px; height: 28px; display: none; flex-shrink: 0; }
 
 
 /* ── Navigation row ── */
@@ -452,19 +462,53 @@
 /* Mobile — matches Figma 370px frame, Section 5624:2168 */
 /* Cards: 316×250, stacked, 16px gap in a 370px section */
 @media (max-width: 480px) {
-  .t-section { padding: 0 10px; }
-  .t-bg { border-radius: 16px; }
-  .t-content { padding: 48px 0 56px; }
-  .t-header { margin-bottom: 36px; gap: 16px; padding: 0 18px; }
+  .t-section { padding: 0; }
+  .t-bg {
+    border-radius: 0;
+    background: #111113;
+    background-blend-mode: hard-light;
+  }
+  .t-content { padding: 80px 0 78px; }
+  .t-header { margin-bottom: 36px; gap: 10px; padding: 0 18px; }
+  .t-badge { border: none; }
   .t-heading-light,
-  .t-heading-bold { font-size: 36px; line-height: 40px; letter-spacing: -1px; }
-  .t-subtitle { font-size: 16px; line-height: 24px; color: #cacaca; }
+  .t-heading-bold { font-size: 36px; line-height: 48px; letter-spacing: -1px; }
+
+  .t-heading-block--desktop,
+  .t-subtitle--desktop {
+    display: none;
+  }
+
+  .t-heading-block--mobile {
+    display: flex;
+  }
+
+  .t-subtitle--mobile {
+    display: block;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.036px;
+    color: #b0b0b0;
+  }
+
   .t-carousel-mobile { padding: 0 12px; }
   .t-carousel-mobile .t-card--active {
-    width: 316px;
-    max-width: 316px;
-    padding: 27px 32px;
-    gap: 40px;
+    width: 340px;
+    max-width: 340px;
+    padding: 30px 32px;
+    gap: 12px;
+  }
+  .t-carousel-mobile .t-stars-mob {
+    display: none;
+  }
+  .t-carousel-mobile .t-card-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .t-carousel-mobile .t-stars-mob-inline {
+    display: block;
   }
   .t-nav { margin-top: 28px; }
 }
