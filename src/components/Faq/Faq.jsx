@@ -101,10 +101,13 @@ const Faq = () => (
           <span className="faq-heading-light">Frequently Asked</span>
           <span className="faq-heading-bold">Questions</span>
         </div>
-        <p className="faq-subtitle">
+        <p className="faq-subtitle faq-subtitle--desktop">
           From Settlements to Compliance, Here are Answers to the Most
           <br />
           Common Questions about LeoPay.
+        </p>
+        <p className="faq-subtitle faq-subtitle--mobile">
+          Get answers to common questions about Leopay&rsquo;s global payment ecosystem.
         </p>
       </div>
 
@@ -119,6 +122,7 @@ const Faq = () => (
       <img src={faqBgBottom} alt="" aria-hidden="true" />
     </div>
   </section>
+
 );
 
 export default Faq;
