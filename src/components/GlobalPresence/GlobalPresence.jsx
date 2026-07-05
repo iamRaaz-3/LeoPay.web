@@ -67,7 +67,7 @@ const Coverage = () => (
           </div>
           <div className="cov-heading">
             <span className="cov-heading__line1">Our wide</span>
-            <span className="cov-heading__line2">Global Presence Range</span>
+            <span className="cov-heading__line2">Global Presence</span>
           </div>
           <div className="cov-paragraph-wrap">
             <div className="cov-paragraph">
@@ -100,16 +100,16 @@ const Coverage = () => (
         <img src={mapBase} alt="" className="cov-map" />
         <div className="cov-markers">
           {[
-            { id: 'usa',         flag: '🇺🇸', code: 'USA', dotX: 148,  dotY: 50,  stemH: 28, enter: '0s',    float: '0s'    },
-            { id: 'china',       flag: '🇨🇳', code: 'CN',  dotX: 927,  dotY: 89,  stemH: 40, enter: '0.15s', float: '0.6s'  },
-            { id: 'vietnam',     flag: '🇻🇳', code: 'VN',  dotX: 901,  dotY: 134, stemH: 24, enter: '0.3s',  float: '1.2s'  },
-            { id: 'philippines', flag: '🇵🇭', code: 'PH',  dotX: 964,  dotY: 163, stemH: 30, enter: '0.45s', float: '1.8s'  },
-            { id: 'japan',       flag: '🇯🇵', code: 'JP',  dotX: 1004, dotY: 117, stemH: 36, enter: '0.6s',  float: '2.4s'  },
+            { id: 'usa',         flag: '🇺🇸', code: 'USA', dotXPct: 11.783, dotYPct: 81.343, stemH: 28, enter: '0s',    float: '0s'    },
+            { id: 'china',       flag: '🇨🇳', code: 'CN',  dotXPct: 73.805, dotYPct: 66.791, stemH: 40, enter: '0.15s', float: '0.6s'  },
+            { id: 'vietnam',     flag: '🇻🇳', code: 'VN',  dotXPct: 71.735, dotYPct: 50,     stemH: 24, enter: '0.3s',  float: '1.2s'  },
+            { id: 'philippines', flag: '🇵🇭', code: 'PH',  dotXPct: 76.751, dotYPct: 39.179, stemH: 30, enter: '0.45s', float: '1.8s'  },
+            { id: 'japan',       flag: '🇯🇵', code: 'JP',  dotXPct: 79.936, dotYPct: 56.343, stemH: 36, enter: '0.6s',  float: '2.4s'  },
           ].map((m) => (
             <div
               key={m.id}
               className="cov-marker"
-              style={{ left: m.dotX, bottom: 268 - m.dotY, animationDelay: m.enter }}
+              style={{ left: `${m.dotXPct}%`, bottom: `${m.dotYPct}%`, animationDelay: m.enter }}
             >
               <div className="cov-marker__badge" style={{ animationDelay: m.float }}>
                 <span className="cov-marker__flag">{m.flag}</span>

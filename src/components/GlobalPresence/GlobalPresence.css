@@ -23,14 +23,16 @@
 
 .cov-map-wrap {
   position: relative;
-  width: 1256.012px;
-  height: 268px;
+  width: 100%;
+  max-width: 1256.012px;
+  height: auto;
+  aspect-ratio: 1256.012 / 268;
   flex-shrink: 0;
 }
 
 .cov-map {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   opacity: 1;
 }
@@ -129,8 +131,10 @@
   position: relative;
   z-index: 1;
   display: flex;
-  width: 1256.01px;
-  height: 771px;
+  width: 100%;
+  max-width: 1256.01px;
+  height: auto;
+  min-height: 771px;
   flex-direction: column;
   align-items: center;
   gap: 64px;
@@ -138,9 +142,9 @@
 
 .cov-features {
   display: flex;
-  width: 1200px;
-  height: 439px;
+  width: 100%;
   max-width: 1200px;
+  height: auto;
   flex-direction: column;
   align-items: center;
   gap: 48px;
@@ -157,7 +161,7 @@
 
 .cov-heading {
   display: flex;
-  width: 500px;
+  width: 100%;
   max-width: 500px;
   flex-direction: column;
   align-items: flex-start;
@@ -165,8 +169,10 @@
 
 .cov-heading__line1 {
   display: flex;
-  width: 481.728px;
-  height: 48px;
+  width: 100%;
+  max-width: 481.728px;
+  height: auto;
+  min-height: 48px;
   flex-direction: column;
   justify-content: center;
   color: #162755;
@@ -181,8 +187,10 @@
 
 .cov-heading__line2 {
   display: flex;
-  width: 485px;
-  height: 48px;
+  width: 100%;
+  max-width: 485px;
+  height: auto;
+  min-height: 48px;
   flex-direction: column;
   justify-content: center;
   color: #162755;
@@ -222,7 +230,7 @@
 
 .cov-paragraph-wrap {
   display: flex;
-  padding: 0 300px;
+  padding: 0 24px;
   justify-content: center;
   align-items: center;
   align-self: stretch;
@@ -231,7 +239,7 @@
 
 .cov-paragraph {
   display: flex;
-  width: 600px;
+  width: 100%;
   max-width: 600px;
   flex-direction: column;
   align-items: flex-start;
@@ -239,8 +247,10 @@
 
 .cov-paragraph-text {
   display: flex;
-  width: 574px;
-  height: 53px;
+  width: 100%;
+  max-width: 574px;
+  height: auto;
+  min-height: 53px;
   flex-direction: column;
   justify-content: center;
   color: #525870;
@@ -337,21 +347,15 @@
   color: #ffffff;
 }
 
-.cov-chip__flag {
-  width: 21.811px;
-  height: 21.811px;
-  aspect-ratio: 1/1;
+/* Flag: 20.199px circle per Figma spec */
+.cov-chip__flag,
+.cov-chip__flag-emoji {
+  width: 20.199px;
+  height: 20.199px;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 1;
-}
-
-.cov-chip__flag-emoji {
-  width: 21.811px;
-  height: 21.811px;
-  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 15px;
@@ -441,18 +445,57 @@
 /* Responsive */
 
 @media (max-width: 1200px) {
+  .cov-section {
+    height: auto;
+    padding: 80px 0;
+  }
+
   .cov-inner {
     width: 100%;
+    height: auto;
     padding: 0 24px;
     box-sizing: border-box;
   }
 
   .cov-features {
     width: 100%;
+    height: auto;
+  }
+
+  .cov-heading {
+    width: 100%;
+  }
+
+  .cov-heading__line1,
+  .cov-heading__line2 {
+    width: 100%;
+  }
+
+  .cov-paragraph-wrap {
+    padding: 0 24px;
+  }
+
+  .cov-paragraph {
+    width: 100%;
+  }
+
+  .cov-paragraph-text {
+    width: 100%;
+    height: auto;
   }
 
   .cov-chips {
     width: 100%;
+  }
+
+  .cov-chips-row--active {
+    width: 100%;
+    max-width: 938.964px;
+  }
+
+  .cov-chips-row--beta {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .cov-map-wrap {
@@ -485,6 +528,11 @@
     gap: 32px;
   }
 
+  .cov-heading {
+    width: 100%;
+    align-items: center;
+  }
+
   .cov-heading__line1,
   .cov-heading__line2 {
     display: block;
@@ -506,6 +554,7 @@
   .cov-paragraph {
     width: 100%;
     max-width: 360px;
+    align-items: center;
   }
 
   .cov-chips-row--active { margin-top: 0; }
@@ -566,4 +615,257 @@
   .cov-chip__code {
     font-size: 13px;
   }
+}
+
+@media (max-width: 480px) {
+  .cov-section {
+    background-image:
+      linear-gradient(to right, #FFFFFF 1px, transparent 1px),
+      linear-gradient(to bottom, #FFFFFF 1px, transparent 1px),
+      linear-gradient(180deg, #E0F4EF 43.89%, #FFFFFF 100%);
+    background-repeat: repeat, repeat, no-repeat;
+    background-size: 44.19px 44.19px, 44.19px 44.19px, 100% 100%;
+    background-position: -27.6px 0, 0 16.5px, 0 0;
+  }
+
+  .cov-inner {
+    gap: 112px;
+  }
+
+  .cov-features {
+    gap: 36px;
+  }
+
+  .cov-map-wrap {
+    align-self: flex-start;
+    width: 489.988px;
+    height: 104.55px;
+    margin-left: -31px;
+  }
+
+  .cov-title {
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .cov-heading {
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .cov-heading__line1,
+  .cov-heading__line2 {
+    display: block;
+    width: auto;
+    height: auto;
+    line-height: 48px;
+  }
+
+  .cov-heading__line2 {
+    letter-spacing: -1px;
+  }
+
+  .cov-badge {
+    box-shadow: 0 4px 12px 0 rgba(82, 88, 112, 0.04);
+  }
+
+  .cov-paragraph {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+  }
+
+  .cov-paragraph-wrap {
+    padding: 0 24px;
+    height: auto;
+  }
+
+  .cov-paragraph-text {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    letter-spacing: 0.036px;
+    color: #505670;
+  }
+
+  .cov-chips-row {
+    gap: 12px;
+  }
+
+  .cov-chips-row--beta,
+  .cov-chips-row--soon {
+    margin-top: 36px;
+  }
+
+  .cov-chip {
+    display: inline-flex;
+    width: 100%;
+    height: 36px;
+    padding: 8px 10px;
+    align-items: center;
+    gap: 12px;
+    border-radius: 100.996px;
+    background: #FFF;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .cov-chip--active {
+    border: 1.01px solid rgba(0, 186, 133, 0.47);
+    box-shadow: inset 0 0 0 1px rgba(177, 193, 255, 0.2);
+  }
+
+  .cov-chip__flag,
+  .cov-chip__flag-emoji {
+    width: 20.199px;
+    height: 20.199px;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+  }
+
+  .cov-chip__code {
+    color: #162755;
+    text-align: center;
+    font-family: "Britti Sans Trial";
+    font-size: 16.159px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .cov-chips-row--active,
+  .cov-chips-row--beta,
+  .cov-chips-row--soon {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: stretch;
+    align-items: center;
+    width: 100%;
+    max-width: 382px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 12px;
+  }
+
+  .cov-chips-row--active {
+    width: 361px;
+    height: 133px;
+  }
+
+  .cov-chips-row--beta {
+    width: 352px;
+    height: 133px;
+  }
+
+  .cov-chip--soon {
+    width: auto;
+  }
+
+  .cov-chip__status--active,
+  .cov-chip__status--beta,
+  .cov-chip__status--soon {
+    font-size: 12.12px;
+    letter-spacing: -0.121px;
+  }
+
+  .cov-chip__status--active {
+    display: flex;
+    width: 36.359px;
+    height: 20.199px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #27AA7B;
+    text-align: center;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+  }
+
+  .cov-chip__status--beta {
+    display: flex;
+    width: 29.289px;
+    height: 20.199px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cov-chip__status--soon {
+    width: 29.289px;
+    height: 20.199px;
+  }
+
+  .cov-chips-row--soon {
+    display: none;
+  }
+
+  .cov-chips-row--active {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .cov-chips-row--active .cov-chip {
+    display: inline-flex;
+    width: auto;
+    height: 36px;
+    padding: 8px 8px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100.996px;
+    background: #FFF;
+  }
+
+  .cov-chips-row--beta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .cov-chips-row--beta .cov-chip {
+    display: inline-flex;
+    width: auto;
+    height: 36px;
+    padding: 8px 10px;
+    align-items: center;
+    gap: 12px;
+    border-radius: 100.996px;
+    background: #FFF;
+  }
+
+  .cov-chips-row--soon {
+    display: flex;
+    width: 336px;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .cov-chips-row--soon .cov-chip {
+    display: inline-flex;
+    width: auto;
+    height: 36px;
+    padding: 8px 10px;
+    align-items: center;
+    gap: 12px;
+    border-radius: 100.996px;
+    background: #FFF;
+  }
+
 }
