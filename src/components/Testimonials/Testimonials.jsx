@@ -155,7 +155,6 @@ const Testimonials = () => {
             </p>
           </div>
 
-          {/* Desktop carousel */}
           <div className="t-carousel">
             <TestimonialCard
               t={TESTIMONIALS[leftIdx]}
@@ -172,12 +171,10 @@ const Testimonials = () => {
             />
           </div>
 
-          {/* Mobile single card */}
           <div className="t-carousel-mobile">
             <TestimonialCard t={TESTIMONIALS[active]} avatars={TESTIMONIALS_AVATARS[active]} active={true} />
           </div>
 
-          {/* Navigation */}
           <div className="t-nav">
             <div className="t-nav-arrows">
               <button

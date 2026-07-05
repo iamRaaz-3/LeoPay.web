@@ -1,12 +1,3 @@
-/* =================================================================
-   TESTIMONIALS — pixel-perfect from Figma Page 3 (2cdyl8wIqgKAt9dVc5LDt2)
-   Desktop Section: 5665:1807 — 1882×823 | border-radius 24px | 19px margins
-   Mobile Section:  5624:2168 — 370×1280  | border-radius 24px
-   Desktop carousel: center card 488×206 active, side cards 442×186
-   Mobile: stacked single card 316px wide
-   ================================================================= */
-
-/* ── Outer wrapper — 19px margins → 1882px in 1920px ── */
 .t-section {
   width: 100%;
   background: #ffffff;
@@ -14,9 +5,6 @@
   box-sizing: border-box;
 }
 
-/* ── Dark rounded block ── */
-/* Figma: Section 1882×823, border-radius 24px, dark bg */
-/* Decorative ellipses (Ellipse 9 & 10) replicated via pseudo-elements */
 .t-bg {
   position: relative;
   width: 100%;
@@ -26,8 +14,6 @@
   box-sizing: border-box;
 }
 
-/* Decorative blur ellipses — Figma: Ellipse 9 & 10, 403×372, rgba(20,19,23)
-   Section: 1882×823 | Ellipse 9 at x=49 y=339 | Ellipse 10 at x=1448 y=339 */
 .t-ellipse {
   position: absolute;
   width: 403px;
@@ -39,13 +25,9 @@
   pointer-events: none;
   z-index: 0;
 }
-/* Figma x=49 — left ellipse sits at the extreme left edge */
 .t-ellipse--left  { left: 0; }
-/* Figma x=1448 — right ellipse sits at the extreme right edge */
 .t-ellipse--right { right: 0; }
 
-/* ── Content area — sits above ellipses ── */
-/* Figma desktop: 120px top padding from section to title (5732-5612=120) */
 .t-content {
   position: relative;
   z-index: 1;
@@ -53,8 +35,6 @@
   box-sizing: border-box;
 }
 
-/* ── Title block — 1200px centered ── */
-/* Figma: Title 1200×223, gap 20px */
 .t-header {
   display: flex;
   flex-direction: column;
@@ -66,7 +46,6 @@
   box-sizing: border-box;
 }
 
-/* Badge — Figma: Geist 500 14px/16.8px #162755 bg #FFF radius 100px pad 8px 16px */
 .t-badge {
   display: inline-flex;
   align-items: center;
@@ -84,7 +63,6 @@
   white-space: nowrap;
 }
 
-/* Heading block */
 .t-heading-block {
   display: flex;
   flex-direction: column;
@@ -92,7 +70,6 @@
   gap: 0;
 }
 
-/* "See what our" — Figma: Britti Sans Trial 400 48px/48px white */
 .t-heading-light {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
   font-size: 48px;
@@ -104,7 +81,6 @@
   display: block;
 }
 
-/* "Customers are saying" — Figma: Britti Sans Trial 600 48px/48px white */
 .t-heading-bold {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
   font-size: 48px;
@@ -116,7 +92,6 @@
   display: block;
 }
 
-/* Subtitle — Figma: Britti Sans Trial 400 18px/27px #B0B0B0 */
 .t-subtitle {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
   font-size: 18px;
@@ -133,10 +108,6 @@
   display: none;
 }
 
-
-/* ── Desktop Carousel ── */
-/* Figma: left 442×186 | center 488×206 | right 442×186 | gap 32px */
-/* Total: 442+32+488+32+442 = 1436px, centered in 1882px → 223px each side */
 .t-carousel {
   display: flex;
   align-items: center;
@@ -145,13 +116,10 @@
   padding: 0 24px;
 }
 
-/* Mobile single-card view — hidden on desktop */
 .t-carousel-mobile {
   display: none;
 }
 
-
-/* ── Card base ── */
 .t-card {
   display: flex;
   flex-direction: column;
@@ -164,7 +132,6 @@
   overflow: hidden;
 }
 
-/* Inner cyan light — behind content, invisible by default */
 .t-card::before {
   content: '';
   position: absolute;
@@ -177,14 +144,12 @@
   z-index: 0;
 }
 
-/* Keep card content above the glow pseudo-element */
 .t-card-paragraph,
 .t-card-author {
   position: relative;
   z-index: 1;
 }
 
-/* Side (inactive) cards */
 .t-card--side {
   width: 442px;
   max-width: 442px;
@@ -195,7 +160,6 @@
   transition: opacity 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* Active (center) card */
 .t-card--active {
   width: 488px;
   max-width: 488px;
@@ -205,7 +169,6 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* Hover effects */
 .t-card:hover::before {
   opacity: 1;
 }
@@ -219,7 +182,6 @@
   box-shadow: 0 28px 60px rgba(0,186,133,0.22), 0 0 0 1.5px rgba(164,239,251,0.3);
 }
 
-/* Paragraph section */
 .t-card-paragraph {
   display: flex;
   flex-direction: column;
@@ -230,7 +192,6 @@
   display: block;
 }
 
-/* Card title — Figma: Britti Sans Trial 600 16.172px/28.8px white */
 .t-card-title {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
   font-size: 16.172px;
@@ -240,7 +201,6 @@
   margin: 0;
 }
 
-/* Card body — Figma: Britti Sans Trial 400 14px/23.8px #BCBCBC */
 .t-card-body {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
@@ -251,7 +211,6 @@
   margin: 0;
 }
 
-/* Author row — Figma: Container 424×48, flex row, space-between */
 .t-card-author {
   display: flex;
   align-items: center;
@@ -259,7 +218,6 @@
   gap: 8px;
 }
 
-/* Left: avatar + company name */
 .t-author-left {
   display: flex;
   align-items: center;
@@ -267,7 +225,6 @@
   min-width: 0;
 }
 
-/* Avatar group — 4px gap between avatars (Figma: x1=10918 x2=10954, gap=4px) */
 .t-avatars {
   display: flex;
   flex-direction: row;
@@ -275,7 +232,6 @@
   gap: 4px;
 }
 
-/* Avatar wrapper — Figma: Background 32×32, radius 999px */
 .t-avatar-wrap {
   width: 32px;
   height: 32px;
@@ -293,7 +249,6 @@
   object-position: top center;
 }
 
-/* Author/Company name — Figma: Britti 600 12px/23.8px white */
 .t-author-name {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
   font-size: 12px;
@@ -305,7 +260,6 @@
   white-space: nowrap;
 }
 
-/* Stars pill — Figma Group 21 (107×23): pill bg + 5 green stars */
 .t-stars-img {
   display: block;
   flex-shrink: 0;
@@ -314,8 +268,6 @@
 .t-stars-mob     { width: 98px;  height: 28px; display: none; }
 .t-stars-mob-inline { width: 98px; height: 28px; display: none; flex-shrink: 0; }
 
-
-/* ── Navigation row ── */
 .t-nav {
   display: flex;
   align-items: center;
@@ -324,7 +276,6 @@
   margin-top: 40px;
 }
 
-/* Arrow group — Figma Group 36 (96×40) */
 .t-nav-arrows {
   position: relative;
   display: inline-flex;
@@ -365,7 +316,6 @@
   transition-duration: 0.08s;
 }
 
-/* Ripple flash on click */
 .t-nav-btn::after {
   content: '';
   position: absolute;
@@ -381,15 +331,10 @@
   transition: none;
 }
 
-/* SVG glow on hover */
 .t-nav-arrows:hover .t-nav-svg {
   filter: drop-shadow(0 0 8px rgba(164, 239, 251, 0.3));
   transition: filter 0.3s ease;
 }
-
-
-
-/* ── Responsive ── */
 
 @media (max-width: 1200px) {
   .t-carousel { gap: 20px; }
@@ -459,8 +404,6 @@
   .t-stars-mob     { display: block; }
 }
 
-/* Mobile — matches Figma 370px frame, Section 5624:2168 */
-/* Cards: 316×250, stacked, 16px gap in a 370px section */
 @media (max-width: 480px) {
   .t-section { padding: 0; }
   .t-bg {
