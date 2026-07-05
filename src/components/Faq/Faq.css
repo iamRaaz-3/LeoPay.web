@@ -1,13 +1,3 @@
-/* =====================================================
-   FAQ SECTION — Figma 22:4515  Container  1920×1190
-   abs(2112, 6999)
-
-   22:4516  Background  1920×1190  fill rgba(251,251,251)
-     22:4518  SVG grid top     1440×505  rel(240,0)
-     22:4526  SVG grid bottom  1440×505  rel(240,685)
-   All baked into faq-bg-full.png
-   ===================================================== */
-
 .faq-section {
   position: relative;
   width: 100%;
@@ -22,11 +12,6 @@
   box-sizing: border-box;
 }
 
-/* ── 1920px canvas for bg image — same as Hero/CTA/Coverage —
-   22:4516 Background  1920×1190  rel(0,0)
-   ─────────────────────────────────────────────────── */
-
-/* Bottom bg — Figma 298:27012  1920×264  y=757 */
 .faq-bg-bottom {
   position: absolute;
   bottom: 0;
@@ -50,13 +35,9 @@
   display: block;
 }
 
-/* ── Main container ─────────────────────────────── ─────
-   Figma: flex, column, gap 56px between title & list
-   max-width ≈ 1078px (1920 – 2×240px side padding)
-   ─────────────────────────────────────────────────── */
 .faq-container {
   position: relative;
-  z-index: 1;          /* sits above faq-canvas */
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -68,9 +49,6 @@
   box-sizing: border-box;
 }
 
-/* ── Title block ───────────────────────────────────────
-   Figma: flex column, center-aligned, gap 20px
-   ─────────────────────────────────────────────────── */
 .faq-title-block {
   display: flex;
   flex-direction: column;
@@ -81,8 +59,6 @@
   width: 100%;
 }
 
-/* Badge — Figma exact specs
-   59×33px, border-radius 100px, Geist Medium 14px/16.8px */
 .faq-badge {
   display: inline-flex;
   justify-content: center;
@@ -94,17 +70,15 @@
   box-shadow: 0px 4px 12px rgba(82, 88, 112, 0.04);
   border-radius: 100px;
   border: 1px solid rgba(82, 88, 112, 0.15);
-  /* Figma: Geist Medium */
   font-family: 'Geist', 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 16.8px; /* 120% */
+  line-height: 16.8px;
   color: #162755;
   box-sizing: border-box;
 }
 
-/* Heading wrapper */
 .faq-heading {
   display: flex;
   flex-direction: column;
@@ -112,11 +86,11 @@
   gap: 0;
 }
 
-/* "Frequently Asked" — Figma exact specs */
 .faq-heading-light {
   display: flex;
-  width: 481.728px;
-  height: 48px;
+  width: 100%;
+  max-width: 482px;
+  height: auto;
   flex-direction: column;
   justify-content: center;
   color: #162755;
@@ -125,18 +99,18 @@
   font-size: 48px;
   font-style: normal;
   font-weight: 400;
-  line-height: 48px; /* 100% */
+  line-height: 48px;
   letter-spacing: -1px;
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* "Questioned" — Figma exact specs */
 .faq-heading-bold {
   display: flex;
-  width: 424.137px;
-  height: 48px;
+  width: 100%;
+  max-width: 425px;
+  height: auto;
   flex-direction: column;
   justify-content: center;
   color: #162755;
@@ -152,7 +126,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtitle */
 .faq-subtitle {
   width: 574px;
   max-width: 100%;
@@ -166,9 +139,10 @@
   margin: 0;
 }
 
-/* ── FAQ Accordion list ────────────────────────────────
-   Figma: flex column, gap 20px, full width
-   ─────────────────────────────────────────────────── */
+.faq-subtitle--mobile {
+  display: none;
+}
+
 .faq-list {
   display: flex;
   flex-direction: column;
@@ -179,11 +153,6 @@
   align-self: center;
 }
 
-/* ── FAQ Item ──────────────────────────────────────────
-   Figma: padding 24px, border-radius 16px,
-   border 1px solid #E8E8E8, bg #FFF
-   open → box-shadow: 0 2px 2px 0 rgba(72,80,88,0.08)
-   ─────────────────────────────────────────────────── */
 .faq-item {
   display: flex;
   padding: 24px;
@@ -203,7 +172,6 @@
   box-shadow: 0 2px 2px 0 rgba(72, 80, 88, 0.08);
 }
 
-/* ── Question row ──────────────────────────────────── */
 .faq-question {
   width: 100%;
   display: flex;
@@ -217,7 +185,6 @@
   cursor: pointer;
 }
 
-/* Question text — Figma 135:5505 Britti Sans Trial 20/600 lh=20 ls=0.2 #162755 */
 .faq-question-text {
   font-family: 'Britti Sans Trial', sans-serif;
   font-size: 20px;
@@ -228,7 +195,6 @@
   flex: 1;
 }
 
-/* +/- icon — Iconsax/Linear/add, 24×24, color #162755 */
 .faq-icon {
   width: 24px;
   height: 24px;
@@ -238,8 +204,6 @@
   flex-shrink: 0;
 }
 
-
-/* ── Answer ────────────────────────────────────────── */
 .faq-answer {
   animation: fadeDown 0.22s ease;
   width: 100%;
@@ -260,7 +224,15 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .faq-heading-light,
+  .faq-heading-bold {
+    font-size: clamp(36px, 4.5vw, 48px);
+    line-height: 1;
+  }
+  .faq-subtitle { font-size: clamp(16px, 2vw, 20px); }
+}
+
 @media (max-width: 900px) {
   .faq-container { padding: 0 24px; gap: 40px; }
   .faq-heading-light,
@@ -273,9 +245,57 @@
 }
 
 @media (max-width: 480px) {
-  .faq-section { height: auto; padding: 60px 0; }
+  .faq-section {
+    height: auto;
+    padding: 60px 0;
+    background-image: url('./assets/faq-grid-top-mobile.png');
+  }
+
+  .faq-bg-bottom {
+    height: 353px;
+    background-image: url('./assets/faq-grid-bottom-mobile.png');
+    background-size: cover;
+    background-position: top center;
+  }
+
+  .faq-bg-bottom img {
+    display: none;
+  }
+
+  .faq-badge {
+    border: 1px solid #525870;
+  }
+
   .faq-heading-light,
-  .faq-heading-bold { font-size: 28px; line-height: 34px; }
-  .faq-item { padding: 16px; }
-  .faq-question-text { font-size: 15px; }
+  .faq-heading-bold {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .faq-subtitle--desktop {
+    display: none;
+  }
+
+  .faq-subtitle--mobile {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.036px;
+    color: #505670;
+  }
+
+  .faq-item { padding: 24px; }
+
+  .faq-question-text {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+
+  .faq-answer p {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
 }

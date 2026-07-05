@@ -2,15 +2,6 @@ import React, { useState } from "react";
 import "./Faq.css";
 import faqBgBottom from "./assets/faq-grid-bottom.png";
 
-/*
- * Figma 22:4515  Container  1920×1190  abs(2112,6999)
- *
- * 22:4516  Background  1920×1190  rel(0,0)  fill rgba(251,251,251)
- *   22:4517  Container 1440×1189.6 rel(240,0)
- *     22:4518  SVG grid top     1440×505  rel(240,0)
- *     22:4526  SVG grid bottom  1440×505  rel(240,685)
- *   → All baked into faq-bg-full.png (22:4516 export)
- */
 const FAQS = [
   {
     q: "How fast are settlements with LeoPay?",
@@ -34,8 +25,6 @@ const FAQS = [
   },
 ];
 
-/* ── Exact SVG from Iconsax/Linear/add.svg export ── */
-/* path: "M6 12H18M12 18V6" stroke:black strokeWidth:1.5 strokeLinecap:round strokeLinejoin:round */
 const AddIcon = () => (
   <svg
     width="24"
@@ -54,7 +43,6 @@ const AddIcon = () => (
   </svg>
 );
 
-/* Minus — same icon, only horizontal path */
 const MinusIcon = () => (
   <svg
     width="24"
@@ -92,23 +80,23 @@ const FAQItem = ({ faq }) => {
 
 const Faq = () => (
   <section id="faqs" className="faq-section">
-    {/* 22:4516  Background  1920×1190  rel(0,0) — perspective grid top + bottom */}
     <div className="faq-container">
-      {/* Title block */}
       <div className="faq-title-block">
         <span className="faq-badge">FAQ</span>
         <div className="faq-heading">
           <span className="faq-heading-light">Frequently Asked</span>
           <span className="faq-heading-bold">Questions</span>
         </div>
-        <p className="faq-subtitle">
+        <p className="faq-subtitle faq-subtitle--desktop">
           From Settlements to Compliance, Here are Answers to the Most
           <br />
           Common Questions about LeoPay.
         </p>
+        <p className="faq-subtitle faq-subtitle--mobile">
+          Get answers to common questions about Leopay&rsquo;s global payment ecosystem.
+        </p>
       </div>
 
-      {/* Accordion */}
       <div className="faq-list">
         {FAQS.map((faq, i) => (
           <FAQItem key={i} faq={faq} />
@@ -119,6 +107,7 @@ const Faq = () => (
       <img src={faqBgBottom} alt="" aria-hidden="true" />
     </div>
   </section>
+
 );
 
 export default Faq;
