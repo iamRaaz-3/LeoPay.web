@@ -589,13 +589,20 @@
 
 @media (max-width: 600px) {
   .cov-chips-row--active,
-  .cov-chips-row--beta,
-  .cov-chips-row--soon {
+  .cov-chips-row--beta {
     flex-wrap: wrap;
     justify-content: center;
     max-width: 380px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .cov-chips-row--soon {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 380px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .cov-chips-row--active .cov-chip,
@@ -849,7 +856,7 @@
 
   .cov-chips-row--soon {
     display: flex;
-    width: 336px;
+    width: 100%;
     height: auto;
     flex-wrap: wrap;
     justify-content: flex-start;
