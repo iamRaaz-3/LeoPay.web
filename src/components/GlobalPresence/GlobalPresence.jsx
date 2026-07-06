@@ -6,7 +6,6 @@ import flagPH from "./assets/flags/flag-ph.svg";
 import flagMY from "./assets/flags/flag-my.svg";
 import flagID from "./assets/flags/flag-id.svg";
 import flagUS from "./assets/flags/flag-us.svg";
-import flagIN from "./assets/flags/flag-in.svg";
 import flagEU from "./assets/flags/flag-eu.svg";
 import flagGB from "./assets/flags/flag-gb.svg";
 import flagHK from "./assets/flags/flag-hk.svg";
@@ -28,7 +27,6 @@ const activeChips = [
 
 const betaChips = [
   { flag: flagAE, code: "UAE", name: "United Arab Emirates" },
-  { flag: flagIN, code: "India", name: "India" },
   { flag: flagEU, code: "European Union", name: "European Union" },
   { flag: flagGB, code: "U.K.",           name: "United Kingdom" },
   { flag: flagHK, code: "Hong Kong",      name: "Hong Kong" },
