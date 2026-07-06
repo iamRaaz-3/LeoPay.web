@@ -1,6 +1,9 @@
 .features {
   display: flex;
-  width: 1920px;
+  width: 100%;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
   height: 962px;
   justify-content: center;
   align-items: center;
@@ -33,7 +36,8 @@
   flex-shrink: 0;
   position: absolute;
   top: 698px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 1920px;
   pointer-events: none;
   z-index: 0;
@@ -48,7 +52,8 @@
   flex-shrink: 0;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   pointer-events: none;
   z-index: 0;
 }
@@ -169,7 +174,8 @@
 
 .features__cards-wrap {
   display: flex;
-  width: 1735px;
+  width: 100%;
+  max-width: 1735px;
   height: 436px;
   justify-content: center;
   align-items: center;
@@ -177,7 +183,8 @@
 
 .features__cards {
   display: flex;
-  width: 1735px;
+  width: 100%;
+  max-width: 1735px;
   height: 438px;
   padding: 0 95.5px 22px 95.5px;
   justify-content: center;
@@ -343,6 +350,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+}
+
+.feat-card__desc--mobile {
+  display: none;
 }
 
 .feat-card__notif-overlay {
@@ -512,7 +523,6 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  background: #FFF;
 }
 
 /* ── Bar chart ───────────────────────────────────────────── */
@@ -1191,17 +1201,9 @@
 }
 
 
-/* ============================================================
-   RESPONSIVE — Industry-standard breakpoints
-   Desktop-first: base styles above are for ≥1280px (large screens).
-   We progressively adapt down to tablet, then mobile.
-   ============================================================ */
+/* Responsive */
 
-/* ═══════════════════════════════════════════════════════════
-   RESPONSIVE — desktop-first, no changes above this line
-   ═══════════════════════════════════════════════════════════ */
-
-/* ── < 1920px: fluid wrapper, cards row scrollable ───────── */
+/* ── < 1920px ─────────────────────────────────────────── */
 @media (max-width: 1919px) {
   .features {
     width: 100%;
@@ -1247,7 +1249,7 @@
   }
 }
 
-/* ── ≤ 1599px: 2-column grid (4 cards can't fit in one row) ─ */
+/* ── ≤ 1599px ─────────────────────────────────────────── */
 @media (max-width: 1599px) {
   .features__content {
     gap: 48px;
@@ -1278,7 +1280,7 @@
   }
   .features__cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
     height: auto;
     padding: 0 24px 22px;
@@ -1291,13 +1293,11 @@
     height: auto;
     min-height: 380px;
     flex-shrink: 1;
-    /* flex-start: visual always starts at padding-top, so the absolute
-       notif-overlay (top:40px) stays inside the bars regardless of
-       how tall the CSS grid row makes this cell via equal-height stretch */
+    min-width: 0;
+    overflow: hidden;
     justify-content: flex-start;
   }
 
-  /* Scale complex visuals so all absolute children fit */
   .feat-card__visual--rails {
     transform: scale(0.88);
     transform-origin: top center;
@@ -1315,8 +1315,6 @@
   .feat-bars {
     width: 100%;
     max-width: 290px;
-    /* content-box: height now means content area, so bar cells (same 205px)
-       fill the container exactly — no 16px upward overflow into the notif tag */
     box-sizing: content-box;
   }
   .feat-card__visual--users {
@@ -1328,7 +1326,6 @@
     top: 180px;
     transform: translateX(-50%);
   }
-  /* Card 1 notif: keep it anchored inside the bar-chart visual area */
   .feat-card__notif-overlay {
     left: 50%;
     top: 40px;
@@ -1336,15 +1333,15 @@
   }
 }
 
-/* ── ≤ 1024px: padding tweak only (grid inherited from 1599px) ─ */
+/* ── ≤ 1024px ─────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .features {
     padding: 72px 0;
   }
 }
 
-/* ── ≤ 768px: tighter 2-col ─────────────────────────────── */
-@media (max-width: 768px) {
+/* ── ≤ 800px ──────────────────────────────────────────── */
+@media (max-width: 800px) {
   .features {
     padding: 64px 0;
   }
@@ -1380,7 +1377,6 @@
     line-height: 22px;
   }
 
-  /* Scale visuals more aggressively */
   .feat-card__visual--rails {
     transform: scale(0.72);
     transform-origin: top center;
@@ -1403,7 +1399,6 @@
     max-width: 260px;
     height: 175px;
   }
-  /* zoom shrinks layout + visual together — no overflow:hidden or clipping needed */
   .feat-users-frame {
     zoom: 0.85;
   }
@@ -1429,92 +1424,224 @@
   }
 }
 
-/* ── ≤ 480px: single column ─────────────────────────────── */
-@media (max-width: 480px) {
-  .features {
-    padding: 56px 0;
-  }
-  .features__content {
-    gap: 32px;
-    padding: 0 16px;
-  }
-  .features__heading--light,
-  .features__heading--bold {
-    font-size: clamp(26px, 7vw, 36px);
-  }
-  .features__subtitle {
-    font-size: 15px;
-  }
+/* ── ≤ 720px ──────────────────────────────────────────── */
+@media (max-width: 720px) {
   .features__cards {
     grid-template-columns: 1fr;
+    padding: 0 20px 16px;
     gap: 12px;
-    padding: 0 16px 12px;
   }
   .feat-card {
     width: 100%;
+    height: auto;
+    min-height: 380px;
     padding: 20px;
-    gap: 28px;
-    min-height: auto;
-    border-radius: 18px;
     justify-content: flex-start;
   }
-  .feat-card__title {
-    font-size: 16px;
-    white-space: normal;
-  }
-  .feat-card__desc {
-    font-size: 14px;
-    line-height: 21px;
-  }
 
-  /* Scale visuals for single column */
   .feat-card__visual--rails {
-    transform: scale(0.78);
+    transform: scale(0.85);
     transform-origin: top center;
-    margin-bottom: -44px;
+    margin-bottom: -30px;
   }
   .feat-c4-visual {
-    transform: scale(0.8);
+    transform: scale(0.88);
     transform-origin: top center;
-    margin-bottom: -40px;
-  }
-  .feat-card__visual,
-  .feat-card__visual--users {
-    align-self: center;
+    margin-bottom: -25px;
   }
   .feat-bars {
     max-width: 260px;
-    height: 180px;
+    height: 195px;
     box-sizing: content-box;
   }
   .feat-bar-cell {
-    height: 180px;
+    height: 195px;
   }
   .feat-card__visual--users {
-    max-width: 280px;
-    height: 180px;
+    max-width: 300px;
+    height: 190px;
   }
   .feat-users-frame {
-    zoom: 0.92;
+    zoom: 0.95;
   }
   .feat-users-frame,
   .feat-users-inner {
-    max-width: 280px;
+    max-width: 300px;
   }
-
-  .feat-c4-stat__value {
-    font-size: 32px;
-    line-height: 36px;
-  }
-
   .feat-c3-badge {
     left: 50%;
-    top: 172px;
+    top: 175px;
     transform: translateX(-50%);
   }
   .feat-card__notif-overlay {
     left: 50%;
-    top: 28px;
+    top: 36px;
     transform: translateX(-50%);
+  }
+  .feat-c4-stat__value {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+
+/* ── ≤ 480px ──────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .features {
+    width: auto;
+    height: 2180px;
+    background: #FFF;
+    padding: 56px 0;
+  }
+  .features__bg-top--mobile,
+  .features__bg-bottom--mobile {
+    width: 100%;
+    height: 353px;
+    left: 0;
+    transform: none;
+    object-fit: cover;
+  }
+  .features__bg-top--mobile {
+    top: 0;
+    bottom: auto;
+  }
+  .features__bg-bottom--mobile {
+    top: auto;
+    bottom: 0;
+  }
+  .features__content {
+    gap: 36px;
+    padding: 0 25px;
+  }
+  .features__header {
+    width: auto;
+    height: 246px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .features__heading {
+    width: auto;
+    max-width: 500px;
+  }
+  .features__heading-inner {
+    padding: 10px 0 11px 0;
+  }
+  .features__heading--light,
+  .features__heading--bold {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  .features__subtitle-wrap {
+    width: auto;
+    height: 65px;
+    max-width: 600px;
+    flex-shrink: 0;
+    align-self: stretch;
+    padding: 0 30px 0 31px;
+    justify-content: center;
+    align-items: center;
+  }
+  .features__subtitle {
+    width: 369px;
+    max-width: 369px;
+    font-size: 18px;
+    line-height: 27px;
+    color: #505670;
+    letter-spacing: 0.036px;
+  }
+  .features__cards {
+    grid-template-columns: 1fr;
+    width: 380px;
+    height: 1679px;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0;
+  }
+  .feat-card {
+    width: 100%;
+    height: 416px;
+    min-height: 416px;
+    padding: 24px;
+    gap: 50px;
+    border-radius: 24px;
+    justify-content: center;
+  }
+
+  .feat-card__visual--rails,
+  .feat-c4-visual {
+    transform: none;
+    margin-bottom: 0;
+  }
+  .feat-bars {
+    width: 290px;
+    max-width: none;
+    height: 205px;
+    box-sizing: border-box;
+  }
+  .feat-bar-cell {
+    height: 205.042px;
+  }
+  .feat-card__visual--users {
+    max-width: none;
+    height: 196px;
+  }
+  .feat-users-frame {
+    zoom: 1;
+  }
+  .feat-users-frame,
+  .feat-users-inner {
+    max-width: none;
+  }
+
+  .feat-user {
+    width: 262px;
+    left: 44px;
+    top: 136px;
+    z-index: 1;
+  }
+  .feat-user--2 {
+    width: 246px;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    background: #ECF5F0;
+  }
+  .feat-user--3 {
+    width: 276px;
+    left: 16px;
+    top: 68px;
+    z-index: 2;
+    background: #DEF1E6;
+  }
+
+  .feat-card__desc--mobile {
+    display: block;
+  }
+  .feat-card__desc--desktop {
+    display: none;
+  }
+
+  .feat-card__title {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+  .feat-card__desc {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .feat-c4-stat__value {
+    font-size: 48px;
+    line-height: 48px;
+  }
+  .feat-c3-badge {
+    left: 114px;
+    top: 187px;
+    transform: none;
+  }
+  .feat-card__notif-overlay {
+    left: 126px;
+    top: 46px;
+    transform: none;
   }
 }
