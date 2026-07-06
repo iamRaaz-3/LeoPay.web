@@ -1,6 +1,9 @@
+import { useEffect, useState } from 'react';
 import './Features.css';
 import bgTop from '../../assets/features-bg-top.png';
 import bgBottom from '../../assets/features-bg-bottom.png';
+import bgTopMobile from './assets/features-bg-top-mobile.png';
+import bgBottomMobile from './assets/features-bg-bottom-mobile.png';
 import avatarAkash from '../../assets/avatar-akash.png';
 import avatarPuranjit from '../../assets/avatar-puranjit.png';
 import avatarSayli from '../../assets/avatar-sayli.png';
@@ -34,10 +37,30 @@ function NotifTag({ label, className = '', icon }) {
 }
 
 export default function Features() {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth <= 480
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 480px)');
+    const onChange = () => setIsMobile(mq.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
   return (
     <section className="features">
-      <img src={bgTop} alt="" className="features__bg-top" />
-      <img src={bgBottom} alt="" className="features__bg-bottom" />
+      {isMobile ? (
+        <>
+          <img src={bgTopMobile} alt="" className="features__bg-top features__bg-top--mobile" />
+          <img src={bgBottomMobile} alt="" className="features__bg-bottom features__bg-bottom--mobile" />
+        </>
+      ) : (
+        <>
+          <img src={bgTop} alt="" className="features__bg-top" />
+          <img src={bgBottom} alt="" className="features__bg-bottom" />
+        </>
+      )}
       <div className="features__content">
         {/* Header */}
         <div className="features__header">
@@ -149,11 +172,11 @@ export default function Features() {
         <div className="feat-card">
           <div className="feat-c3-badge">
             <div className="feat-c3-badge__icon">
-              <svg width="8.938" height="8.938" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.74911 0.490359C4.00692 -0.163453 4.93092 -0.163453 5.18873 0.490359L5.98761 2.51436C6.06598 2.71373 6.22411 2.87186 6.42348 2.95023L8.44748 3.74911C9.1013 4.00692 9.1013 4.93092 8.44748 5.18873L6.42348 5.98761C6.22411 6.06598 6.06598 6.22411 5.98761 6.42348L5.18873 8.44748C4.93092 9.1013 4.00692 9.1013 3.74911 8.44748L2.95023 6.42348C2.87186 6.22411 2.71373 6.06598 2.51436 5.98761L0.490359 5.18873C-0.163453 4.93092 -0.163453 4.00692 0.490359 3.74911L2.51436 2.95023C2.71373 2.87186 2.87186 2.71373 2.95023 2.51436L3.74911 0.490359Z" fill="black"/>
-              </svg>
-              <svg width="6.187" height="6.187" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg" style={{opacity:0.5}}>
-                <path d="M2.69792 0.269672C2.83955 -0.0898906 3.34761 -0.0898906 3.48923 0.269672L4.10867 1.83923C4.15198 1.94923 4.23861 2.03586 4.34861 2.07917L5.91817 2.69792C6.27705 2.83955 6.27705 3.34761 5.91817 3.48923L4.34861 4.10867C4.23861 4.15198 4.15198 4.23861 4.10867 4.34861L3.48923 5.91817C3.34761 6.27705 2.83955 6.27705 2.69792 5.91817L2.07917 4.34861C2.03586 4.23861 1.94923 4.15198 1.83923 4.10867L0.269672 3.48923C-0.0898906 3.34761 -0.0898906 2.83955 0.269672 2.69792L1.83923 2.07917C1.94923 2.03586 2.03586 1.94923 2.07917 1.83923L2.69792 0.269672Z" fill="black"/>
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.12411 1.86487C5.38192 1.21106 6.30592 1.21106 6.56373 1.86487L7.36261 3.88887C7.44098 4.08825 7.59911 4.24637 7.79848 4.32475L9.82248 5.12362C10.4763 5.38143 10.4763 6.30543 9.82248 6.56325L7.79848 7.36212C7.59911 7.4405 7.44098 7.59862 7.36261 7.798L6.56373 9.822C6.30592 10.4758 5.38192 10.4758 5.12411 9.822L4.32523 7.798C4.24686 7.59862 4.08873 7.4405 3.88936 7.36212L1.86536 6.56325C1.21155 6.30543 1.21155 5.38143 1.86536 5.12362L3.88936 4.32475C4.08873 4.24637 4.24686 4.08825 4.32523 3.88887L5.12411 1.86487Z" fill="white"/>
+                <g opacity="0.5">
+                  <path d="M11.6364 9.20668C11.778 8.84712 12.2861 8.84712 12.4277 9.20668L13.0471 10.7762C13.0905 10.8862 13.1771 10.9729 13.2871 11.0162L14.8566 11.6349C15.2155 11.7766 15.2155 12.2846 14.8566 12.4262L13.2871 13.0457C13.1771 13.089 13.0905 13.1756 13.0471 13.2856L12.4277 14.8552C12.2861 15.2141 11.778 15.2141 11.6364 14.8552L11.0176 13.2856C10.9743 13.1756 10.8877 13.089 10.7777 13.0457L9.20815 12.4262C8.84859 12.2846 8.84859 11.7766 9.20815 11.6349L10.7777 11.0162C10.8877 10.9729 10.9743 10.8862 11.0176 10.7762L11.6364 9.20668Z" fill="white"/>
+                </g>
               </svg>
             </div>
             <div className="feat-c3-badge__text">
@@ -307,7 +330,8 @@ export default function Features() {
           <div className="feat-card__text">
             <div className="feat-card__text-body">
               <p className="feat-card__title">Lowest Fees. Highest Efficiency</p>
-              <p className="feat-card__desc">Smarter FX routing and competitive rates for higher transaction value.</p>
+              <p className="feat-card__desc feat-card__desc--desktop">Smarter FX routing and competitive rates for higher transaction value.</p>
+              <p className="feat-card__desc feat-card__desc--mobile">Reduce costs while improving operational speed and efficiency.</p>
             </div>
           </div>
         </div>
