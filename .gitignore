@@ -1,4 +1,14 @@
 node_modules
 dist
+.vite
 *.log
 .DS_Store
+
+src/components/Navbar/
+src/components/Hero/
+src/components/Ticker/
+src/components/Partners/
+src/components/FastestWay/
+src/components/Logo/
+src/components/privacy/
+src/pages/
