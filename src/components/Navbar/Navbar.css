@@ -10,25 +10,11 @@
   padding: 16px 24px 0;
   pointer-events: none;
   transition: padding 0.3s ease;
-
-
-
 }
 
 .navbar.scrolled {
   padding-top: 10px;
 }
-
-/* ── Inner container 
-   display:flex;
-   width: 976px;
-  height: 137px ;
-   padding: 16px 24px;
-   justify-content: space-between;
-   align-items: center;
-   border-radius: 16px;
-   background: #FFF;
-   backdrop-filter: blur(10px);*/
 
 .navbar-inner {
   display: flex;
@@ -46,10 +32,6 @@
   box-sizing: border-box;
 }
 
-/* ── Logo image ───────────────────────────────────
-   width: 100px; height: 31px;
-   flex-shrink: 0; aspect-ratio: 100/31;
-   ─────────────────────────────────────────────── */
 .navbar-logo {
   display: flex;
   width: 135px;
@@ -86,9 +68,6 @@
   padding: 0;
 }
 
-/* ── Each nav link ────────────────────────────────
-   display: flex; align-items: center; gap: 4px;
-   ─────────────────────────────────────────────── */
 .nav-link {
   display: flex;
   align-items: center;
@@ -98,20 +77,12 @@
   text-decoration: none;
   transition: background 0.18s;
   cursor: pointer;
- 
-  
 }
 
 .nav-link:hover {
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* ── Link label typography ────────────────────────
-   color: #000; text-align: center;
-   font-family: "Britti Sans Trial";
-   font-size: 16px; font-style: normal;
-   font-weight: 400; line-height: 100%;
-   ─────────────────────────────────────────────── */
 .nav-link-label {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
   font-size: 16px;
@@ -132,10 +103,6 @@
   margin-left: 12px;
 }
 
-/* Sign in ─────────────────────────────────────────
-   color: #000; font-family: "Britti Sans Trial";
-   font-size: 16px; font-weight: 400; line-height:100%;
-   ─────────────────────────────────────────────── */
 .nav-signin {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
   font-size: 16px;
@@ -156,11 +123,6 @@
   background: rgba(0,0,0,0.04);
 }
 
-/* Get Started ─────────────────────────────────────
-   color: #FFF; font-family: "Britti Sans Trial";
-   font-size: 16px; font-weight: 600; line-height:100%;
-   bg: #00BA85; border-radius: pill
-   ─────────────────────────────────────────────── */
 .nav-getstarted {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
   font-size: 16px;
@@ -222,7 +184,7 @@
 /* ── Responsive ─────────────────────────────────── */
 @media (max-width: 900px) {
   .navbar {
-    padding: 2px 16px 0; /* 2px down from top */
+    padding: 2px 16px 0;
   }
 
   .navbar-inner {

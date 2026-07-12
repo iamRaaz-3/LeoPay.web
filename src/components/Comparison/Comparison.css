@@ -1,6 +1,7 @@
 
 .comparison-section {
-  width: 1920px;
+  width: 100%;
+  max-width: 1920px;
   height: 882px;
   background-image:
     linear-gradient(to right, rgba(255,255,255,1) 1px, transparent 1px),
