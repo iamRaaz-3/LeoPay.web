@@ -1,7 +1,12 @@
+import { useEffect, useState } from 'react';
 import './FastestWay.css';
 import fwBgGrid from './assets/fw-bg-grid.png';
+import fwBgTopMobile from './assets/fw-bg-top-mobile.png';
+import fwBgBottomMobile from './assets/fw-bg-bottom-mobile.png';
 import fwOthersFlow from './assets/Group 1000004860 (1).png';
+import fwOthersFlowMobile from './assets/fw-others-flow-mobile.png';
 import fwLeopayCenterLogo from './assets/Auto Layout Horizontal 1.png';
+import fwLeopayClusterMobile from './assets/Group 2085662980.png';
 
 
 const OthersIcon = () => (
@@ -48,9 +53,9 @@ const AvailIcon = () => (
 );
 
 const othersStats = [
-  { val: '3 Days',   icon: <TimeIcon />,  label: 'Settlement Time', desc: 'Transfers slowed by multiple intermediary banks' },
+  { val: '3 Days',   icon: <TimeIcon />,  label: 'Settlement Time', desc: 'Transfers slowed by \nmultiple intermediary banks' },
   { val: '5%',       icon: <CostIcon />,  label: 'Total Cost',      desc: 'Higher costs due to layered processing fees models' },
-  { val: 'Limited',  icon: <AvailIcon />, label: 'Availability',    desc: 'Limited to standard business working hours' },
+  { val: 'Limited',  icon: <AvailIcon />, label: 'Availability',    desc: 'Limited to standard \nbusiness working hours' },
 ];
 
 const leopayStats = [
@@ -61,24 +66,47 @@ const leopayStats = [
 
 const StatCol = ({ val, icon, label, desc, variant }) => (
   <div className="fw-stat-col">
-    <span className={`fw-stat-val fw-stat-val--${variant}`}>{val}</span>
-    <div className="fw-stat-label-row">
-      <span className="fw-stat-icon">{icon}</span>
-      <div className="fw-stat-label-wrap">
-        <span className="fw-stat-label">{label}</span>
+    <div className="fw-stat-top-row">
+      <div className="fw-stat-left-col">
+        <div className="fw-stat-label-row">
+          <span className="fw-stat-icon">{icon}</span>
+          <div className="fw-stat-label-wrap">
+            <span className="fw-stat-label">{label}</span>
+          </div>
+        </div>
+        <div className="fw-stat-desc-wrap">
+          <div className="fw-stat-desc-inner">
+            <p className="fw-stat-desc">{desc}</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div className="fw-stat-desc-wrap">
-      <div className="fw-stat-desc-inner">
-        <p className="fw-stat-desc">{desc}</p>
-      </div>
+      <span className={`fw-stat-val fw-stat-val--${variant}`}>{val}</span>
     </div>
   </div>
 );
 
-const FastestWay = () => (
+const FastestWay = () => {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth <= 480
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 480px)');
+    const onChange = () => setIsMobile(mq.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
+  return (
   <section className="fw-section">
-    <img src={fwBgGrid} alt="" aria-hidden="true" className="fw-bg-grid" />
+    {isMobile ? (
+      <>
+        <img src={fwBgTopMobile} alt="" aria-hidden="true" className="fw-bg-top-mobile" />
+        <img src={fwBgBottomMobile} alt="" aria-hidden="true" className="fw-bg-bottom-mobile" />
+      </>
+    ) : (
+      <img src={fwBgGrid} alt="" aria-hidden="true" className="fw-bg-grid" />
+    )}
     <div className="fw-inner">
       <div className="fw-title-area">
         <div className="fw-badge">
@@ -119,8 +147,28 @@ const FastestWay = () => (
                 <StatCol key={s.label} {...s} variant="others" />
               ))}
             </div>
-            <img src={fwOthersFlow} alt="" aria-hidden="true" className="fw-others-flow" />
-            <div aria-hidden="true" className="fw-others-globe" />
+            {!isMobile && (
+              <div className="fw-others-illustration">
+                <img
+                  src={fwOthersFlow}
+                  alt=""
+                  aria-hidden="true"
+                  className="fw-others-flow"
+                />
+                <div aria-hidden="true" className="fw-others-globe" />
+              </div>
+            )}
+            {isMobile && (
+              <div aria-hidden="true" className="fw-others-globe fw-others-globe--mobile" />
+            )}
+            {isMobile && (
+              <img
+                src={fwOthersFlowMobile}
+                alt=""
+                aria-hidden="true"
+                className="fw-others-flow fw-others-flow--mobile"
+              />
+            )}
           </div>
         </div>
 
@@ -141,61 +189,77 @@ const FastestWay = () => (
                 <StatCol key={s.label} {...s} variant="leopay" />
               ))}
             </div>
-            <div className="fw-leopay-avatar" aria-hidden="true">
-              <div className="fw-leopay-avatar-img" />
-              <svg className="fw-leopay-avatar-shadow" xmlns="http://www.w3.org/2000/svg" width="100" height="52" viewBox="0 0 100 52" fill="none" aria-hidden="true">
-                <g filter="url(#lp-shadow)">
-                  <ellipse cx="49.5481" cy="25.7426" rx="33.4895" ry="9.68372" fill="#638C81"/>
-                </g>
-                <defs>
-                  <filter id="lp-shadow" x="-0.000249863" y="-5.72205e-06" width="99.0972" height="51.4851" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                    <feGaussianBlur stdDeviation="8.02942" result="effect1_foregroundBlur_298_22937"/>
-                  </filter>
-                </defs>
-              </svg>
-            </div>
-            <div className="fw-leopay-badge fw-leopay-badge--left" aria-hidden="true">
-              <div className="fw-leopay-badge-connector" />
-              <div className="fw-leopay-badge-label">
-                <div className="fw-leopay-badge-label-inner">
-                  <span className="fw-leopay-badge-text">&gt;30 seconds</span>
-                </div>
+            {!isMobile && (
+            <div className="fw-leopay-illustration">
+              <div className="fw-leopay-avatar" aria-hidden="true">
+                <div className="fw-leopay-avatar-img" />
+                <svg className="fw-leopay-avatar-shadow" xmlns="http://www.w3.org/2000/svg" width="100" height="52" viewBox="0 0 100 52" fill="none" aria-hidden="true">
+                  <g filter="url(#lp-shadow)">
+                    <ellipse cx="49.5481" cy="25.7426" rx="33.4895" ry="9.68372" fill="#638C81"/>
+                  </g>
+                  <defs>
+                    <filter id="lp-shadow" x="-0.000249863" y="-5.72205e-06" width="99.0972" height="51.4851" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                      <feGaussianBlur stdDeviation="8.02942" result="effect1_foregroundBlur_298_22937"/>
+                    </filter>
+                  </defs>
+                </svg>
               </div>
-              <div className="fw-leopay-badge-connector" />
-            </div>
-            <div className="fw-leopay-badge fw-leopay-badge--right" aria-hidden="true">
-              <div className="fw-leopay-badge-connector" />
-              <div className="fw-leopay-badge-label">
-                <div className="fw-leopay-badge-label-inner">
-                  <span className="fw-leopay-badge-text">&gt;30 seconds</span>
+              <div className="fw-leopay-badge fw-leopay-badge--left" aria-hidden="true">
+                <div className="fw-leopay-badge-connector" />
+                <div className="fw-leopay-badge-label">
+                  <div className="fw-leopay-badge-label-inner">
+                    <span className="fw-leopay-badge-text">&gt;30 seconds</span>
+                  </div>
                 </div>
+                <div className="fw-leopay-badge-connector" />
               </div>
-              <div className="fw-leopay-badge-connector" />
+              <div className="fw-leopay-badge fw-leopay-badge--right" aria-hidden="true">
+                <div className="fw-leopay-badge-connector" />
+                <div className="fw-leopay-badge-label">
+                  <div className="fw-leopay-badge-label-inner">
+                    <span className="fw-leopay-badge-text">&gt;30 seconds</span>
+                  </div>
+                </div>
+                <div className="fw-leopay-badge-connector" />
+              </div>
+              {!isMobile && <img src={fwLeopayCenterLogo} alt="" aria-hidden="true" className="fw-leopay-center-logo" />}
+              <div className="fw-leopay-avatar fw-leopay-avatar--right" aria-hidden="true">
+                <div className="fw-leopay-avatar-img" />
+                <svg className="fw-leopay-avatar-shadow fw-leopay-avatar-shadow--right" xmlns="http://www.w3.org/2000/svg" width="100" height="52" viewBox="0 0 100 52" fill="none" aria-hidden="true">
+                  <g filter="url(#lp-shadow-r)">
+                    <ellipse cx="33.4895" cy="9.68372" rx="33.4895" ry="9.68372" transform="matrix(-1 0 0 1 83.0371 16.0588)" fill="#638C81"/>
+                  </g>
+                  <defs>
+                    <filter id="lp-shadow-r" x="-0.000249863" y="-5.72205e-06" width="99.0962" height="51.4851" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                      <feGaussianBlur stdDeviation="8.02942" result="effect1_foregroundBlur_264_11340"/>
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <div aria-hidden="true" className="fw-leopay-globe" />
             </div>
-            <img src={fwLeopayCenterLogo} alt="" aria-hidden="true" className="fw-leopay-center-logo" />
-            <div className="fw-leopay-avatar fw-leopay-avatar--right" aria-hidden="true">
-              <div className="fw-leopay-avatar-img" />
-              <svg className="fw-leopay-avatar-shadow fw-leopay-avatar-shadow--right" xmlns="http://www.w3.org/2000/svg" width="100" height="52" viewBox="0 0 100 52" fill="none" aria-hidden="true">
-                <g filter="url(#lp-shadow-r)">
-                  <ellipse cx="33.4895" cy="9.68372" rx="33.4895" ry="9.68372" transform="matrix(-1 0 0 1 83.0371 16.0588)" fill="#638C81"/>
-                </g>
-                <defs>
-                  <filter id="lp-shadow-r" x="-0.000249863" y="-5.72205e-06" width="99.0962" height="51.4851" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                    <feGaussianBlur stdDeviation="8.02942" result="effect1_foregroundBlur_264_11340"/>
-                  </filter>
-                </defs>
-              </svg>
-            </div>
-            <div aria-hidden="true" className="fw-leopay-globe" />
+            )}
+            {isMobile && (
+              <div aria-hidden="true" className="fw-leopay-globe fw-leopay-globe--mobile" />
+            )}
+            {isMobile && (
+              <img
+                src={fwLeopayClusterMobile}
+                alt=""
+                aria-hidden="true"
+                className="fw-leopay-cluster--mobile"
+              />
+            )}
           </div>
         </div>
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default FastestWay;
