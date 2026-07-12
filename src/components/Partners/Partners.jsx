@@ -1,20 +1,9 @@
 import React from "react";
 import "./Partners.css";
 
-/* ── Logo strip assets (Figma 22:356 bottom row, 22:419 top row) ── */
 import logosTop from "./assets/partners-logos-top.png";
 import logosBottom from "./assets/partners-logos-bottom.png";
 
-/*
- * Figma 22:334 — Group 770777 — 1924×369
- *
- * Layout:
- *   TOP ROW    (22:407): [Card — 22:433 PARTNERS] | [Logo marquee — 22:411]
- *   BOTTOM ROW (22:344): [Logo marquee — 22:348]  | [Card — 22:370 PAYMENT METHODS]
- *
- * Full-width section. No scaling canvas.
- * Logo rows: horizontal marquee (scroll left, infinite).
- */
 /* ── Badge icons ── */
 const BadgeIconLeft = () => (
   <svg
@@ -66,10 +55,6 @@ const Partners = () => (
   <section className="partners-section">
     {/* ── TOP ROW ──────────────────────────────────────────── */}
     <div className="partners-row partners-row--top">
-      {/* Left card — 22:433  492×185
-          Badge: PARTNERS  Geist 12px/600  rgb(3,126,91)
-          Stat:  10+ Trusted Partners  Britti Sans 29.8px/600  rgb(26,26,26)
-          Sub:   Helping big names in the industry  Britti Sans 16px/400  rgb(82,88,112) */}
       <div className="partners-card">
         <span className="partners-badge">
           <BadgeIconLeft />
@@ -80,7 +65,6 @@ const Partners = () => (
         <p className="partners-sub">Helping big names in the industry</p>
       </div>
 
-      {/* Right logo marquee — 22:411  logos scroll left */}
       <div className="partners-marquee-wrap">
         {/* Fade overlay left */}
         <div className="partners-fade partners-fade--left" />
@@ -118,7 +102,6 @@ const Partners = () => (
 
     {/* ── BOTTOM ROW ───────────────────────────────────────── */}
     <div className="partners-row partners-row--bottom">
-      {/* Left logo marquee — 22:348  logos scroll left */}
       <div className="partners-marquee-wrap">
         <div className="partners-fade partners-fade--left" />
         <div className="partners-marquee partners-marquee--reverse">
@@ -150,10 +133,6 @@ const Partners = () => (
         <div className="partners-fade partners-fade--right" />
       </div>
 
-      {/* Right card — 22:370  492×185
-          Badge: PAYMENT METHODS
-          Stat:  5+ Payment Methods  Britti Sans 29.8px/600  rgb(26,26,26)
-          Sub:   Best way to transfer anytime  Britti Sans 16px/400  rgb(82,88,112) */}
       <div className="partners-card partners-card--right">
         <span className="partners-badge partners-badge--right">
           <BadgeIconLeft />

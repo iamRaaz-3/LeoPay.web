@@ -9,6 +9,37 @@
   flex-shrink: 0;
 }
 
+/* ── Smooth transitions for layout shrinking ────────────── */
+.hero,
+.hero__content,
+.hero__heading,
+.hero__desc,
+.hero__visual,
+.hero__ring-group,
+.hero__ring-glow,
+.hero__flag,
+.hero__txn-card,
+.hero__txn-pill,
+.hero__txn-logo,
+.hero__txn-coin,
+.hero__txn-dashes,
+.hero__txn-label,
+.hero__txn-bold,
+.hero__txn-light,
+.hero__txn-coin-tile,
+.hero__txn-ticker {
+  transition: width 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              height 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              left 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              right 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              top 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              font-size 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              line-height 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              padding 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              gap 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 /* ── Background rays ─────────────────────────────────────── */
 
 .hero__rays {
@@ -338,7 +369,6 @@
   object-fit: cover;
 }
 
-/* Positions relative to hero__visual */
 .hero__flag--usa { left: 368px; top: 0px; }
 .hero__flag--ph  { left: 368px; top: 426px; }
 .hero__flag--jp  { left: 532px; top: 80.22px; transform: rotate(-30deg); }
@@ -359,7 +389,6 @@
   z-index: 3;
 }
 
-/* Card 1 – Stablecoin API: Figma pos (0, 76) within hero__visual */
 .hero__txn-card--api {
   left: 0px;
   top: 76px;
@@ -367,7 +396,6 @@
   height: 105px;
 }
 
-/* Card 2 – Stablecoin Backed: Figma pos (503, 310) within hero__visual */
 .hero__txn-card--backed {
   left: 503px;
   top: 310px;
@@ -480,4 +508,879 @@
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.3px;
+}
+
+/* ── Mobile ──────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .hero {
+    width: 430px;
+    height: 932px;
+    background: linear-gradient(180deg, #F5FAFF 0.08%, #C7E8DF 106.42%);
+    border-radius: 0;
+  }
+
+  .hero__bg-mobile-wrap {
+    display: flex;
+    width: 737px;
+    height: 932px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--item-spacing-s, 10px);
+    mask-image: linear-gradient(180deg, var(--color-black-0, rgba(0, 0, 0, 0.00)) 33.78%, var(--token-c64ab00d-071c-45ba-9bdc-c26d9ab03aca, #000) 49.51%, var(--color-black-0, rgba(0, 0, 0, 0.00)) 76.58%);
+    -webkit-mask-image: linear-gradient(180deg, var(--color-black-0, rgba(0, 0, 0, 0.00)) 33.78%, var(--token-c64ab00d-071c-45ba-9bdc-c26d9ab03aca, #000) 49.51%, var(--color-black-0, rgba(0, 0, 0, 0.00)) 76.58%);
+  }
+
+  .hero__fade {
+    left: 0;
+    top: 752px;
+    width: 430px;
+    height: 180px;
+  }
+
+  .hero__content {
+    left: 35px;
+    top: 135.5px;
+    width: 360px;
+    height: 363px;
+    gap: 20px;
+  }
+
+  .hero__badge {
+    width: 190px;
+    height: 32px;
+    padding: 10.415px 16px 10.585px 16px;
+    margin-bottom: 10px;
+  }
+
+  .hero__heading {
+    width: 360px;
+    font-size: 40px;
+    line-height: 44.8px;
+    letter-spacing: -1.2px;
+  }
+
+  .hero__desc-wrap { width: 360px; }
+  .hero__desc {
+    width: 360px;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero__buttons { height: auto; padding: 4px 0; }
+
+  /* ── Right visual ──────────────────────────────────────── */
+
+  .hero__visual {
+    left: 58.19px;
+    top: 552.16px;
+    width: 318.929px;
+    height: 312.959px;
+  }
+
+  .hero__ring-group {
+    left: 5.54px;
+    top: 7.38px;
+    width: 303.634px;
+    height: 303.634px;
+  }
+
+  .hero__globe {
+    left: 0;
+    top: 0;
+    width: 303.634px;
+    height: 303.634px;
+  }
+
+  .hero__ring-glow {
+    left: 41.85px;
+    top: 44.51px;
+    width: 232.39px;
+    height: 232.39px;
+    border-width: 1.9px;
+  }
+
+  /* ── Flags ─────────────────────────────────────────────── */
+
+  .hero__flag--sm { width: 63.86px; height: 63.86px; padding: 4.1px; }
+  .hero__flag--usa { left: 17.81px; top: 48.84px; transform: none; }
+  .hero__flag--vn  { left: 232.81px; top: 207.84px; transform: none; }
+  .hero__flag--ph,
+  .hero__flag--jp {
+    width: 51.25px;
+    height: 51.25px;
+    padding: 3.29px;
+  }
+  .hero__flag--ph { left: 1.85px; top: 151.9px; transform: none; }
+  .hero__flag--jp { left: 264.81px; top: 119.92px; transform: none; }
+
+  .hero__flag--usa .hero__flag-icon,
+  .hero__flag--vn .hero__flag-icon { width: 37.75px; height: 37.75px; }
+  .hero__flag--ph .hero__flag-icon,
+  .hero__flag--jp .hero__flag-icon { width: 30.29px; height: 30.29px; }
+
+  /* ── Floating transaction cards ───────────────────────────
+     Both cards scale from desktop at a uniform 0.635 ratio. */
+
+  .hero__txn-card {
+    gap: 10.8px;
+    padding: 9.53px 14.61px 9.53px 8.89px;
+    border-radius: 11.43px;
+  }
+
+  .hero__txn-card--api {
+    left: 0px;
+    top: 246.29px;
+    width: 193.03px;
+    height: 66.67px;
+  }
+
+  .hero__txn-card--backed {
+    left: 127.81px;
+    top: 0px;
+    width: 191.12px;
+    height: 66.67px;
+  }
+
+  .hero__txn-pill {
+    gap: 5.72px;
+    height: 47.63px;
+    padding: 12.7px 8.89px;
+    border-radius: 10.16px;
+  }
+
+  .hero__txn-logo,
+  .hero__txn-coin {
+    width: 22.23px;
+    height: 22.23px;
+  }
+
+  .hero__txn-dashes {
+    width: 24.13px;
+    height: 10.16px;
+  }
+
+  .hero__txn-label { width: 60.33px; }
+  .hero__txn-label--left { width: 63.5px; }
+
+  .hero__txn-bold,
+  .hero__txn-light {
+    font-size: 12.7px;
+    line-height: 15.24px;
+  }
+
+  .hero__txn-coins { gap: 5.08px; }
+
+  .hero__txn-coin-tile {
+    width: 44.45px;
+    height: 53.97px;
+    padding: 6.35px 8.89px 7.62px 9.53px;
+    border-radius: 10.16px;
+    gap: 3.23px;
+  }
+
+  .hero__txn-ticker {
+    font-size: 9.53px;
+    line-height: 13px;
+    letter-spacing: 0.19px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   DESKTOP RESPONSIVE ONLY (901px → 1919px)
+   Breakpoint-based layouts to avoid "zoom out" font shrinking.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Breakpoint 1: 1440px → 1919px (Large Laptops) ── */
+@media (max-width: 1919px) and (min-width: 1440px) {
+  .hero {
+    width: 100%;
+    height: 800px;
+  }
+  .hero__rays {
+    width: 100%;
+    height: 100%;
+  }
+  .hero__ray {
+    flex: 1 0 170.4px;
+    height: 100%;
+  }
+  .hero__fade {
+    width: 100%;
+    top: calc(100% - 180px);
+  }
+  .hero__content {
+    left: 100px;
+    top: 249px;
+    width: 560px;
+  }
+  .hero__heading {
+    width: 100%;
+    font-size: 64px;
+    line-height: 70px;
+  }
+  .hero__desc-wrap { width: 100%; }
+  .hero__desc {
+    width: 100%;
+    font-size: 19px;
+    line-height: 26px;
+  }
+  .hero__visual {
+    left: auto;
+    right: 60px;
+    top: 198px;
+    width: 700px;
+    height: 433.8px;
+  }
+  .hero__ring-group {
+    left: 146px;
+    top: 7px;
+    width: 428px;
+    height: 428px;
+  }
+  .hero__globe {
+    width: 100%;
+    height: 100%;
+  }
+  .hero__ring-glow {
+    left: 197px;
+    top: 59px;
+    width: 328px;
+    height: 328px;
+  }
+  .hero__flag--sm {
+    width: 64px;
+    height: 64px;
+    padding: 5px;
+  }
+  .hero__flag-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .hero__flag--usa { left: 330px; top: 0px; }
+  .hero__flag--ph  { left: 330px; top: 382px; }
+  .hero__flag--jp  { left: 476px; top: 72px; }
+  .hero__flag--vn  { left: 154px; top: 267px; }
+
+  .hero__txn-card {
+    gap: 15px;
+    padding: 13px 20px;
+    border-radius: 16px;
+  }
+  .hero__txn-card--api {
+    left: 0px;
+    top: 68px;
+    width: 272px;
+    height: 94px;
+  }
+  .hero__txn-card--backed {
+    left: auto;
+    right: 0px;
+    top: 278px;
+    width: 270px;
+    height: 94px;
+  }
+}
+
+/* ── Breakpoint 2: 1200px → 1439px (Standard Laptops) ── */
+@media (max-width: 1439px) and (min-width: 1200px) {
+  .hero {
+    width: 100%;
+    height: 720px;
+  }
+  .hero__rays {
+    width: 100%;
+    height: 100%;
+  }
+  .hero__ray {
+    flex: 1 0 170.4px;
+    height: 100%;
+  }
+  .hero__fade {
+    width: 100%;
+    top: calc(100% - 180px);
+  }
+  .hero__content {
+    left: 60px;
+    top: 200px;
+    width: 480px;
+  }
+  .hero__heading {
+    width: 100%;
+    font-size: 54px;
+    line-height: 60px;
+    letter-spacing: -1.6px;
+  }
+  .hero__desc-wrap { width: 100%; }
+  .hero__desc {
+    width: 100%;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .hero__visual {
+    left: auto;
+    right: 40px;
+    top: 160px;
+    width: 580px;
+    height: 359.5px;
+  }
+  .hero__ring-group {
+    left: 121px;
+    top: 6px;
+    width: 357px;
+    height: 357px;
+  }
+  .hero__globe {
+    width: 100%;
+    height: 100%;
+  }
+  .hero__ring-glow {
+    left: 164px;
+    top: 49px;
+    width: 273px;
+    height: 273px;
+  }
+  .hero__flag--sm {
+    width: 58px;
+    height: 58px;
+    padding: 5px;
+  }
+  .hero__flag-icon {
+    width: 35px;
+    height: 35px;
+  }
+  .hero__flag--usa { left: 275px; top: 0px; }
+  .hero__flag--ph  { left: 275px; top: 318px; }
+  .hero__flag--jp  { left: 397px; top: 60px; }
+  .hero__flag--vn  { left: 128px; top: 223px; }
+
+  .hero__txn-card {
+    gap: 12px;
+    padding: 11px 16px;
+    border-radius: 14px;
+  }
+  .hero__txn-card--api {
+    left: 0px;
+    top: 57px;
+    width: 230px;
+    height: 80px;
+  }
+  .hero__txn-card--backed {
+    left: auto;
+    right: 0px;
+    top: 231px;
+    width: 225px;
+    height: 80px;
+  }
+  .hero__txn-pill {
+    gap: 6px;
+    height: 58px;
+    padding: 12px 10px;
+    border-radius: 12px;
+  }
+  .hero__txn-logo, .hero__txn-coin {
+    width: 26px;
+    height: 26px;
+  }
+  .hero__txn-dashes {
+    width: 28px;
+    height: 12px;
+  }
+  .hero__txn-label {
+    width: 72px;
+  }
+  .hero__txn-bold, .hero__txn-light {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .hero__txn-label--left {
+    width: 75px;
+  }
+  .hero__txn-coins {
+    gap: 6px;
+  }
+  .hero__txn-coin-tile {
+    gap: 6px;
+    width: 50px;
+    height: 66px;
+    padding: 8px;
+    border-radius: 12px;
+  }
+  .hero__txn-ticker {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+/* ── Breakpoint 3: 901px → 1199px (Small Desktop range) ── */
+@media (max-width: 1199px) and (min-width: 901px) {
+  .hero {
+    width: 100%;
+    height: 640px;
+  }
+  .hero__rays {
+    width: 100%;
+    height: 100%;
+  }
+  .hero__ray {
+    flex: 1 0 170.4px;
+    height: 100%;
+  }
+  .hero__fade {
+    width: 100%;
+    top: calc(100% - 180px);
+  }
+  .hero__content {
+    left: 40px;
+    top: 160px;
+    width: 400px;
+  }
+  .hero__heading {
+    width: 100%;
+    font-size: 44px;
+    line-height: 50px;
+    letter-spacing: -1.2px;
+  }
+  .hero__desc-wrap { width: 100%; }
+  .hero__desc {
+    width: 100%;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .hero__visual {
+    left: auto;
+    right: 30px;
+    top: 130px;
+    width: 420px;
+    height: 260.2px;
+  }
+  .hero__ring-group {
+    left: 101px;
+    top: 5px;
+    width: 297px;
+    height: 297px;
+  }
+  .hero__globe {
+    width: 100%;
+    height: 100%;
+  }
+  .hero__ring-glow {
+    left: 137px;
+    top: 41px;
+    width: 228px;
+    height: 228px;
+  }
+  .hero__flag--sm {
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+  }
+  .hero__flag-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .hero__flag--usa { left: 229px; top: 0px; }
+  .hero__flag--ph  { left: 229px; top: 265px; }
+  .hero__flag--jp  { left: 331px; top: 50px; }
+  .hero__flag--vn  { left: 107px; top: 186px; }
+
+  .hero__txn-card {
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 11px;
+  }
+  .hero__txn-card--api {
+    left: 0px;
+    top: 47px;
+    width: 195px;
+    height: 70px;
+  }
+  .hero__txn-card--backed {
+    left: auto;
+    right: 0px;
+    top: 193px;
+    width: 188px;
+    height: 70px;
+  }
+  .hero__txn-pill {
+    gap: 5px;
+    height: 50px;
+    padding: 10px 8px;
+    border-radius: 10px;
+  }
+  .hero__txn-logo, .hero__txn-coin {
+    width: 22px;
+    height: 22px;
+  }
+  .hero__txn-dashes {
+    width: 24px;
+    height: 10px;
+  }
+  .hero__txn-label {
+    width: 60px;
+  }
+  .hero__txn-bold, .hero__txn-light {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .hero__txn-label--left {
+    width: 65px;
+  }
+  .hero__txn-coins {
+    gap: 5px;
+  }
+  .hero__txn-coin-tile {
+    gap: 5px;
+    width: 42px;
+    height: 56px;
+    padding: 6px;
+    border-radius: 10px;
+  }
+  .hero__txn-ticker {
+    font-size: 10px;
+    line-height: 13px;
+  }
+}
+
+/* ── IPAD RESPONSIVE (481px → 900px) ── */
+@media (max-width: 900px) and (min-width: 481px) {
+  .hero {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    min-height: 1180px;
+    border-radius: 16px;
+  }
+
+  .hero__rays {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: var(--item-spacing-s, 24px);
+    mask-image: linear-gradient(180deg, var(--color-black-0, rgba(0, 0, 0, 0.00)) 33.78%, var(--token-c64ab00d-071c-45ba-9bdc-c26d9ab03aca, #000) 49.51%, var(--color-black-0, rgba(0, 0, 0, 0.00)) 76.58%);
+    -webkit-mask-image: linear-gradient(180deg, var(--color-black-0, rgba(0, 0, 0, 0.00)) 33.78%, var(--token-c64ab00d-071c-45ba-9bdc-c26d9ab03aca, #000) 49.51%, var(--color-black-0, rgba(0, 0, 0, 0.00)) 76.58%);
+  }
+
+  .hero__fade {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 180px;
+    background: #FFF;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+
+  .hero__content {
+    position: absolute;
+    left: 5.77%;
+    top: 130px;
+    width: 620px;
+    height: auto;
+  }
+
+  .hero__heading {
+    width: 567px;
+    font-size: 70px;
+    line-height: 77px;
+  }
+  
+  .hero__desc-wrap {
+    width: 100%;
+    max-width: 640px;
+  }
+  
+  .hero__desc {
+    width: 100%;
+    max-width: 636px;
+    font-size: 20px;
+    line-height: 27px;
+    color: #505670;
+    font-family: 'Britti Sans Trial', sans-serif;
+    letter-spacing: 0.2px;
+  }
+
+  .hero__buttons {
+    height: auto;
+    gap: 12px 20px;
+  }
+
+  .hero__visual {
+    position: absolute;
+    left: 7%;
+    top: 570px;
+    width: 77.2%;
+    max-width: 695px;
+    height: auto;
+    aspect-ratio: 695 / 498.237;
+  }
+
+  .hero__ring-group {
+    left: 16.52%;
+    top: 1.509%;
+    width: 68.8%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero__globe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero__ring-glow {
+    left: 24.74%;
+    top: 13.246%;
+    width: 52.66%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+  }
+
+  .hero__flag--sm {
+    width: 72.237px;
+    height: 72.237px;
+  }
+
+  .hero__flag--usa { left: 46.04%; top: 0px; }
+  .hero__flag--ph  { left: 46.04%; top: 85.5%; }
+  .hero__flag--jp {
+    left: 69.64%;
+    top: 16.1%;
+    width: 98.68px;
+    height: 98.68px;
+    transform: none;
+  }
+  .hero__flag--vn {
+    left: 15.97%;
+    top: 58.87%;
+    width: 98.68px;
+    height: 98.68px;
+    transform: none;
+  }
+  .hero__flag--jp .hero__flag-icon,
+  .hero__flag--vn .hero__flag-icon {
+    width: 58.329px;
+    height: 58.329px;
+  }
+
+  .hero__txn-card--api {
+    left: 0px;
+    top: 18.66%;
+    width: 304px;
+    height: 105px;
+    min-height: 0;
+  }
+
+  .hero__txn-card--backed {
+    left: auto;
+    right: 0px;
+    top: 54.79%;
+    width: 301px;
+    height: 105px;
+    min-height: 0;
+  }
+
+  .hero__txn-card--backed .hero__txn-label--left {
+    width: 100px;
+    flex: none;
+  }
+
+  .hero__txn-card--backed .hero__txn-coin-tile {
+    width: 64px;
+    height: 85px;
+    padding: 10px 14px 12px 15px;
+  }
+
+  .hero__txn-card--backed .hero__txn-coins {
+    gap: 8px;
+  }
+
+  .hero__txn-card--backed .hero__txn-ticker {
+    font-size: 15px;
+  }
+}
+
+/* ── Mobile ──────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .hero {
+    width: 430px;
+    height: 932px;
+    background: linear-gradient(180deg, #F5FAFF 0.08%, #C7E8DF 106.42%);
+    border-radius: 0;
+  }
+
+  .hero__bg-mobile-wrap {
+    display: flex;
+    width: 737px;
+    height: 932px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--item-spacing-s, 10px);
+    mask-image: linear-gradient(180deg, var(--color-black-0, rgba(0, 0, 0, 0.00)) 33.78%, var(--token-c64ab00d-071c-45ba-9bdc-c26d9ab03aca, #000) 49.51%, var(--color-black-0, rgba(0, 0, 0, 0.00)) 76.58%);
+    -webkit-mask-image: linear-gradient(180deg, var(--color-black-0, rgba(0, 0, 0, 0.00)) 33.78%, var(--token-c64ab00d-071c-45ba-9bdc-c26d9ab03aca, #000) 49.51%, var(--color-black-0, rgba(0, 0, 0, 0.00)) 76.58%);
+  }
+
+  .hero__fade {
+    left: 0;
+    top: 752px;
+    width: 430px;
+    height: 180px;
+  }
+
+  .hero__content {
+    left: 35px;
+    top: 135.5px;
+    width: 360px;
+    height: 363px;
+    gap: 20px;
+  }
+
+  .hero__badge {
+    width: 190px;
+    height: 32px;
+    padding: 10.415px 16px 10.585px 16px;
+    margin-bottom: 10px;
+  }
+
+  .hero__heading {
+    width: 360px;
+    font-size: 40px;
+    line-height: 44.8px;
+    letter-spacing: -1.2px;
+  }
+
+  .hero__desc-wrap { width: 360px; }
+  .hero__desc {
+    width: 360px;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero__buttons { height: auto; padding: 4px 0; }
+
+  /* ── Right visual ──────────────────────────────────────── */
+
+  .hero__visual {
+    left: 58.19px;
+    top: 552.16px;
+    width: 318.929px;
+    height: 312.959px;
+  }
+
+  .hero__ring-group {
+    left: 5.54px;
+    top: 7.38px;
+    width: 303.634px;
+    height: 303.634px;
+  }
+
+  .hero__globe {
+    left: 0;
+    top: 0;
+    width: 303.634px;
+    height: 303.634px;
+  }
+
+  .hero__ring-glow {
+    left: 41.85px;
+    top: 44.51px;
+    width: 232.39px;
+    height: 232.39px;
+    border-width: 1.9px;
+  }
+
+  /* ── Flags ─────────────────────────────────────────────── */
+
+  .hero__flag--sm { width: 63.86px; height: 63.86px; padding: 4.1px; }
+  .hero__flag--usa { left: 17.81px; top: 48.84px; transform: none; }
+  .hero__flag--vn  { left: 232.81px; top: 207.84px; transform: none; }
+  .hero__flag--ph,
+  .hero__flag--jp {
+    width: 51.25px;
+    height: 51.25px;
+    padding: 3.29px;
+  }
+  .hero__flag--ph { left: 1.85px; top: 151.9px; transform: none; }
+  .hero__flag--jp { left: 264.81px; top: 119.92px; transform: none; }
+
+  .hero__flag--usa .hero__flag-icon,
+  .hero__flag--vn .hero__flag-icon { width: 37.75px; height: 37.75px; }
+  .hero__flag--ph .hero__flag-icon,
+  .hero__flag--jp .hero__flag-icon { width: 30.29px; height: 30.29px; }
+
+  /* ── Floating transaction cards ───────────────────────────
+     Both cards scale from desktop at a uniform 0.635 ratio. */
+
+  .hero__txn-card {
+    gap: 10.8px;
+    padding: 9.53px 14.61px 9.53px 8.89px;
+    border-radius: 11.43px;
+  }
+
+  .hero__txn-card--api {
+    left: 0px;
+    top: 246.29px;
+    width: 193.03px;
+    height: 66.67px;
+  }
+
+  .hero__txn-card--backed {
+    left: 127.81px;
+    top: 0px;
+    width: 191.12px;
+    height: 66.67px;
+  }
+
+  .hero__txn-pill {
+    gap: 5.72px;
+    height: 47.63px;
+    padding: 12.7px 8.89px;
+    border-radius: 10.16px;
+  }
+
+  .hero__txn-logo,
+  .hero__txn-coin {
+    width: 22.23px;
+    height: 22.23px;
+  }
+
+  .hero__txn-dashes {
+    width: 24.13px;
+    height: 10.16px;
+  }
+
+  .hero__txn-label { width: 60.33px; }
+  .hero__txn-label--left { width: 63.5px; }
+
+  .hero__txn-bold,
+  .hero__txn-light {
+    font-size: 12.7px;
+    line-height: 15.24px;
+  }
+
+  .hero__txn-coins { gap: 5.08px; }
+
+  .hero__txn-coin-tile {
+    width: 44.45px;
+    height: 53.97px;
+    padding: 6.35px 8.89px 7.62px 9.53px;
+    border-radius: 10.16px;
+    gap: 3.23px;
+  }
+
+  .hero__txn-ticker {
+    font-size: 9.53px;
+    line-height: 13px;
+    letter-spacing: 0.19px;
+  }
 }

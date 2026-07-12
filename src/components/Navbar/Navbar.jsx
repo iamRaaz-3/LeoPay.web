@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
 
-/* Exact Figma SVG chevron: width:24 height:24, path opacity:0.6, color:#000 */
 const ChevronIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path opacity="0.6" d="M7 9.5L12 14.5L17 9.5" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
-/* Nav links from original design: Products, Partners, API Docs, Resources */
 const NAV_LINKS = [
   { label: 'Products',  dropdown: true },
   { label: 'Partners',  dropdown: false },
@@ -69,10 +67,6 @@ const Navbar = () => {
 
   return (
     <nav ref={navRef} className={`navbar${scrolled ? ' scrolled' : ''}`}>
-      {/* Exact Figma container:
-          display:flex; width:976px; height:137px; padding:16px 24px;
-          justify-content:space-between; align-items:center;
-          border-radius:16px; background:#FFF; backdrop-filter:blur(10px); */}
       <div className="navbar-inner">
 
         <a href="/" className="navbar-logo">
