@@ -73,12 +73,10 @@ const Navbar = () => {
           <span className="navbar-logo-text">leopay</span>
         </a>
 
-        {/* Nav links — each: display:flex align-items:center gap:4px */}
         <ul className={`navbar-links${menuOpen ? ' open' : ''}`}>
           {NAV_LINKS.map(link => (
             <li key={link.label}>
               <a href={link.href || '#'} target={link.href ? "_blank" : undefined} rel={link.href ? "noopener noreferrer" : undefined} className="nav-link" onClick={() => setMenuOpen(false)}>
-                {/* Typography: Britti Sans Trial, 16px, weight:400, color:#000 */}
                 <span className="nav-link-label">{link.label}</span>
                 {link.dropdown && <ChevronIcon />}
               </a>
@@ -91,15 +89,9 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* CTA area */}
         <div className="navbar-cta">
-          {/* Sign in: Britti Sans Trial, 16px, weight:400, color:#000 */}
-          {/* <a href="#" className="nav-signin">Sign in</a> */}
-
-          {/* Get Started: Britti Sans Trial, 16px, weight:600, color:#FFF, bg:#00BA85 */}
           <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" className="nav-getstarted">  Sign in</a>
 
-          {/* Mobile hamburger */}
           <button className={`hamburger${menuOpen ? ' open' : ''}`} aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(v => !v)}>
             <span /><span /><span />
           </button>
