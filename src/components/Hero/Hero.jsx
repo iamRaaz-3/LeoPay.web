@@ -1,17 +1,40 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './Hero.css';
 import globeSrc from '../../assets/globe.png';
 import flagUsaSrc from '../../assets/flag-usa.svg';
 import flagPhSrc  from '../../assets/flag-ph.svg';
 import flagJpSrc  from '../../assets/flag-jp.svg';
+import flagIdSrc  from '../../assets/flag-id.svg';
 import flagVnSrc  from '../../assets/flag-vn.svg';
 import leopayLogoSrc from '../../assets/leopay-logo-green.png';
 import coinUsdcSrc from '../../assets/coin-usdc.svg';
 import coinUsdtSrc from '../../assets/coin-usdt.svg';
 import connectorDashesSrc from '../../assets/connector-dashes.svg';
+import heroBgMobileSrc from './assets/Container (11).png';
+import globeMobileSrc from './assets/Group (7).png';
 
 export default function Hero() {
   const globeRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth <= 480
+  );
+  const [isTabletDown, setIsTabletDown] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth <= 900
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 480px)');
+    const onChange = () => setIsMobile(mq.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 900px)');
+    const onChange = () => setIsTabletDown(mq.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
 
   useEffect(() => {
     const now = new Date();
@@ -32,14 +55,25 @@ export default function Hero() {
     <section className="hero">
 
       {/* Background rays */}
-      <div className="hero__rays">
-        {Array.from({ length: 10 }).map((_, i) => (
-          <div key={i} className="hero__ray" />
-        ))}
-      </div>
+      {isMobile ? (
+        <>
+          <div className="hero__bg-mobile-wrap">
+            <img src={heroBgMobileSrc} alt="" aria-hidden="true" className="hero__bg-mobile" />
+          </div>
+          <div className="hero__fade" />
+        </>
+      ) : (
+        <>
+          <div className="hero__rays">
+            {Array.from({ length: 10 }).map((_, i) => (
+              <div key={i} className="hero__ray" />
+            ))}
+          </div>
 
-      {/* Bottom fade mask */}
-      <div className="hero__fade" />
+          {/* Bottom fade mask */}
+          <div className="hero__fade" />
+        </>
+      )}
 
       {/* Hero content */}
       <div className="hero__content">
@@ -108,11 +142,10 @@ export default function Hero() {
       {/* Right visual */}
       <div className="hero__visual">
         <div className="hero__ring-group">
-          <img ref={globeRef} className="hero__globe" src={globeSrc} alt="" />
+          <img ref={globeRef} className="hero__globe" src={isMobile ? globeMobileSrc : globeSrc} alt="" />
         </div>
         <div className="hero__ring-glow" />
 
-        {/* Floating card 1 – Stablecoin API (Figma: left=0, top=76 within visual) */}
         <div className="hero__txn-card hero__txn-card--api">
           <div className="hero__txn-pill">
             <img className="hero__txn-logo" src={leopayLogoSrc} alt="LeoPay" />
@@ -127,7 +160,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Floating card 2 – Stablecoin Backed (Figma: left=503, top=310 within visual) */}
         <div className="hero__txn-card hero__txn-card--backed">
           <div className="hero__txn-label hero__txn-label--left">
             <span className="hero__txn-bold">Stablecoin</span>
@@ -153,7 +185,11 @@ export default function Hero() {
           <img className="hero__flag-icon" src={flagPhSrc} alt="Philippines" />
         </div>
         <div className="hero__flag hero__flag--sm hero__flag--jp">
-          <img className="hero__flag-icon" src={flagJpSrc} alt="Japan" />
+          {isTabletDown ? (
+            <img className="hero__flag-icon" src={flagIdSrc} alt="Indonesia" />
+          ) : (
+            <img className="hero__flag-icon" src={flagJpSrc} alt="Japan" />
+          )}
         </div>
         <div className="hero__flag hero__flag--sm hero__flag--vn">
           <img className="hero__flag-icon" src={flagVnSrc} alt="Vietnam" />
