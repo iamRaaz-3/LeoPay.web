@@ -1,0 +1,235 @@
+.prh-section {
+  width: 100%;
+  aspect-ratio: 8 / 3;
+  background: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-top: 12.5%; /* 240/1920 = 12.5% → 240px at 1920px, scales with aspect-ratio */
+  position: relative;
+  overflow: hidden;
+}
+
+.prh-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.prh-ellipse {
+  position: absolute;
+  left: 22.29%;   /* 428/1920 */
+  top: 28.19%;    /* 203/720 */
+  width: 55.42%;  /* 1064/1920 */
+  height: 45.14%; /* 325/720 */
+  border-radius: 1064px;
+  background: rgba(255, 255, 255, 0.50);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.prh-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 620px;
+  max-width: calc(100% - 48px);
+  gap: 20px;
+  text-align: center;
+  z-index: 2;
+}
+
+.prh-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: #162755;
+  border-radius: 100px;
+  color: #fff;
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.prh-badge-icon {
+  display: flex;
+  width: 6px;
+  height: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.prh-badge-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.prh-badge-text-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  color: #FFF;
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 12px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.prh-heading {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 77px;
+  letter-spacing: -2.1px;
+  color: #060612;
+  text-align: center;
+  margin: 0;
+}
+
+.prh-desc {
+  width: 636px;
+  max-width: 100%;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.04px;
+  color: #69686E;
+  text-align: center;
+  margin: 0;
+}
+
+.prh-updated-wrap {
+  display: flex;
+  height: 77px;
+  padding: 20px 0;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0 20px;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.prh-updated {
+  display: flex;
+  width: 221px;
+  height: 40px;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 8.01px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #FFF;
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #162755;
+  position: relative;
+}
+
+.prh-updated::after {
+  content: '';
+  position: absolute;
+  width: 220.85px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #FFF;
+  pointer-events: none;
+}
+
+.prh-updated-text {
+  display: flex;
+  width: 181px;
+  height: 16px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #000;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.2px;
+  letter-spacing: 0.2px;
+}
+
+/* 1024px — aspect-ratio makes section only 384px tall, content overflows */
+@media (max-width: 1024px) {
+  .prh-section {
+    aspect-ratio: unset;
+    min-height: 520px;
+    align-items: center;
+    padding: 80px 40px;
+  }
+}
+
+/* 768px — tablet portrait */
+@media (max-width: 768px) {
+  .prh-section {
+    min-height: 460px;
+    padding: 64px 32px;
+  }
+  .prh-inner {
+    width: 100%;
+    max-width: 560px;
+    gap: 16px;
+  }
+  .prh-heading {
+    font-size: 52px;
+    line-height: 60px;
+    letter-spacing: -1.5px;
+  }
+  .prh-desc {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
+/* 640px — mobile */
+@media (max-width: 640px) {
+  .prh-section {
+    min-height: 380px;
+    padding: 56px 20px;
+  }
+  .prh-inner {
+    width: 100%;
+    max-width: 100%;
+    gap: 14px;
+  }
+  .prh-heading {
+    font-size: 38px;
+    line-height: 46px;
+    letter-spacing: -1px;
+  }
+  .prh-desc {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .prh-updated-wrap { height: auto; }
+  .prh-updated { width: auto; }
+  .prh-updated-text { width: auto; height: auto; }
+}

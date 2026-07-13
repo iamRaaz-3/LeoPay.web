@@ -1,0 +1,103 @@
+.ticker {
+  position: relative;
+  width: 1920px;
+  height: 64px;
+  background: linear-gradient(92deg, #162755 18.59%, #000 112.27%);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ── Glow lines ───────────────────────────────────────────── */
+
+.ticker__glow-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1913.352px;
+  height: 87.956px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.ticker__glow-line {
+  position: absolute;
+  left: 0;
+  width: 1913.352px;
+  height: 0.993px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 0%, rgba(39, 170, 123, 0.30) 50%, rgba(0, 0, 0, 0.00) 100%);
+}
+
+.ticker__glow-line--top    { top: 1.35px; }
+.ticker__glow-line--bottom { top: 88.31px; }
+
+/* ── Marquee track ────────────────────────────────────────── */
+
+.ticker__track {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+  animation: ticker-scroll 20s linear infinite;
+}
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+.ticker__group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 40px;
+  flex-shrink: 0;
+  padding-right: 24px;
+}
+
+.ticker__item-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+/* ── Item ─────────────────────────────────────────────────── */
+
+.ticker__item {
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  gap: 15.994px;
+}
+
+.ticker__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.986px;
+}
+
+.ticker__line {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #FFF;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.35px;
+  white-space: nowrap;
+}
+
+.ticker__dot {
+  width: 10px;
+  height: 10px;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+}
