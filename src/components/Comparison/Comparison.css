@@ -1,6 +1,7 @@
 
 .comparison-section {
-  width: 1920px;
+  width: 100%;
+  max-width: 1920px;
   height: 882px;
   background-image:
     linear-gradient(to right, rgba(255,255,255,1) 1px, transparent 1px),
@@ -121,9 +122,12 @@
 
 /* ── Card wrap ─────────────────────────────────────────── */
 .comparison-card-wrap {
-  width: 1372px;
+  width: 100%;
+  max-width: 1372px;
   display: flex;
   justify-content: center;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 /* Desktop card */
@@ -131,7 +135,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 1372px;
+  width: 100%;
+  max-width: 1372px;
   height: 347px;
   padding: 10px;
   gap: 20px;
@@ -147,7 +152,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
-  width: 656px;
+  width: 50%;
+  max-width: 656px;
   flex-shrink: 0;
   padding: 19px 20px 20px;
   box-sizing: border-box;
@@ -254,7 +260,7 @@
   .cmp-col { width: 50%; height: auto; }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 800px) {
   .comparison-desktop { flex-direction: column; height: auto; }
   .cmp-col { width: 100%; }
   .cmp-others, .cmp-leopay { height: auto; }
