@@ -781,6 +781,44 @@
     width: 270px;
     height: 94px;
   }
+  .hero__txn-pill {
+    gap: 8px;
+    height: 65px;
+    padding: 16px 12px;
+    border-radius: 14px;
+  }
+  .hero__txn-logo, .hero__txn-coin {
+    width: 30px;
+    height: 30px;
+  }
+  .hero__txn-dashes {
+    width: 32px;
+    height: 14px;
+  }
+  .hero__txn-label {
+    width: 80px;
+  }
+  .hero__txn-bold, .hero__txn-light {
+    font-size: 17px;
+    line-height: 20px;
+  }
+  .hero__txn-label--left {
+    width: 85px;
+  }
+  .hero__txn-coins {
+    gap: 7px;
+  }
+  .hero__txn-coin-tile {
+    gap: 7px;
+    width: 54px;
+    height: 72px;
+    padding: 9px 12px 10px 13px;
+    border-radius: 14px;
+  }
+  .hero__txn-ticker {
+    font-size: 13px;
+    line-height: 17px;
+  }
 }
 
 /* ── Breakpoint 2: 1200px → 1439px (Standard Laptops) ── */
