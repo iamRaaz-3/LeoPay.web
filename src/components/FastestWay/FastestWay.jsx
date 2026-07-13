@@ -159,15 +159,15 @@ const FastestWay = () => {
               </div>
             )}
             {isMobile && (
-              <div aria-hidden="true" className="fw-others-globe fw-others-globe--mobile" />
-            )}
-            {isMobile && (
-              <img
-                src={fwOthersFlowMobile}
-                alt=""
-                aria-hidden="true"
-                className="fw-others-flow fw-others-flow--mobile"
-              />
+              <div className="fw-others-illustration--mobile">
+                <div aria-hidden="true" className="fw-others-globe fw-others-globe--mobile" />
+                <img
+                  src={fwOthersFlowMobile}
+                  alt=""
+                  aria-hidden="true"
+                  className="fw-others-flow fw-others-flow--mobile"
+                />
+              </div>
             )}
           </div>
         </div>
@@ -244,15 +244,15 @@ const FastestWay = () => {
             </div>
             )}
             {isMobile && (
-              <div aria-hidden="true" className="fw-leopay-globe fw-leopay-globe--mobile" />
-            )}
-            {isMobile && (
-              <img
-                src={fwLeopayClusterMobile}
-                alt=""
-                aria-hidden="true"
-                className="fw-leopay-cluster--mobile"
-              />
+              <div className="fw-leopay-illustration--mobile">
+                <div aria-hidden="true" className="fw-leopay-globe fw-leopay-globe--mobile" />
+                <img
+                  src={fwLeopayClusterMobile}
+                  alt=""
+                  aria-hidden="true"
+                  className="fw-leopay-cluster--mobile"
+                />
+              </div>
             )}
           </div>
         </div>
