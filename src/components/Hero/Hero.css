@@ -1,6 +1,8 @@
 .hero {
   position: relative;
-  width: 1920px;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
   height: 800px;
   background: linear-gradient(180deg, #F5FAFF 0.08%, #C7E8DF 106.42%);
   border-radius: 16px;
