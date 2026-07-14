@@ -87,11 +87,11 @@ const StatCol = ({ val, icon, label, desc, variant }) => (
 
 const FastestWay = () => {
   const [isMobile, setIsMobile] = useState(
-    () => typeof window !== 'undefined' && window.innerWidth <= 480
+    () => typeof window !== 'undefined' && window.innerWidth <= 600
   );
 
   useEffect(() => {
-    const mq = window.matchMedia('(max-width: 480px)');
+    const mq = window.matchMedia('(max-width: 600px)');
     const onChange = () => setIsMobile(mq.matches);
     mq.addEventListener('change', onChange);
     return () => mq.removeEventListener('change', onChange);
