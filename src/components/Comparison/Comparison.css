@@ -172,6 +172,7 @@
   border-radius: 20px;
   height: 287px;
   box-shadow: -12px 0px 12px -3.5px rgba(18, 109, 251, 0.08);
+  margin-right: 20px;
 }
 
 /* Column title */
@@ -253,7 +254,7 @@
 
 /* ── Responsive ────────────────────────────────────────── */
 @media (max-width: 1440px) {
-  .comparison-section { width: 100%; height: auto; padding-bottom: 80px; }
+  .comparison-section { width: 100%; height: auto; padding-bottom: 80px; overflow: visible; }
   .comparison-card-wrap { width: 100%; padding: 0 24px; box-sizing: border-box; }
   .comparison-desktop { width: 100%; height: auto; }
   .cmp-col { width: 50%; height: auto; }
@@ -263,8 +264,31 @@
   .comparison-desktop { flex-direction: column; height: auto; }
   .cmp-col { width: 100%; }
   .cmp-others, .cmp-leopay { height: auto; }
+  .cmp-leopay { margin-right: 0; }
   .cmp-heading-light, .cmp-heading-bold { font-size: 36px; line-height: 40px; }
   .comparison-subtitle { font-size: 16px; }
+}
+
+@media (max-width: 600px) {
+  .comparison-section {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+  .comparison-container { gap: 40px; }
+  .comparison-desktop {
+    padding: 8px;
+    gap: 12px;
+    border-radius: 20px;
+  }
+  .cmp-col {
+    padding: 16px;
+  }
+  .cmp-col-title { font-size: 26px; line-height: 32px; }
+  .cmp-leopay-text { font-size: 28px; line-height: 32px; }
+  .cmp-text { font-size: 15px; line-height: 20px; }
+  .cmp-list { gap: 10px; }
+  .cmp-heading-light, .cmp-heading-bold { font-size: 32px; line-height: 38px; }
+  .comparison-subtitle { font-size: 15px; line-height: 22px; }
 }
 
 @media (max-width: 480px) {
