@@ -210,7 +210,7 @@ const FastestWay = () => {
                 <div className="fw-leopay-badge-connector" />
                 <div className="fw-leopay-badge-label">
                   <div className="fw-leopay-badge-label-inner">
-                    <span className="fw-leopay-badge-text">&gt;30 seconds</span>
+                    <span className="fw-leopay-badge-text">&lt;30 seconds</span>
                   </div>
                 </div>
                 <div className="fw-leopay-badge-connector" />
@@ -219,7 +219,7 @@ const FastestWay = () => {
                 <div className="fw-leopay-badge-connector" />
                 <div className="fw-leopay-badge-label">
                   <div className="fw-leopay-badge-label-inner">
-                    <span className="fw-leopay-badge-text">&gt;30 seconds</span>
+                    <span className="fw-leopay-badge-text">&lt;30 seconds</span>
                   </div>
                 </div>
                 <div className="fw-leopay-badge-connector" />
