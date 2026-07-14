@@ -87,11 +87,11 @@ const StatCol = ({ val, icon, label, desc, variant }) => (
 
 const FastestWay = () => {
   const [isMobile, setIsMobile] = useState(
-    () => typeof window !== 'undefined' && window.innerWidth <= 480
+    () => typeof window !== 'undefined' && window.innerWidth <= 600
   );
 
   useEffect(() => {
-    const mq = window.matchMedia('(max-width: 480px)');
+    const mq = window.matchMedia('(max-width: 600px)');
     const onChange = () => setIsMobile(mq.matches);
     mq.addEventListener('change', onChange);
     return () => mq.removeEventListener('change', onChange);
@@ -210,7 +210,7 @@ const FastestWay = () => {
                 <div className="fw-leopay-badge-connector" />
                 <div className="fw-leopay-badge-label">
                   <div className="fw-leopay-badge-label-inner">
-                    <span className="fw-leopay-badge-text">&gt;30 seconds</span>
+                    <span className="fw-leopay-badge-text">&lt;30 seconds</span>
                   </div>
                 </div>
                 <div className="fw-leopay-badge-connector" />
@@ -219,7 +219,7 @@ const FastestWay = () => {
                 <div className="fw-leopay-badge-connector" />
                 <div className="fw-leopay-badge-label">
                   <div className="fw-leopay-badge-label-inner">
-                    <span className="fw-leopay-badge-text">&gt;30 seconds</span>
+                    <span className="fw-leopay-badge-text">&lt;30 seconds</span>
                   </div>
                 </div>
                 <div className="fw-leopay-badge-connector" />
