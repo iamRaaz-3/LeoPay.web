@@ -6,7 +6,6 @@ import fwBgBottomMobile from './assets/fw-bg-bottom-mobile.png';
 import fwOthersFlow from './assets/Group 1000004860 (1).png';
 import fwOthersFlowMobile from './assets/fw-others-flow-mobile.png';
 import fwLeopayCenterLogo from './assets/Auto Layout Horizontal 1.png';
-import fwLeopayClusterMobile from './assets/Group 2085662980.png';
 
 
 const OthersIcon = () => (
@@ -246,12 +245,55 @@ const FastestWay = () => {
             {isMobile && (
               <div className="fw-leopay-illustration--mobile">
                 <div aria-hidden="true" className="fw-leopay-globe fw-leopay-globe--mobile" />
-                <img
-                  src={fwLeopayClusterMobile}
-                  alt=""
-                  aria-hidden="true"
-                  className="fw-leopay-cluster--mobile"
-                />
+                <div className="fw-leopay-avatar" aria-hidden="true">
+                  <div className="fw-leopay-avatar-img" />
+                  <svg className="fw-leopay-avatar-shadow" xmlns="http://www.w3.org/2000/svg" width="100" height="52" viewBox="0 0 100 52" fill="none" aria-hidden="true">
+                    <g filter="url(#lp-shadow-m)">
+                      <ellipse cx="49.5481" cy="25.7426" rx="33.4895" ry="9.68372" fill="#638C81"/>
+                    </g>
+                    <defs>
+                      <filter id="lp-shadow-m" x="-0.000249863" y="-5.72205e-06" width="99.0972" height="51.4851" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feGaussianBlur stdDeviation="8.02942" result="effect1_foregroundBlur_298_22937"/>
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
+                <div className="fw-leopay-badge fw-leopay-badge--left" aria-hidden="true">
+                  <div className="fw-leopay-badge-connector" />
+                  <div className="fw-leopay-badge-label">
+                    <div className="fw-leopay-badge-label-inner">
+                      <span className="fw-leopay-badge-text">&lt;30 seconds</span>
+                    </div>
+                  </div>
+                  <div className="fw-leopay-badge-connector" />
+                </div>
+                <div className="fw-leopay-badge fw-leopay-badge--right" aria-hidden="true">
+                  <div className="fw-leopay-badge-connector" />
+                  <div className="fw-leopay-badge-label">
+                    <div className="fw-leopay-badge-label-inner">
+                      <span className="fw-leopay-badge-text">&lt;30 seconds</span>
+                    </div>
+                  </div>
+                  <div className="fw-leopay-badge-connector" />
+                </div>
+                <img src={fwLeopayCenterLogo} alt="" aria-hidden="true" className="fw-leopay-center-logo" />
+                <div className="fw-leopay-avatar fw-leopay-avatar--right" aria-hidden="true">
+                  <div className="fw-leopay-avatar-img" />
+                  <svg className="fw-leopay-avatar-shadow fw-leopay-avatar-shadow--right" xmlns="http://www.w3.org/2000/svg" width="100" height="52" viewBox="0 0 100 52" fill="none" aria-hidden="true">
+                    <g filter="url(#lp-shadow-mr)">
+                      <ellipse cx="33.4895" cy="9.68372" rx="33.4895" ry="9.68372" transform="matrix(-1 0 0 1 83.0371 16.0588)" fill="#638C81"/>
+                    </g>
+                    <defs>
+                      <filter id="lp-shadow-mr" x="-0.000249863" y="-5.72205e-06" width="99.0962" height="51.4851" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feGaussianBlur stdDeviation="8.02942" result="effect1_foregroundBlur_264_11340"/>
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
               </div>
             )}
           </div>
