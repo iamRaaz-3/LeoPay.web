@@ -46,7 +46,6 @@ export default function Hero() {
     const m = parseInt(parts.find(p => p.type === 'minute').value);
     const s = parseInt(parts.find(p => p.type === 'second').value);
     const secondsInDay = h * 3600 + m * 60 + s;
-    // 60s animation duration — scale real day to 60s for testing
     const delay = -((secondsInDay / 86400) * 60);
     if (globeRef.current) globeRef.current.style.animationDelay = `${delay}s`;
   }, []);
@@ -54,7 +53,6 @@ export default function Hero() {
   return (
     <section className="hero">
 
-      {/* Background rays */}
       {isMobile ? (
         <>
           <div className="hero__bg-mobile-wrap">
@@ -70,15 +68,12 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Bottom fade mask */}
           <div className="hero__fade" />
         </>
       )}
 
-      {/* Hero content */}
       <div className="hero__content">
 
-        {/* Badge */}
         <div className="hero__badge">
           <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#badge-dots-a)">
@@ -99,7 +94,6 @@ export default function Hero() {
           </svg>
         </div>
 
-        {/* Heading wrapper */}
         <div className="hero__heading-wrap">
           <h1 className="hero__heading">
             <span className="hero__heading--bold">Stablecoin API </span><br />
@@ -107,14 +101,12 @@ export default function Hero() {
           </h1>
         </div>
 
-        {/* Description */}
         <div className="hero__desc-wrap">
           <p className="hero__desc">
             A modern infrastructure for global finance, orchestrating stablecoins, local payment rails, virtual accounts, and integrated compliance.
           </p>
         </div>
 
-        {/* Buttons */}
         <div className="hero__buttons">
           <div className="hero__btn-wrap">
             <a href="#" className="hero__btn hero__btn--primary">
@@ -139,7 +131,6 @@ export default function Hero() {
 
       </div>
 
-      {/* Right visual */}
       <div className="hero__visual">
         <div className="hero__ring-group">
           <img ref={globeRef} className="hero__globe" src={isMobile ? globeMobileSrc : globeSrc} alt="" />
@@ -149,9 +140,7 @@ export default function Hero() {
         <div className="hero__txn-card hero__txn-card--api">
           <div className="hero__txn-pill">
             <img className="hero__txn-logo" src={leopayLogoSrc} alt="LeoPay" />
-            {/* Dashed connector – 3 animated lines */}
             <img className="hero__txn-dashes" src={connectorDashesSrc} alt="" />
-            {/* USDC coin icon */}
             <img className="hero__txn-coin" src={coinUsdcSrc} alt="USDC" />
           </div>
           <div className="hero__txn-label">
@@ -177,7 +166,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Flag circles */}
         <div className="hero__flag hero__flag--sm hero__flag--usa">
           <img className="hero__flag-icon" src={flagUsaSrc} alt="USA" />
         </div>
