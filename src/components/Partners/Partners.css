@@ -1,11 +1,9 @@
-/* ── Section wrapper ─────────────────────────────────── */
 .partners-section {
   width: 100%;
   background: #ffffff;
   overflow: hidden;
 }
 
-/* ── Each row ───────────────────────────────────────── */
 .partners-row {
   display: flex;
   align-items: stretch;
@@ -16,8 +14,7 @@
 }
 
 .partners-row--bottom {
-  border-top: none; /* avoid double border between rows */
-}
+  border-top: none;}
 
 .partners-card {
   flex: 0 0 492px;
@@ -36,17 +33,23 @@
   border-left: 1px solid rgb(224, 224, 224);
 }
 
+.partners-badge svg:first-child {
+  margin-right: 1.8px;
+}
+
 .partners-badge {
   display: inline-flex;
   align-items: center;
-  height: 24px;
-  padding: 0 8px;
-  background: rgba(204, 242, 231, 0.8);
+  gap: 6px;
+  height: 28px;
+  padding: 0 17px;
+  background: #00BA85;
   border-radius: 4px;
   font-family: 'Geist', sans-serif;
   font-size: 12px;
   font-weight: 600;
-  color: rgb(3, 126, 91);
+  line-height: 12px;
+  color: #fff;
   letter-spacing: 1.8px;
   text-transform: uppercase;
   margin-bottom: 6px;
@@ -98,20 +101,17 @@
   background: linear-gradient(to left, rgba(220,238,232,0.9), rgba(255,255,255,0));
 }
 
-/* Track — 4 copies of the strip for seamless infinite loop */
 .partners-marquee {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: marquee-left 30s linear infinite;
+  animation: marquee-left 75s linear infinite;
 }
 
-/* Bottom row logos go in reverse direction */
 .partners-marquee--reverse {
-  animation: marquee-right 34s linear infinite;
+  animation: marquee-right 110s linear infinite;
 }
 
-/* Pause on hover */
 .partners-marquee-wrap:hover .partners-marquee {
   animation-play-state: paused;
 }
@@ -122,9 +122,9 @@
   width: auto;
   max-width: none;
   flex-shrink: 0;
+  margin-right: 40px;
 }
 
-/* ── Animations ──────────────────────────────────────── */
 @keyframes marquee-left {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -135,7 +135,6 @@
   100% { transform: translateX(0); }
 }
 
-/* ── Responsive: at smaller screens shrink the card ──── */
 @media (max-width: 768px) {
   .partners-card {
     flex: 0 0 260px;
@@ -196,10 +195,26 @@
     height: 56px;
   }
 
-  .partners-row--top .partners-logos-strip {
-    height: 28.34px;
+  .partners-fade {
+    display: none;
   }
-  .partners-row--bottom .partners-logos-strip {
-    height: 23.62px;
+
+  .partners-row--top .partners-marquee-wrap {
+    background: linear-gradient(90deg, #EBF5FC 0%, #FFF 50%, #EBF5FC 100%);
+  }
+  .partners-row--bottom .partners-marquee-wrap {
+    background: linear-gradient(90deg, #DCF1EC 0%, #FFF 50%, #DCF1EC 100%);
+  }
+
+  .partners-logos-strip {
+    height: 24px;
+    margin-right: 25px;
+  }
+
+  .partners-marquee {
+    animation-duration: 49s;
+  }
+  .partners-marquee--reverse {
+    animation-duration: 70s;
   }
 }
