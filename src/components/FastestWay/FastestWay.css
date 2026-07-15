@@ -565,12 +565,10 @@
   margin: 0;
 }
 
-
 @media (max-width: 1720px) {
   .fw-inner { width: 100%; padding-left: 60px; padding-right: 60px; }
 }
 
-/* ── Cards stack vertically below 1250px ── */
 @media (max-width: 1250px) and (min-width: 481px) {
   .fw-cards-row {
     flex-direction: column;
@@ -584,7 +582,6 @@
   }
 }
 
-/* ── Mid-desktop (laptops 1280px) ─────────────────────────────── */
 @media (max-width: 1280px) {
   .fw-section { height: auto; padding-bottom: 80px; }
   .fw-inner { margin-top: 100px; gap: 48px; padding-left: 40px; padding-right: 40px; }
@@ -597,7 +594,6 @@
   .fw-para-text { font-size: 17px; }
 }
 
-/* ── Small desktop / large tablet (1024px) ───────────────────── */
 @media (max-width: 1100px) {
   .fw-section { height: auto; padding-bottom: 80px; }
   .fw-inner { margin-top: 80px; }
@@ -665,7 +661,7 @@
   }
   .fw-stat-label-row { display: inline-flex; gap: 8px; }
   .fw-stat-label-wrap { width: auto; }
-  .fw-stat-val { flex: 1 1 auto; min-width: 0; text-align: right; font-size: 28px; }
+  .fw-stat-val { flex: 0 0 auto; margin-left: auto; text-align: right; white-space: nowrap; font-size: 28px; }
   .fw-stat-val--leopay {
     background: linear-gradient(180deg, #00BA85 0%, #037E5B 100%);
     background-clip: text;
@@ -675,109 +671,98 @@
   .fw-stat-desc-wrap { width: 100%; }
   .fw-stat-desc { width: 100%; }
 
-  .fw-others-illustration {
-    position: relative;
-    height: 250px;
-    margin-top: 40px;
-  }
-  .fw-leopay-illustration {
-    position: relative;
-    height: 246px;
-    margin-top: 68px;
-  }
-  .fw-others-globe {
-    left: 0;
-    top: 60px;
-    width: 400px;
-    height: 190px;
-    background: url('./assets/fw-others-globe.png') transparent -8.354px 28.148px / 102.089% 83.258% no-repeat;
-  }
-  .fw-others-flow {
-    left: 30px;
-    top: 0;
-    width: 339.473px;
-    height: 191px;
-    object-fit: contain;
-  }
   .fw-others-illustration--mobile {
     position: relative;
-    height: 250px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 392 / 250;
     margin-top: 64px;
   }
   .fw-others-globe--mobile {
-    left: 0px;
-    top: 60px;
-    width: 400px;
-    height: 190px;
+    left: 0;
+    top: 24%;
+    width: 102.041%;
+    height: auto;
+    aspect-ratio: 400 / 190;
     opacity: 1;
     background: url('./assets/fw-others-globe-mobile.png') transparent center / cover no-repeat;
   }
   .fw-others-flow--mobile {
-    left: 30px;
-    top: 0px;
-    width: 339.473px;
-    height: 191px;
+    left: 7.653%;
+    top: 0;
+    width: 86.601%;
+    height: auto;
+    aspect-ratio: 339.473 / 191;
     object-fit: contain;
   }
 
-  .fw-leopay-globe {
+  .fw-leopay-illustration--mobile {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 392 / 246;
+    margin-top: 68px;
+    container-type: inline-size;
+  }
+  .fw-leopay-globe--mobile {
     left: 0;
-    top: 56px;
-    width: 400px;
-    height: 190px;
-    background: url('./assets/fw-leopay-globe.png') transparent -8.354px 28.148px / 102.089% 83.258% no-repeat;
+    top: 22.764%;
+    width: 102.041%;
+    height: auto;
+    aspect-ratio: 400 / 190;
+    opacity: 1;
+    background: url('./assets/fw-leopay-globe.png') transparent center / cover no-repeat;
   }
-  .fw-leopay-avatar {
-    left: 28px;
-    top: 100px;
-    width: 75.79px;
-    height: 72px;
+  .fw-leopay-illustration--mobile .fw-leopay-avatar {
+    left: 7.143%;
+    top: 40.65%;
+    width: 19.334%;
+    aspect-ratio: 75.79 / 72;
   }
-  .fw-leopay-avatar--right {
-    left: 288px;
-    top: 100px;
+  .fw-leopay-illustration--mobile .fw-leopay-avatar--right {
+    left: 73.469%;
+    top: 40.65%;
   }
-  .fw-leopay-avatar-img {
-    width: 75.79px;
-    height: 72px;
+  .fw-leopay-illustration--mobile .fw-leopay-avatar-shadow {
+    left: 0;
+    top: 55%;
+    width: 104%;
+    height: auto;
   }
-  .fw-leopay-badge {
-    height: 23px;
-    padding: 0 12px;
+  .fw-leopay-illustration--mobile .fw-leopay-center-logo {
+    left: 42.602%;
+    top: 0;
+    width: 17.857%;
+  }
+  .fw-leopay-illustration--mobile .fw-leopay-badge {
+    height: 5.867cqw;
+    padding: 0 0.957cqw;
+    gap: 0.969cqw;
     border-radius: 100px;
     transform: none;
     box-shadow: 0 0 3.2px 0 rgba(6, 6, 18, 0.18) inset;
   }
-  .fw-leopay-badge--left { left: 47px; top: 59px; }
-  .fw-leopay-badge--right { left: 262px; top: 59px; }
-
-  .fw-leopay-illustration--mobile {
-    position: relative;
-    height: 246px;
-    margin-top: 68px;
+  .fw-leopay-illustration--mobile .fw-leopay-badge--left {
+    left: 11.99%;
+    top: 23.984%;
   }
-  .fw-leopay-globe--mobile {
-    left: 0px;
-    top: 56px;
-    width: 400px;
-    height: 190px;
-    opacity: 1;
-    background: url('./assets/fw-leopay-globe.png') transparent center / cover no-repeat;
+  .fw-leopay-illustration--mobile .fw-leopay-badge--right {
+    left: 66.837%;
+    right: auto;
+    top: 23.984%;
   }
-  .fw-leopay-cluster--mobile {
-    position: absolute;
-    left: 28px;
-    top: 0px;
-    width: 335.789px;
-    height: 172px;
-    object-fit: contain;
-    pointer-events: none;
-    user-select: none;
-    z-index: 2;
+  .fw-leopay-illustration--mobile .fw-leopay-badge-connector {
+    width: 0.969cqw;
+    height: 1.633cqw;
+  }
+  .fw-leopay-illustration--mobile .fw-leopay-badge-text {
+    font-size: 2.041cqw;
+    line-height: 2.041cqw;
+    letter-spacing: 0.306cqw;
   }
 
-  .fw-card-wrap { width: 100%; max-width: 400px; min-height: 682px; }
-  .fw-card { width: 100%; max-width: 400px; height: auto; min-height: 658px; border-radius: 32px; overflow: hidden; }
+  .fw-card-wrap { width: 100%; max-width: 400px; }
+  .fw-card { width: 100%; max-width: 400px; height: auto; border-radius: 32px; overflow: hidden; }
   .fw-card--others { border: 4px solid #FFF; background: #FFF; }
   .fw-card--leopay { border: 4px solid #FFF; }
 
