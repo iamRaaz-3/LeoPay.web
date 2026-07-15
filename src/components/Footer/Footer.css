@@ -1,6 +1,3 @@
-/* =====================================================
-   FOOTER DESKTOP
-   ===================================================== */
 
 .footer-desktop {
   width: 100%;
@@ -23,11 +20,6 @@
   display: none;
 }
 
-/* ── Lines layer — all lines absolutely positioned ── */
-/* Positions are relative to footer-inner (1260×762px content box).
-   Figma footer frame origin (10688,8940). footer-inner starts at y=169 of footer frame.
-   x_rel = figma_x - 330 (footer-inner left = x330 in frame)
-   y_rel = figma_y - 8940 - 169 (footer-inner top) */
 .footer-lines {
   position: absolute;
   top: 0;
@@ -44,12 +36,6 @@
   pointer-events: none;
 }
 
-/* Top border — rendered as ::before on top-row (exact Figma: x=0, y=0) */
-
-/* Top border — exact Figma: x=0, y=0, w=1260, h=1, box-shadow: 0 1px 0 0 #FFF */
-/* Section divider — rendered as ::after on top-row (exact Figma: bottom: -0.49px) */
-
-/* Extension lines — rendered within top-row (exact Figma: bottom: -0.49px) */
 .footer-ext {
   position: absolute;
   bottom: -0.49px;
@@ -61,7 +47,6 @@
 .footer-ext--left  { left: -90px; }
 .footer-ext--right { right: -90px; }
 
-/* Vertical borders — rendered within top-row (exact Figma: bottom: -0.48px) */
 .footer-vborder {
   position: absolute;
   bottom: -0.48px;
@@ -74,7 +59,6 @@
 .footer-vborder--left  { left: 0; }
 .footer-vborder--right { right: 0; }
 
-/* Column separators — exact Figma positions, same style as outer borders */
 .fl-sep-brand,
 .fl-sep-home,
 .fl-sep-help {
@@ -86,8 +70,6 @@
 .fl-sep-home  { top: 0; left: 747px; height: 360.48px; }
 .fl-sep-help  { top: 0; left: 973px; height: 360.48px; }
 
-/* Corner dots — 9×9, centered on top-border intersections (y=0 line)
-   Figma: rel=(326,165)→(-4,-4), (1585,165)→(1255,-4), (326,524)→(-4,355), (1585,524)→(1255,355) */
 .fl-dot {
   width: 9px;
   height: 9px;
@@ -104,8 +86,6 @@
 .fl-dot-bl { top: 355px; left: -4px;   }
 .fl-dot-br { top: 355px; left: 1255px; }
 
-
-/* ── TOP ROW ─────────────────────────────────────── */
 .footer-top-row {
   display: flex;
   align-items: flex-start;
@@ -116,7 +96,6 @@
   z-index: 2;
 }
 
-/* Top border — exact Figma: w=1260 h=1, top: 0, box-shadow: 0 1px 0 0 #FFF */
 .footer-top-row::before {
   content: '';
   position: absolute;
@@ -129,7 +108,6 @@
   pointer-events: none;
 }
 
-/* Section divider — exact Figma: w=1260 h=1, bottom: -0.49px, box-shadow: 0 1px 0 0 #FFF */
 .footer-top-row::after {
   content: '';
   position: absolute;
@@ -142,7 +120,6 @@
   pointer-events: none;
 }
 
-/* ── Brand column ─────────────────────────────────── */
 .footer-brand-outer {
   display: flex;
   width: 462px;
@@ -154,7 +131,6 @@
   box-sizing: border-box;
   position: relative;
 }
-
 
 .footer-brand-inner {
   display: flex;
@@ -258,7 +234,6 @@
 
 .footer-company-email:hover { color: #000000; }
 
-/* ── Nav columns ─────────────────────────────────── */
 .footer-col {
   display: flex;
   flex-direction: column;
@@ -270,7 +245,6 @@
   position: relative;
   min-width: 0;
 }
-
 
 .footer-col-heading {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
@@ -316,7 +290,6 @@
   font-weight: 500;
 }
 
-/* Social icons */
 .footer-social-icons {
   display: flex;
   align-items: center;
@@ -357,7 +330,6 @@
 
 .footer-legal-link:hover { color: #000000; }
 
-/* ── Logo footer — Figma: Leopay logo footer 1260×402 ── */
 .footer-logo-footer {
   width: 100%;
   height: 402px;
@@ -368,7 +340,6 @@
   z-index: 2;
 }
 
-/* Left border — matches right border exactly */
 .footer-logo-footer::before {
   content: '';
   position: absolute;
@@ -381,7 +352,6 @@
   z-index: 3;
 }
 
-/* Right border — no shadow (shadow clips in overflow:hidden), pure 1px line */
 .footer-logo-footer::after {
   content: '';
   position: absolute;
@@ -394,7 +364,6 @@
   z-index: 3;
 }
 
-/* Legal row — Figma: Container 1260×62, links right-aligned at 60px from right */
 .footer-logo-footer-legal {
   display: flex;
   align-items: center;
@@ -409,19 +378,22 @@
 }
 
 .footer-watermark-img {
-  width: min(100%, 100vw);
+  width: 93.601%;
   max-width: 100%;
   min-width: 0;
   height: auto;
   display: block;
-  margin: -25px auto 0;
+  margin: -2.13px auto 0;
   user-select: none;
   pointer-events: none;
 }
 
-/* ── Responsive ──────────────────────────────────── */
-@media (max-width: 1260px) {
-  .footer-desktop { padding-top: 80px; padding-bottom: 80px; }
+@media (max-width: 1280px) {
+  .footer-desktop {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    overflow: visible;
+  }
   .footer-top-row::before,
   .footer-top-row::after { width: 100%; }
   .footer-top-row { flex-wrap: wrap; height: auto; }
@@ -430,14 +402,19 @@
   .footer-ext { display: none; }
   .footer-logo-footer-legal { padding: 0 40px; }
   .footer-logo-footer {
+    width: 100vw;
     height: auto;
     overflow: visible;
+    position: relative;
+    left: calc((100% - 100vw) / 2);
+    margin: 0;
   }
   .footer-watermark-img {
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-top: 20px;
+    margin: 20px 0 0 0;
+    display: block;
   }
 }
 
@@ -462,7 +439,8 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-top: 16px;
+    margin: 16px 0 0 0;
+    display: block;
   }
 }
 
@@ -484,7 +462,13 @@
     padding: 0 24px;
     gap: 20px;
   }
-  .footer-watermark-img { margin-top: 12px; }
+  .footer-watermark-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 12px 0 0 0;
+    display: block;
+  }
 }
 
 @media (max-width: 480px) {
@@ -493,7 +477,13 @@
   .footer-top-row { padding: 0 16px; }
   .footer-col { width: 100%; flex: none; }
   .footer-logo-footer-legal { padding: 0 16px; flex-wrap: wrap; height: auto; padding-top: 16px; padding-bottom: 16px; }
-  .footer-watermark-img { margin-top: 8px; }
+  .footer-watermark-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 8px 0 0 0;
+    display: block;
+  }
 
   .footer-lines,
   .footer-top-row,
@@ -673,7 +663,6 @@
       0 1.757px 1.757px 0 rgba(0, 0, 0, 0.05),
       0 0.586px 0.586px 0 rgba(0, 0, 0, 0.12);
   }
-
 
   .footer-mobile-watermark-section {
     padding-top: 4px;
