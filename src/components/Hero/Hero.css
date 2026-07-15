@@ -1239,8 +1239,8 @@
     height: clamp(8px, 2.363vw, 10.16px);
   }
 
-  .hero__txn-label { width: clamp(47px, 14.03vw, 60.33px); }
-  .hero__txn-label--left { width: clamp(49px, 14.767vw, 63.5px); }
+  .hero__txn-label { width: clamp(47px, 14.03vw, 60.33px); min-width: 0; }
+  .hero__txn-label--left { width: clamp(49px, 14.767vw, 63.5px); min-width: 0; }
 
   .hero__txn-bold,
   .hero__txn-light {
