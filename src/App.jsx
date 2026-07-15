@@ -3,7 +3,6 @@ import Navbar from './components/Navbar/Navbar.jsx'
 import Hero from './components/Hero/Hero.jsx'
 import Ticker from './components/Ticker/Ticker.jsx'
 import FastestWay from './components/FastestWay/FastestWay.jsx'
-import Partners from './components/Partners/Partners.jsx'
 import Features from './components/Features/Features.jsx'
 import Comparison from './components/Comparison/Comparison.jsx'
 import GlobalPresence from './components/GlobalPresence/GlobalPresence.jsx'
@@ -17,7 +16,6 @@ const Landing = () => (
     <Navbar />
     <Hero />
     <Ticker />
-    <Partners />
     <FastestWay />
     <Comparison />
     <Features />
