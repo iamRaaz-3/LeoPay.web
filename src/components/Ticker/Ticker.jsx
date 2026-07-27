@@ -4,7 +4,7 @@ const ITEMS = [
   'Fastest Settlement',
   '20+ Countries',
   '10+ Currencies',
-  'Low Fees',
+  'Lowest Fees',
   'Stablecoin Powered',
   '24/7 Support',
   'Best Rates',
