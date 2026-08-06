@@ -1,0 +1,295 @@
+.cbr-bvisual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: #EAF3F5;
+  overflow: hidden;
+}
+
+/* Settlement */
+
+.cbr-bvisual__settle-stripe {
+  position: absolute;
+  left: -3%;
+  width: 106%;
+  height: 15.7%;
+  background: #E4FAED;
+}
+
+.cbr-bvisual__settle-stripe--1 {
+  top: 31.9%;
+}
+
+.cbr-bvisual__settle-stripe--2 {
+  top: 53.8%;
+}
+
+.cbr-bvisual__settle-notes {
+  position: absolute;
+  left: 9.16%;
+  top: 33.33%;
+  width: 31.8%;
+  transform: rotate(-19.35deg);
+  transform-origin: center;
+}
+
+.cbr-bvisual__settle-notes img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cbr-bvisual__notif {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 7.405px 11.107px;
+  background: #FFFFFF;
+  border: 0.926px solid rgba(82, 88, 112, 0.08);
+  border-radius: 11.107px;
+  box-shadow: 0 3.702px 11.107px 0 rgba(82, 88, 112, 0.04);
+  box-sizing: border-box;
+}
+
+.cbr-bvisual__notif--1 {
+  left: 44.44%;
+  top: 20%;
+  width: 43.89%;
+  height: 19.3%;
+  transform: rotate(-8.76deg);
+}
+
+.cbr-bvisual__notif--2 {
+  left: 45.94%;
+  top: 59.2%;
+  width: 41.06%;
+  height: 19.3%;
+  transform: rotate(6.418deg);
+}
+
+.cbr-bvisual__notif-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 6px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #00BA85;
+  color: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.cbr-bvisual__notif-label {
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+/* Transfer */
+
+.cbr-bvisual__transfer-card {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 16px;
+  bottom: 16px;
+  padding: 14px 16px;
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(32, 41, 76, 0.06);
+  box-sizing: border-box;
+}
+
+.cbr-bvisual__transfer-head {
+  display: flex;
+  flex-direction: column;
+}
+
+.cbr-bvisual__transfer-title {
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.cbr-bvisual__transfer-sub {
+  color: #8892A6;
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.cbr-bvisual__transfer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding: 8px 10px;
+  background: #F6F9FC;
+  border-radius: 10px;
+}
+
+.cbr-bvisual__transfer-row-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #525870;
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.cbr-bvisual__transfer-coin {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.cbr-bvisual__transfer-amount {
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Liquidity */
+
+.cbr-bvisual__liquidity-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(32, 41, 76, 0.08);
+  transform: translate(-50%, -50%);
+}
+
+.cbr-bvisual__spinner {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 3px solid #E0F4EF;
+  border-top-color: #3DCB83;
+}
+
+.cbr-bvisual__liquidity-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.cbr-bvisual__liquidity-label {
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.cbr-bvisual__liquidity-sub {
+  color: #8892A6;
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.cbr-bvisual__liquidity-done {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 4px;
+  padding: 3px 8px;
+  background: #E6FBED;
+  border-radius: 100px;
+  color: #1EA860;
+  font-family: 'Geist', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* Transaction history */
+
+.cbr-bvisual__history-card {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 16px;
+  bottom: 16px;
+  padding: 14px 16px;
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(32, 41, 76, 0.06);
+  box-sizing: border-box;
+}
+
+.cbr-bvisual__history-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cbr-bvisual__history-time {
+  color: #8892A6;
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.cbr-bvisual__history-status {
+  padding: 3px 8px;
+  background: #E6FBED;
+  border-radius: 100px;
+  color: #1EA860;
+  font-family: 'Geist', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.cbr-bvisual__history-name {
+  margin-top: 10px;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cbr-bvisual__history-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #EEF2F6;
+}
+
+.cbr-bvisual__history-stat-label {
+  display: block;
+  color: #8892A6;
+  font-family: 'Geist', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.cbr-bvisual__history-stat-value {
+  display: block;
+  margin-top: 2px;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}

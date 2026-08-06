@@ -1,0 +1,48 @@
+.btn-api-docs {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-api-docs__visual {
+  display: flex;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 8.01px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.50);
+  position: relative;
+}
+
+.btn-api-docs__border {
+  position: absolute;
+  width: 122.85px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid #FFF;
+  pointer-events: none;
+}
+
+.btn-api-docs__label {
+  color: #000;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.2px;
+  letter-spacing: 0.2px;
+}
+
+.btn-api-docs__icon {
+  display: flex;
+  padding: 6px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  background: #FFF;
+}

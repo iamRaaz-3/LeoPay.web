@@ -1,0 +1,291 @@
+.cbr-hero {
+  position: relative;
+  width: 100%;
+  background: #FFF;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.cbr-hero__inner {
+  position: relative;
+  width: 1920px;
+  height: 872px;
+  flex-shrink: 0;
+  margin: 0 auto;
+  background: url('../shared/assets/product-hero-bg.jpg') center top / cover no-repeat #FFF;
+}
+
+.cbr-hero__inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #ECF5FC 0%, rgba(204, 242, 231, 0.80) 154.93%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.cbr-hero__glow {
+  position: absolute;
+  left: 72px;
+  top: 122px;
+  width: 818px;
+  height: 627px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  filter: blur(100.1px);
+  pointer-events: none;
+}
+
+.cbr-hero__stage {
+  position: absolute;
+  left: 204px;
+  top: 175px;
+  width: 1532px;
+  height: 578px;
+}
+
+.cbr-hero__content {
+  position: absolute;
+  left: 0;
+  top: 78px;
+  width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.cbr-hero__badge-wrap {
+  display: flex;
+  height: 53px;
+  padding: 4px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.cbr-hero__badge {
+  display: flex;
+  width: 153px;
+  height: 32px;
+  padding: 10.415px 18px 10.585px 18.5px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  background: #162755;
+  border-radius: 8px;
+  color: #FFF;
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.cbr-hero__title {
+  margin: 0;
+  color: #060612;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 77px;
+  letter-spacing: -2.1px;
+}
+
+.cbr-hero__title-line {
+  display: block;
+}
+
+.cbr-hero__title-line:nth-child(2) {
+  font-weight: 400;
+}
+
+.cbr-hero__desc {
+  margin: 0;
+  width: 636px;
+  color: #505670;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.2px;
+}
+
+.cbr-hero__buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18.5px 0;
+}
+
+
+
+
+.cbr-hero__visual {
+  position: absolute;
+  left: 756px;
+  top: 0;
+  width: 776px;
+  height: 578px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Bank visual variant ─────────────────────────────────── */
+
+.cbr-hero__visual--bank {
+  left: 706px;
+  width: 650px;
+  height: 578px;
+}
+
+.cbr-hero__bank-img {
+  position: absolute;
+  left: 6.45%;
+  top: 0;
+  width: 88.97%;
+  height: auto;
+}
+
+.cbr-hero__bank-card {
+  position: absolute;
+  height: auto;
+}
+
+.cbr-hero__bank-card--sending {
+  left: -1.99%;
+  top: 32.11%;
+  width: 39.81%;
+}
+
+.cbr-hero__bank-card--received {
+  left: 62.09%;
+  top: 17.28%;
+  width: 40.71%;
+}
+
+@media (max-width: 1824px) {
+  .cbr-hero__inner {
+    zoom: 0.95;
+  }
+}
+
+@media (max-width: 1728px) {
+  .cbr-hero__inner {
+    zoom: 0.9;
+  }
+}
+
+@media (max-width: 1632px) {
+  .cbr-hero__inner {
+    zoom: 0.85;
+  }
+}
+
+@media (max-width: 1536px) {
+  .cbr-hero__inner {
+    zoom: 0.8;
+  }
+}
+
+@media (max-width: 1440px) {
+  .cbr-hero__inner {
+    zoom: 0.75;
+  }
+}
+
+@media (max-width: 1344px) {
+  .cbr-hero__inner {
+    zoom: 0.7;
+  }
+}
+
+@media (max-width: 1248px) {
+  .cbr-hero__inner {
+    zoom: 0.65;
+  }
+}
+
+@media (max-width: 1152px) {
+  .cbr-hero__inner {
+    zoom: 0.6;
+  }
+}
+
+@media (max-width: 1056px) {
+  .cbr-hero__inner {
+    zoom: 0.55;
+  }
+}
+
+@media (max-width: 960px) {
+  .cbr-hero__inner {
+    zoom: 0.5;
+  }
+}
+
+@media (max-width: 900px) {
+  .cbr-hero__stage {
+    display: contents;
+  }
+  .cbr-hero__inner {
+    zoom: 1;
+    width: 100%;
+    height: auto;
+    padding: 140px 24px 60px;
+    box-sizing: border-box;
+  }
+  .cbr-hero__glow {
+    left: 0;
+    top: 90px;
+    width: 100%;
+    height: 400px;
+  }
+  .cbr-hero__content {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 620px;
+  }
+  .cbr-hero__visual {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin: 48px auto 0;
+    width: 340px;
+    height: 333px;
+  }
+  .cbr-hero__visual--bank {
+    width: 340px;
+    height: 302px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cbr-hero__inner {
+    padding: 126px 35px 60px;
+  }
+  .cbr-hero__title {
+    font-family: 'Britti Sans Trial', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 44.8px;
+    letter-spacing: -1.2px;
+  }
+  .cbr-hero__desc {
+    width: 100%;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .cbr-hero__visual {
+    margin-top: 44px;
+  }
+}

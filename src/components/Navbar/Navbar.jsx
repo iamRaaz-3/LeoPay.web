@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import iconPayouts from './assets/nav-icon-payouts.svg';
 import iconRemittance from './assets/nav-icon-remittance.svg';
@@ -12,12 +13,14 @@ const ChevronIcon = () => (
   </svg>
 );
 
+const prefetchProductPage = () => import('../../pages/products/ProductPage.jsx');
+
 const PRODUCT_ITEMS = [
-  { icon: iconPayouts,    title: 'Global Payouts',                  desc: 'Send Payments Across Borders in Seconds' },
-  { icon: iconRemittance, title: 'Cross-Border Remittance',         desc: 'Faster International Transfers, Lower Costs' },
+  { icon: iconPayouts,    title: 'Global Payouts',                  desc: 'Send Payments Across Borders in Seconds', to: '/products/global-payouts' },
+  { icon: iconRemittance, title: 'Cross-Border Remittance',         desc: 'Faster International Transfers, Lower Costs', to: '/products/cross-border-remittance' },
   { icon: iconPobo,       title: 'POBO / COBO',                     desc: 'Simplify Global Payment Operations' },
   { icon: iconTreasury,   title: 'Treasury & Liquidity Management', desc: 'Optimize Global Cash Flow' },
-  { icon: iconAccounts,   title: 'Virtual Accounts',                desc: 'Streamline Collections and Reconciliation' },
+  { icon: iconAccounts,   title: 'Virtual Accounts',                desc: 'Streamline Collections and Reconciliation', to: '/products/virtual-accounts' },
 ];
 
 const NAV_LINKS = [
@@ -34,12 +37,22 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [dropdownMounted, setDropdownMounted] = useState(false);
   const navRef = useRef(null);
   const closeTimer = useRef(null);
 
+  const revealProducts = (next) => {
+    if (!dropdownMounted) {
+      setDropdownMounted(true);
+      requestAnimationFrame(() => requestAnimationFrame(() => setProductsOpen(next)));
+    } else {
+      setProductsOpen(next);
+    }
+  };
+
   const openProducts = () => {
     clearTimeout(closeTimer.current);
-    setProductsOpen(true);
+    revealProducts(true);
   };
 
   const closeProductsDelayed = () => {
@@ -112,7 +125,7 @@ const Navbar = () => {
         <ul className={`navbar-links${menuOpen ? ' open' : ''}`}>
           <li
             className={`nav-item-dropdown${productsOpen ? ' open' : ''}`}
-            onMouseEnter={() => canHover() && openProducts()}
+            onMouseEnter={() => { if (canHover()) { openProducts(); prefetchProductPage(); } }}
             onMouseLeave={() => canHover() && closeProductsDelayed()}
           >
             <a
@@ -122,25 +135,38 @@ const Navbar = () => {
               aria-expanded={productsOpen}
               onClick={(e) => {
                 e.preventDefault();
-                setProductsOpen(v => !v);
+                revealProducts(!productsOpen);
               }}
             >
               <span className="nav-link-label" data-label="Products">Products</span>
               <ChevronIcon />
             </a>
+            {dropdownMounted && (
             <div className="nav-dropdown">
-              {PRODUCT_ITEMS.map(item => (
-                <a key={item.title} href="#" className="nav-dropdown-item" onClick={closeAll}>
-                  <span className="nav-dropdown-icon">
-                    <img src={item.icon} alt="" aria-hidden="true" />
-                  </span>
-                  <span className="nav-dropdown-texts">
-                    <span className="nav-dropdown-title">{item.title}</span>
-                    <span className="nav-dropdown-desc">{item.desc}</span>
-                  </span>
-                </a>
-              ))}
+              {PRODUCT_ITEMS.map(item => {
+                const inner = (
+                  <>
+                    <span className="nav-dropdown-icon">
+                      <img src={item.icon} alt="" aria-hidden="true" />
+                    </span>
+                    <span className="nav-dropdown-texts">
+                      <span className="nav-dropdown-title">{item.title}</span>
+                      <span className="nav-dropdown-desc">{item.desc}</span>
+                    </span>
+                  </>
+                );
+                return item.to ? (
+                  <Link key={item.title} to={item.to} className="nav-dropdown-item" onClick={closeAll} onMouseEnter={prefetchProductPage}>
+                    {inner}
+                  </Link>
+                ) : (
+                  <a key={item.title} href="#" className="nav-dropdown-item" onClick={closeAll}>
+                    {inner}
+                  </a>
+                );
+              })}
             </div>
+            )}
           </li>
           {NAV_LINKS.filter(link => link.label !== 'Products').map(link => (
             <li key={link.label}>
