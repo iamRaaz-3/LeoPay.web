@@ -1,9 +1,9 @@
 import './Hero.css';
-import heroBank from './assets/hero-bank.png';
-import cardSending from './assets/hero-card-sending.png';
-import cardReceived from './assets/hero-card-received.png';
-import GetStartedButton from '../../buttons/GetStartedButton/GetStartedButton.jsx';
-import ApiDocsButton from '../../buttons/ApiDocsButton/ApiDocsButton.jsx';
+import bankIcon from './assets/Group 2085663050 (1).png';
+import sendingPill from './assets/sending-pill.png';
+import receivedPill from './assets/received-pill.png';
+import GetStartedButton from '../../../buttons/GetStartedButton/GetStartedButton.jsx';
+import ApiDocsButton from '../../../buttons/ApiDocsButton/ApiDocsButton.jsx';
 
 const BadgeIconLeft = () => (
   <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,9 +43,26 @@ const Hero = () => (
       </div>
 
       <div className="cbr-hero__visual cbr-hero__visual--bank" aria-hidden="true">
-        <img src={heroBank} alt="" className="cbr-hero__bank-img" />
-        <img src={cardSending} alt="" className="cbr-hero__bank-card cbr-hero__bank-card--sending" />
-        <img src={cardReceived} alt="" className="cbr-hero__bank-card cbr-hero__bank-card--received" />
+        <img src={bankIcon} alt="" className="cbr-hero__bank-img" />
+        <div className="cbr-hero__card">
+          <p className="cbr-hero__card-title">
+            <span className="cbr-hero__card-title-line cbr-hero__card-title-line--bold">Received in</span>
+            <span className="cbr-hero__card-title-line">Seconds</span>
+          </p>
+          <div className="cbr-hero__pill-received">
+            <img src={receivedPill} alt="" className="cbr-hero__pill-received-img" />
+          </div>
+        </div>
+
+        <div className="cbr-hero__card cbr-hero__card--sending">
+          <p className="cbr-hero__card-title">
+            <span className="cbr-hero__card-title-line cbr-hero__card-title-line--bold">Sending via</span>
+            <span className="cbr-hero__card-title-line">Leopay</span>
+          </p>
+          <div className="cbr-hero__pill-sending">
+            <img src={sendingPill} alt="" className="cbr-hero__pill-sending-img" />
+          </div>
+        </div>
       </div>
       </div>
     </div>

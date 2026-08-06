@@ -1,10 +1,10 @@
 import './Audience.css';
-import icoRemittance from '../shared/assets/aud-remittance.png';
-import icoEnterprises from '../shared/assets/aud-enterprises.png';
-import icoPayroll from '../shared/assets/aud-payroll.png';
-import icoMarketplaces from '../shared/assets/aud-marketplaces.png';
-import icoFintechs from '../shared/assets/aud-fintechs.png';
-import icoExchanges from '../shared/assets/aud-exchanges.png';
+import icoRemittance from '../../shared/assets/aud-remittance.png';
+import icoEnterprises from '../../shared/assets/aud-enterprises.png';
+import icoPayroll from '../../shared/assets/aud-payroll.png';
+import icoMarketplaces from '../../shared/assets/aud-marketplaces.png';
+import icoFintechs from '../../shared/assets/aud-fintechs.png';
+import icoExchanges from '../../shared/assets/aud-exchanges.png';
 
 const cards = [
   { icon: icoRemittance, title: 'Remittance Companies', desc: 'Deliver cross-border money transfers with stablecoin-powered settlement and local payouts.' },
