@@ -2,10 +2,10 @@ import './Benefits.css';
 import { SettlementVisual, TransferCostVisual, LiquidityVisual, TransactionHistoryVisual } from '../BenefitVisuals/BenefitVisuals.jsx';
 
 const cards = [
-  { visual: <SettlementVisual />, title: 'Instant Settlement', desc: 'Deliver faster remittance through real-time settlement.' },
+  { visual: <SettlementVisual />, title: 'Instant Settlement', desc: 'Deliver faster remittance through real‑time settlement.' },
   { visual: <TransferCostVisual />, title: 'Reduced Transfer Costs', desc: 'Reduce remittance costs with optimized payment settlements.' },
   { visual: <LiquidityVisual />, title: 'Better Liquidity Management', desc: 'Access liquidity faster with streamlined settlement and fund movement.' },
-  { visual: <TransactionHistoryVisual />, title: 'Transparent Transactions', desc: 'Monitor transactions with real-time settlement visibility.' },
+  { visual: <TransactionHistoryVisual />, title: 'Transparent Transactions', desc: 'Monitor transactions with real‑time settlement visibility.' },
 ];
 
 const Benefits = () => (

@@ -1,7 +1,10 @@
 import './BenefitVisuals.css';
 import coinUsdc from '../../shared/assets/coin-usdc.svg';
 import flagUs from '../../shared/assets/flag-us.svg';
+import flagPh from '../../shared/assets/flag-ph.svg';
+import iconBank from '../../shared/assets/icon-bank.svg';
 import settlementNotes from './assets/settlement-notes.svg';
+import avatarAlbert from './assets/Frame 2085662928.png';
 
 const ClockIcon = () => (
   <svg viewBox="0 0 16 16" fill="none" width="100%" height="100%">
@@ -17,15 +20,156 @@ const ClockIcon = () => (
   </svg>
 );
 
-const PinIcon = () => (
-  <svg viewBox="0 0 16 16" fill="none" width="100%" height="100%">
-    <path d="M8 14.5S13 10 13 6.5C13 3.74 10.76 1.5 8 1.5S3 3.74 3 6.5C3 10 8 14.5 8 14.5Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
-    <circle cx="8" cy="6.5" r="1.8" stroke="currentColor" strokeWidth="1.4" />
+const DashArrowIcon = () => (
+  <svg viewBox="0 0 13 6" fill="none" xmlns="http://www.w3.org/2000/svg" className="cbr-bvisual__transfer-pill-dash">
+    <path d="M0.357422 2.27867H-0.000626951V2.99477H0.357422V2.63672V2.27867ZM12.0682 2.8899C12.208 2.75007 12.208 2.52337 12.0682 2.38354L9.78955 0.104931C9.64973 -0.0348957 9.42302 -0.0348957 9.2832 0.104931C9.14337 0.244758 9.14337 0.471462 9.2832 0.611289L11.3086 2.63672L9.2832 4.66215C9.14337 4.80198 9.14337 5.02868 9.2832 5.16851C9.42302 5.30833 9.64973 5.30833 9.78955 5.16851L12.0682 2.8899ZM0.357422 2.63672V2.99477H0.715471V2.63672V2.27867H0.357422V2.63672ZM1.43157 2.63672V2.99477H2.14767V2.63672V2.27867H1.43157V2.63672ZM2.86376 2.63672V2.99477H3.57986V2.63672V2.27867H2.86376V2.63672ZM4.29596 2.63672V2.99477H5.01206V2.63672V2.27867H4.29596V2.63672ZM5.72815 2.63672V2.99477H6.44425V2.63672V2.27867H5.72815V2.63672ZM7.16035 2.63672V2.99477H7.87645V2.63672V2.27867H7.16035V2.63672ZM8.59255 2.63672V2.99477H9.30864V2.63672V2.27867H8.59255V2.63672ZM10.0247 2.63672V2.99477H10.7408V2.63672V2.27867H10.0247V2.63672ZM11.4569 2.63672V2.99477H11.815V2.63672V2.27867H11.4569V2.63672Z" fill="#6D8599"/>
+  </svg>
+);
+
+const UsdcCoin = () => (
+  <svg viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" className="cbr-bvisual__liquidity-coin cbr-bvisual__liquidity-coin--usdc">
+    <rect x="7.53132" y="-0.655349" width="21" height="21" rx="10.5" transform="rotate(22.942 7.53132 -0.655349)" stroke="white"/>
+    <path d="M9.2099 22.316C14.3132 24.4761 20.1567 22.1083 22.3169 17.005C24.477 11.9016 22.1092 6.05814 17.0059 3.89799C11.9025 1.73784 6.05903 4.10565 3.89889 9.209C1.73874 14.3124 4.10655 20.1558 9.2099 22.316Z" fill="#2775CA"/>
+    <path d="M15.024 15.6368C15.5924 14.2939 14.9815 13.4924 13.4512 12.6184C12.365 11.9776 12.2647 11.5732 12.4921 11.036C12.7195 10.4987 13.2494 10.3159 14.0168 10.6407C14.7075 10.9331 14.9938 11.3257 14.9419 11.9825C14.9316 12.1139 15.0143 12.2393 15.1294 12.288L15.7433 12.5479C15.8968 12.6128 16.0606 12.5464 16.1255 12.393L16.1418 12.3546C16.3456 11.4455 15.931 10.5008 15.081 10.0506L15.4708 9.12968C15.5358 8.97616 15.4694 8.81233 15.2938 8.69273L14.7183 8.44911C14.5648 8.38413 14.4009 8.45051 14.2813 8.62618L13.9077 9.50867C12.6916 9.17494 11.6378 9.63376 11.2318 10.5931C10.6958 11.8593 11.2521 12.6829 12.7824 13.5569C13.7756 14.2035 14.0235 14.5799 13.7636 15.1939C13.5038 15.8079 12.7879 16.0025 12.0589 15.6939C11.0612 15.2716 10.8945 14.7033 11.023 14.079C11.0497 13.9094 10.9671 13.7839 10.8519 13.7351L10.1996 13.459C10.0462 13.3941 9.88232 13.4605 9.81734 13.614L9.80109 13.6524C9.5485 14.6765 9.87011 15.6271 11.0551 16.355L10.6653 17.2759C10.6004 17.4293 10.6668 17.5931 10.8423 17.7127L11.4179 17.9563C11.5714 18.0213 11.7352 17.9549 11.8548 17.7794L12.2446 16.8585C13.477 17.1538 14.5855 16.6728 15.024 15.6368Z" fill="white"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M8.53175 8.95276C6.1683 11.4363 6.29014 15.4243 8.82833 17.7655C8.91093 17.891 8.9611 18.0931 8.91238 18.2082L8.68497 18.7455C8.6525 18.8222 8.63625 18.8606 8.58163 18.8827C8.47834 19.02 8.29236 19.0317 8.17131 18.89C6.31493 17.2898 5.36335 14.9414 5.58219 12.5003C5.97401 8.3679 9.60975 5.33696 13.7422 5.72877C13.7968 5.70672 13.8735 5.73919 13.9119 5.75544C14.0492 5.85873 14.0772 6.00631 14.0122 6.15983L13.7849 6.69699C13.7036 6.88891 13.5782 6.97155 13.3922 6.98328C11.5754 6.89295 9.78946 7.58481 8.53175 8.95276ZM17.5527 7.52272C17.656 7.38542 17.842 7.37369 17.9631 7.51538C19.781 9.09932 20.771 11.4639 20.5359 13.9434C20.1441 18.0759 16.5084 21.1068 12.3759 20.715C12.3213 20.7371 12.2446 20.7046 12.2062 20.6883C12.0689 20.585 12.0409 20.4375 12.1059 20.284L12.3332 19.7468C12.4145 19.5549 12.5399 19.4722 12.7259 19.4605C14.5427 19.5508 16.3287 18.859 17.5864 17.491C19.9498 15.0074 19.828 11.0195 17.2898 8.67833C17.2072 8.5528 17.157 8.35065 17.222 8.19714L17.4494 7.65998C17.4819 7.58317 17.4981 7.54486 17.5527 7.52272Z" fill="white"/>
+  </svg>
+);
+
+const UsdtCoin = () => (
+  <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="cbr-bvisual__liquidity-coin cbr-bvisual__liquidity-coin--usdt">
+    <rect x="-0.641935" y="6.61193" width="21" height="21" rx="10.5" transform="rotate(-20.2076 -0.641935 6.61193)" stroke="white"/>
+    <path d="M22.7759 11.7587C23.373 17.2475 19.4072 22.1814 13.9177 22.7784C8.43043 23.375 3.49646 19.4089 2.90003 13.9203C2.30215 8.43114 6.26788 3.49706 11.7557 2.90028C17.2447 2.30307 22.1787 6.26982 22.7758 11.7589L22.7758 11.7588L22.7759 11.7587Z" fill="#50AF95"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M14.4173 13.4657C14.3528 13.4951 14.0174 13.6417 13.2527 13.9232C12.6444 14.1471 12.2058 14.2878 12.0517 14.3364C9.66292 15.0982 7.75772 15.3348 7.57738 14.8449C7.39705 14.355 9.00122 13.3005 11.3132 12.3302L11.9017 13.9288C12.0595 13.8833 12.5092 13.7473 13.1175 13.5234C13.8474 13.2547 14.2017 13.0898 14.2653 13.0595L13.677 11.4614C16.0612 10.7025 17.9626 10.4673 18.1425 10.9561C18.3224 11.445 16.7229 12.4983 14.4149 13.4659L14.4173 13.4657ZM13.6184 11.2952L13.0919 9.8647L16.3654 8.65976L15.5625 6.47828L6.64968 9.75889L7.45263 11.9404L10.7257 10.7356L11.252 12.1656C8.63666 13.267 6.82997 14.5304 7.06241 15.1619C7.29485 15.7934 9.48927 15.5834 12.1948 14.727L13.8821 19.3111L16.2478 18.4404L14.5598 13.8546C17.1691 12.7554 18.9727 11.4938 18.7404 10.8629C18.5082 10.2319 16.3188 10.4401 13.6176 11.2949L13.6184 11.2952Z" fill="white"/>
+  </svg>
+);
+
+const FlagUsRing = () => (
+  <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="cbr-bvisual__liquidity-flag cbr-bvisual__liquidity-flag--us">
+    <g clipPath="url(#cbr-liq-flag-us)">
+      <path d="M15.8323 22.1401C21.0694 20.3867 23.8935 14.7198 22.1401 9.48265C20.3867 4.24553 14.7198 1.42141 9.48265 3.17481C4.24553 4.9282 1.42141 10.5951 3.17481 15.8323C4.9282 21.0694 10.5951 23.8935 15.8323 22.1401Z" fill="#F0F0F0"/>
+      <path d="M12.2462 12.796L22.1411 9.48318C21.8546 8.6273 21.4629 7.83636 20.9862 7.1188L11.418 10.3223L12.2462 12.796Z" fill="#D80027"/>
+      <path d="M10.5899 7.84778L19.0931 5.00092C18.1954 4.24803 17.1729 3.65927 16.0768 3.25973L9.76172 5.37403L10.5899 7.84778Z" fill="#D80027"/>
+      <path d="M15.8332 22.1399C18.0649 21.3927 19.8579 19.9346 21.0458 18.1022L9.24023 22.0547C11.292 22.8025 13.6015 22.887 15.8332 22.1399Z" fill="#D80027"/>
+      <path d="M6.22342 20.3134L22.4051 14.8958C22.6165 13.9793 22.6997 13.0271 22.642 12.0654L4.33008 18.1963C4.86311 18.9988 5.50281 19.709 6.22342 20.3134Z" fill="#D80027"/>
+      <path d="M4.88833 6.35983L5.75247 6.07052L5.14418 6.92359L5.76757 7.76569L4.7683 7.45083L4.16004 8.30389L4.15197 7.39881C3.64162 8.22527 3.25256 9.12363 2.99904 10.0643L3.27593 9.97164L2.88872 10.5147C2.85353 10.6743 2.82231 10.835 2.79494 10.9966L3.29103 11.6668L2.72431 11.4882C2.69138 11.7662 2.66992 12.0464 2.66066 12.3282L3.20724 13.0666L4.20077 12.734L3.59247 13.5871L4.21586 14.4292L3.21659 14.1143L2.85224 14.6253C2.93375 15.0288 3.04073 15.4318 3.17481 15.8323L12.6575 12.6575C10.9041 7.42037 10.6974 6.80296 9.48265 3.17481C7.60938 3.80198 6.04506 4.93003 4.88833 6.35983ZM7.61724 13.2904L6.61797 12.9755L6.00971 13.8286L6.0004 12.7809L5.00109 12.466L5.99462 12.1334L5.98526 11.0857L6.60862 11.9278L7.60215 11.5952L6.99386 12.4483L7.61724 13.2904ZM6.06902 9.68593L6.69241 10.528L5.69313 10.2132L5.08488 11.0662L5.07556 10.0185L4.07625 9.7037L5.06978 9.37106L5.06043 8.32338L5.68378 9.16549L6.67731 8.83286L6.06902 9.68593ZM11.0186 12.1516L10.0193 11.8367L9.41109 12.6898L9.40178 11.6421L8.40247 11.3272L9.396 10.9946L9.38665 9.94693L10.01 10.789L11.0035 10.4564L10.3952 11.3095L11.0186 12.1516ZM9.4704 8.54714L10.0938 9.38924L9.09451 9.07438L8.48626 9.92744L8.47694 8.87975L7.47763 8.56491L8.47116 8.23227L8.46181 7.18459L9.08516 8.0267L10.0787 7.69407L9.4704 8.54714ZM8.54556 5.7848L9.16895 6.6269L8.16968 6.31204L7.56142 7.1651L7.55211 6.11741L6.55279 5.80257L7.54632 5.46993L7.53697 4.42225L8.16033 5.26436L9.15385 4.93173L8.54556 5.7848Z" fill="#0052B4"/>
+    </g>
+    <rect x="-0.632873" y="6.03422" width="21" height="21" rx="10.5" transform="rotate(-18.5106 -0.632873 6.03422)" stroke="white"/>
+    <defs>
+      <clipPath id="cbr-liq-flag-us">
+        <rect y="6.34961" width="20" height="20" rx="10" transform="rotate(-18.5106 0 6.34961)" fill="white"/>
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+const FlagPhRing = () => (
+  <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" className="cbr-bvisual__liquidity-flag cbr-bvisual__liquidity-flag--ph">
+    <g clipPath="url(#cbr-liq-flag-ph)">
+      <path d="M9.6781 21.873C15.0232 23.263 20.483 20.0568 21.873 14.7117C23.263 9.36668 20.0568 3.90683 14.7117 2.51682C9.36668 1.12682 3.90683 4.33303 2.51682 9.6781C1.12682 15.0232 4.33303 20.483 9.6781 21.873Z" fill="#F0F0F0"/>
+      <path d="M14.7111 2.51697L12.1943 12.1951L3.57114 17.2589C4.86709 19.4657 7.0049 21.1782 9.67746 21.8732C15.0225 23.2632 20.4824 20.0569 21.8724 14.7119C23.2624 9.36687 14.7111 2.51697 14.7111 2.51697Z" fill="#D80027"/>
+      <path d="M14.7111 2.51697C12.0386 1.82197 9.33732 2.27603 7.13048 3.57193C8.88751 6.56397 9.51123 7.62616 12.1943 12.1951L21.8724 14.7119C23.2624 9.36687 20.0561 3.90697 14.7111 2.51697Z" fill="#0052B4"/>
+      <path d="M9.14438 11.4017L8.10702 10.5384L9.03412 9.55737L7.68679 9.46914L7.86133 8.13024L6.71933 8.85135L6.07334 7.66527L5.57348 8.91957L4.3539 8.34022L4.68563 9.64864L3.35907 9.89723L4.39647 10.7606L3.46937 11.7416L4.81677 11.8299L4.64212 13.1687L5.78412 12.4476L6.43015 13.6337L6.92996 12.3794L8.14951 12.9587L7.81782 11.6503L9.14438 11.4017Z" fill="#FFDA44"/>
+      <path d="M6.63041 4.45797L6.88075 5.11005L7.57822 5.07352L7.03535 5.51307L7.2857 6.16515L6.69985 5.78472L6.15703 6.22424L6.33785 5.54959L5.75205 5.16913L6.44963 5.13262L6.63041 4.45797Z" fill="#FFDA44"/>
+      <path d="M4.02689 14.4707L4.27724 15.1227L4.97471 15.0862L4.43184 15.5258L4.68218 16.1778L4.09634 15.7974L3.55352 16.2369L3.73433 15.5623L3.14854 15.1818L3.84612 15.1453L4.02689 14.4707Z" fill="#FFDA44"/>
+      <path d="M10.9385 10.9232L10.4023 11.3707L9.81096 10.9989L10.0709 11.6473L9.5346 12.0949L10.2316 12.048L10.4915 12.6963L10.6622 12.019L11.3592 11.9721L10.7678 11.6004L10.9385 10.9232Z" fill="#FFDA44"/>
+    </g>
+    <rect x="4.67559" y="-0.609746" width="21" height="21" rx="10.5" transform="rotate(14.5771 4.67559 -0.609746)" stroke="white"/>
+    <defs>
+      <clipPath id="cbr-liq-flag-ph">
+        <rect x="5.03365" width="20" height="20" rx="10" transform="rotate(14.5771 5.03365 0)" fill="white"/>
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+const FlagMmRing = () => (
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="cbr-bvisual__liquidity-flag cbr-bvisual__liquidity-flag--mm">
+    <g clipPath="url(#cbr-liq-flag-mm)">
+      <path d="M21.7773 13.3084C21.9427 12.1648 21.9116 10.973 21.6546 9.77712C21.3976 8.58123 20.9363 7.48185 20.3156 6.50722L10.9643 7.62751L1.97832 10.4481C1.81295 11.5917 1.84403 12.7835 2.10104 13.9794C2.35805 15.1753 2.81938 16.2747 3.43998 17.2493L12.7913 16.129L21.7773 13.3084Z" fill="#6DA544"/>
+      <path d="M20.3151 6.50669C18.1336 3.08057 13.9797 1.19756 9.77608 2.10098C5.57242 3.0044 2.55901 6.42773 1.97774 10.4476L20.3151 6.50669Z" fill="#FFDA44"/>
+      <path d="M13.9784 21.6549C18.1821 20.7515 21.1955 17.3281 21.7768 13.3083L3.43945 17.2492C5.62096 20.6753 9.77476 22.5583 13.9784 21.6549Z" fill="#D80027"/>
+      <path d="M18.2582 8.93178L13.1366 10.0325L10.507 5.50169L9.97117 10.7128L4.84956 11.8135L9.64001 13.9334L9.10416 19.1445L12.6082 15.2785L17.3912 17.3635L14.7617 12.8326L18.2582 8.93178Z" fill="#F0F0F0"/>
+    </g>
+    <rect x="-0.593896" y="3.81851" width="21" height="21" rx="10.5" transform="rotate(-12.1291 -0.593896 3.81851)" stroke="white"/>
+    <defs>
+      <clipPath id="cbr-liq-flag-mm">
+        <rect y="4.20229" width="20" height="20" rx="10" transform="rotate(-12.1291 0 4.20229)" fill="white"/>
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+const FlagVnRing = () => (
+  <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="cbr-bvisual__liquidity-flag cbr-bvisual__liquidity-flag--vn">
+    <g clipPath="url(#cbr-liq-flag-vn)">
+      <path d="M9.43378 22.1848C14.6439 24.0169 20.3527 21.2785 22.1849 16.0684C24.017 10.8583 21.2786 5.14948 16.0685 3.31735C10.8584 1.48523 5.14954 4.22362 3.31741 9.43372C1.48529 14.6438 4.22368 20.3527 9.43378 22.1848Z" fill="#D80027"/>
+      <path d="M14.3381 8.23921L14.2543 11.7306L17.549 12.8891L14.2026 13.8883L14.1188 17.3797L12.1344 14.5059L8.78802 15.5052L10.908 12.7298L8.92355 9.85602L12.2181 11.0145L14.3381 8.23921Z" fill="#FFDA44"/>
+    </g>
+    <rect x="6.32895" y="-0.637554" width="21" height="21" rx="10.5" transform="rotate(19.3741 6.32895 -0.637554)" stroke="white"/>
+    <defs>
+      <clipPath id="cbr-liq-flag-vn">
+        <rect x="6.63477" width="20" height="20" rx="10" transform="rotate(19.3741 6.63477 0)" fill="white"/>
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+const FlagIdRing = () => (
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="cbr-bvisual__liquidity-flag cbr-bvisual__liquidity-flag--id">
+    <g clipPath="url(#cbr-liq-flag-id)">
+      <path d="M13.9227 21.6371C19.3259 20.4941 22.7796 15.1873 21.6366 9.78397C20.4936 4.3807 15.1868 0.927062 9.7835 2.07006C4.38022 3.21306 0.926585 8.51987 2.06959 13.9231C3.21259 19.3264 8.51939 22.7801 13.9227 21.6371Z" fill="#F0F0F0"/>
+      <path d="M2.06959 13.9231C0.926592 8.5199 4.38025 3.21306 9.7835 2.07006C15.1867 0.927069 20.4936 4.38073 21.6366 9.78397" fill="#A2001D"/>
+    </g>
+    <rect x="-0.592654" y="3.75395" width="21" height="21" rx="10.5" transform="rotate(-11.9442 -0.592654 3.75395)" stroke="white"/>
+    <defs>
+      <clipPath id="cbr-liq-flag-id">
+        <rect y="4.13965" width="20" height="20" rx="10" transform="rotate(-11.9442 0 4.13965)" fill="white"/>
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+const BankBoxIcon = () => (
+  <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" className="cbr-bvisual__liquidity-box-icon">
+    <path d="M26.252 25H3.75195C3.06179 25 2.50195 25.5598 2.50195 26.25C2.50195 26.9402 3.06179 27.5 3.75195 27.5H26.252C26.9421 27.5 27.502 26.9402 27.502 26.25C27.502 25.5598 26.9421 25 26.252 25Z" fill="#162755"/>
+    <path opacity="0.4" d="M25.4855 14.1685C27.0561 14.1685 28.3346 12.89 28.3346 11.3193C28.3346 10.3101 27.7935 9.36779 26.9243 8.85996L17.0056 3.05763C15.7686 2.33496 14.2338 2.33496 12.9968 3.05763L3.07997 8.85913C2.20914 9.36779 1.66797 10.3101 1.66797 11.3193C1.66797 12.89 2.94647 14.1685 4.51714 14.1685H5.0013V20.0001H4.58464C3.89447 20.0001 3.33464 20.56 3.33464 21.2501C3.33464 21.9403 3.89447 22.5001 4.58464 22.5001H25.418C26.1081 22.5001 26.668 21.9403 26.668 21.2501C26.668 20.56 26.1081 20.0001 25.418 20.0001H25.0013V14.1685H25.4855ZM7.5013 20.0001V14.168L10.8346 14.1676V20.0001H7.5013ZM13.3346 20.0001V14.1671L15.0013 14.1668L16.668 14.1671V20.0001H13.3346ZM22.5013 20.0001H19.168V14.1676L22.5013 14.168V20.0001Z" fill="#162755"/>
+    <path d="M15.0007 10.4163C15.9207 10.4163 16.6673 9.66967 16.6673 8.74967C16.6673 7.82967 15.9207 7.08301 15.0007 7.08301C14.0807 7.08301 13.334 7.82967 13.334 8.74967C13.334 9.66967 14.0807 10.4163 15.0007 10.4163Z" fill="#162755"/>
+  </svg>
+);
+
+const CheckCircleIcon = () => (
+  <span className="cbr-bvisual__check">
+    <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clipPath="url(#cbr-bvisual-check-clip)">
+        <path d="M5.95047 0.856445C3.14058 0.856445 0.855469 3.14155 0.855469 5.95144C0.855469 8.76134 3.14058 11.0464 5.95047 11.0464C8.76036 11.0464 11.0455 8.76134 11.0455 5.95144C11.0455 3.14155 8.76036 0.856445 5.95047 0.856445ZM8.37314 4.63524L5.82309 8.0319C5.7127 8.17966 5.54372 8.27137 5.35945 8.28495C5.34331 8.2858 5.32888 8.28665 5.31359 8.28665C5.14546 8.28665 4.98327 8.22042 4.86353 8.10069L3.58724 6.82694C3.33843 6.57898 3.33843 6.17478 3.58724 5.92597C3.83604 5.67716 4.2394 5.67631 4.48905 5.92597L5.24651 6.68173L7.35584 3.87099C7.56643 3.58991 7.96554 3.53132 8.24746 3.74446C8.52854 3.9559 8.58543 4.35501 8.37399 4.63609L8.37314 4.63524Z" fill="white"/>
+      </g>
+      <defs>
+        <clipPath id="cbr-bvisual-check-clip">
+          <rect width="11.4628" height="11.4628" fill="white"/>
+        </clipPath>
+      </defs>
+    </svg>
+  </span>
+);
+
+const GlobeIcon = () => (
+  <svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#cbr-bvisual-globe-clip)">
+      <path d="M8.92376 1.64518C5.31135 1.2387 2.05329 3.83772 1.64682 7.45012C1.24034 11.0625 3.83936 14.3206 7.45176 14.7271L8.4227 13.7545L7.6388 10.5247C7.44628 9.73462 7.72529 8.9138 8.36291 8.40534L8.36426 8.40426C9.00168 7.89743 9.85995 7.80923 10.5865 8.16892L10.5894 8.17034L13.8046 9.77245L14.7287 8.92212C15.1352 5.30971 12.5362 2.05165 8.92376 1.64518Z" fill="white" fillOpacity="0.4"/>
+      <path d="M10.7934 15.9314C10.4413 15.8918 10.1498 15.6366 10.065 15.2908L8.83749 10.2333C8.75832 9.90905 8.87064 9.57891 9.13187 9.37059C9.39294 9.163 9.73823 9.12668 10.0385 9.2753L14.6958 11.596C15.0205 11.7578 15.2051 12.1077 15.1573 12.467C15.1089 12.8254 14.8379 13.1143 14.4839 13.1852L12.4928 13.5838L11.6609 15.4365C11.5139 15.766 11.172 15.9661 10.8118 15.9336L10.7934 15.9314Z" fill="white"/>
+      <path d="M8.92349 1.64578C8.36963 1.58346 7.86775 1.8043 7.45718 2.13924C7.04884 2.47238 6.6899 2.94841 6.38441 3.50183C5.77197 4.61133 5.31239 6.1446 5.12143 7.84173C4.93046 9.53886 5.03782 11.1359 5.38838 12.3538C5.56324 12.9613 5.80741 13.5051 6.13152 13.9207C6.45738 14.3385 6.89763 14.6653 7.4515 14.7277C7.86708 14.7744 8.25339 14.6617 8.59387 14.4611L8.27628 13.1529C8.22947 13.1991 8.18319 13.2407 8.13764 13.2779C7.89379 13.4769 7.71303 13.5151 7.5895 13.5012C7.46596 13.4873 7.29823 13.4098 7.10468 13.1617C6.90937 12.9113 6.72269 12.5275 6.57439 12.0123C6.27863 10.9849 6.17045 9.55634 6.34785 7.97973C6.52526 6.4031 6.9482 5.03429 7.4649 4.09825C7.72398 3.6289 7.99127 3.2963 8.23734 3.09555C8.4812 2.8966 8.66196 2.85831 8.78549 2.87221C8.90902 2.88611 9.07675 2.96362 9.2703 3.21178C9.46561 3.46219 9.65227 3.84587 9.80063 4.36107C10.071 5.30045 10.1847 6.57514 10.0665 7.9917C10.2439 8.02736 10.4186 8.08651 10.5862 8.16952L10.5891 8.17095L11.2567 8.5036C11.4434 6.81696 11.3352 5.2308 10.9866 4.01968C10.8117 3.4122 10.5676 2.86831 10.2435 2.45276C9.91756 2.03495 9.47735 1.7081 8.92349 1.64578Z" fill="white"/>
+      <path d="M8.53313 5.12076C6.83601 4.9298 5.23894 5.03715 4.02109 5.38772C3.41362 5.56258 2.86972 5.80675 2.45417 6.13085C2.03636 6.45672 1.70951 6.89697 1.64719 7.45083C1.58487 8.0047 1.80571 8.50653 2.14065 8.91714C2.47379 9.32547 2.94983 9.68439 3.50324 9.98992C4.6066 10.5989 6.12905 11.0569 7.81497 11.2497L7.63943 10.5265L7.63918 10.5254C7.59456 10.3423 7.57527 10.1576 7.5799 9.97544C6.17272 9.77579 4.95535 9.38181 4.09965 8.90946C3.63031 8.65032 3.29771 8.38306 3.09696 8.13698C2.89801 7.89312 2.85972 7.71237 2.87362 7.58883C2.88752 7.4653 2.96503 7.29757 3.21319 7.10402C3.4636 6.90871 3.84728 6.72202 4.36248 6.57372C5.38994 6.27797 6.81851 6.16979 8.39513 6.34719C9.97175 6.52459 11.3406 6.94754 12.2766 7.46423C12.7459 7.72331 13.0786 7.99061 13.2793 8.23668C13.4783 8.48054 13.5166 8.66129 13.5027 8.78483C13.4888 8.90836 13.4113 9.07609 13.1631 9.26964C13.1167 9.30581 13.0657 9.34171 13.0102 9.37711L14.2151 9.97754C14.4866 9.69017 14.6823 9.33849 14.7291 8.92283C14.7914 8.36896 14.5706 7.86709 14.2356 7.45651C13.9025 7.04818 13.4265 6.68924 12.8731 6.38375C11.7635 5.77131 10.2303 5.31173 8.53313 5.12076Z" fill="white"/>
+    </g>
+    <defs>
+      <clipPath id="cbr-bvisual-globe-clip">
+        <rect width="14.81" height="14.81" fill="white" transform="translate(1.65625) rotate(6.42)"/>
+      </clipPath>
+    </defs>
   </svg>
 );
 
 export const SettlementVisual = () => (
-  <div className="cbr-bvisual">
+  <div className="cbr-bvisual cbr-bvisual--settle">
     <span className="cbr-bvisual__settle-stripe cbr-bvisual__settle-stripe--1" />
     <span className="cbr-bvisual__settle-stripe cbr-bvisual__settle-stripe--2" />
     <div className="cbr-bvisual__settle-notes">
@@ -36,76 +180,104 @@ export const SettlementVisual = () => (
       <span className="cbr-bvisual__notif-label">Settled in secs</span>
     </div>
     <div className="cbr-bvisual__notif cbr-bvisual__notif--2">
-      <span className="cbr-bvisual__notif-icon"><PinIcon /></span>
+      <span className="cbr-bvisual__notif-icon"><GlobeIcon /></span>
       <span className="cbr-bvisual__notif-label">Cross-Border</span>
     </div>
   </div>
 );
 
 export const TransferCostVisual = () => (
-  <div className="cbr-bvisual">
-    <div className="cbr-bvisual__transfer-card">
-      <div className="cbr-bvisual__transfer-head">
-        <span className="cbr-bvisual__transfer-title">Sending Money</span>
-        <span className="cbr-bvisual__transfer-sub">from USA</span>
-      </div>
-      <div className="cbr-bvisual__transfer-row">
-        <span className="cbr-bvisual__transfer-row-label">
-          <img src={coinUsdc} alt="" className="cbr-bvisual__transfer-coin" />
-          USDC to USD
-        </span>
-        <span className="cbr-bvisual__transfer-amount">$1,000.00</span>
-      </div>
-      <div className="cbr-bvisual__transfer-row">
-        <span className="cbr-bvisual__transfer-row-label">
-          <img src={flagUs} alt="" className="cbr-bvisual__transfer-coin" />
-          Transfer Fee
-        </span>
-        <span className="cbr-bvisual__transfer-amount">$0.00</span>
-      </div>
+  <div className="cbr-bvisual cbr-bvisual--transfer">
+    <span className="cbr-bvisual__transfer-title">Sending Money</span>
+    <span className="cbr-bvisual__transfer-sub">from USA</span>
+
+    <div className="cbr-bvisual__transfer-pill">
+      <img src={flagUs} alt="" className="cbr-bvisual__transfer-pill-flag" />
+      <DashArrowIcon />
+      <img src={iconBank} alt="" className="cbr-bvisual__transfer-pill-bank" />
+    </div>
+
+    <div className="cbr-bvisual__transfer-row cbr-bvisual__transfer-row--1">
+      <span className="cbr-bvisual__transfer-chip cbr-bvisual__transfer-chip--a">
+        <img src={coinUsdc} alt="" />
+      </span>
+      <span className="cbr-bvisual__transfer-chip cbr-bvisual__transfer-chip--b">
+        <img src={flagUs} alt="" />
+      </span>
+      <span className="cbr-bvisual__transfer-label">USDC to USD</span>
+      <span className="cbr-bvisual__transfer-btn cbr-bvisual__transfer-btn--pay">$1,000.00</span>
+    </div>
+
+    <div className="cbr-bvisual__transfer-row cbr-bvisual__transfer-row--2">
+      <span className="cbr-bvisual__transfer-chip cbr-bvisual__transfer-chip--a">
+        <img src={flagUs} alt="" />
+      </span>
+      <span className="cbr-bvisual__transfer-label cbr-bvisual__transfer-label--fee">Transfer Fee</span>
+      <span className="cbr-bvisual__transfer-btn cbr-bvisual__transfer-btn--fee">$0.00</span>
     </div>
   </div>
 );
 
 export const LiquidityVisual = () => (
-  <div className="cbr-bvisual">
-    <div className="cbr-bvisual__liquidity-card">
-      <span className="cbr-bvisual__spinner" />
-      <div className="cbr-bvisual__liquidity-copy">
-        <span className="cbr-bvisual__liquidity-label">Liquidity Movement</span>
-        <span className="cbr-bvisual__liquidity-sub">Fastest way</span>
+  <div className="cbr-bvisual cbr-bvisual--liquidity">
+    <span className="cbr-bvisual__liquidity-title">Liquidity Movement</span>
+    <span className="cbr-bvisual__liquidity-sub">Fastest way</span>
+    <span className="cbr-bvisual__liquidity-done">
+      <CheckCircleIcon />
+      Done
+    </span>
+
+    <div className="cbr-bvisual__liquidity-panel">
+      <span className="cbr-bvisual__liquidity-box cbr-bvisual__liquidity-box--left">
+        <span className="cbr-bvisual__liquidity-box-inner"><BankBoxIcon /></span>
+      </span>
+      <span className="cbr-bvisual__liquidity-box cbr-bvisual__liquidity-box--right">
+        <span className="cbr-bvisual__liquidity-box-inner"><BankBoxIcon /></span>
+      </span>
+
+      <div className="cbr-bvisual__liquidity-bars">
+        {[1, 2, 3, 4, 5, 6].map(i => (
+          <span key={i} className={`cbr-bvisual__liquidity-bar cbr-bvisual__liquidity-bar--${i}`} />
+        ))}
       </div>
-      <span className="cbr-bvisual__liquidity-done">Done</span>
+
+      <UsdcCoin />
+      <UsdtCoin />
+      <FlagUsRing />
+      <FlagPhRing />
+      <FlagMmRing />
+      <FlagVnRing />
+      <FlagIdRing />
+
     </div>
   </div>
 );
 
+const historyStats = [
+  { mod: 'amount', label: 'Amount', value: '₱878.23' },
+  { mod: 'time', label: 'Time', value: '>30s' },
+  { mod: 'bank', label: 'Bank A/c', value: 'XX 7890' },
+  { mod: 'fee', label: 'Fee', value: '0%' },
+];
+
 export const TransactionHistoryVisual = () => (
-  <div className="cbr-bvisual">
+  <div className="cbr-bvisual cbr-bvisual--history">
+    <span className="cbr-bvisual__history-title">Transaction History</span>
+    <span className="cbr-bvisual__history-time">Today, 11:11 A.M</span>
+    <span className="cbr-bvisual__history-status">
+      <CheckCircleIcon />
+      Completed
+    </span>
     <div className="cbr-bvisual__history-card">
-      <div className="cbr-bvisual__history-head">
-        <span className="cbr-bvisual__history-time">Today, 11:11 A.M</span>
-        <span className="cbr-bvisual__history-status">Completed</span>
-      </div>
+      <img src={avatarAlbert} alt="" className="cbr-bvisual__history-avatar" />
       <span className="cbr-bvisual__history-name">Send to Albert Dino</span>
-      <div className="cbr-bvisual__history-stats">
-        <div>
-          <span className="cbr-bvisual__history-stat-label">Amount</span>
-          <span className="cbr-bvisual__history-stat-value">₱878.23</span>
+      <img src={flagPh} alt="" className="cbr-bvisual__history-flag" />
+      {historyStats.map(stat => (
+        <div key={stat.label} className={`cbr-bvisual__history-stat cbr-bvisual__history-stat--${stat.mod}`}>
+          <span className="cbr-bvisual__history-stat-label">{stat.label}</span>
+          <span className="cbr-bvisual__history-stat-value">{stat.value}</span>
         </div>
-        <div>
-          <span className="cbr-bvisual__history-stat-label">Time</span>
-          <span className="cbr-bvisual__history-stat-value">&gt;30s</span>
-        </div>
-        <div>
-          <span className="cbr-bvisual__history-stat-label">Bank A/c</span>
-          <span className="cbr-bvisual__history-stat-value">XX 7890</span>
-        </div>
-        <div>
-          <span className="cbr-bvisual__history-stat-label">Fee</span>
-          <span className="cbr-bvisual__history-stat-value">0%</span>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 );

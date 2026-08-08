@@ -1,18 +1,16 @@
 .cbr-benefits {
   width: 100%;
   background:
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.9) 0, rgba(255, 255, 255, 0.9) 1.26px, transparent 1.26px, transparent 80.7px),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0, rgba(255, 255, 255, 0.9) 1.26px, transparent 1.26px, transparent 80.7px),
+    url('./assets/Background.png') center top / cover no-repeat,
     linear-gradient(180deg, #FFFFFF 0%, #E0F4EF 100%);
   overflow: hidden;
 }
 
 .cbr-benefits__inner {
   position: relative;
-  width: 100%;
-  max-width: 1920px;
+  width: 1920px;
   margin: 0 auto;
-  padding: 139px 164px 139px;
+  padding: 140px 240px 139px;
   box-sizing: border-box;
 }
 
@@ -46,6 +44,7 @@
   font-family: 'Britti Sans Trial', sans-serif;
   font-size: 48px;
   line-height: 48px;
+  letter-spacing: -1px;
 }
 
 .cbr-benefits__title-light {
@@ -66,42 +65,40 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 27px;
+  letter-spacing: 0.04px;
 }
 
 .cbr-benefits__cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  max-width: 1556px;
-  margin: 60px auto 0;
+  justify-items: center;
+  gap: 8px;
+  max-width: 1424px;
+  margin: 59px auto 0;
 }
 
 .cbr-benefits__card {
   width: 100%;
-  max-width: 380px;
-  padding: 26px 24px 24px;
+  max-width: 350px;
+  padding: 0 0 32px;
   background: #FFFFFF;
   border-radius: 24px;
-  box-shadow: 0 0 0 4px rgba(82, 88, 112, 0.02), 0 4px 12px rgba(82, 88, 112, 0.04);
+  box-shadow:
+    0 4px 12px 0 rgba(82, 88, 112, 0.04),
+    0 0 0 4px rgba(82, 88, 112, 0.02),
+    inset 0 0 0 1px rgba(82, 88, 112, 0.12);
   box-sizing: border-box;
 }
 
-.cbr-benefits__card-illo {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 332 / 210;
-  max-width: 332px;
-}
-
 .cbr-benefits__card-visual {
-  width: 100%;
-  aspect-ratio: 332 / 210;
-  max-width: 332px;
+  width: auto;
+  margin: 14px 13px 0;
+  aspect-ratio: 324 / 210;
+  container-type: inline-size;
 }
 
 .cbr-benefits__card-title {
-  margin: 31px 0 0;
+  margin: 43px 24px 0;
   color: #162755;
   font-family: 'Britti Sans Trial', sans-serif;
   font-size: 20px;
@@ -110,7 +107,7 @@
 }
 
 .cbr-benefits__card-desc {
-  margin: 9px 0 0;
+  margin: 8px 24px 0;
   color: #525870;
   font-family: 'Britti Sans Trial', sans-serif;
   font-size: 18px;
@@ -118,9 +115,140 @@
   line-height: 24px;
 }
 
-@media (max-width: 1200px) {
+/* the section is laid out on a fixed 1920 canvas, so it is scaled to fit.
+   zoom needs a plain number and CSS cannot divide vw by a length, hence the steps. */
+@media (max-width: 1919px) {
   .cbr-benefits__inner {
+    zoom: 0.9833;
+  }
+}
+
+@media (max-width: 1887px) {
+  .cbr-benefits__inner {
+    zoom: 0.9667;
+  }
+}
+
+@media (max-width: 1855px) {
+  .cbr-benefits__inner {
+    zoom: 0.9500;
+  }
+}
+
+@media (max-width: 1823px) {
+  .cbr-benefits__inner {
+    zoom: 0.9333;
+  }
+}
+
+@media (max-width: 1791px) {
+  .cbr-benefits__inner {
+    zoom: 0.9167;
+  }
+}
+
+@media (max-width: 1759px) {
+  .cbr-benefits__inner {
+    zoom: 0.9000;
+  }
+}
+
+@media (max-width: 1727px) {
+  .cbr-benefits__inner {
+    zoom: 0.8833;
+  }
+}
+
+@media (max-width: 1695px) {
+  .cbr-benefits__inner {
+    zoom: 0.8667;
+  }
+}
+
+@media (max-width: 1663px) {
+  .cbr-benefits__inner {
+    zoom: 0.8500;
+  }
+}
+
+@media (max-width: 1631px) {
+  .cbr-benefits__inner {
+    zoom: 0.8333;
+  }
+}
+
+@media (max-width: 1599px) {
+  .cbr-benefits__inner {
+    zoom: 0.8167;
+  }
+}
+
+@media (max-width: 1567px) {
+  .cbr-benefits__inner {
+    zoom: 0.8000;
+  }
+}
+
+@media (max-width: 1535px) {
+  .cbr-benefits__inner {
+    zoom: 0.7833;
+  }
+}
+
+@media (max-width: 1503px) {
+  .cbr-benefits__inner {
+    zoom: 0.7667;
+  }
+}
+
+@media (max-width: 1471px) {
+  .cbr-benefits__inner {
+    zoom: 0.7500;
+  }
+}
+
+@media (max-width: 1439px) {
+  .cbr-benefits__inner {
+    zoom: 0.7333;
+  }
+}
+
+@media (max-width: 1407px) {
+  .cbr-benefits__inner {
+    zoom: 0.7167;
+  }
+}
+
+@media (max-width: 1375px) {
+  .cbr-benefits__inner {
+    zoom: 0.7000;
+  }
+}
+
+@media (max-width: 1343px) {
+  .cbr-benefits__inner {
+    zoom: 0.6833;
+  }
+}
+
+@media (max-width: 1311px) {
+  .cbr-benefits__inner {
+    zoom: 0.6667;
+  }
+}
+
+@media (max-width: 1279px) {
+  .cbr-benefits__inner {
+    zoom: 1;
+    width: 100%;
+    max-width: 1920px;
     padding: 100px 40px;
+  }
+  .cbr-benefits__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 724px;
+    margin-top: 48px;
   }
 }
 
@@ -128,17 +256,12 @@
   .cbr-benefits__inner {
     padding: 80px 24px;
   }
-  .cbr-benefits__cards {
-    margin-top: 44px;
-  }
 }
 
-/* Single column starts at the iPad breakpoint — cards stay inline (4-across,
-   shrinking fluidly) above this, consistent with the rest of the site. */
 @media (max-width: 768px) {
   .cbr-benefits__cards {
-    grid-template-columns: 1fr;
-    max-width: 480px;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 350px;
   }
 }
 
