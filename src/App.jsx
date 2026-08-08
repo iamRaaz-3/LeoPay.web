@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar.jsx'
 import Hero from './components/Hero/Hero.jsx'
@@ -11,11 +12,16 @@ import Cta from './components/Cta/Cta.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import Privacy from './pages/Privacy.jsx'
 
+
+const ProductPage = lazy(() => import('./pages/products/ProductPage.jsx'))
+
 const Landing = () => (
   <>
     <Navbar />
     <Hero />
     <Ticker />
+    
+
     <FastestWay />
     <Comparison />
     <Features />
@@ -31,6 +37,14 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/privacy" element={<Privacy />} />
+      <Route
+        path="/products/:slug"
+        element={
+          <Suspense fallback={<div style={{ minHeight: '100vh', background: '#ECF5FC' }} />}>
+            <ProductPage />
+          </Suspense>
+        }
+      />
     </Routes>
   );
 }

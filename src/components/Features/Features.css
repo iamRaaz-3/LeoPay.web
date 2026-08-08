@@ -348,7 +348,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: 21.6px;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .feat-card__desc {
@@ -367,8 +367,9 @@
 
 .feat-card__notif-overlay {
   position: absolute;
-  left: 126px;
-  top: 46px;
+  left: 50%;
+  top: 24px;
+  transform: translateX(calc(-50% + 43px));
   z-index: 2;
 }
 
@@ -1272,172 +1273,47 @@
     width: 100%;
     height: auto;
     padding: 0;
-    gap: 16px;
+    gap: 8px;
     overflow-x: unset;
     justify-content: unset;
   }
   .features__cards::-webkit-scrollbar { display: none; }
+  /* Figma's dedicated "Features Page 1440 px" frame: cards narrow to ~330px
+     and grow taller (450px) to fit the wrapped title/desc — fonts and visuals
+     stay essentially full-size, they don't shrink like a naive scale-down. */
   .feat-card {
     width: 100%;
-    height: auto;
-    min-height: 420px;
+    height: 450px;
+    min-height: 450px;
     min-width: 0;
     overflow: hidden;
     flex-shrink: 1;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .feat-card__visual { width: 100%; align-self: center; }
-  .feat-card__text { margin-top: auto; }
+  .feat-card__title { white-space: normal; }
 
   .feat-card__visual--rails {
-    transform: scale(0.82);
+    transform: scale(0.92);
     transform-origin: top center;
-    margin-bottom: -36px;
+    margin-bottom: -16px;
   }
   .feat-c4-visual {
-    transform: scale(0.82);
+    transform: scale(0.92);
     transform-origin: top center;
-    margin-bottom: -36px;
+    margin-bottom: -16px;
   }
   .feat-bars {
     width: 100%;
-    max-width: 260px;
-    height: 185px;
+    max-width: 266px;
+    height: 178px;
     box-sizing: content-box;
   }
-  .feat-bar-cell { height: 185px; }
+  .feat-bar-cell { height: 178px; }
   .feat-card__visual--users {
     width: 100%;
-    max-width: 280px;
-    height: 185px;
-    overflow: hidden;
-  }
-  .feat-users-frame {
-    transform: scale(0.88);
-    transform-origin: top center;
-    margin-bottom: -24px;
-  }
-  .feat-users-frame,
-  .feat-users-inner { width: 306px; max-width: none; overflow: hidden; }
-  .feat-user { width: 100%; }
-  .feat-user--2 { width: calc(100% - 16px); max-width: 276px; }
-  .feat-user--3 { width: calc(100% - 44px); max-width: 262px; }
-  .feat-c4-stat__value { font-size: 38px; line-height: 42px; }
-  .feat-c3-badge {
-    left: 50%;
-    top: 175px;
-    transform: translateX(-50%);
-  }
-  .feat-card__notif-overlay {
-    left: 50%;
-    top: 36px;
-    transform: translateX(-50%);
-  }
-}
-
-/* ── ≤ 1280px ─────────────────────────────────────────── */
-@media (max-width: 1280px) {
-  .features__content {
-    max-width: 1280px;
-    padding: 0 24px;
-    gap: 48px;
-  }
-  .features__heading--light,
-  .features__heading--bold {
-    font-size: clamp(28px, 3.5vw, 40px);
-  }
-  .features__subtitle { font-size: 17px; }
-  .features__cards { gap: 12px; }
-  .feat-card {
-    min-height: 400px;
-    padding: 18px;
-    gap: 28px;
-    border-radius: 20px;
-  }
-  .feat-card__title { font-size: 16px; white-space: normal; }
-  .feat-card__desc { font-size: 14px; line-height: 20px; }
-  .feat-card__visual--rails {
-    transform: scale(0.72);
-    transform-origin: top center;
-    margin-bottom: -56px;
-  }
-  .feat-c4-visual {
-    transform: scale(0.72);
-    transform-origin: top center;
-    margin-bottom: -56px;
-  }
-  .feat-bars {
-    max-width: 220px;
-    height: 165px;
-  }
-  .feat-bar-cell { height: 165px; }
-  .feat-card__visual--users {
-    max-width: 240px;
-    height: 165px;
-    overflow: hidden;
-  }
-  .feat-users-frame {
-    transform: scale(0.78);
-    transform-origin: top center;
-    margin-bottom: -43px;
-  }
-  .feat-users-frame,
-  .feat-users-inner { width: 306px; max-width: none; overflow: hidden; }
-  .feat-user { width: 100%; }
-  .feat-user--2 { width: calc(100% - 16px); max-width: 276px; }
-  .feat-user--3 { width: calc(100% - 44px); max-width: 262px; }
-  .feat-c4-stat__value { font-size: 32px; line-height: 36px; }
-  .feat-c3-badge { left: 50%; top: 158px; transform: translateX(-50%); }
-  .feat-card__notif-overlay { left: 50%; top: 28px; transform: translateX(-50%); }
-}
-
-/* ── ≤ 1024px ─────────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .features {
-    padding: 80px 0;
-  }
-  .features__content {
-    padding: 0 24px;
-    gap: 40px;
-  }
-  .features__heading--light,
-  .features__heading--bold {
-    font-size: clamp(28px, 4vw, 38px);
-  }
-  .features__subtitle {
-    font-size: 17px;
-    line-height: 26px;
-  }
-  .features__cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-  }
-  .feat-card {
-    min-height: 380px;
-    padding: 22px;
-    gap: 36px;
-    border-radius: 22px;
-  }
-  .feat-card__title { font-size: 18px; white-space: normal; }
-  .feat-card__desc { font-size: 16px; line-height: 23px; }
-  .feat-card__visual--rails {
-    transform: scale(0.88);
-    transform-origin: top center;
-    margin-bottom: -26px;
-  }
-  .feat-c4-visual {
-    transform: scale(0.88);
-    transform-origin: top center;
-    margin-bottom: -25px;
-  }
-  .feat-bars {
-    max-width: 260px;
-    height: 195px;
-  }
-  .feat-bar-cell { height: 195px; }
-  .feat-card__visual--users {
-    max-width: 290px;
-    height: 190px;
+    max-width: 282px;
+    height: 189px;
     overflow: hidden;
   }
   .feat-users-frame {
@@ -1450,13 +1326,151 @@
   .feat-user { width: 100%; }
   .feat-user--2 { width: calc(100% - 16px); max-width: 276px; }
   .feat-user--3 { width: calc(100% - 44px); max-width: 262px; }
+  .feat-c4-stat__value { font-size: 44px; line-height: 48px; }
+  .feat-c3-badge {
+    left: 50%;
+    top: 182px;
+    transform: translateX(-50%);
+  }
+  .feat-card__notif-overlay {
+    left: 50%;
+    top: 24px;
+    transform: translateX(calc(-50% + 40px));
+  }
+}
+
+/* ── ≤ 1280px ─────────────────────────────────────────── */
+/* Cards stay 4-across (inline), continuing the same trend Figma's 1440px
+   frame establishes: fonts stay full-size, card grows taller to fit wrapped
+   text, visuals only shrink as much as needed to still fit. Single column
+   only starts at ≤768px (Figma's "Feature- Ipad Version" frame). */
+@media (max-width: 1280px) {
+  .features__content {
+    max-width: 1280px;
+    padding: 0 24px;
+    gap: 48px;
+  }
+  .features__heading--light,
+  .features__heading--bold {
+    font-size: clamp(28px, 3.5vw, 40px);
+  }
+  .features__subtitle { font-size: 17px; }
+  .features__cards { gap: 8px; }
+  .feat-card {
+    height: 470px;
+    min-height: 470px;
+    padding: 24px;
+    justify-content: center;
+    gap: 40px;
+    border-radius: 20px;
+  }
+  .feat-card__title { white-space: normal; }
+  .feat-card__visual--rails {
+    transform: scale(0.82);
+    transform-origin: top center;
+    margin-bottom: -37px;
+  }
+  .feat-c4-visual {
+    transform: scale(0.82);
+    transform-origin: top center;
+    margin-bottom: -37px;
+  }
+  .feat-bars {
+    max-width: 250px;
+    height: 167px;
+  }
+  .feat-bar-cell { height: 167px; }
+  .feat-card__visual--users {
+    max-width: 250px;
+    height: 167px;
+    overflow: hidden;
+  }
+  .feat-users-frame {
+    transform: scale(0.82);
+    transform-origin: top center;
+    margin-bottom: -37px;
+  }
+  .feat-users-frame,
+  .feat-users-inner { width: 306px; max-width: none; overflow: hidden; }
+  .feat-user { width: 100%; }
+  .feat-user--2 { width: calc(100% - 16px); max-width: 276px; }
+  .feat-user--3 { width: calc(100% - 44px); max-width: 262px; }
   .feat-c4-stat__value { font-size: 40px; line-height: 44px; }
-  .feat-c3-badge { left: 50%; top: 170px; transform: translateX(-50%); }
-  .feat-card__notif-overlay { left: 50%; top: 36px; transform: translateX(-50%); }
+  .feat-c3-badge { left: 50%; top: 162px; transform: translateX(-50%); }
+  .feat-card__notif-overlay { left: 50%; top: 20px; transform: translateX(calc(-50% + 32px)); }
+}
+
+/* ── ≤ 1024px ─────────────────────────────────────────── */
+/* Still 4-across — shrink further so nothing overflows the narrower cards. */
+@media (max-width: 1024px) {
+  .features {
+    padding: 80px 0;
+  }
+  .features__content {
+    padding: 0 20px;
+    gap: 40px;
+  }
+  .features__heading--light,
+  .features__heading--bold {
+    font-size: clamp(28px, 4vw, 38px);
+  }
+  .features__subtitle {
+    font-size: 17px;
+    line-height: 26px;
+  }
+  .features__cards { gap: 8px; }
+  .feat-card {
+    height: 510px;
+    min-height: 510px;
+    padding: 24px;
+    justify-content: center;
+    gap: 32px;
+    border-radius: 18px;
+  }
+  .feat-card__title { white-space: normal; }
+  .feat-card__visual--rails {
+    transform: scale(0.63);
+    transform-origin: top center;
+    margin-bottom: -76px;
+  }
+  .feat-c4-visual {
+    transform: scale(0.63);
+    transform-origin: top center;
+    margin-bottom: -76px;
+  }
+  .feat-bars {
+    width: 290px;
+    max-width: none;
+    height: 205px;
+    box-sizing: border-box;
+    transform: scale(0.63);
+    transform-origin: top center;
+    margin-bottom: -76px;
+  }
+  .feat-card__visual--users {
+    max-width: 192px;
+    height: 129px;
+    overflow: hidden;
+  }
+  .feat-users-frame {
+    transform: scale(0.63);
+    transform-origin: top center;
+    margin-bottom: -76px;
+  }
+  .feat-users-frame,
+  .feat-users-inner { width: 306px; max-width: none; overflow: hidden; }
+  .feat-user { width: 100%; }
+  .feat-user--2 { width: calc(100% - 16px); max-width: 276px; }
+  .feat-user--3 { width: calc(100% - 44px); max-width: 262px; }
+  .feat-c4-stat__value { font-size: 31px; line-height: 35px; }
+  .feat-c3-badge { left: 50%; top: 132px; transform: translateX(-50%) scale(0.8); }
+  .feat-card__notif-overlay { left: 50%; top: 20px; transform: translateX(calc(-50% + 25px)) scale(0.77); }
 }
 
 
 /* ── ≤ 768px ──────────────────────────────────────────── */
+/* Switch to single-column, full-size (630px) cards — matches Figma's own
+   "Feature- Ipad Version" frame, which is exactly 768px wide. */
 @media (max-width: 768px) {
   .features {
     padding: 64px 0;
@@ -1475,53 +1489,33 @@
   }
   .features__cards {
     grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 0;
+    justify-items: center;
+    gap: 16px;
   }
   .feat-card {
     width: 100%;
-    max-width: none;
-    height: auto;
-    min-height: 380px;
+    max-width: 630px;
+    height: 416px;
+    min-height: 416px;
     padding: 24px;
-    gap: 20px;
     justify-content: center;
+    gap: 50px;
     border-radius: 24px;
   }
-  .feat-card__text {
-    margin-top: 0;
-  }
-  .feat-card__visual--rails {
-    transform: none;
-    margin-bottom: 0;
-  }
-  .feat-c4-visual {
-    transform: none;
-    margin-bottom: 0;
-  }
-  .feat-bars {
-    width: 290px;
-    max-width: none;
-    height: 205px;
-    box-sizing: border-box;
-  }
+  .feat-card__text { margin-top: 0; }
+  .feat-card__title { font-size: 20px; white-space: normal; }
+  .feat-card__desc { font-size: 18px; line-height: 24px; }
+  .feat-card__visual--rails { transform: none; margin-bottom: 0; }
+  .feat-c4-visual { transform: none; margin-bottom: 0; }
+  .feat-bars { width: 290px; max-width: none; height: 205px; box-sizing: border-box; }
   .feat-bar-cell { height: 205.042px; }
-  .feat-card__visual--users {
-    max-width: none;
-    height: 196px;
-    overflow: hidden;
-  }
-  .feat-users-frame {
-    transform: none;
-    margin-bottom: 0;
-  }
+  .feat-card__visual--users { max-width: none; height: 196px; overflow: hidden; }
+  .feat-users-frame { transform: none; margin-bottom: 0; }
   .feat-users-frame,
   .feat-users-inner { max-width: none; }
   .feat-c4-stat__value { font-size: 48px; line-height: 48px; }
-  .feat-card__title { font-size: 20px; white-space: nowrap; }
-  .feat-card__desc { font-size: 18px; line-height: 24px; }
   .feat-c3-badge { left: 50%; top: 187px; transform: translateX(-50%); }
-  .feat-card__notif-overlay { left: 50%; top: 46px; transform: translateX(-50%); }
+  .feat-card__notif-overlay { left: 50%; top: 30px; transform: translateX(calc(-50% + 43px)); }
 }
 
 
@@ -1670,7 +1664,7 @@
 
   .feat-card__title {
     font-size: 20px;
-    white-space: nowrap;
+    white-space: normal;
   }
   .feat-card__desc {
     font-size: 18px;
@@ -1686,8 +1680,6 @@
     transform: translateX(-50%);
   }
   .feat-card__notif-overlay {
-    left: 50%;
-    top: 46px;
-    transform: translateX(-50%);
+    display: none;
   }
 }

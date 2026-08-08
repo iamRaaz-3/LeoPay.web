@@ -1,0 +1,177 @@
+.va-audience {
+  position: relative;
+  width: 100%;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.va-audience__deco {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: url('../shared/assets/aud-deco.png') center / cover no-repeat;
+  pointer-events: none;
+}
+
+.va-audience__deco--top {
+  top: 0;
+  height: 408px;
+}
+
+.va-audience__deco--bottom {
+  bottom: 0;
+  height: 264px;
+  transform: scaleY(-1);
+}
+
+.va-audience__inner {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 146px 312px 145px;
+  box-sizing: border-box;
+}
+
+.va-audience__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.va-audience__badge {
+  display: inline-flex;
+  align-items: center;
+  height: 33px;
+  padding: 0 16px;
+  background: #FFFFFF;
+  border: 1px solid rgba(82, 88, 112, 0.12);
+  border-radius: 100px;
+  color: #162755;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  box-sizing: border-box;
+}
+
+.va-audience__title {
+  margin: 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+.va-audience__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.va-audience__title-bold {
+  display: block;
+  font-weight: 600;
+}
+
+.va-audience__para {
+  margin: 0;
+  max-width: 600px;
+  color: #525870;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.va-audience__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1296px;
+  margin: 60px auto 0;
+}
+
+.va-audience__card {
+  width: 100%;
+  max-width: 416px;
+  height: auto;
+  min-height: 300px;
+  padding: 36px;
+  background: #FFFFFF;
+  border: 1px solid #E5EEF0;
+  border-radius: 24px;
+  box-sizing: border-box;
+}
+
+.va-audience__card-icon {
+  display: block;
+  width: 70px;
+  height: 70px;
+}
+
+.va-audience__card-title {
+  margin: 30px 0 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 21.6px;
+}
+
+.va-audience__card-desc {
+  margin: 10px 0 0;
+  color: #525870;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media (max-width: 1440px) {
+  .va-audience__inner {
+    padding: 120px 40px;
+  }
+}
+
+@media (max-width: 940px) {
+  .va-audience__inner {
+    padding: 80px 24px;
+  }
+  .va-audience__cards {
+    margin-top: 44px;
+    gap: 12px;
+  }
+}
+
+/* Single column starts at the iPad breakpoint — cards stay inline (3-across,
+   shrinking fluidly) above this, consistent with the rest of the site. */
+@media (max-width: 768px) {
+  .va-audience__cards {
+    grid-template-columns: 1fr;
+    max-width: 416px;
+  }
+  .va-audience__card {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .va-audience__inner {
+    padding: 80px 25px;
+  }
+  .va-audience__title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  .va-audience__para {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .va-audience__card {
+    padding: 28px;
+  }
+}
