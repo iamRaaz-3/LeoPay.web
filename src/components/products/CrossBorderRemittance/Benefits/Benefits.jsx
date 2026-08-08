@@ -1,5 +1,5 @@
 import './Benefits.css';
-import { SettlementVisual, TransferCostVisual, LiquidityVisual, TransactionHistoryVisual } from './BenefitVisuals.jsx';
+import { SettlementVisual, TransferCostVisual, LiquidityVisual, TransactionHistoryVisual } from '../BenefitVisuals/BenefitVisuals.jsx';
 
 const cards = [
   { visual: <SettlementVisual />, title: 'Instant Settlement', desc: 'Deliver faster remittance through real-time settlement.' },

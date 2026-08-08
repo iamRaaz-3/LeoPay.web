@@ -1,6 +1,6 @@
 import './BenefitVisuals.css';
-import coinUsdc from '../shared/assets/coin-usdc.svg';
-import flagUs from '../shared/assets/flag-us.svg';
+import coinUsdc from '../../shared/assets/coin-usdc.svg';
+import flagUs from '../../shared/assets/flag-us.svg';
 import settlementNotes from './assets/settlement-notes.svg';
 
 const ClockIcon = () => (

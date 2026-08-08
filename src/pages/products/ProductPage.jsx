@@ -8,9 +8,9 @@ import GlobalPayoutsAudience from '../../components/products/GlobalPayouts/Audie
 import VirtualAccountsHero from '../../components/products/VirtualAccounts/Hero.jsx';
 import VirtualAccountsBenefits from '../../components/products/VirtualAccounts/Benefits.jsx';
 import VirtualAccountsAudience from '../../components/products/VirtualAccounts/Audience.jsx';
-import CrossBorderRemittanceHero from '../../components/products/CrossBorderRemittance/Hero.jsx';
-import CrossBorderRemittanceBenefits from '../../components/products/CrossBorderRemittance/Benefits.jsx';
-import CrossBorderRemittanceAudience from '../../components/products/CrossBorderRemittance/Audience.jsx';
+import CrossBorderRemittanceHero from '../../components/products/CrossBorderRemittance/Hero/Hero.jsx';
+import CrossBorderRemittanceBenefits from '../../components/products/CrossBorderRemittance/Benefits/Benefits.jsx';
+import CrossBorderRemittanceAudience from '../../components/products/CrossBorderRemittance/Audience/Audience.jsx';
 
 const PRODUCTS = {
   'global-payouts': { Hero: GlobalPayoutsHero, Benefits: GlobalPayoutsBenefits, Audience: GlobalPayoutsAudience },
