@@ -288,7 +288,7 @@
   }
 }
 
-/* Fluid override: supersedes the steps above where supported, ignored elsewhere */
+/* keep the steps above as fallback - old browsers drop this calc */
 @media (max-width: 1919px) {
   .cbr-hero__inner {
     zoom: calc(100vw / 1920px);
