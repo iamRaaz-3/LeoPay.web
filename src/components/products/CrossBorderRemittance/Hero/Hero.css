@@ -288,6 +288,13 @@
   }
 }
 
+/* Fluid override: supersedes the steps above where supported, ignored elsewhere */
+@media (max-width: 1919px) {
+  .cbr-hero__inner {
+    zoom: calc(100vw / 1920px);
+  }
+}
+
 @media (max-width: 900px) {
   .cbr-hero__stage {
     display: contents;
@@ -296,61 +303,123 @@
     zoom: 1;
     width: 100%;
     height: auto;
-    padding: 140px 24px 60px;
+    padding: 130px 52px 49px;
     box-sizing: border-box;
+    background: url('./assets/Artboard 1 1 (1).png') #FFF left bottom / 100% auto no-repeat;
+  }
+  .cbr-hero__inner::before {
+    width: 100%;
+    height: 100%;
   }
   .cbr-hero__glow {
-    left: 0;
-    top: 90px;
-    width: 100%;
-    height: 400px;
+    left: -478px;
+    top: 276px;
   }
   .cbr-hero__content {
     position: relative;
     left: auto;
     top: auto;
     width: 100%;
-    max-width: 620px;
+    max-width: 688.098px;
+  }
+  .cbr-hero__title {
+    font-size: min(70px, calc(100vw / 11.7));
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  .cbr-hero__desc {
+    max-width: 100%;
+  }
+  .cbr-hero__visual {
+    position: relative;
+    left: 6.5px;
+    top: auto;
+    width: 600px;
+    height: 600px;
+    margin: 19px auto 0;
+    zoom: 1;
+    zoom: min(1, calc((100vw - 104px) / 674.5px));
+  }
+  .cbr-hero__visual--bank {
+    transform: none;
+  }
+  .cbr-hero__card {
+    left: 393.9px;
+    top: 120px;
+  }
+  .cbr-hero__card--sending {
+    left: -43.5px;
+    top: 206px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cbr-hero__inner {
+    padding: 130px 24px 60px;
   }
   .cbr-hero__title-line {
     white-space: normal;
   }
   .cbr-hero__visual {
-    position: relative;
-    left: auto;
-    top: auto;
-    width: 320px;
-    height: 320px;
-    margin: 48px auto 0;
-  }
-  .cbr-hero__visual--bank {
-    transform: scale(0.5333);
-    transform-origin: top left;
+    zoom: 0.85;
+    zoom: min(1, calc((100vw - 48px) / 674.5px));
   }
 }
 
 @media (max-width: 480px) {
   .cbr-hero__inner {
-    padding: 126px 35px 60px;
+    padding: 126px 35px 41px;
+    background: url('./assets/Artboard 1 1 (2).png') #FFF center bottom / 100% auto no-repeat;
+  }
+  .cbr-hero__glow {
+    left: 0;
+    top: 179px;
+    width: 100%;
+    height: 414px;
   }
   .cbr-hero__title {
-    font-family: 'Britti Sans Trial', sans-serif;
     font-size: 40px;
-    font-weight: 600;
     line-height: 44.8px;
     letter-spacing: -1.2px;
   }
-  .cbr-hero__desc {
-    width: 100%;
-    font-size: 18px;
-    line-height: 28px;
+  .cbr-hero__buttons {
+    padding: 5px 0;
   }
   .cbr-hero__visual {
-    width: 240px;
-    height: 240px;
-    margin-top: 40px;
+    left: 0;
+    zoom: 1;
+    zoom: min(1, calc((100vw - 70px) / 357.5px));
+    width: 357.5px;
+    height: 380px;
+    margin: 80px auto 0;
   }
   .cbr-hero__visual--bank {
-    transform: scale(0.4);
+    transform: none;
+  }
+  .cbr-hero__bank-img {
+    position: absolute;
+    left: 3px;
+    top: 29px;
+    width: 351px;
+    height: 351px;
+  }
+  .cbr-hero__card {
+    left: 220px;
+    top: 0;
+    transform: scale(0.7135);
+    transform-origin: top left;
+  }
+  .cbr-hero__card--sending {
+    left: 0;
+    top: 231.5px;
+    transform: scale(0.7135);
+    transform-origin: top left;
+  }
+}
+
+@media (max-width: 429px) {
+  .cbr-hero__visual {
+    zoom: 0.85;
+    zoom: min(1, calc((100vw - 70px) / 357.5px));
   }
 }
