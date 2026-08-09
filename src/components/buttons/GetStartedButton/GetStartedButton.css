@@ -1,0 +1,23 @@
+.btn-get-started {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 10px 22px;
+  background: #00BA85;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #FFF;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 19.2px;
+  letter-spacing: 0.04px;
+  text-decoration: none;
+  box-shadow: 0 1.4px 1px 0 rgba(255, 255, 255, 0.12) inset, 0 1.4px 4px 0 rgba(6, 6, 18, 0.30);
+  transition: background 0.2s;
+}
+
+.btn-get-started:hover {
+  background: #009E70;
+}
