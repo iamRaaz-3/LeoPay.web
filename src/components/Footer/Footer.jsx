@@ -51,9 +51,9 @@ const LinkedInIconMobile = () => (
 const Footer = () => (
   <footer className="footer-desktop">
     <div className="footer-inner">
-      {/* Lines layer — all lines/dots positioned absolutely using exact Figma coords */}
+      {/* Lines layer */}
       <div className="footer-lines" aria-hidden="true">
-        {/* Column separators — exact Figma x: 521, 747, 973 */}
+        {/* Column separators */}
         <div className="fl fl-sep-brand" />
         <div className="fl fl-sep-home" />
         <div className="fl fl-sep-help" />
@@ -116,7 +116,6 @@ const Footer = () => (
               </a>
             </li>
             <li><a href="/#comparison" className="footer-nav-link">Comparison</a></li>
-            <li><a href="/#testimonials" className="footer-nav-link">Testimonials</a></li>
             <li><a href="/#faqs" className="footer-nav-link">FAQs</a></li>
           </ul>
         </div>
@@ -147,10 +146,8 @@ const Footer = () => (
         </div>
       </div>
 
-      {/* Figma: Leopay logo footer 1260×402 */}
       <div className="footer-logo-footer">
         <div className="footer-logo-footer-legal">
-          <a href="/terms" className="footer-legal-link">Terms &amp; Conditions</a>
           <a href="/privacy" className="footer-legal-link">Privacy Policy</a>
         </div>
         <img src={watermarkImg} alt="" aria-hidden="true" className="footer-watermark-img" />
@@ -175,9 +172,6 @@ const Footer = () => (
             <a href="/privacy" className="footer-mobile-link">
               Privacy Policy<ArrowIcon />
             </a>
-            <a href="/terms" className="footer-mobile-link">
-              Terms &amp; Conditions<ArrowIcon />
-            </a>
           </div>
         </div>
 
@@ -197,8 +191,7 @@ const Footer = () => (
                 </a>
               </li>
               <li><a href="/#comparison" className="footer-nav-link">Comparison</a></li>
-              <li><a href="/#testimonials" className="footer-nav-link">Testimonials</a></li>
-              <li><a href="/#faqs" className="footer-nav-link">FAQs</a></li>
+                <li><a href="/#faqs" className="footer-nav-link">FAQs</a></li>
             </ul>
           </div>
 
