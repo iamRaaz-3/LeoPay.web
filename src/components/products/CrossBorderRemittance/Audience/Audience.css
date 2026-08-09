@@ -1,7 +1,10 @@
 .cbr-audience {
   position: relative;
+  display: flex;
   width: 100%;
-  background: #FFFFFF;
+  justify-content: center;
+  align-items: center;
+  background: #FFF;
   overflow: hidden;
 }
 
@@ -9,27 +12,27 @@
   position: absolute;
   left: 0;
   width: 100%;
-  background: url('../../shared/assets/aud-deco.png') center / cover no-repeat;
   pointer-events: none;
 }
 
 .cbr-audience__deco--top {
   top: 0;
   height: 408px;
+  background: url('./assets/grid-top.png') center / 1920px 408px no-repeat;
 }
 
 .cbr-audience__deco--bottom {
   bottom: 0;
   height: 264px;
-  transform: scaleY(-1);
+  background: url('./assets/grid-bottom.png') center / 1920px 264px no-repeat;
 }
 
 .cbr-audience__inner {
   position: relative;
-  width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 146px 312px 145px;
+  flex-shrink: 0;
+  width: 1920px;
+  height: 1222px;
+  padding: 140px 240px 145px;
   box-sizing: border-box;
 }
 
@@ -63,6 +66,7 @@
   font-family: 'Britti Sans Trial', sans-serif;
   font-size: 48px;
   line-height: 48px;
+  letter-spacing: -1px;
 }
 
 .cbr-audience__title-light {
@@ -83,36 +87,53 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 27px;
+  letter-spacing: 0.04px;
 }
 
 .cbr-audience__cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 416px);
+  grid-template-rows: repeat(2, 300px);
+  grid-auto-flow: column;
+  justify-content: center;
+  align-content: start;
   gap: 24px;
+  width: 100%;
   max-width: 1296px;
-  margin: 60px auto 0;
+  height: 648px;
+  margin: 66px auto 0;
 }
 
 .cbr-audience__card {
-  width: 100%;
-  max-width: 416px;
-  height: auto;
-  min-height: 300px;
-  padding: 36px;
-  background: #FFFFFF;
-  border: 1px solid #E5EEF0;
+  width: 416px;
+  height: 300px;
+  padding: 34px;
+  border: 2px solid #E5EEF0;
   border-radius: 24px;
   box-sizing: border-box;
 }
 
 .cbr-audience__card-icon {
-  display: block;
+  display: flex;
   width: 70px;
   height: 70px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 19.444px;
+  background: #F1FAFB;
+  box-sizing: border-box;
+}
+
+.cbr-audience__card-glyph {
+  display: block;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
 }
 
 .cbr-audience__card-title {
-  margin: 30px 0 0;
+  margin: 48px 0 0;
   color: #162755;
   font-family: 'Britti Sans Trial', sans-serif;
   font-size: 20px;
@@ -121,57 +142,199 @@
 }
 
 .cbr-audience__card-desc {
-  margin: 10px 0 0;
-  color: #525870;
+  margin: 16px 0 0;
+  color: #505670;
   font-family: 'Britti Sans Trial', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1919px) {
   .cbr-audience__inner {
-    padding: 120px 40px;
+    zoom: 0.9833;
   }
 }
 
-@media (max-width: 940px) {
+@media (max-width: 1887px) {
   .cbr-audience__inner {
-    padding: 80px 24px;
-  }
-  .cbr-audience__cards {
-    margin-top: 44px;
-    gap: 12px;
+    zoom: 0.9667;
   }
 }
 
-/* Single column starts at the iPad breakpoint — cards stay inline (3-across,
-   shrinking fluidly) above this, consistent with the rest of the site. */
-@media (max-width: 768px) {
+@media (max-width: 1855px) {
+  .cbr-audience__inner {
+    zoom: 0.9500;
+  }
+}
+
+@media (max-width: 1823px) {
+  .cbr-audience__inner {
+    zoom: 0.9333;
+  }
+}
+
+@media (max-width: 1791px) {
+  .cbr-audience__inner {
+    zoom: 0.9167;
+  }
+}
+
+@media (max-width: 1759px) {
+  .cbr-audience__inner {
+    zoom: 0.9000;
+  }
+}
+
+@media (max-width: 1727px) {
+  .cbr-audience__inner {
+    zoom: 0.8833;
+  }
+}
+
+@media (max-width: 1695px) {
+  .cbr-audience__inner {
+    zoom: 0.8667;
+  }
+}
+
+@media (max-width: 1663px) {
+  .cbr-audience__inner {
+    zoom: 0.8500;
+  }
+}
+
+@media (max-width: 1631px) {
+  .cbr-audience__inner {
+    zoom: 0.8333;
+  }
+}
+
+@media (max-width: 1599px) {
+  .cbr-audience__inner {
+    zoom: 0.8167;
+  }
+}
+
+@media (max-width: 1567px) {
+  .cbr-audience__inner {
+    zoom: 0.8000;
+  }
+}
+
+@media (max-width: 1535px) {
+  .cbr-audience__inner {
+    zoom: 0.7833;
+  }
+}
+
+@media (max-width: 1503px) {
+  .cbr-audience__inner {
+    zoom: 0.7667;
+  }
+}
+
+@media (max-width: 1471px) {
+  .cbr-audience__inner {
+    zoom: 0.7500;
+  }
+}
+
+@media (max-width: 1439px) {
+  .cbr-audience__inner {
+    zoom: 0.7333;
+  }
+}
+
+@media (max-width: 1407px) {
+  .cbr-audience__inner {
+    zoom: 0.7167;
+  }
+}
+
+@media (max-width: 1375px) {
+  .cbr-audience__inner {
+    zoom: 0.7000;
+  }
+}
+
+@media (max-width: 1343px) {
+  .cbr-audience__inner {
+    zoom: 0.6833;
+  }
+}
+
+@media (max-width: 1311px) {
+  .cbr-audience__inner {
+    zoom: 0.6667;
+  }
+}
+
+@media (max-width: 1279px) {
+  .cbr-audience__inner {
+    zoom: 1;
+    flex-shrink: 1;
+    width: 100%;
+    height: auto;
+    padding: 100px 40px;
+  }
   .cbr-audience__cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 416px);
+    grid-template-rows: none;
+    grid-auto-flow: row;
+    max-width: 856px;
+    height: auto;
+    margin-top: 52px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .cbr-audience__inner {
+    padding: 100px 24px;
+  }
+}
+
+@media (max-width: 903px) {
+  .cbr-audience__cards {
+    grid-template-columns: 416px;
     max-width: 416px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cbr-audience__inner {
+    padding: 96px 25px 119px;
+  }
+  .cbr-audience__head {
+    gap: 10px;
+    margin: 0 -25px;
+    padding: 0 10px;
+  }
+  .cbr-audience__title {
+    font-size: 36px;
+  }
+  .cbr-audience__para {
+    max-width: 369px;
+    font-size: 18px;
+    color: #505670;
+  }
+  .cbr-audience__cards {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 380px;
+    gap: 12px;
+    margin-top: 52px;
   }
   .cbr-audience__card {
     width: 100%;
     height: auto;
     min-height: 300px;
   }
-}
-
-@media (max-width: 480px) {
-  .cbr-audience__inner {
-    padding: 80px 25px;
+  .cbr-audience__deco--top {
+    height: 353px;
+    background: url('./assets/grid-top-mobile.png') center top / 430px 353px no-repeat;
   }
-  .cbr-audience__title {
-    font-size: 36px;
-    line-height: 48px;
-  }
-  .cbr-audience__para {
-    font-size: 18px;
-    line-height: 27px;
-  }
-  .cbr-audience__card {
-    padding: 28px;
+  .cbr-audience__deco--bottom {
+    height: 353px;
+    background: url('./assets/grid-bottom-mobile.png') center bottom / 430px 353px no-repeat;
   }
 }
