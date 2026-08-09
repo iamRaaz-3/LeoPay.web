@@ -1,0 +1,325 @@
+.cbr-benefits {
+  position: relative;
+  width: 100%;
+  background:
+    url('./assets/Background.png') center top / cover no-repeat,
+    linear-gradient(180deg, #FFFFFF 0%, #E0F4EF 100%);
+  overflow: hidden;
+}
+
+.cbr-benefits__inner {
+  position: relative;
+  z-index: 1;
+  width: 1920px;
+  margin: 0 auto;
+  padding: 140px 240px 139px;
+  box-sizing: border-box;
+}
+
+.cbr-benefits__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.cbr-benefits__badge {
+  display: inline-flex;
+  align-items: center;
+  height: 33px;
+  padding: 0 16px;
+  background: #FFFFFF;
+  border: 1px solid rgba(82, 88, 112, 0.12);
+  border-radius: 100px;
+  color: #162755;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  box-sizing: border-box;
+}
+
+.cbr-benefits__title {
+  margin: 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -1px;
+}
+
+.cbr-benefits__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.cbr-benefits__title-bold {
+  display: block;
+  font-weight: 600;
+}
+
+.cbr-benefits__para {
+  margin: 0;
+  max-width: 600px;
+  color: #525870;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.04px;
+}
+
+.cbr-benefits__cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-items: center;
+  gap: 8px;
+  max-width: 1424px;
+  margin: 59px auto 0;
+}
+
+.cbr-benefits__card {
+  width: 100%;
+  max-width: 350px;
+  padding: 0 0 32px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-shadow:
+    0 4px 12px 0 rgba(82, 88, 112, 0.04),
+    0 0 0 4px rgba(82, 88, 112, 0.02),
+    inset 0 0 0 1px rgba(82, 88, 112, 0.12);
+  box-sizing: border-box;
+}
+
+.cbr-benefits__card-visual {
+  width: auto;
+  margin: 14px 13px 0;
+  aspect-ratio: 324 / 210;
+  container-type: inline-size;
+}
+
+.cbr-benefits__card-title {
+  margin: 43px 24px 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 21.6px;
+}
+
+.cbr-benefits__card-desc {
+  margin: 8px 24px 0;
+  color: #525870;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media (max-width: 1919px) {
+  .cbr-benefits__inner {
+    zoom: 0.9833;
+  }
+}
+
+@media (max-width: 1887px) {
+  .cbr-benefits__inner {
+    zoom: 0.9667;
+  }
+}
+
+@media (max-width: 1855px) {
+  .cbr-benefits__inner {
+    zoom: 0.9500;
+  }
+}
+
+@media (max-width: 1823px) {
+  .cbr-benefits__inner {
+    zoom: 0.9333;
+  }
+}
+
+@media (max-width: 1791px) {
+  .cbr-benefits__inner {
+    zoom: 0.9167;
+  }
+}
+
+@media (max-width: 1759px) {
+  .cbr-benefits__inner {
+    zoom: 0.9000;
+  }
+}
+
+@media (max-width: 1727px) {
+  .cbr-benefits__inner {
+    zoom: 0.8833;
+  }
+}
+
+@media (max-width: 1695px) {
+  .cbr-benefits__inner {
+    zoom: 0.8667;
+  }
+}
+
+@media (max-width: 1663px) {
+  .cbr-benefits__inner {
+    zoom: 0.8500;
+  }
+}
+
+@media (max-width: 1631px) {
+  .cbr-benefits__inner {
+    zoom: 0.8333;
+  }
+}
+
+@media (max-width: 1599px) {
+  .cbr-benefits__inner {
+    zoom: 0.8167;
+  }
+}
+
+@media (max-width: 1567px) {
+  .cbr-benefits__inner {
+    zoom: 0.8000;
+  }
+}
+
+@media (max-width: 1535px) {
+  .cbr-benefits__inner {
+    zoom: 0.7833;
+  }
+}
+
+@media (max-width: 1503px) {
+  .cbr-benefits__inner {
+    zoom: 0.7667;
+  }
+}
+
+@media (max-width: 1471px) {
+  .cbr-benefits__inner {
+    zoom: 0.7500;
+  }
+}
+
+@media (max-width: 1439px) {
+  .cbr-benefits__inner {
+    zoom: 0.7333;
+  }
+}
+
+@media (max-width: 1407px) {
+  .cbr-benefits__inner {
+    zoom: 0.7167;
+  }
+}
+
+@media (max-width: 1375px) {
+  .cbr-benefits__inner {
+    zoom: 0.7000;
+  }
+}
+
+@media (max-width: 1343px) {
+  .cbr-benefits__inner {
+    zoom: 0.6833;
+  }
+}
+
+@media (max-width: 1311px) {
+  .cbr-benefits__inner {
+    zoom: 0.6667;
+  }
+}
+
+@media (max-width: 1279px) {
+  .cbr-benefits {
+    background:
+      url('./assets/Background-ipad.png') center top / cover no-repeat,
+      linear-gradient(180deg, #FFFFFF 0%, #E0F4EF 100%);
+  }
+  .cbr-benefits__inner {
+    zoom: 1;
+    width: 100%;
+    max-width: 820px;
+    padding: 140px 54px 182px;
+  }
+  .cbr-benefits__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 712px;
+    margin-top: 82px;
+  }
+}
+
+@media (max-width: 819px) {
+  .cbr-benefits__inner {
+    padding: 120px 24px 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cbr-benefits__inner {
+    padding: 100px 24px 120px;
+  }
+  .cbr-benefits__cards {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 350px;
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cbr-benefits {
+    background: linear-gradient(180deg, #FFFFFF 0%, #E0F4EF 100%);
+  }
+  .cbr-benefits::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 0;
+    width: 1048px;
+    height: 1048px;
+    margin-left: -524px;
+    background-image:
+      repeating-linear-gradient(to right, #FFFFFF 0 0.69px, transparent 0.69px 44.19px),
+      repeating-linear-gradient(to top, #FFFFFF 0 0.69px, transparent 0.69px 44.19px);
+    pointer-events: none;
+  }
+  .cbr-benefits__inner {
+    max-width: 430px;
+    padding: 101.5px 25px 155px;
+  }
+  .cbr-benefits__head {
+    gap: 10px;
+    margin: 0 -25px;
+    padding: 0 10px;
+  }
+  .cbr-benefits__title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  .cbr-benefits__para {
+    max-width: 369px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .cbr-benefits__cards {
+    max-width: 380px;
+    gap: 12px;
+    margin-top: 65.5px;
+  }
+  .cbr-benefits__card-visual {
+    margin: 26px 20px 0;
+    aspect-ratio: 340 / 210;
+  }
+  .cbr-benefits__card-title {
+    margin-top: 31px;
+  }
+}
