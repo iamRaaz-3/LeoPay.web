@@ -288,13 +288,6 @@
   }
 }
 
-/* Fluid override: supersedes the steps above where supported, ignored elsewhere */
-@media (max-width: 1919px) {
-  .cbr-hero__inner {
-    zoom: calc(100vw / 1920px);
-  }
-}
-
 @media (max-width: 900px) {
   .cbr-hero__stage {
     display: contents;
@@ -338,7 +331,6 @@
     height: 600px;
     margin: 19px auto 0;
     zoom: 1;
-    zoom: min(1, calc((100vw - 104px) / 674.5px));
   }
   .cbr-hero__visual--bank {
     transform: none;
@@ -362,7 +354,6 @@
   }
   .cbr-hero__visual {
     zoom: 0.85;
-    zoom: min(1, calc((100vw - 48px) / 674.5px));
   }
 }
 
@@ -388,7 +379,6 @@
   .cbr-hero__visual {
     left: 0;
     zoom: 1;
-    zoom: min(1, calc((100vw - 70px) / 357.5px));
     width: 357.5px;
     height: 380px;
     margin: 80px auto 0;
@@ -420,6 +410,5 @@
 @media (max-width: 429px) {
   .cbr-hero__visual {
     zoom: 0.85;
-    zoom: min(1, calc((100vw - 70px) / 357.5px));
   }
 }

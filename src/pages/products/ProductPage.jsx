@@ -20,7 +20,7 @@ const PRODUCTS = {
 
 const ProductPage = () => {
   const { slug } = useParams();
-  const product = PRODUCTS[slug];
+  const product = Object.hasOwn(PRODUCTS, slug) ? PRODUCTS[slug] : undefined;
 
   if (!product) {
     return <Navigate to="/" replace />;
