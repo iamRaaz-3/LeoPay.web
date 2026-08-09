@@ -1,5 +1,5 @@
 .cbr-bvisual {
-  /* 1 unit = 1px of the 324px-wide Figma frame, so each visual scales as one piece */
+
   --u: 1px;
   position: relative;
   width: 100%;
@@ -11,11 +11,9 @@
 
 @supports (container-type: inline-size) {
   .cbr-bvisual {
-    --u: calc(100cqw / 324);
+    --u: min(1px, calc(100cqw / 324));
   }
 }
-
-/* Settlement */
 
 .cbr-bvisual--settle {
   background: #F0F7F9;
@@ -39,7 +37,6 @@
   top: 53.8095%;
 }
 
-/* the SVG is exported already rotated, so it is placed at its bounding box - no transform */
 .cbr-bvisual__settle-notes {
   position: absolute;
   left: 6.4630%;
@@ -67,17 +64,17 @@
 }
 
 .cbr-bvisual__notif--1 {
-  left: 44.5370%;
+  right: calc(37.5 * var(--u));
   top: 19.8095%;
-  width: 43.8895%;
+  width: calc(142.202 * var(--u));
   height: 19.3048%;
   transform: rotate(-8.76deg);
 }
 
 .cbr-bvisual__notif--2 {
-  left: 45.9568%;
+  right: calc(42.1 * var(--u));
   top: 59.1905%;
-  width: 41.0494%;
+  width: calc(133 * var(--u));
   height: 19.3333%;
   transform: rotate(6.42deg);
 }
@@ -120,8 +117,6 @@
   line-height: calc(13.33 * var(--u));
   white-space: nowrap;
 }
-
-/* Transfer */
 
 .cbr-bvisual--transfer {
   background: #E4FAED;
@@ -270,8 +265,6 @@
   height: calc(11.463 * var(--u));
 }
 
-/* Liquidity */
-
 .cbr-bvisual--liquidity {
   background: #F0F7F9;
   font-family: 'Britti Sans Trial', sans-serif;
@@ -382,7 +375,6 @@
 .cbr-bvisual__liquidity-bar--5 { top: calc(42 * var(--u)); background: #E4FAED; }
 .cbr-bvisual__liquidity-bar--6 { top: calc(53 * var(--u)); background: #E4F2FA; }
 
-/* the coin SVG has its ring + rotation baked in, so it sits at its bounding box */
 .cbr-bvisual__liquidity-coin {
   position: absolute;
 }
@@ -439,8 +431,6 @@
   width: calc(23.7 * var(--u));
   height: calc(23.7 * var(--u));
 }
-
-/* Transaction history */
 
 .cbr-bvisual--history {
   background: #E4FAED;
@@ -574,4 +564,12 @@
   font-size: calc(13 * var(--u));
   line-height: calc(14 * var(--u));
   font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  @supports (container-type: inline-size) {
+    .cbr-bvisual {
+      --u: min(1px, calc(100cqw / 340));
+    }
+  }
 }
