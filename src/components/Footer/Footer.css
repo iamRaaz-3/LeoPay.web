@@ -250,7 +250,7 @@
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
   font-weight: 600;
   font-size: 13.9px;
-  line-height: 1.5;
+  line-height: 23px;
   color: #000000;
   margin: 0;
 }
@@ -293,8 +293,9 @@
 .footer-social-icons {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 10px;
+  margin-top: 1px;
   overflow: visible;
 }
 
@@ -302,6 +303,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -365,6 +367,8 @@
 }
 
 .footer-logo-footer-legal {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -378,12 +382,15 @@
 }
 
 .footer-watermark-img {
-  width: 93.601%;
-  max-width: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 96.5079%;
+  max-width: 96.5079%;
   min-width: 0;
   height: auto;
   display: block;
-  margin: -2.13px auto 0;
   user-select: none;
   pointer-events: none;
 }
@@ -402,18 +409,20 @@
   .footer-ext { display: none; }
   .footer-logo-footer-legal { padding: 0 40px; }
   .footer-logo-footer {
-    width: 100vw;
+    width: 100%;
     height: auto;
     overflow: visible;
     position: relative;
-    left: calc((100% - 100vw) / 2);
+    left: 0;
     margin: 0;
   }
   .footer-watermark-img {
-    width: 100%;
-    max-width: 100%;
+    position: static;
+    transform: none;
+    width: 96.5079%;
+    max-width: 96.5079%;
     height: auto;
-    margin: 20px 0 0 0;
+    margin: 20px auto 0;
     display: block;
   }
 }
@@ -426,8 +435,9 @@
     height: auto;
     padding: 0 32px;
   }
-  .footer-brand-outer { width: auto; flex: 1; }
-  .footer-col { width: auto; flex: 1; min-width: 140px; }
+  .footer-brand-outer { width: 100%; flex: none; }
+  .footer-col { width: 33.3333%; flex: none; min-width: 0; }
+  .footer-social-icons { flex-wrap: wrap; }
   .footer-logo-footer {
     height: auto;
     overflow: visible;
@@ -436,10 +446,12 @@
   .footer-logo-footer::after { display: none; }
   .footer-logo-footer-legal { padding: 0 32px; }
   .footer-watermark-img {
-    width: 100%;
-    max-width: 100%;
+    position: static;
+    transform: none;
+    width: 96.5079%;
+    max-width: 96.5079%;
     height: auto;
-    margin: 16px 0 0 0;
+    margin: 16px auto 0;
     display: block;
   }
 }
@@ -463,10 +475,12 @@
     gap: 20px;
   }
   .footer-watermark-img {
-    width: 100%;
-    max-width: 100%;
+    position: static;
+    transform: none;
+    width: 96.5079%;
+    max-width: 96.5079%;
     height: auto;
-    margin: 12px 0 0 0;
+    margin: 12px auto 0;
     display: block;
   }
 }
@@ -478,6 +492,8 @@
   .footer-col { width: 100%; flex: none; }
   .footer-logo-footer-legal { padding: 0 16px; flex-wrap: wrap; height: auto; padding-top: 16px; padding-bottom: 16px; }
   .footer-watermark-img {
+    position: static;
+    transform: none;
     width: 100%;
     max-width: 100%;
     height: auto;
