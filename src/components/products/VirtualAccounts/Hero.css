@@ -1,0 +1,532 @@
+.va-hero {
+  position: relative;
+  width: 100%;
+  background: #FFF;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.va-hero__inner {
+  position: relative;
+  width: 1920px;
+  height: 872px;
+  flex-shrink: 0;
+  margin: 0 auto;
+  background: url('../shared/assets/product-hero-bg.jpg') center top / cover no-repeat #FFF;
+}
+
+.va-hero__inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #ECF5FC 0%, rgba(204, 242, 231, 0.80) 154.93%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.va-hero__glow {
+  position: absolute;
+  left: 72px;
+  top: 122px;
+  width: 818px;
+  height: 627px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  filter: blur(100.1px);
+  pointer-events: none;
+}
+
+.va-hero__stage {
+  position: absolute;
+  left: 204px;
+  top: 175px;
+  width: 1532px;
+  height: 578px;
+}
+
+.va-hero__content {
+  position: absolute;
+  left: 0;
+  top: 78px;
+  width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.va-hero__badge-wrap {
+  display: flex;
+  height: 53px;
+  padding: 4px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.va-hero__badge {
+  display: flex;
+  width: 153px;
+  height: 32px;
+  padding: 10.415px 18px 10.585px 18.5px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  background: #162755;
+  border-radius: 8px;
+  color: #FFF;
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.va-hero__title {
+  margin: 0;
+  color: #060612;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 77px;
+  letter-spacing: -2.1px;
+}
+
+.va-hero__title-line {
+  display: block;
+}
+
+.va-hero__title-line:nth-child(2) {
+  font-weight: 400;
+}
+
+.va-hero__desc {
+  margin: 0;
+  width: 636px;
+  color: #505670;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.2px;
+}
+
+.va-hero__buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18.5px 0;
+}
+
+
+
+
+.va-hero__visual {
+  position: absolute;
+  left: 756px;
+  top: 0;
+  width: 776px;
+  height: 578px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.va-hero__globe {
+  position: absolute;
+  left: 85px;
+  top: 0;
+  width: 578px;
+  height: 578px;
+}
+
+.va-hero__txn {
+  position: absolute;
+  width: 400px;
+  height: 150px;
+}
+
+.va-hero__txn--1 {
+  left: 0;
+  top: 78px;
+}
+
+.va-hero__txn--2 {
+  left: 376px;
+  top: 297px;
+}
+
+.va-hero__txn-content {
+  position: absolute;
+  left: 12.5px;
+  top: 13px;
+  width: 375px;
+  height: 129px;
+}
+
+.va-hero__txn-card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 375px;
+  height: 125px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 0 7px rgba(32, 41, 76, 0.09), 0 0 10px rgba(32, 41, 76, 0.07), 0 0 14px rgba(32, 41, 76, 0.05);
+  box-sizing: border-box;
+}
+
+.va-hero__txn-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 19.5px 0 27.5px;
+}
+
+.va-hero__txn-name {
+  display: flex;
+  min-width: 89px;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.va-hero__txn-time {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #505670;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.va-hero__txn-divider {
+  position: absolute;
+  left: 0;
+  top: 49px;
+  width: 100%;
+  height: 2px;
+  background: #E9F5FF;
+}
+
+.va-hero__txn-amount {
+  position: absolute;
+  left: 27.5px;
+  top: 76.9px;
+  display: flex;
+  min-width: 89px;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.va-hero__txn-pill {
+  position: absolute;
+  left: 214.5px;
+  top: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 40px;
+  padding: 5px;
+  gap: 14px;
+  border-radius: 100px;
+  box-sizing: border-box;
+}
+
+.va-hero__txn-pill--blue {
+  border: 1px solid rgba(230, 245, 251, 0);
+  background: linear-gradient(90deg, #E6F5FB 38.57%, rgba(230, 245, 251, 0) 96.79%);
+}
+
+.va-hero__txn-pill--green {
+  border: 1px solid rgba(230, 251, 237, 0);
+  background: linear-gradient(90deg, #E6FBED 38.57%, rgba(230, 251, 237, 0) 96.79%);
+}
+
+.va-hero__txn-coin,
+.va-hero__txn-flag {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.va-hero__txn-dash {
+  width: 42px;
+  height: 8px;
+  flex-shrink: 0;
+}
+
+.va-hero__chip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 144px;
+  height: 69px;
+  padding: 0 15px 0 12px;
+  background: #FFFFFF;
+  border-radius: 18px;
+  box-shadow: 0 4.91px 18.66px rgba(0, 0, 0, 0.11);
+  box-sizing: border-box;
+}
+
+.va-hero__chip--1 {
+  left: 494px;
+  top: 131px;
+}
+
+.va-hero__chip--2 {
+  left: 85px;
+  top: 360px;
+}
+
+.va-hero__chip-coin {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+}
+
+.va-hero__chip-bank {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.va-hero__chip-dash {
+  width: 19.642px;
+  height: auto;
+  flex-shrink: 0;
+  margin: 0 11px 0 15px;
+}
+
+@media (max-width: 1824px) {
+  .va-hero__inner {
+    zoom: 0.95;
+  }
+}
+
+/* ── ID-card visual variant (Virtual Accounts) ──────────── */
+
+.va-hero__idcard-scale {
+  position: absolute;
+  inset: 0;
+}
+
+.va-hero__idcard-img {
+  position: absolute;
+  left: 127px;
+  top: -8px;
+  width: 627px;
+  height: 627px;
+}
+
+.va-hero__idbadge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 110px;
+  padding: 0 20px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 4.91px 18.66px rgba(0, 0, 0, 0.11);
+  box-sizing: border-box;
+}
+
+.va-hero__idbadge--1 { left: 528px; top: 15px; width: 240px; }
+.va-hero__idbadge--2 { left: 50px; top: 305px; width: 315px; }
+.va-hero__idbadge--3 { left: 540px; top: 345px; width: 246px; }
+
+.va-hero__idbadge-icon {
+  width: auto;
+  height: 75px;
+  flex-shrink: 0;
+}
+
+.va-hero__idbadge-label {
+  display: flex;
+  flex-direction: column;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.va-hero__idbadge-label span:first-child { font-weight: 400; }
+.va-hero__idbadge-label span:last-child { font-weight: 700; }
+
+@media (max-width: 1728px) {
+  .va-hero__inner {
+    zoom: 0.9;
+  }
+}
+
+@media (max-width: 1632px) {
+  .va-hero__inner {
+    zoom: 0.85;
+  }
+}
+
+@media (max-width: 1536px) {
+  .va-hero__inner {
+    zoom: 0.8;
+  }
+}
+
+@media (max-width: 1440px) {
+  .va-hero__inner {
+    zoom: 0.75;
+  }
+}
+
+@media (max-width: 1344px) {
+  .va-hero__inner {
+    zoom: 0.7;
+  }
+}
+
+@media (max-width: 1248px) {
+  .va-hero__inner {
+    zoom: 0.65;
+  }
+}
+
+@media (max-width: 1152px) {
+  .va-hero__inner {
+    zoom: 0.6;
+  }
+}
+
+@media (max-width: 1056px) {
+  .va-hero__inner {
+    zoom: 0.55;
+  }
+}
+
+@media (max-width: 960px) {
+  .va-hero__inner {
+    zoom: 0.5;
+  }
+}
+
+@media (max-width: 900px) {
+  .va-hero__stage {
+    display: contents;
+  }
+  .va-hero__inner {
+    zoom: 1;
+    width: 100%;
+    height: auto;
+    padding: 140px 24px 60px;
+    box-sizing: border-box;
+  }
+  .va-hero__glow {
+    left: 0;
+    top: 90px;
+    width: 100%;
+    height: 400px;
+  }
+  .va-hero__content {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 620px;
+  }
+  .va-hero__visual {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin: 48px auto 0;
+    width: 340px;
+    height: 333px;
+  }
+  .va-hero__globe {
+    left: 15px;
+    top: 6px;
+    width: 310px;
+    height: 310px;
+  }
+  .va-hero__txn {
+    transform: scale(0.624);
+    transform-origin: top left;
+  }
+  .va-hero__txn--1 {
+    left: 1px;
+    top: 0;
+  }
+  .va-hero__txn--2 {
+    left: 100px;
+    top: 230px;
+  }
+  .va-hero__chip {
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
+  .va-hero__chip--1 {
+    left: 225px;
+    top: 123px;
+  }
+  .va-hero__chip--2 {
+    left: 0;
+    top: 191px;
+  }
+  .va-hero__visual--idcard {
+    width: 338px;
+    height: 266px;
+  }
+  .va-hero__idcard-scale {
+    position: relative;
+    inset: auto;
+    width: 786px;
+    height: 619px;
+    transform: scale(0.43);
+    transform-origin: top left;
+  }
+}
+
+@media (max-width: 480px) {
+  .va-hero__inner {
+    padding: 126px 35px 60px;
+  }
+  .va-hero__title {
+    font-family: 'Britti Sans Trial', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 44.8px;
+    letter-spacing: -1.2px;
+  }
+  .va-hero__desc {
+    width: 100%;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .va-hero__visual {
+    margin-top: 44px;
+  }
+}
