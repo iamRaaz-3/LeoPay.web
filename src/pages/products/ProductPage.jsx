@@ -11,11 +11,15 @@ import VirtualAccountsAudience from '../../components/products/VirtualAccounts/A
 import CrossBorderRemittanceHero from '../../components/products/CrossBorderRemittance/Hero/Hero.jsx';
 import CrossBorderRemittanceBenefits from '../../components/products/CrossBorderRemittance/Benefits/Benefits.jsx';
 import CrossBorderRemittanceAudience from '../../components/products/CrossBorderRemittance/Audience/Audience.jsx';
+import PoboCoboHero from '../../components/products/PoboCobo/Hero.jsx';
+import PoboCoboBenefits from '../../components/products/PoboCobo/Benefits.jsx';
+import PoboCoboAudience from '../../components/products/PoboCobo/Audience.jsx';
 
 const PRODUCTS = {
   'global-payouts': { Hero: GlobalPayoutsHero, Benefits: GlobalPayoutsBenefits, Audience: GlobalPayoutsAudience },
   'virtual-accounts': { Hero: VirtualAccountsHero, Benefits: VirtualAccountsBenefits, Audience: VirtualAccountsAudience },
   'cross-border-remittance': { Hero: CrossBorderRemittanceHero, Benefits: CrossBorderRemittanceBenefits, Audience: CrossBorderRemittanceAudience },
+  'pobo-cobo': { Hero: PoboCoboHero, Benefits: PoboCoboBenefits, Audience: PoboCoboAudience },
 };
 
 const ProductPage = () => {
