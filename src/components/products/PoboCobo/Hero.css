@@ -16,6 +16,16 @@
   background: url('../CrossBorderRemittance/Hero/assets/Artboard 1 1.png') #FFF bottom / cover no-repeat;
 }
 
+/* Figma "Rectangle 3132" — tint laid over the artboard image. */
+.pobo-hero__inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #ECF5FC 0%, rgba(204, 242, 231, 0.80) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
 .pobo-hero__glow {
   position: absolute;
   left: 72px;
@@ -84,7 +94,7 @@
   color: #060612;
   font-family: 'Britti Sans Trial', sans-serif;
   font-size: 70px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 77px;
   letter-spacing: -2.1px;
 }
@@ -92,10 +102,6 @@
 .pobo-hero__title-line {
   display: block;
   white-space: nowrap;
-}
-
-.pobo-hero__title-line:nth-child(2) {
-  font-weight: 400;
 }
 
 .pobo-hero__desc {
@@ -116,21 +122,77 @@
   padding: 18.5px 0;
 }
 
+/* ── Visual: cube art + centre mark + currency pills ───────── */
+
 .pobo-hero__visual {
   position: absolute;
   left: 835px;
   top: 0;
-  width: 594px;
+  width: 595px;
   height: 518px;
-  pointer-events: none;
   user-select: none;
 }
 
-.pobo-hero__visual-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.pobo-hero__cubes {
+  position: absolute;
+  left: 26px;
+  top: 0;
+  width: 548px;
+  height: 518px;
+}
+
+.pobo-hero__halo {
+  position: absolute;
+  left: 198px;
+  top: 161px;
+  width: 201px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(314.6deg, #E4FAED 48%, rgba(0, 186, 133, 0.80) 100%);
+}
+
+.pobo-hero__mark {
+  position: absolute;
+  left: 226px;
+  top: 188px;
+  width: 144px;
+  height: 144px;
+}
+
+.pobo-hero__pill {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 132px;
+  height: 68px;
+  padding-left: 17px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #E4F2F8 98%);
+  border-radius: 16px;
+  box-shadow: 0 5px 18.66px rgba(0, 0, 0, 0.11);
+  box-sizing: border-box;
+}
+
+.pobo-hero__pill--usd { left: 239px; top: 23px; }
+.pobo-hero__pill--mmk { left: 0;     top: 228px; }
+.pobo-hero__pill--php { left: 463px; top: 228px; }
+.pobo-hero__pill--vnd { left: 239px; top: 430px; }
+
+.pobo-hero__pill-flag {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.pobo-hero__pill-label {
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
 }
 
 @media (max-width: 1824px) { .pobo-hero__inner { zoom: 0.95; } }
@@ -181,14 +243,14 @@
     width: 100%;
     max-width: 100%;
   }
+  /* The visual is absolutely positioned internally, so scale the whole
+     595x518 stage rather than reflowing each piece. */
   .pobo-hero__visual {
     position: relative;
     left: auto;
     top: auto;
     margin: 48px auto 0;
-    width: min(594px, 100%);
-    height: auto;
-    aspect-ratio: 594 / 518;
+    zoom: min(1, calc((100vw - 48px) / 595px));
   }
 }
 
@@ -207,5 +269,6 @@
   }
   .pobo-hero__visual {
     margin-top: 44px;
+    zoom: min(1, calc((100vw - 70px) / 595px));
   }
 }
