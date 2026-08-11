@@ -18,7 +18,7 @@ const prefetchProductPage = () => import('../../pages/products/ProductPage.jsx')
 const PRODUCT_ITEMS = [
   { icon: iconPayouts,    title: 'Global Payouts',                  desc: 'Send Payments Across Borders in Seconds', to: '/products/global-payouts' },
   { icon: iconRemittance, title: 'Cross-Border Remittance',         desc: 'Faster International Transfers, Lower Costs', to: '/products/cross-border-remittance' },
-  { icon: iconPobo,       title: 'POBO / COBO',                     desc: 'Simplify Global Payment Operations' },
+  { icon: iconPobo,       title: 'POBO / COBO',                     desc: 'Simplify Global Payment Operations', to: '/products/pobo-cobo' },
   { icon: iconTreasury,   title: 'Treasury & Liquidity Management', desc: 'Optimize Global Cash Flow' },
   { icon: iconAccounts,   title: 'Virtual Accounts',                desc: 'Streamline Collections and Reconciliation', to: '/products/virtual-accounts' },
 ];

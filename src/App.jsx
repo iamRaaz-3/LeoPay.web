@@ -12,7 +12,6 @@ import Cta from './components/Cta/Cta.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import Privacy from './pages/Privacy.jsx'
 
-
 const ProductPage = lazy(() => import('./pages/products/ProductPage.jsx'))
 
 const Landing = () => (
@@ -20,8 +19,6 @@ const Landing = () => (
     <Navbar />
     <Hero />
     <Ticker />
-    
-
     <FastestWay />
     <Comparison />
     <Features />

@@ -1,4 +1,4 @@
-.cbr-audience {
+.pobo-audience {
   position: relative;
   display: flex;
   width: 100%;
@@ -8,26 +8,26 @@
   overflow: hidden;
 }
 
-.cbr-audience__deco {
+.pobo-audience__deco {
   position: absolute;
   left: 0;
   width: 100%;
   pointer-events: none;
 }
 
-.cbr-audience__deco--top {
+.pobo-audience__deco--top {
   top: 0;
   height: 408px;
-  background: url('./assets/grid-top.png') center / 1920px 408px no-repeat;
+  background: url('./assets/deco-top.png') center / 1920px 408px no-repeat;
 }
 
-.cbr-audience__deco--bottom {
+.pobo-audience__deco--bottom {
   bottom: 0;
   height: 264px;
-  background: url('./assets/grid-bottom.png') center / 1920px 264px no-repeat;
+  background: url('./assets/deco-bottom.png') center / 1920px 264px no-repeat;
 }
 
-.cbr-audience__inner {
+.pobo-audience__inner {
   position: relative;
   flex-shrink: 0;
   width: 1920px;
@@ -36,7 +36,7 @@
   box-sizing: border-box;
 }
 
-.cbr-audience__head {
+.pobo-audience__head {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +44,7 @@
   text-align: center;
 }
 
-.cbr-audience__badge {
+.pobo-audience__badge {
   display: inline-flex;
   align-items: center;
   height: 33px;
@@ -60,7 +60,7 @@
   box-sizing: border-box;
 }
 
-.cbr-audience__title {
+.pobo-audience__title {
   margin: 0;
   color: #162755;
   font-family: 'Britti Sans Trial', sans-serif;
@@ -69,17 +69,17 @@
   letter-spacing: -1px;
 }
 
-.cbr-audience__title-light {
+.pobo-audience__title-light {
   display: block;
   font-weight: 400;
 }
 
-.cbr-audience__title-bold {
+.pobo-audience__title-bold {
   display: block;
   font-weight: 600;
 }
 
-.cbr-audience__para {
+.pobo-audience__para {
   margin: 0;
   max-width: 600px;
   color: #525870;
@@ -90,7 +90,7 @@
   letter-spacing: 0.04px;
 }
 
-.cbr-audience__cards {
+.pobo-audience__cards {
   display: grid;
   grid-template-columns: repeat(3, 416px);
   grid-template-rows: repeat(2, 300px);
@@ -104,7 +104,7 @@
   margin: 66px auto 0;
 }
 
-.cbr-audience__card {
+.pobo-audience__card {
   width: 416px;
   height: 300px;
   padding: 34px;
@@ -113,26 +113,13 @@
   box-sizing: border-box;
 }
 
-.cbr-audience__card-icon {
-  display: flex;
+.pobo-audience__card-icon {
+  display: block;
   width: 70px;
   height: 70px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 19.444px;
-  background: #F1FAFB;
-  box-sizing: border-box;
 }
 
-.cbr-audience__card-glyph {
-  display: block;
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-  aspect-ratio: 1 / 1;
-}
-
-.cbr-audience__card-title {
+.pobo-audience__card-title {
   margin: 48px 0 0;
   color: #162755;
   font-family: 'Britti Sans Trial', sans-serif;
@@ -141,7 +128,7 @@
   line-height: 21.6px;
 }
 
-.cbr-audience__card-desc {
+.pobo-audience__card-desc {
   margin: 16px 0 0;
   color: #505670;
   font-family: 'Britti Sans Trial', sans-serif;
@@ -151,134 +138,138 @@
 }
 
 @media (max-width: 1919px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.9833;
   }
 }
 
 @media (max-width: 1887px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.9667;
   }
 }
 
 @media (max-width: 1855px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.9500;
   }
 }
 
 @media (max-width: 1823px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.9333;
   }
 }
 
 @media (max-width: 1791px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.9167;
   }
 }
 
 @media (max-width: 1759px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.9000;
   }
 }
 
 @media (max-width: 1727px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.8833;
   }
 }
 
 @media (max-width: 1695px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.8667;
   }
 }
 
 @media (max-width: 1663px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.8500;
   }
 }
 
 @media (max-width: 1631px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.8333;
   }
 }
 
 @media (max-width: 1599px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.8167;
   }
 }
 
 @media (max-width: 1567px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.8000;
   }
 }
 
 @media (max-width: 1535px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.7833;
   }
 }
 
 @media (max-width: 1503px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.7667;
   }
 }
 
 @media (max-width: 1471px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.7500;
   }
 }
 
 @media (max-width: 1439px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.7333;
   }
 }
 
 @media (max-width: 1407px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.7167;
   }
 }
 
 @media (max-width: 1375px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.7000;
   }
 }
 
 @media (max-width: 1343px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.6833;
   }
 }
 
 @media (max-width: 1311px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 0.6667;
   }
 }
 
+@media (max-width: 1919px) and (min-width: 1280px) {
+  .pobo-audience__inner { zoom: calc(100vw / 1920px); }
+}
+
 @media (max-width: 1279px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     zoom: 1;
     flex-shrink: 1;
     width: 100%;
     height: auto;
     padding: 100px 40px;
   }
-  .cbr-audience__cards {
+  .pobo-audience__cards {
     grid-template-columns: repeat(2, 416px);
     grid-template-rows: none;
     grid-auto-flow: row;
@@ -289,19 +280,19 @@
 }
 
 @media (max-width: 1023px) {
-  .cbr-audience__inner {
+  .pobo-audience__inner {
     padding: 100px 24px;
   }
 }
 
 @media (max-width: 903px) {
-  .cbr-audience__cards {
+  .pobo-audience__cards {
     zoom: min(1, calc((100vw - 48px) / 856px));
   }
 }
 
 @media (max-width: 615px) {
-  .cbr-audience__cards {
+  .pobo-audience__cards {
     grid-template-columns: 416px;
     max-width: 416px;
     zoom: min(1, calc((100vw - 48px) / 416px));
@@ -309,40 +300,43 @@
 }
 
 @media (max-width: 480px) {
-  .cbr-audience__inner {
-    padding: 96px 25px 119px;
+  .pobo-audience__inner {
+    padding: 80px 25px 109px;
   }
-  .cbr-audience__head {
+  .pobo-audience__head {
     gap: 10px;
     margin: 0 -25px;
     padding: 0 10px;
   }
-  .cbr-audience__title {
+  .pobo-audience__title {
     font-size: 36px;
   }
-  .cbr-audience__para {
+  .pobo-audience__title-bold {
+    line-height: 34px;
+  }
+  .pobo-audience__para {
     max-width: 369px;
     font-size: 18px;
     color: #505670;
   }
-  .cbr-audience__cards {
+  .pobo-audience__cards {
     grid-template-columns: minmax(0, 1fr);
     max-width: 380px;
     gap: 12px;
-    margin-top: 52px;
+    margin-top: 56px;
     zoom: 1;
   }
-  .cbr-audience__card {
+  .pobo-audience__card {
     width: 100%;
     height: auto;
     min-height: 300px;
   }
-  .cbr-audience__deco--top {
+  .pobo-audience__deco--top {
     height: 353px;
-    background: url('./assets/grid-top-mobile.png') center top / 430px 353px no-repeat;
+    background: url('./assets/deco-mobile.png') center top / 430px 353px no-repeat;
   }
-  .cbr-audience__deco--bottom {
+  .pobo-audience__deco--bottom {
     height: 353px;
-    background: url('./assets/grid-bottom-mobile.png') center bottom / 430px 353px no-repeat;
+    background: url('./assets/deco-mobile.png') center bottom / 430px 353px no-repeat;
   }
 }
