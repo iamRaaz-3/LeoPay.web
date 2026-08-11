@@ -1,0 +1,205 @@
+
+.pobo-bv {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 324 / 210;
+  border-radius: 20px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.pobo-bv > * {
+  position: absolute;
+}
+
+@container (min-width: 0px) {
+  .pobo-bv > * {
+    --u: calc(100cqw / 324);
+  }
+}
+
+.pobo-bv--centralized {
+  background: #F0F7F9;
+}
+
+.pobo-bv--centralized .pobo-bv__spoke {
+  background: #E5EEF1;
+}
+
+.pobo-bv__spoke--v {
+  left: calc(152 * var(--u));
+  top: calc(-49 * var(--u));
+  width: calc(20 * var(--u));
+  height: calc(310 * var(--u));
+}
+
+.pobo-bv__spoke--h {
+  left: calc(-48 * var(--u));
+  top: calc(96 * var(--u));
+  width: calc(428 * var(--u));
+  height: calc(20 * var(--u));
+}
+
+.pobo-bv__ring {
+  left: calc(18 * var(--u));
+  top: calc(-39 * var(--u));
+  width: calc(288 * var(--u));
+  height: calc(288 * var(--u));
+  border-radius: 50%;
+  background: #F8FDFF;
+  border: calc(2 * var(--u)) solid #FFFFFF;
+  box-sizing: border-box;
+  mask: radial-gradient(circle at 50% 50%, transparent calc(80 * var(--u)), #000 calc(80 * var(--u)));
+  -webkit-mask: radial-gradient(circle at 50% 50%, transparent calc(80 * var(--u)), #000 calc(80 * var(--u)));
+}
+
+.pobo-bv__hub {
+  left: calc(135 * var(--u));
+  top: calc(79 * var(--u));
+  width: calc(53 * var(--u));
+  height: calc(53 * var(--u));
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #4FD8AC 0%, #00BA85 55%, #0C7A5C 100%);
+}
+
+.pobo-bv--collections { background: #E4FAED; }
+.pobo-bv--visibility  { background: #F0F7F9; }
+
+.pobo-bv__band {
+  left: calc(-7 * var(--u));
+  width: calc(345 * var(--u));
+  height: calc(33 * var(--u));
+  border: calc(3 * var(--u)) solid #FFFFFF;
+  box-sizing: border-box;
+}
+
+.pobo-bv__band--1 { top: calc(67 * var(--u)); }
+.pobo-bv__band--2 { top: calc(113 * var(--u)); }
+
+.pobo-bv--collections .pobo-bv__band { background: #F0F7F9; }
+.pobo-bv--visibility  .pobo-bv__band { background: #E4FAED; }
+
+.pobo-bv__chip {
+  display: flex;
+  align-items: center;
+  gap: calc(4 * var(--u));
+  padding: 0 calc(12 * var(--u));
+  background: #FFFFFF;
+  border: calc(0.93 * var(--u)) solid rgba(82, 88, 112, 0.18);
+  border-radius: calc(11.1 * var(--u));
+  box-shadow: 0 calc(4 * var(--u)) calc(11.1 * var(--u)) rgba(82, 88, 112, 0.04);
+  box-sizing: border-box;
+}
+
+.pobo-bv__chip-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: calc(29 * var(--u));
+  height: calc(29 * var(--u));
+  border-radius: calc(7.4 * var(--u));
+  background: #00BA85;
+}
+
+.pobo-bv__chip-label {
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: calc(12 * var(--u));
+  font-weight: 600;
+  line-height: calc(13.3 * var(--u));
+}
+
+.pobo-bv__chip--c2a { left: calc(142 * var(--u)); top: calc(31 * var(--u));  width: calc(147 * var(--u)); height: calc(62 * var(--u)); }
+.pobo-bv__chip--c2b { left: calc(147 * var(--u)); top: calc(117 * var(--u)); width: calc(157 * var(--u)); height: calc(57 * var(--u)); }
+.pobo-bv__chip--c3a { left: calc(10 * var(--u));  top: calc(31 * var(--u));  width: calc(147 * var(--u)); height: calc(69 * var(--u)); }
+.pobo-bv__chip--c3b { left: calc(22 * var(--u));  top: calc(112 * var(--u)); width: calc(142 * var(--u)); height: calc(57 * var(--u)); }
+
+.pobo-bv--efficiency {
+  background: #F0F7F9;
+}
+
+.pobo-bv__eff-title {
+  margin: 0;
+  left: calc(18 * var(--u));
+  top: calc(18 * var(--u));
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: calc(19.1 * var(--u));
+  font-weight: 600;
+  line-height: calc(15.8 * var(--u));
+  white-space: nowrap;
+}
+
+.pobo-bv__eff-sub {
+  margin: 0;
+  left: calc(18 * var(--u));
+  top: calc(43 * var(--u));
+  color: #525870;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: calc(16.7 * var(--u));
+  font-weight: 400;
+  line-height: calc(12.9 * var(--u));
+  white-space: nowrap;
+}
+
+.pobo-bv__done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(5 * var(--u));
+  left: calc(232 * var(--u));
+  top: calc(18 * var(--u));
+  width: calc(78 * var(--u));
+  height: calc(30 * var(--u));
+  background: #00BA85;
+  border-radius: calc(15 * var(--u));
+}
+
+.pobo-bv__done-label {
+  color: #FFFFFF;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: calc(14 * var(--u));
+  font-weight: 600;
+  line-height: 1;
+}
+
+.pobo-bv__panel {
+  left: calc(10 * var(--u));
+  top: calc(77 * var(--u));
+  width: calc(303 * var(--u));
+  height: calc(117 * var(--u));
+  background: #FFFFFF;
+  border-radius: calc(18 * var(--u));
+}
+
+.pobo-bv__tile {
+  position: absolute;
+  top: calc(21 * var(--u));
+  width: calc(73 * var(--u));
+  height: calc(73 * var(--u));
+  border-radius: calc(12 * var(--u));
+  background: #F0F7F9;
+}
+
+.pobo-bv__tile--l { left: calc(14 * var(--u)); }
+.pobo-bv__tile--r { left: calc(218 * var(--u)); }
+
+.pobo-bv__dash {
+  position: absolute;
+  left: calc(88 * var(--u));
+  top: calc(59 * var(--u));
+  width: calc(130 * var(--u));
+  height: 0;
+  border-top: calc(1.5 * var(--u)) dashed #C7CFE2;
+}
+
+.pobo-bv__panel-mark {
+  position: absolute;
+  left: calc(139 * var(--u));
+  top: calc(45 * var(--u));
+  width: calc(27 * var(--u));
+  height: calc(27 * var(--u));
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #4FD8AC 0%, #00BA85 55%, #0C7A5C 100%);
+}

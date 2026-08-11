@@ -8,10 +8,10 @@ import icoFranchise from './assets/aud-franchise.png';
 
 const cards = [
   { icon: icoEnterpriseGroups, title: 'Enterprise Groups', desc: 'Centralize treasury operations and payments across subsidiaries and business units globally.' },
-  { icon: icoPaymentAggregators, title: 'Payment Aggregators', desc: 'Manage collections and disbursements through unified infrastructure across multiple payment channels.' },
-  { icon: icoMarketplaces, title: 'Marketplaces', desc: 'Simplify merchant payments settlements and collection operations across global marketplace ecosystems.' },
   { icon: icoMultinational, title: 'Multinational Organizations', desc: 'Improve cash visibility and payment control across international entities and markets worldwide efficiently.' },
+  { icon: icoPaymentAggregators, title: 'Payment Aggregators', desc: 'Manage collections and disbursements through unified infrastructure across multiple payment channels.' },
   { icon: icoSaas, title: 'SaaS Platforms', desc: 'Centralize customer collections and vendor payments across multiple entities and markets.' },
+  { icon: icoMarketplaces, title: 'Marketplaces', desc: 'Simplify merchant payments settlements and collection operations across global marketplace ecosystems.' },
   { icon: icoFranchise, title: 'Franchise Networks', desc: 'Manage payments and collections across locations through unified multi-entity financial infrastructure.' },
 ];
 

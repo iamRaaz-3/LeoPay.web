@@ -5,8 +5,8 @@ import flagUsd from './assets/flag-usd.png';
 import flagVnd from './assets/flag-vnd.png';
 import flagPhp from './assets/flag-php.png';
 import flagMmk from './assets/flag-mmk.png';
-import GetStartedButton from '../../buttons/GetStartedButton/GetStartedButton.jsx';
-import ApiDocsButton from '../../buttons/ApiDocsButton/ApiDocsButton.jsx';
+import GetStartedButton from '../../../buttons/GetStartedButton/GetStartedButton.jsx';
+import ApiDocsButton from '../../../buttons/ApiDocsButton/ApiDocsButton.jsx';
 
 const BadgeIconLeft = () => (
   <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@ const Hero = () => (
             </span>
           </div>
           <h1 className="pobo-hero__title">
-            <span className="pobo-hero__title-line">Centralize Payments &amp;</span>
+            <span className="pobo-hero__title-line">Centralize Payments &amp;</span>{' '}
             <span className="pobo-hero__title-line">Collections Across Entities</span>
           </h1>
           <p className="pobo-hero__desc">Manage payments and collections through a unified framework designed for global business operations.</p>
