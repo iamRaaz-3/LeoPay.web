@@ -1,0 +1,320 @@
+.tr-hero {
+  position: relative;
+  width: 100%;
+  background: #FFF;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.tr-hero__inner {
+  position: relative;
+  width: 1920px;
+  height: 872px;
+  flex-shrink: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  background: url('./assets/Artboard 1 1.png') #FFF bottom / cover no-repeat;
+}
+
+.tr-hero__inner::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 1920px;
+  height: 1080px;
+  background: linear-gradient(180deg, #ECF5FC 0%, rgba(204, 242, 231, 0.80) 125.19%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.tr-hero__glow {
+  position: absolute;
+  left: 72px;
+  top: 122px;
+  width: 818px;
+  height: 627px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  filter: blur(100.1px);
+  pointer-events: none;
+}
+
+.tr-hero__stage {
+  position: absolute;
+  left: 244px;
+  top: 193px;
+  width: 1439px;
+  height: 590px;
+}
+
+.tr-hero__content {
+  position: absolute;
+  left: 0;
+  top: 98px;
+  width: 643px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.tr-hero__badge-wrap {
+  display: flex;
+  height: 53px;
+  padding: 4px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.tr-hero__badge {
+  display: flex;
+  width: 153px;
+  height: 32px;
+  padding: 10.415px 18px 10.585px 18.5px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  background: #162755;
+  border-radius: 8px;
+  color: #FFF;
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.tr-hero__title {
+  margin: 0;
+  color: #060612;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 77px;
+  letter-spacing: -2.1px;
+}
+
+.tr-hero__title-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.tr-hero__title-line:nth-child(2) {
+  font-weight: 400;
+}
+
+.tr-hero__desc {
+  margin: 0;
+  width: 636px;
+  color: #505670;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.2px;
+}
+
+.tr-hero__buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18.5px 0;
+}
+
+.tr-hero__visual {
+  position: absolute;
+  left: 758px;
+  top: 6px;
+  width: 681px;
+  height: 590px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.tr-hero__visual-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1824px) {
+  .tr-hero__inner {
+    zoom: 0.95;
+  }
+}
+
+@media (max-width: 1728px) {
+  .tr-hero__inner {
+    zoom: 0.9;
+  }
+}
+
+@media (max-width: 1632px) {
+  .tr-hero__inner {
+    zoom: 0.85;
+  }
+}
+
+@media (max-width: 1536px) {
+  .tr-hero__inner {
+    zoom: 0.8;
+  }
+}
+
+@media (max-width: 1440px) {
+  .tr-hero__inner {
+    zoom: 0.75;
+  }
+}
+
+@media (max-width: 1344px) {
+  .tr-hero__inner {
+    zoom: 0.7;
+  }
+}
+
+@media (max-width: 1248px) {
+  .tr-hero__inner {
+    zoom: 0.65;
+  }
+}
+
+@media (max-width: 1152px) {
+  .tr-hero__inner {
+    zoom: 0.6;
+  }
+}
+
+@media (max-width: 1056px) {
+  .tr-hero__inner {
+    zoom: 0.55;
+  }
+}
+
+@media (max-width: 960px) {
+  .tr-hero__inner {
+    zoom: 0.5;
+  }
+}
+
+@media (max-width: 1919px) {
+  .tr-hero__inner {
+    zoom: calc(100vw / 1920px);
+  }
+}
+
+@media (max-width: 900px) {
+  .tr-hero__stage {
+    display: contents;
+  }
+  .tr-hero__inner {
+    zoom: 1;
+    width: 100%;
+    height: auto;
+    padding: 130px 52px 49px;
+    background: url('./assets/Artboard 1 1 (1).png') #FFF left bottom / 100% auto no-repeat;
+    box-sizing: border-box;
+  }
+  .tr-hero__inner::before {
+    width: 100%;
+  }
+  .tr-hero__glow {
+    left: 0;
+    top: 90px;
+    width: 100%;
+    height: 400px;
+  }
+  .tr-hero__content {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 643px;
+  }
+  .tr-hero__title {
+    font-size: min(70px, calc(100vw / 11.7));
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  .tr-hero__desc {
+    width: 100%;
+    max-width: 636px;
+  }
+  .tr-hero__visual {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 708.15px;
+    height: 590px;
+    margin: 19px auto 0;
+    zoom: 1;
+    zoom: min(1, calc((100vw - 104px) / 708.15px));
+    background: url('./assets/Group 2085662999.png') center / 100% 100% no-repeat;
+  }
+  .tr-hero__visual-img {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .tr-hero__inner {
+    padding: 130px 24px 60px;
+  }
+  .tr-hero__title-line {
+    white-space: normal;
+  }
+  .tr-hero__visual {
+    zoom: 0.85;
+    zoom: min(1, calc((100vw - 48px) / 708.15px));
+  }
+}
+
+@media (max-width: 480px) {
+  .tr-hero__inner {
+    padding: 126px 35px 41px;
+    background: url('./assets/Artboard 1 1 (2).png') #FFF center bottom / 100% auto no-repeat;
+  }
+  .tr-hero__glow {
+    left: 0;
+    top: 179px;
+    width: 100%;
+    height: 414px;
+  }
+  .tr-hero__title {
+    font-size: 40px;
+    line-height: 44.8px;
+    letter-spacing: -1.2px;
+  }
+  .tr-hero__desc {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+  }
+  .tr-hero__buttons {
+    padding: 5px 0;
+  }
+  .tr-hero__visual {
+    width: 383.21px;
+    height: 394.59px;
+    margin: 40px auto 0;
+    zoom: 1;
+    zoom: min(1, calc((100vw - 70px) / 383.21px));
+    background: url('./assets/Group 2085663023.png') center / 100% 100% no-repeat;
+  }
+}
+
+@media (max-width: 429px) {
+  .tr-hero__visual {
+    zoom: 0.85;
+    zoom: min(1, calc((100vw - 70px) / 383.21px));
+  }
+}
