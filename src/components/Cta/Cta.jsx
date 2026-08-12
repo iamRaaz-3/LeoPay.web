@@ -1,4 +1,5 @@
 import './Cta.css';
+import GetStartedButton from '../buttons/GetStartedButton/GetStartedButton.jsx';
 
 const CtaLogoIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="53.472" height="53.379" viewBox="0 0 54 54" fill="none" className="cta-logo-icon cta-logo-icon--desktop">
@@ -12,7 +13,7 @@ const CtaLogoIconMobile = () => (
   </svg>
 );
 
-const Cta = () => (
+const Cta = ({ variant = 'default' }) => (
   <section className="cta-section">
     <div className="cta-rect cta-rect--1" />
     <div className="cta-rect cta-rect--2" />
@@ -25,24 +26,39 @@ const Cta = () => (
       </div>
       <div className="cta-top">
         <div className="cta-title">
-          <h2 className="cta-heading">
-            <span className="cta-heading--semibold">Built for the Next Generation of</span><br />
-            <span className="cta-heading--regular">Global Finance<span className="cta-heading-period">.</span></span>
-          </h2>
+          {variant === 'newsletter' ? (
+            <h2 className="cta-heading cta-heading--newsletter">Subscribe to our Newsletter</h2>
+          ) : (
+            <h2 className="cta-heading">
+              <span className="cta-heading--semibold">Built for the Next Generation of</span><br />
+              <span className="cta-heading--regular">Global Finance<span className="cta-heading-period">.</span></span>
+            </h2>
+          )}
         </div>
         <div className="cta-desc-wrap">
-          <p className="cta-desc">Modern infrastructure to collect, move, and manage money across borders.</p>
+          <p className="cta-desc">
+            {variant === 'newsletter'
+              ? 'Subscribe for Updates: Stay informed about the latest investor updates, financial results, and announcements by subscribing to our newsletter.'
+              : 'Modern infrastructure to collect, move, and manage money across borders.'}
+          </p>
         </div>
-        <div className="cta-buttons">
-          <div className="cta-btn-wrap">
-            <a href="#" className="cta-btn cta-btn--primary">Get Started</a>
-          </div>
-          <div className="cta-btn-wrap cta-btn-wrap--secondary">
-            <div className="cta-btn-inner">
-              <a href="#" className="cta-btn cta-btn--secondary">API Docs</a>
+        {variant === 'newsletter' ? (
+          <form className="cta-subscribe" onSubmit={e => e.preventDefault()}>
+            <input type="email" className="cta-subscribe__input" placeholder="Enter your email" aria-label="Enter your email" />
+            <GetStartedButton label="Subscribe" className="cta-subscribe__btn" />
+          </form>
+        ) : (
+          <div className="cta-buttons">
+            <div className="cta-btn-wrap">
+              <a href="#" className="cta-btn cta-btn--primary">Get Started</a>
+            </div>
+            <div className="cta-btn-wrap cta-btn-wrap--secondary">
+              <div className="cta-btn-inner">
+                <a href="#" className="cta-btn cta-btn--secondary">API Docs</a>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   </section>

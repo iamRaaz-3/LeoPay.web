@@ -1,0 +1,176 @@
+.contact-info {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.contact-info__inner {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  width: 1920px;
+  height: 444px;
+  padding: 88px 240px 100px;
+  box-sizing: border-box;
+}
+
+.contact-info__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 655px;
+  flex-shrink: 0;
+}
+
+.contact-info__badge {
+  display: inline-flex;
+  align-items: center;
+  height: 33px;
+  padding: 0 16px;
+  background: #FFFFFF;
+  border: 1px solid rgba(82, 88, 112, 0.12);
+  border-radius: 100px;
+  color: #162755;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  box-sizing: border-box;
+}
+
+.contact-info__title {
+  margin: 24px 0 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 61.6px;
+  letter-spacing: -1.12px;
+}
+
+.contact-info__title-line {
+  display: block;
+}
+
+.contact-info__channels {
+  display: flex;
+  gap: 46px;
+  padding-top: 24px;
+}
+
+.contact-info__channel {
+  width: 364px;
+}
+
+.contact-info__channel-title {
+  margin: 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.contact-info__channel-email {
+  display: inline-block;
+  margin-top: 55px;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+.contact-info__channel-email:hover {
+  text-decoration: underline;
+}
+
+.contact-info__channel-hours {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0 0;
+  color: #505670;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+@media (max-width: 1919px) { .contact-info__inner { zoom: 0.9833; } }
+@media (max-width: 1887px) { .contact-info__inner { zoom: 0.9667; } }
+@media (max-width: 1855px) { .contact-info__inner { zoom: 0.95; } }
+@media (max-width: 1823px) { .contact-info__inner { zoom: 0.9333; } }
+@media (max-width: 1791px) { .contact-info__inner { zoom: 0.9167; } }
+@media (max-width: 1759px) { .contact-info__inner { zoom: 0.9; } }
+@media (max-width: 1727px) { .contact-info__inner { zoom: 0.8833; } }
+@media (max-width: 1695px) { .contact-info__inner { zoom: 0.8667; } }
+@media (max-width: 1663px) { .contact-info__inner { zoom: 0.85; } }
+@media (max-width: 1631px) { .contact-info__inner { zoom: 0.8333; } }
+@media (max-width: 1599px) { .contact-info__inner { zoom: 0.8167; } }
+@media (max-width: 1567px) { .contact-info__inner { zoom: 0.8; } }
+@media (max-width: 1535px) { .contact-info__inner { zoom: 0.7833; } }
+@media (max-width: 1503px) { .contact-info__inner { zoom: 0.7667; } }
+@media (max-width: 1471px) { .contact-info__inner { zoom: 0.75; } }
+@media (max-width: 1439px) { .contact-info__inner { zoom: 0.7333; } }
+@media (max-width: 1407px) { .contact-info__inner { zoom: 0.7167; } }
+@media (max-width: 1375px) { .contact-info__inner { zoom: 0.7; } }
+@media (max-width: 1343px) { .contact-info__inner { zoom: 0.6833; } }
+@media (max-width: 1311px) { .contact-info__inner { zoom: 0.6667; } }
+
+@media (max-width: 1919px) and (min-width: 1280px) {
+  .contact-info__inner { zoom: calc(100vw / 1920px); }
+}
+
+@media (max-width: 1279px) {
+  .contact-info__inner {
+    zoom: 1;
+    flex-shrink: 1;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 100px 40px;
+  }
+  .contact-info__head {
+    width: 100%;
+  }
+  .contact-info__channels {
+    gap: 40px;
+    margin-top: 56px;
+    padding-top: 0;
+  }
+  .contact-info__channel {
+    width: 100%;
+    max-width: 364px;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-info__inner {
+    padding: 80px 24px;
+  }
+  .contact-info__title {
+    font-size: 40px;
+    line-height: 46px;
+  }
+  .contact-info__channels {
+    flex-direction: column;
+    gap: 44px;
+  }
+  .contact-info__channel-email {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info__inner {
+    padding: 80px 25px;
+  }
+  .contact-info__title {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}

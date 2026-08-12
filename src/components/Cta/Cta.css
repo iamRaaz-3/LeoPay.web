@@ -325,3 +325,90 @@
   }
 }
 
+
+.cta-heading--newsletter {
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 77px;
+  letter-spacing: -2.1px;
+}
+
+.cta-subscribe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 736px;
+  height: 72px;
+  padding: 6px 6px 6px 30px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 100px;
+  box-sizing: border-box;
+}
+
+.cta-subscribe__input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.cta-subscribe__input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cta-subscribe__input:focus {
+  outline: none;
+}
+
+.cta-subscribe__btn {
+  flex-shrink: 0;
+  height: 60px;
+  padding: 0 40px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 100px;
+  color: #060612;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .cta-heading--newsletter {
+    font-size: min(70px, calc(100vw / 11.7));
+    line-height: 1.1;
+  }
+  .cta-subscribe {
+    width: 100%;
+    max-width: 736px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-heading--newsletter {
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: -1.2px;
+  }
+  .cta-subscribe {
+    height: 60px;
+    padding: 5px 5px 5px 20px;
+  }
+  .cta-subscribe__input {
+    font-size: 16px;
+  }
+  .cta-subscribe__btn {
+    height: 50px;
+    padding: 0 24px;
+    font-size: 16px;
+  }
+}
