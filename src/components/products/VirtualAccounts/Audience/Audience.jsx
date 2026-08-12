@@ -1,18 +1,18 @@
 import './Audience.css';
-import icoMarketplaces from '../shared/assets/aud-marketplaces.png';
-import icoFintechs from '../shared/assets/aud-fintechs.png';
-import icoEnterprises from '../shared/assets/aud-enterprises.png';
-import icoRemittance from '../shared/assets/aud-remittance.png';
-import icoExchanges from '../shared/assets/aud-exchanges.png';
-import icoPayroll from '../shared/assets/aud-payroll.png';
+import icoMarketplaces from './assets/aud-marketplaces.png';
+import icoSaas from './assets/aud-saas.png';
+import icoFintechs from './assets/aud-fintechs.png';
+import icoEnterprises from './assets/aud-enterprises.png';
+import icoPaymentProviders from './assets/aud-payment-providers.png';
+import icoFinancial from './assets/aud-financial.png';
 
 const cards = [
   { icon: icoMarketplaces, title: 'Marketplaces', desc: 'Simplify merchant collections, settlements, and reconciliation across global payment ecosystems.' },
-  { icon: icoExchanges, title: 'SaaS Platforms', desc: 'Automate customer collections and streamline reconciliation workflows across multiple regions.' },
+  { icon: icoSaas, title: 'SaaS Platforms', desc: 'Automate customer collections and streamline reconciliation workflows across multiple regions.' },
   { icon: icoFintechs, title: 'Fintechs', desc: 'Build scalable collection experiences using virtual accounts and modern payment APIs globally.' },
   { icon: icoEnterprises, title: 'Enterprises', desc: 'Improve payment visibility and operational efficiency across business units and subsidiaries.' },
-  { icon: icoRemittance, title: 'Payment Providers', desc: 'Offer flexible and scalable collection infrastructure across multiple global payment corridors.' },
-  { icon: icoPayroll, title: 'Financial Institutions', desc: 'Manage global customer payments, refunds, and reconciliation through virtual account systems.' },
+  { icon: icoPaymentProviders, title: 'Payment Providers', desc: 'Offer flexible and scalable collection infrastructure across multiple global payment corridors.' },
+  { icon: icoFinancial, title: 'Financial Institutions', desc: 'Manage global customer payments, refunds, and reconciliation through virtual account systems.' },
 ];
 
 const Audience = () => (

@@ -13,7 +13,7 @@
   height: 872px;
   flex-shrink: 0;
   margin: 0 auto;
-  background: url('../shared/assets/product-hero-bg.jpg') center top / cover no-repeat #FFF;
+  background: url('./assets/Artboard 1 1.png') #FFF bottom / cover no-repeat;
 }
 
 .va-hero__inner::before {
@@ -39,17 +39,17 @@
 
 .va-hero__stage {
   position: absolute;
-  left: 204px;
-  top: 175px;
-  width: 1532px;
-  height: 578px;
+  left: 244px;
+  top: 192px;
+  width: 1440px;
+  height: 557px;
 }
 
 .va-hero__content {
   position: absolute;
   left: 0;
-  top: 78px;
-  width: 620px;
+  top: 99px;
+  width: 627px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -129,10 +129,10 @@
 
 .va-hero__visual {
   position: absolute;
-  left: 756px;
+  left: 702px;
   top: 0;
-  width: 776px;
-  height: 578px;
+  width: 738px;
+  height: 557px;
   pointer-events: none;
   user-select: none;
 }
@@ -433,100 +433,99 @@
   }
 }
 
+@media (max-width: 1919px) and (min-width: 901px) {
+  .va-hero__inner { zoom: calc(100vw / 1920px); }
+}
+
 @media (max-width: 900px) {
-  .va-hero__stage {
-    display: contents;
-  }
   .va-hero__inner {
     zoom: 1;
-    width: 100%;
-    height: auto;
-    padding: 140px 24px 60px;
-    box-sizing: border-box;
+    width: 820px;
+    height: 1180px;
+    padding: 0;
+    background: url('./assets/Artboard 1 1 (1).png') #FFF left bottom / 100% auto no-repeat;
   }
   .va-hero__glow {
-    left: 0;
-    top: 90px;
-    width: 100%;
-    height: 400px;
+    left: -478px;
+    top: 276px;
+    width: 818px;
+    height: 627px;
+  }
+  .va-hero__stage {
+    left: 52px;
+    top: 130px;
+    width: 627px;
+    height: auto;
   }
   .va-hero__content {
     position: relative;
     left: auto;
     top: auto;
-    width: 100%;
-    max-width: 620px;
+    width: 627px;
+  }
+  .va-hero__desc {
+    width: 636px;
+    max-width: none;
   }
   .va-hero__visual {
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    margin: 48px auto 0;
-    width: 340px;
-    height: 333px;
+    left: 63px;
+    top: 441px;
+    width: 591px;
+    height: 590px;
+    background: url('./assets/Group 2085663025 (1).png') center / 100% 100% no-repeat;
   }
-  .va-hero__globe {
-    left: 15px;
-    top: 6px;
-    width: 310px;
-    height: 310px;
+  .va-hero__visual > * {
+    display: none;
   }
-  .va-hero__txn {
-    transform: scale(0.624);
-    transform-origin: top left;
-  }
-  .va-hero__txn--1 {
-    left: 1px;
-    top: 0;
-  }
-  .va-hero__txn--2 {
-    left: 100px;
-    top: 230px;
-  }
-  .va-hero__chip {
-    transform: scale(0.8);
-    transform-origin: top left;
-  }
-  .va-hero__chip--1 {
-    left: 225px;
-    top: 123px;
-  }
-  .va-hero__chip--2 {
-    left: 0;
-    top: 191px;
-  }
-  .va-hero__visual--idcard {
-    width: 338px;
-    height: 266px;
-  }
-  .va-hero__idcard-scale {
-    position: relative;
-    inset: auto;
-    width: 786px;
-    height: 619px;
-    transform: scale(0.43);
-    transform-origin: top left;
+}
+
+@media (max-width: 819px) {
+  .va-hero__inner {
+    zoom: min(1, calc(100vw / 820px));
   }
 }
 
 @media (max-width: 480px) {
   .va-hero__inner {
-    padding: 126px 35px 60px;
+    width: 430px;
+    height: 1000px;
+    padding: 0;
+    zoom: calc(100vw / 430px);
+    background: url('./assets/Artboard 1 1 (2).png') #FFF center bottom / 100% auto no-repeat;
+  }
+  .va-hero__glow {
+    left: 0;
+    top: 179px;
+    width: 430px;
+    height: 414px;
+  }
+  .va-hero__stage {
+    left: 35px;
+    top: 126px;
+    width: 360px;
+  }
+  .va-hero__content {
+    width: 360px;
   }
   .va-hero__title {
-    font-family: 'Britti Sans Trial', sans-serif;
     font-size: 40px;
-    font-weight: 600;
     line-height: 44.8px;
     letter-spacing: -1.2px;
   }
   .va-hero__desc {
     width: 100%;
-    font-size: 18px;
-    line-height: 28px;
+    max-width: none;
+    font-size: 20px;
+    line-height: 27px;
+  }
+  .va-hero__buttons {
+    padding: 0;
   }
   .va-hero__visual {
-    margin-top: 44px;
+    left: -26px;
+    top: 398px;
+    width: 411px;
+    height: 410px;
+    background: url('./assets/Group 2085663025.png') center / 100% 100% no-repeat;
   }
 }
