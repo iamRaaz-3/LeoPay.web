@@ -13,7 +13,7 @@
   height: 872px;
   flex-shrink: 0;
   margin: 0 auto;
-  background: url('../shared/assets/product-hero-bg.jpg') center top / cover no-repeat #FFF;
+  background: url('./assets/product-hero-bg.jpg') center top / cover no-repeat #FFF;
 }
 
 .gp-hero__inner::before {
@@ -433,6 +433,10 @@
   }
 }
 
+@media (max-width: 1919px) and (min-width: 901px) {
+  .gp-hero__inner { zoom: calc(100vw / 1920px); }
+}
+
 @media (max-width: 900px) {
   .gp-hero__stage {
     display: contents;
@@ -456,6 +460,10 @@
     top: auto;
     width: 100%;
     max-width: 620px;
+  }
+  .gp-hero__desc {
+    width: 100%;
+    max-width: 636px;
   }
   .gp-hero__visual {
     position: relative;
@@ -513,6 +521,11 @@
 @media (max-width: 480px) {
   .gp-hero__inner {
     padding: 126px 35px 60px;
+    background: url('./assets/Artboard 1 1.png') center 64px / 100% auto no-repeat #FFF;
+  }
+  .gp-hero__glow {
+    top: 179px;
+    height: 414px;
   }
   .gp-hero__title {
     font-family: 'Britti Sans Trial', sans-serif;
@@ -525,8 +538,14 @@
     width: 100%;
     font-size: 18px;
     line-height: 28px;
+    letter-spacing: -0.5px;
+  }
+  .gp-hero__buttons {
+    padding: 0;
+    margin-top: -6px;
   }
   .gp-hero__visual {
-    margin-top: 44px;
+    margin-top: 103px;
+    zoom: min(1, calc((100vw - 70px) / 340px));
   }
 }

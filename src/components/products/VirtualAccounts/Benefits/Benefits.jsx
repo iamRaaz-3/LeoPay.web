@@ -1,14 +1,14 @@
 import './Benefits.css';
-import illoSettlement from '../shared/assets/benefit-settlement.png';
-import illoRails from '../shared/assets/benefit-rails.png';
-import illoCurrency from '../shared/assets/benefit-currency.png';
-import illoCompliance from '../shared/assets/benefit-compliance.png';
+import illoCollections from './assets/benefit-collections.png';
+import illoReconciliation from './assets/benefit-reconciliation.png';
+import illoCurrency from './assets/benefit-currency.png';
+import illoTracking from './assets/benefit-tracking.png';
 
 const cards = [
-  { illo: illoSettlement, title: 'Faster Collections', desc: 'Accelerate collection cycles with localized payment infrastructure.' },
-  { illo: illoRails, title: 'Automated Reconciliation', desc: 'Match transactions automatically with built-in reconciliation workflows.' },
+  { illo: illoCollections, title: 'Faster Collections', desc: 'Accelerate collection cycles with localized payment infrastructure.' },
+  { illo: illoReconciliation, title: 'Automated Reconciliation', desc: 'Match transactions automatically with built-in reconciliation workflows.' },
   { illo: illoCurrency, title: 'Global Currency Accounts', desc: 'Collect and manage funds across multiple currencies seamlessly.' },
-  { illo: illoCompliance, title: 'Live Payment Tracking', desc: 'Monitor incoming payments with complete transaction visibility.' },
+  { illo: illoTracking, title: 'Live Payment Tracking', desc: 'Monitor incoming payments with complete transaction visibility.' },
 ];
 
 const Benefits = () => (

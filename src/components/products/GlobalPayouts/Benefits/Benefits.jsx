@@ -1,8 +1,8 @@
 import './Benefits.css';
-import illoSettlement from '../shared/assets/benefit-settlement.png';
-import illoRails from '../shared/assets/benefit-rails.png';
-import illoCurrency from '../shared/assets/benefit-currency.png';
-import illoCompliance from '../shared/assets/benefit-compliance.png';
+import illoSettlement from './assets/benefit-settlement.png';
+import illoRails from './assets/benefit-rails.png';
+import illoCurrency from './assets/benefit-currency.png';
+import illoCompliance from './assets/benefit-compliance.png';
 
 const cards = [
   { illo: illoSettlement, title: 'Near Real-Time Settlement', desc: 'Accelerating global transactions with near real-time settlement.' },

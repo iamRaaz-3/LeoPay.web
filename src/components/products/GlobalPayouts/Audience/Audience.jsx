@@ -1,17 +1,17 @@
 import './Audience.css';
-import icoFintechs from '../shared/assets/aud-fintechs.png';
-import icoPayroll from '../shared/assets/aud-payroll.png';
-import icoMarketplaces from '../shared/assets/aud-marketplaces.png';
-import icoExchanges from '../shared/assets/aud-exchanges.png';
-import icoEnterprises from '../shared/assets/aud-enterprises.png';
-import icoRemittance from '../shared/assets/aud-remittance.png';
+import icoFintechs from './assets/aud-fintechs.png';
+import icoPayroll from './assets/aud-payroll.png';
+import icoMarketplaces from './assets/aud-marketplaces.png';
+import icoExchanges from './assets/aud-exchanges.png';
+import icoEnterprises from './assets/aud-enterprises.png';
+import icoRemittance from './assets/aud-remittance.png';
 
 const cards = [
   { icon: icoFintechs, title: 'Fintechs', desc: 'Build global payment products using stablecoin infrastructure, virtual accounts, and payment APIs.' },
-  { icon: icoPayroll, title: 'Payroll Providers', desc: 'Enable global payroll payments through multi-currency payouts and local payment rails.' },
-  { icon: icoMarketplaces, title: 'Marketplaces', desc: 'Manage global collections, merchant settlements, and cross-border payout operations efficiently.' },
   { icon: icoExchanges, title: 'Exchanges', desc: 'Facilitate stablecoin settlements, treasury operations, and global fund movement seamlessly.' },
+  { icon: icoPayroll, title: 'Payroll Providers', desc: 'Enable global payroll payments through multi-currency payouts and local payment rails.' },
   { icon: icoEnterprises, title: 'Global Enterprises', desc: 'Streamline international payments, treasury management, and global liquidity optimization strategies.' },
+  { icon: icoMarketplaces, title: 'Marketplaces', desc: 'Manage global collections, merchant settlements, and cross-border payout operations efficiently.' },
   { icon: icoRemittance, title: 'Remittance Companies', desc: 'Deliver cross-border money transfers with stablecoin-powered settlement and local payouts.' },
 ];
 

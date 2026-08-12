@@ -3,8 +3,8 @@ import heroCard from './assets/id-card.png';
 import heroIconGlobalId from './assets/icon-global-id.png';
 import heroIconFlags from './assets/icon-flags.png';
 import heroIconFastest from './assets/icon-fastest.png';
-import GetStartedButton from '../../buttons/GetStartedButton/GetStartedButton.jsx';
-import ApiDocsButton from '../../buttons/ApiDocsButton/ApiDocsButton.jsx';
+import GetStartedButton from '../../../buttons/GetStartedButton/GetStartedButton.jsx';
+import ApiDocsButton from '../../../buttons/ApiDocsButton/ApiDocsButton.jsx';
 
 const BadgeIconLeft = () => (
   <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +39,7 @@ const Hero = () => (
           </span>
         </div>
         <h1 className="va-hero__title">
-          <span className="va-hero__title-line">Collect Global Payments</span>
+          <span className="va-hero__title-line">Global Payments</span>
           <span className="va-hero__title-line">via Virtual Accounts</span>
         </h1>
         <p className="va-hero__desc">Simplify global collections, reconciliation, and payment visibility through virtual account infrastructure.</p>
