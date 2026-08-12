@@ -1,0 +1,342 @@
+.tr-audience {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: #FFF;
+  overflow: hidden;
+}
+
+.tr-audience__deco {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.tr-audience__deco--top {
+  top: 0;
+  height: 408px;
+  background: url('./assets/grid-top.png') center / 1920px 408px no-repeat;
+}
+
+.tr-audience__deco--bottom {
+  bottom: 0;
+  height: 264px;
+  background: url('./assets/grid-bottom.png') center / 1920px 264px no-repeat;
+}
+
+.tr-audience__inner {
+  position: relative;
+  flex-shrink: 0;
+  width: 1920px;
+  height: 1222px;
+  padding: 140px 240px 145px;
+  box-sizing: border-box;
+}
+
+.tr-audience__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.tr-audience__badge {
+  display: inline-flex;
+  align-items: center;
+  height: 33px;
+  padding: 0 16px;
+  background: #FFFFFF;
+  border: 1px solid rgba(82, 88, 112, 0.12);
+  border-radius: 100px;
+  color: #162755;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  box-sizing: border-box;
+}
+
+.tr-audience__title {
+  margin: 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -1px;
+}
+
+.tr-audience__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.tr-audience__title-bold {
+  display: block;
+  font-weight: 600;
+}
+
+.tr-audience__para {
+  margin: 0;
+  max-width: 600px;
+  color: #525870;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.04px;
+}
+
+.tr-audience__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 416px);
+  grid-template-rows: repeat(2, 300px);
+  grid-auto-flow: column;
+  justify-content: center;
+  align-content: start;
+  gap: 24px;
+  width: 100%;
+  max-width: 1296px;
+  height: 648px;
+  margin: 66px auto 0;
+}
+
+.tr-audience__card {
+  width: 416px;
+  height: 300px;
+  padding: 36px;
+  border: 2px solid #E5EEF0;
+  border-radius: 24px;
+  box-sizing: border-box;
+}
+
+.tr-audience__card-icon {
+  display: block;
+  width: 70px;
+  height: 70px;
+}
+
+.tr-audience__card-title {
+  margin: 48px 0 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 21.6px;
+}
+
+.tr-audience__card-desc {
+  margin: 16px 0 0;
+  color: #505670;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media (max-width: 1919px) {
+  .tr-audience__inner {
+    zoom: 0.9833;
+  }
+}
+
+@media (max-width: 1887px) {
+  .tr-audience__inner {
+    zoom: 0.9667;
+  }
+}
+
+@media (max-width: 1855px) {
+  .tr-audience__inner {
+    zoom: 0.9500;
+  }
+}
+
+@media (max-width: 1823px) {
+  .tr-audience__inner {
+    zoom: 0.9333;
+  }
+}
+
+@media (max-width: 1791px) {
+  .tr-audience__inner {
+    zoom: 0.9167;
+  }
+}
+
+@media (max-width: 1759px) {
+  .tr-audience__inner {
+    zoom: 0.9000;
+  }
+}
+
+@media (max-width: 1727px) {
+  .tr-audience__inner {
+    zoom: 0.8833;
+  }
+}
+
+@media (max-width: 1695px) {
+  .tr-audience__inner {
+    zoom: 0.8667;
+  }
+}
+
+@media (max-width: 1663px) {
+  .tr-audience__inner {
+    zoom: 0.8500;
+  }
+}
+
+@media (max-width: 1631px) {
+  .tr-audience__inner {
+    zoom: 0.8333;
+  }
+}
+
+@media (max-width: 1599px) {
+  .tr-audience__inner {
+    zoom: 0.8167;
+  }
+}
+
+@media (max-width: 1567px) {
+  .tr-audience__inner {
+    zoom: 0.8000;
+  }
+}
+
+@media (max-width: 1535px) {
+  .tr-audience__inner {
+    zoom: 0.7833;
+  }
+}
+
+@media (max-width: 1503px) {
+  .tr-audience__inner {
+    zoom: 0.7667;
+  }
+}
+
+@media (max-width: 1471px) {
+  .tr-audience__inner {
+    zoom: 0.7500;
+  }
+}
+
+@media (max-width: 1439px) {
+  .tr-audience__inner {
+    zoom: 0.7333;
+  }
+}
+
+@media (max-width: 1407px) {
+  .tr-audience__inner {
+    zoom: 0.7167;
+  }
+}
+
+@media (max-width: 1375px) {
+  .tr-audience__inner {
+    zoom: 0.7000;
+  }
+}
+
+@media (max-width: 1343px) {
+  .tr-audience__inner {
+    zoom: 0.6833;
+  }
+}
+
+@media (max-width: 1311px) {
+  .tr-audience__inner {
+    zoom: 0.6667;
+  }
+}
+
+@media (max-width: 1919px) and (min-width: 1280px) {
+  .tr-audience__inner { zoom: calc(100vw / 1920px); }
+}
+
+@media (max-width: 1279px) {
+  .tr-audience__inner {
+    zoom: 1;
+    flex-shrink: 1;
+    width: 100%;
+    height: auto;
+    padding: 100px 40px;
+  }
+  .tr-audience__cards {
+    grid-template-columns: repeat(2, 416px);
+    grid-template-rows: none;
+    grid-auto-flow: row;
+    max-width: 856px;
+    height: auto;
+    margin-top: 52px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .tr-audience__inner {
+    padding: 100px 24px;
+  }
+}
+
+@media (max-width: 903px) {
+  .tr-audience__cards {
+    zoom: min(1, calc((100vw - 48px) / 856px));
+  }
+}
+
+@media (max-width: 615px) {
+  .tr-audience__cards {
+    grid-template-columns: 416px;
+    max-width: 416px;
+    zoom: min(1, calc((100vw - 48px) / 416px));
+  }
+}
+
+@media (max-width: 480px) {
+  .tr-audience__inner {
+    padding: 80px 25px 109px;
+  }
+  .tr-audience__head {
+    gap: 10px;
+    margin: 0 -25px;
+    padding: 0 10px;
+  }
+  .tr-audience__title {
+    font-size: 36px;
+  }
+  .tr-audience__title-bold {
+    line-height: 34px;
+  }
+  .tr-audience__para {
+    max-width: 369px;
+    font-size: 18px;
+    color: #505670;
+  }
+  .tr-audience__cards {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 380px;
+    gap: 12px;
+    margin-top: 36px;
+    zoom: 1;
+  }
+  .tr-audience__card {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+  }
+  .tr-audience__deco--top {
+    height: 353px;
+    background: url('./assets/grid-top-mobile.png') center top / 430px 353px no-repeat;
+  }
+  .tr-audience__deco--bottom {
+    height: 353px;
+    background: url('./assets/grid-bottom-mobile.png') center bottom / 430px 353px no-repeat;
+  }
+}
