@@ -1,14 +1,14 @@
 import './Hero.css';
-import heroGlobe from '../shared/assets/Dotted globe.png';
-import coinUsdc from '../shared/assets/coin-usdc.svg';
-import coinUsdt from '../shared/assets/coin-usdt.svg';
-import coinUsdt30 from '../shared/assets/coin-usdt-30.svg';
-import flagUs from '../shared/assets/flag-us.svg';
-import flagPh from '../shared/assets/flag-ph.svg';
-import iconBank from '../shared/assets/icon-bank.svg';
-import dashArrow from '../shared/assets/dash-arrow.svg';
-import GetStartedButton from '../../buttons/GetStartedButton/GetStartedButton.jsx';
-import ApiDocsButton from '../../buttons/ApiDocsButton/ApiDocsButton.jsx';
+import heroGlobe from './assets/Dotted globe.png';
+import coinUsdc from './assets/coin-usdc.svg';
+import coinUsdt from './assets/coin-usdt.svg';
+import coinUsdt30 from './assets/coin-usdt-30.svg';
+import flagUs from './assets/flag-us.svg';
+import flagPh from './assets/flag-ph.svg';
+import iconBank from './assets/icon-bank.svg';
+import dashArrow from './assets/dash-arrow.svg';
+import GetStartedButton from '../../../buttons/GetStartedButton/GetStartedButton.jsx';
+import ApiDocsButton from '../../../buttons/ApiDocsButton/ApiDocsButton.jsx';
 
 const BadgeIconLeft = () => (
   <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">

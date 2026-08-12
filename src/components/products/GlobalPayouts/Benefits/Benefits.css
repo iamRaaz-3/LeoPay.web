@@ -1,0 +1,187 @@
+.gp-benefits {
+  width: 100%;
+  background: linear-gradient(180deg, #FFFFFF 0%, #E0F4EF 100%);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.gp-benefits__inner {
+  position: relative;
+  width: 1920px;
+  flex-shrink: 0;
+  margin: 0 auto;
+  padding: 140px 164px 139px;
+  background: url('./assets/Background.png') center top / 100% 100% no-repeat;
+  box-sizing: border-box;
+}
+
+.gp-benefits__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.gp-benefits__badge {
+  display: inline-flex;
+  align-items: center;
+  height: 33px;
+  padding: 0 16px;
+  background: #FFFFFF;
+  border: 1px solid rgba(82, 88, 112, 0.12);
+  border-radius: 100px;
+  color: #162755;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  box-sizing: border-box;
+}
+
+.gp-benefits__title {
+  margin: 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -1px;
+}
+
+.gp-benefits__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.gp-benefits__title-bold {
+  display: block;
+  font-weight: 600;
+}
+
+.gp-benefits__para {
+  margin: 0;
+  max-width: 600px;
+  color: #525870;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.04px;
+}
+
+.gp-benefits__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 350px);
+  gap: 8px;
+  width: 1424px;
+  margin: 59px auto 0;
+}
+
+.gp-benefits__card {
+  width: 350px;
+  height: 377px;
+  padding: 14px 13px 32px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 0 0 0 4px rgba(82, 88, 112, 0.02), 0 4px 12px rgba(82, 88, 112, 0.04);
+  box-sizing: border-box;
+}
+
+.gp-benefits__card-illo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 324 / 210;
+}
+
+.gp-benefits__card-title {
+  margin: 32px 11px 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 21.6px;
+}
+
+.gp-benefits__card-desc {
+  margin: 8px 11px 0;
+  color: #525870;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media (max-width: 1824px) { .gp-benefits__inner { zoom: 0.95; } }
+@media (max-width: 1728px) { .gp-benefits__inner { zoom: 0.9; } }
+@media (max-width: 1632px) { .gp-benefits__inner { zoom: 0.85; } }
+@media (max-width: 1536px) { .gp-benefits__inner { zoom: 0.8; } }
+@media (max-width: 1440px) { .gp-benefits__inner { zoom: 0.75; } }
+@media (max-width: 1344px) { .gp-benefits__inner { zoom: 0.7; } }
+@media (max-width: 1248px) { .gp-benefits__inner { zoom: 0.65; } }
+@media (max-width: 1152px) { .gp-benefits__inner { zoom: 0.6; } }
+@media (max-width: 1056px) { .gp-benefits__inner { zoom: 0.55; } }
+@media (max-width: 960px)  { .gp-benefits__inner { zoom: 0.5; } }
+
+@media (max-width: 1919px) and (min-width: 901px) {
+  .gp-benefits__inner { zoom: calc(100vw / 1920px); }
+}
+
+@media (max-width: 900px) {
+  .gp-benefits__inner {
+    zoom: 1;
+    width: 820px;
+    padding: 140px 54px 182px;
+    background-image: url('./assets/Background-ipad.png');
+  }
+  .gp-benefits__cards {
+    grid-template-columns: repeat(2, 350px);
+    gap: 12px;
+    width: 712px;
+    margin: 82px auto 0;
+  }
+}
+
+@media (max-width: 820px) { .gp-benefits__inner { zoom: 0.95; } }
+@media (max-width: 779px) { .gp-benefits__inner { zoom: 0.9; } }
+@media (max-width: 738px) { .gp-benefits__inner { zoom: 0.85; } }
+@media (max-width: 697px) { .gp-benefits__inner { zoom: 0.8; } }
+@media (max-width: 656px) { .gp-benefits__inner { zoom: 0.75; } }
+
+@media (max-width: 900px) and (min-width: 616px) {
+  .gp-benefits__inner { zoom: min(1, calc(100vw / 820px)); }
+}
+
+@media (max-width: 615px) {
+  .gp-benefits__inner {
+    zoom: 1;
+    width: 100%;
+    padding: 80px 24px;
+  }
+  .gp-benefits__cards {
+    grid-template-columns: 350px;
+    width: 350px;
+    max-width: 100%;
+    margin-top: 44px;
+    zoom: min(1, calc((100vw - 48px) / 350px));
+  }
+}
+
+@media (max-width: 480px) {
+  .gp-benefits__inner {
+    padding: 80px 25px;
+  }
+  .gp-benefits__title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  .gp-benefits__para {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .gp-benefits__cards {
+    margin-top: 44px;
+    zoom: min(1, calc((100vw - 50px) / 350px));
+  }
+}
