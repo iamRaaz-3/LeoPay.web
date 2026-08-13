@@ -1,0 +1,291 @@
+.contact-hero {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background: linear-gradient(168deg, rgba(235, 245, 252, 0.80) 8.65%, rgba(255, 249, 249, 0.80) 138.01%);
+  overflow: hidden;
+}
+
+.contact-hero__inner {
+  position: relative;
+  flex-shrink: 0;
+  width: 1920px;
+  height: 1108px;
+  padding: 270px 240px 150px;
+  background: url('./assets/Glass Background.png') center top / 100% 100% no-repeat;
+  box-sizing: border-box;
+}
+
+.contact-hero__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.contact-hero__glow--1 {
+  left: 160px;
+  top: 135px;
+  width: 1600px;
+  height: 911px;
+  background: rgba(255, 255, 255, 0.80);
+}
+
+.contact-hero__glow--2 {
+  left: -840px;
+  top: 808px;
+  width: 864px;
+  height: 504px;
+  background: rgba(255, 255, 255, 1);
+}
+
+.contact-hero__head {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-hero__badge-wrap {
+  display: flex;
+  height: 53px;
+  padding: 4px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.contact-hero__badge {
+  display: flex;
+  width: 221px;
+  height: 32px;
+  padding: 0 13px 0 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  background: #00BA85;
+  border-radius: 4px;
+  color: #FFF;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.contact-hero__title {
+  margin: 33px 0 0;
+  color: #060612;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 75px;
+  letter-spacing: -2px;
+}
+
+.contact-hero__title-line {
+  display: block;
+}
+
+.contact-hero__title-line--light {
+  font-weight: 400;
+}
+
+.contact-hero__form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 1439px;
+  margin: 64px 0 0;
+}
+
+.contact-hero__row {
+  display: flex;
+  gap: 33px;
+}
+
+.contact-hero__field {
+  width: 458px;
+  height: 78px;
+  padding: 0 10px 42px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #CACACA;
+  border-radius: 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 36px;
+  box-sizing: border-box;
+}
+
+.contact-hero__field::placeholder {
+  color: #505670;
+}
+
+.contact-hero__field:focus {
+  outline: none;
+  border-bottom-color: #162755;
+}
+
+.contact-hero__field--message {
+  width: 100%;
+  height: 117px;
+  margin-top: 30px;
+  padding: 0 10px;
+  resize: none;
+}
+
+.contact-hero__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  text-decoration: none;
+  width: 192px;
+  height: 64px;
+  margin-top: 31px;
+  background: #162755;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1.4px #4A4A4A, inset 0 1.4px 1px rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 19.2px;
+  letter-spacing: 0.04px;
+  cursor: pointer;
+}
+
+@media (max-width: 1824px) { .contact-hero__inner { zoom: 0.95; } }
+@media (max-width: 1728px) { .contact-hero__inner { zoom: 0.9; } }
+@media (max-width: 1632px) { .contact-hero__inner { zoom: 0.85; } }
+@media (max-width: 1536px) { .contact-hero__inner { zoom: 0.8; } }
+@media (max-width: 1440px) { .contact-hero__inner { zoom: 0.75; } }
+@media (max-width: 1344px) { .contact-hero__inner { zoom: 0.7; } }
+@media (max-width: 1248px) { .contact-hero__inner { zoom: 0.65; } }
+@media (max-width: 1152px) { .contact-hero__inner { zoom: 0.6; } }
+@media (max-width: 1056px) { .contact-hero__inner { zoom: 0.55; } }
+@media (max-width: 960px)  { .contact-hero__inner { zoom: 0.5; } }
+
+@media (max-width: 1919px) {
+  .contact-hero__inner {
+    zoom: calc(100vw / 1920px);
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-hero__inner {
+    zoom: 1;
+    width: 100%;
+    height: auto;
+    padding: 150px 52px 80px;
+    background: url('./assets/Glass Background.png') center top / cover no-repeat;
+  }
+  .contact-hero__glow--1 {
+    left: 0;
+    top: 90px;
+    width: 100%;
+    height: 500px;
+  }
+  .contact-hero__glow--2 {
+    left: -420px;
+    top: auto;
+    bottom: -120px;
+    width: 600px;
+    height: 400px;
+  }
+  .contact-hero__title {
+    font-size: min(70px, calc(100vw / 11.7));
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  .contact-hero__form {
+    width: 100%;
+  }
+  .contact-hero__row {
+    gap: 20px;
+  }
+  .contact-hero__field {
+    width: 100%;
+    flex: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-hero__inner {
+    padding: 130px 24px 60px;
+  }
+  .contact-hero__row {
+    flex-direction: column;
+    gap: 21px;
+  }
+  .contact-hero__field {
+    height: 68px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero__inner {
+    width: 430px;
+    height: 1014px;
+    padding: 126px 35px 0;
+    zoom: calc(100vw / 430px);
+    background: url('./assets/Glass Background-mobile.png') center top / 100% 100% no-repeat;
+  }
+  .contact-hero__glow--1 {
+    left: 39px;
+    top: 68px;
+    width: 353px;
+    height: 992px;
+  }
+  .contact-hero__glow--2 {
+    left: -840px;
+    top: 808px;
+    bottom: auto;
+    width: 864px;
+    height: 504px;
+  }
+  .contact-hero__title {
+    margin-top: 20px;
+    font-size: 40px;
+    line-height: 44.8px;
+    letter-spacing: -1.2px;
+  }
+  .contact-hero__form {
+    width: 360px;
+    margin-top: 48px;
+  }
+  .contact-hero__row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .contact-hero__field {
+    width: 360px;
+    height: 78px;
+    font-size: 20px;
+  }
+  .contact-hero__field--message {
+    width: 360px;
+    height: 134px;
+    margin-top: 16px;
+    padding: 10px 10px 100px;
+    font-size: 18px;
+    line-height: 36px;
+  }
+  .contact-hero__submit {
+    width: 192px;
+    height: 64px;
+    margin-top: 30px;
+  }
+}
