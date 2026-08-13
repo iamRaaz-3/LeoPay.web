@@ -12,13 +12,14 @@ const ContactInfo = () => (
         <span className="contact-info__badge">Contact Info</span>
         <h2 className="contact-info__title">
           <span className="contact-info__title-line">We are always</span>
-          <span className="contact-info__title-line">happy to assist you</span>
+          <span className="contact-info__title-line">happy to <span className="contact-info__title-bold">assist you</span></span>
         </h2>
       </div>
       <div className="contact-info__channels">
         {channels.map(channel => (
           <div key={channel.title} className="contact-info__channel">
             <h3 className="contact-info__channel-title">{channel.title}</h3>
+            <span className="contact-info__channel-rule" aria-hidden="true" />
             <a href={`mailto:${channel.email}`} className="contact-info__channel-email">{channel.email}</a>
             <p className="contact-info__channel-hours">
               <span>Assistance hours:</span>

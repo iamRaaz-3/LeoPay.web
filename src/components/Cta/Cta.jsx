@@ -36,7 +36,7 @@ const Cta = ({ variant = 'default' }) => (
           )}
         </div>
         <div className="cta-desc-wrap">
-          <p className="cta-desc">
+          <p className={variant === 'newsletter' ? 'cta-desc cta-desc--newsletter' : 'cta-desc'}>
             {variant === 'newsletter'
               ? 'Subscribe for Updates: Stay informed about the latest investor updates, financial results, and announcements by subscribing to our newsletter.'
               : 'Modern infrastructure to collect, move, and manage money across borders.'}

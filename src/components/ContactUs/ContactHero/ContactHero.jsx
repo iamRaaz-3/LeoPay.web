@@ -13,18 +13,11 @@ const BadgeIconRight = () => (
   </svg>
 );
 
-const strips = Array.from({ length: 20 }, (_, i) => i);
-
 const ContactHero = () => (
   <section className="contact-hero">
-    <div className="contact-hero__strips" aria-hidden="true">
-      {strips.map(i => (
-        <span key={i} className="contact-hero__strip" style={{ left: `${i * 96}px` }} />
-      ))}
-    </div>
-    <div className="contact-hero__glow" aria-hidden="true" />
-
     <div className="contact-hero__inner">
+      <div className="contact-hero__glow contact-hero__glow--1" aria-hidden="true" />
+      <div className="contact-hero__glow contact-hero__glow--2" aria-hidden="true" />
       <div className="contact-hero__head">
         <div className="contact-hero__badge-wrap">
           <span className="contact-hero__badge">
