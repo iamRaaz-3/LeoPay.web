@@ -13,52 +13,57 @@ const CtaLogoIconMobile = () => (
   </svg>
 );
 
-const Cta = ({ variant = 'default' }) => (
+const NEWSLETTER_HEADING = 'Subscribe to our Newsletter';
+const NEWSLETTER_DESC = 'Subscribe for Updates: Stay informed about the latest investor updates, financial results, and announcements by subscribing to our newsletter.';
+
+const Cta = ({ variant = 'default', heading, desc }) => (
   <section className="cta-section">
-    <div className="cta-rect cta-rect--1" />
-    <div className="cta-rect cta-rect--2" />
-    <div className="cta-inner">
-      <div className="cta-logo">
-        <div className="cta-logo-bg">
-          <CtaLogoIcon />
-          <CtaLogoIconMobile />
+    <div className="cta-frame">
+      <div className="cta-rect cta-rect--1" />
+      <div className="cta-rect cta-rect--2" />
+      <div className="cta-inner">
+        <div className="cta-logo">
+          <div className="cta-logo-bg">
+            <CtaLogoIcon />
+            <CtaLogoIconMobile />
+          </div>
         </div>
-      </div>
-      <div className="cta-top">
-        <div className="cta-title">
+        <div className="cta-top">
+          <div className="cta-title">
+            {variant === 'newsletter' ? (
+              <h2 className="cta-heading cta-heading--newsletter">{heading || NEWSLETTER_HEADING}</h2>
+            ) : (
+              <h2 className="cta-heading">
+                <span className="cta-heading--semibold">Built for the Next Generation of</span><br />
+                <span className="cta-heading--regular">Global Finance<span className="cta-heading-period">.</span></span>
+              </h2>
+            )}
+          </div>
+          <div className="cta-desc-wrap">
+            <p className={variant === 'newsletter' ? 'cta-desc cta-desc--newsletter' : 'cta-desc'}>
+              {variant === 'newsletter'
+                ? (desc || NEWSLETTER_DESC)
+                : 'Modern infrastructure to collect, move, and manage money across borders.'}
+            </p>
+          </div>
           {variant === 'newsletter' ? (
-            <h2 className="cta-heading cta-heading--newsletter">Subscribe to our Newsletter</h2>
+            <form className="cta-subscribe" onSubmit={e => e.preventDefault()}>
+              <input type="email" className="cta-subscribe__input" placeholder="Enter your email" aria-label="Enter your email" />
+              <GetStartedButton label="Subscribe" className="cta-subscribe__btn" />
+            </form>
           ) : (
-            <h2 className="cta-heading">
-              <span className="cta-heading--semibold">Built for the Next Generation of</span><br />
-              <span className="cta-heading--regular">Global Finance<span className="cta-heading-period">.</span></span>
-            </h2>
-          )}
-        </div>
-        <div className="cta-desc-wrap">
-          <p className={variant === 'newsletter' ? 'cta-desc cta-desc--newsletter' : 'cta-desc'}>
-            {variant === 'newsletter'
-              ? 'Subscribe for Updates: Stay informed about the latest investor updates, financial results, and announcements by subscribing to our newsletter.'
-              : 'Modern infrastructure to collect, move, and manage money across borders.'}
-          </p>
-        </div>
-        {variant === 'newsletter' ? (
-          <form className="cta-subscribe" onSubmit={e => e.preventDefault()}>
-            <input type="email" className="cta-subscribe__input" placeholder="Enter your email" aria-label="Enter your email" />
-            <GetStartedButton label="Subscribe" className="cta-subscribe__btn" />
-          </form>
-        ) : (
-          <div className="cta-buttons">
-            <div className="cta-btn-wrap">
-              <a href="#" className="cta-btn cta-btn--primary">Get Started</a>
-            </div>
-            <div className="cta-btn-wrap cta-btn-wrap--secondary">
-              <div className="cta-btn-inner">
-                <a href="#" className="cta-btn cta-btn--secondary">API Docs</a>
+            <div className="cta-buttons">
+              <div className="cta-btn-wrap">
+                <a href="#" className="cta-btn cta-btn--primary">Get Started</a>
+              </div>
+              <div className="cta-btn-wrap cta-btn-wrap--secondary">
+                <div className="cta-btn-inner">
+                  <a href="#" className="cta-btn cta-btn--secondary">API Docs</a>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   </section>
