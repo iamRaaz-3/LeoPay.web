@@ -6,6 +6,8 @@ import iconRemittance from './assets/nav-icon-remittance.svg';
 import iconPobo from './assets/nav-icon-pobo.svg';
 import iconTreasury from './assets/nav-icon-treasury.svg';
 import iconAccounts from './assets/nav-icon-accounts.svg';
+import iconApiDocs from './assets/nav-icon-apidocs.svg';
+import iconBlogs from './assets/nav-icon-blogs.svg';
 
 const ChevronIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,11 +25,15 @@ const PRODUCT_ITEMS = [
   { icon: iconAccounts,   title: 'Virtual Accounts',                desc: 'Streamline Collections and Reconciliation', to: '/products/virtual-accounts' },
 ];
 
+const RESOURCE_ITEMS = [
+  { icon: iconApiDocs, title: 'API Docs', desc: 'Everything developers need to integrate', href: 'https://leopay.gitbook.io/leopay-docs' },
+  { icon: iconBlogs,   title: 'Blogs',    desc: 'Insights, updates, and Industry perspectives', href: 'https://medium.com/@neha_79180' },
+];
+
 const NAV_LINKS = [
   { label: 'Products',  dropdown: true },
   { label: 'Resources', dropdown: true },
-  { label: 'Company',   dropdown: false },
-  { label: 'API Docs',  dropdown: false, href: 'https://leopay.gitbook.io/leopay-docs' },
+  { label: 'Company',   dropdown: true },
 ];
 
 const canHover = () =>
@@ -37,6 +43,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
   const [dropdownMounted, setDropdownMounted] = useState(false);
   const navRef = useRef(null);
   const closeTimer = useRef(null);
@@ -60,6 +67,16 @@ const Navbar = () => {
     closeTimer.current = setTimeout(() => setProductsOpen(false), 200);
   };
 
+  const openResources = () => {
+    clearTimeout(closeTimer.current);
+    setResourcesOpen(true);
+  };
+
+  const closeResourcesDelayed = () => {
+    clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setResourcesOpen(false), 200);
+  };
+
   useEffect(() => () => clearTimeout(closeTimer.current), []);
 
   useEffect(() => {
@@ -74,6 +91,7 @@ const Navbar = () => {
       if (navRef.current && !navRef.current.contains(e.target)) {
         setMenuOpen(false);
         setProductsOpen(false);
+        setResourcesOpen(false);
       }
     };
     document.addEventListener('mousedown', onClickOutside);
@@ -112,6 +130,7 @@ const Navbar = () => {
   const closeAll = () => {
     setMenuOpen(false);
     setProductsOpen(false);
+    setResourcesOpen(false);
   };
 
   return (
@@ -168,7 +187,46 @@ const Navbar = () => {
             </div>
             )}
           </li>
-          {NAV_LINKS.filter(link => link.label !== 'Products').map(link => (
+          <li
+            className={`nav-item-dropdown${resourcesOpen ? ' open' : ''}`}
+            onMouseEnter={() => canHover() && openResources()}
+            onMouseLeave={() => canHover() && closeResourcesDelayed()}
+          >
+            <a
+              href="#"
+              className="nav-link"
+              aria-haspopup="true"
+              aria-expanded={resourcesOpen}
+              onClick={(e) => {
+                e.preventDefault();
+                setResourcesOpen(v => !v);
+              }}
+            >
+              <span className="nav-link-label" data-label="Resources">Resources</span>
+              <ChevronIcon />
+            </a>
+            <div className="nav-dropdown nav-dropdown--resources">
+              {RESOURCE_ITEMS.map(item => (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nav-dropdown-item"
+                  onClick={closeAll}
+                >
+                  <span className="nav-dropdown-icon">
+                    <img src={item.icon} alt="" aria-hidden="true" />
+                  </span>
+                  <span className="nav-dropdown-texts">
+                    <span className="nav-dropdown-title">{item.title}</span>
+                    <span className="nav-dropdown-desc">{item.desc}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </li>
+          {NAV_LINKS.filter(link => link.label !== 'Products' && link.label !== 'Resources').map(link => (
             <li key={link.label}>
               <a href={link.href || '#'} target={link.href ? "_blank" : undefined} rel={link.href ? "noopener noreferrer" : undefined} className="nav-link" onClick={() => setMenuOpen(false)}>
                 <span className="nav-link-label" data-label={link.label}>{link.label}</span>
@@ -184,7 +242,8 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-cta">
-          <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" className="nav-getstarted">  Sign in</a>
+          <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" className="nav-signin">Sign in</a>
+          <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" className="nav-getstarted">Get Started</a>
 
           <button className={`hamburger${menuOpen ? ' open' : ''}`} aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(v => !v)}>
             <span /><span /><span />
