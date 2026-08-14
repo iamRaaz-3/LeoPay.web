@@ -59,25 +59,48 @@ const Navbar = () => {
 
   const openProducts = () => {
     clearTimeout(closeTimer.current);
+    setResourcesOpen(false);
     revealProducts(true);
-  };
-
-  const closeProductsDelayed = () => {
-    clearTimeout(closeTimer.current);
-    closeTimer.current = setTimeout(() => setProductsOpen(false), 200);
   };
 
   const openResources = () => {
     clearTimeout(closeTimer.current);
+    setProductsOpen(false);
     setResourcesOpen(true);
   };
 
-  const closeResourcesDelayed = () => {
+  const closeMenusDelayed = () => {
     clearTimeout(closeTimer.current);
-    closeTimer.current = setTimeout(() => setResourcesOpen(false), 200);
+    closeTimer.current = setTimeout(() => {
+      setProductsOpen(false);
+      setResourcesOpen(false);
+    }, 200);
+  };
+
+  const toggleProducts = () => {
+    setResourcesOpen(false);
+    revealProducts(!productsOpen);
+  };
+
+  const toggleResources = () => {
+    setProductsOpen(false);
+    setResourcesOpen(v => !v);
   };
 
   useEffect(() => () => clearTimeout(closeTimer.current), []);
+
+  useEffect(() => {
+    if (!productsOpen && !resourcesOpen && !menuOpen) return;
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setProductsOpen(false);
+        setResourcesOpen(false);
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [productsOpen, resourcesOpen, menuOpen]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -86,7 +109,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (!menuOpen && !productsOpen) return;
+    if (!menuOpen && !productsOpen && !resourcesOpen) return;
     const onClickOutside = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) {
         setMenuOpen(false);
@@ -100,7 +123,7 @@ const Navbar = () => {
       document.removeEventListener('mousedown', onClickOutside);
       document.removeEventListener('touchstart', onClickOutside);
     };
-  }, [menuOpen, productsOpen]);
+  }, [menuOpen, productsOpen, resourcesOpen]);
 
   useEffect(() => {
     if (menuOpen) {
@@ -145,7 +168,7 @@ const Navbar = () => {
           <li
             className={`nav-item-dropdown${productsOpen ? ' open' : ''}`}
             onMouseEnter={() => { if (canHover()) { openProducts(); prefetchProductPage(); } }}
-            onMouseLeave={() => canHover() && closeProductsDelayed()}
+            onMouseLeave={() => canHover() && closeMenusDelayed()}
           >
             <a
               href="#"
@@ -154,7 +177,7 @@ const Navbar = () => {
               aria-expanded={productsOpen}
               onClick={(e) => {
                 e.preventDefault();
-                revealProducts(!productsOpen);
+                toggleProducts();
               }}
             >
               <span className="nav-link-label" data-label="Products">Products</span>
@@ -190,7 +213,7 @@ const Navbar = () => {
           <li
             className={`nav-item-dropdown${resourcesOpen ? ' open' : ''}`}
             onMouseEnter={() => canHover() && openResources()}
-            onMouseLeave={() => canHover() && closeResourcesDelayed()}
+            onMouseLeave={() => canHover() && closeMenusDelayed()}
           >
             <a
               href="#"
@@ -199,7 +222,7 @@ const Navbar = () => {
               aria-expanded={resourcesOpen}
               onClick={(e) => {
                 e.preventDefault();
-                setResourcesOpen(v => !v);
+                toggleResources();
               }}
             >
               <span className="nav-link-label" data-label="Resources">Resources</span>
