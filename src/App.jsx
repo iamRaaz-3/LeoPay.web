@@ -12,6 +12,7 @@ import Cta from './components/Cta/Cta.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import Privacy from './pages/Privacy.jsx'
 import Contact from './pages/Contact.jsx'
+import Blog from './pages/Blog.jsx'
 
 const ProductPage = lazy(() => import('./pages/products/ProductPage.jsx'))
 
@@ -36,6 +37,7 @@ export default function App() {
       <Route path="/" element={<Landing />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/blog" element={<Blog />} />
       <Route
         path="/products/:slug"
         element={

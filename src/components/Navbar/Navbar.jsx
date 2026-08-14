@@ -27,7 +27,7 @@ const PRODUCT_ITEMS = [
 
 const RESOURCE_ITEMS = [
   { icon: iconApiDocs, title: 'API Docs', desc: 'Everything developers need to integrate', href: 'https://leopay.gitbook.io/leopay-docs' },
-  { icon: iconBlogs,   title: 'Blogs',    desc: 'Insights, updates, and Industry perspectives', href: 'https://medium.com/@neha_79180' },
+  { icon: iconBlogs,   title: 'Blogs',    desc: 'Insights, updates, and Industry perspectives', to: '/blog' },
 ];
 
 const NAV_LINKS = [
@@ -126,27 +126,14 @@ const Navbar = () => {
   }, [menuOpen, productsOpen, resourcesOpen]);
 
   useEffect(() => {
-    if (menuOpen) {
-      const scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = '100%';
-      document.body.style.overflow = 'hidden';
-    } else {
-      const scrollY = parseInt(document.body.style.top || '0', 10);
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
-      window.scrollTo(0, -scrollY);
-    }
+    if (!menuOpen) return;
+    const { overflow, paddingRight } = document.body.style;
+    const gutter = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = 'hidden';
+    if (gutter > 0) document.body.style.paddingRight = `${gutter}px`;
     return () => {
-      const scrollY = parseInt(document.body.style.top || '0', 10);
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
-      if (scrollY) window.scrollTo(0, -scrollY);
+      document.body.style.overflow = overflow;
+      document.body.style.paddingRight = paddingRight;
     };
   }, [menuOpen]);
 
@@ -229,24 +216,35 @@ const Navbar = () => {
               <ChevronIcon />
             </a>
             <div className="nav-dropdown nav-dropdown--resources">
-              {RESOURCE_ITEMS.map(item => (
-                <a
-                  key={item.title}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="nav-dropdown-item"
-                  onClick={closeAll}
-                >
-                  <span className="nav-dropdown-icon">
-                    <img src={item.icon} alt="" aria-hidden="true" />
-                  </span>
-                  <span className="nav-dropdown-texts">
-                    <span className="nav-dropdown-title">{item.title}</span>
-                    <span className="nav-dropdown-desc">{item.desc}</span>
-                  </span>
-                </a>
-              ))}
+              {RESOURCE_ITEMS.map(item => {
+                const body = (
+                  <>
+                    <span className="nav-dropdown-icon">
+                      <img src={item.icon} alt="" aria-hidden="true" />
+                    </span>
+                    <span className="nav-dropdown-texts">
+                      <span className="nav-dropdown-title">{item.title}</span>
+                      <span className="nav-dropdown-desc">{item.desc}</span>
+                    </span>
+                  </>
+                );
+                return item.to ? (
+                  <Link key={item.title} to={item.to} className="nav-dropdown-item" onClick={closeAll}>
+                    {body}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.title}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nav-dropdown-item"
+                    onClick={closeAll}
+                  >
+                    {body}
+                  </a>
+                );
+              })}
             </div>
           </li>
           {NAV_LINKS.filter(link => link.label !== 'Products' && link.label !== 'Resources').map(link => (
@@ -268,7 +266,19 @@ const Navbar = () => {
           <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" className="nav-signin">Sign in</a>
           <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" className="nav-getstarted">Get Started</a>
 
-          <button className={`hamburger${menuOpen ? ' open' : ''}`} aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(v => !v)}>
+          <button
+            className={`hamburger${menuOpen ? ' open' : ''}`}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            onClick={() => {
+              const next = !menuOpen;
+              setMenuOpen(next);
+              if (!next) {
+                setProductsOpen(false);
+                setResourcesOpen(false);
+              }
+            }}
+          >
             <span /><span /><span />
           </button>
         </div>
