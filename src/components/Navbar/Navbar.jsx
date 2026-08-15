@@ -188,19 +188,16 @@ const Navbar = () => {
             onMouseEnter={() => { if (canHover()) { openProducts(); prefetchProductPage(); } }}
             onMouseLeave={() => canHover() && closeMenusDelayed()}
           >
-            <a
-              href="#"
+            <button
+              type="button"
               className="nav-link"
               aria-haspopup="true"
               aria-expanded={productsOpen}
-              onClick={(e) => {
-                e.preventDefault();
-                toggleProducts();
-              }}
+              onClick={toggleProducts}
             >
               <span className="nav-link-label" data-label="Products">Products</span>
               <ChevronIcon />
-            </a>
+            </button>
             {dropdownMounted && (
             <div className="nav-dropdown">
               {PRODUCT_ITEMS.map(item => {
@@ -233,19 +230,16 @@ const Navbar = () => {
             onMouseEnter={() => canHover() && openResources()}
             onMouseLeave={() => canHover() && closeMenusDelayed()}
           >
-            <a
-              href="#"
+            <button
+              type="button"
               className="nav-link"
               aria-haspopup="true"
               aria-expanded={resourcesOpen}
-              onClick={(e) => {
-                e.preventDefault();
-                toggleResources();
-              }}
+              onClick={toggleResources}
             >
               <span className="nav-link-label" data-label="Resources">Resources</span>
               <ChevronIcon />
-            </a>
+            </button>
             <div className="nav-dropdown nav-dropdown--resources">
               {RESOURCE_ITEMS.map(item => {
                 const body = (
@@ -283,19 +277,16 @@ const Navbar = () => {
             onMouseEnter={() => canHover() && openCompany()}
             onMouseLeave={() => canHover() && closeMenusDelayed()}
           >
-            <a
-              href="#"
+            <button
+              type="button"
               className="nav-link"
               aria-haspopup="true"
               aria-expanded={companyOpen}
-              onClick={(e) => {
-                e.preventDefault();
-                toggleCompany();
-              }}
+              onClick={toggleCompany}
             >
               <span className="nav-link-label" data-label="Company">Company</span>
               <ChevronIcon />
-            </a>
+            </button>
             <div className="nav-dropdown nav-dropdown--company">
               {COMPANY_ITEMS.map(item => (
                 <Link key={item.title} to={item.to} className="nav-dropdown-item" onClick={closeAll}>
