@@ -195,6 +195,7 @@
   line-height: 22.4px;
   letter-spacing: -0.2px;
   text-decoration: none;
+  cursor: default;
 }
 
 @media (max-width: 1824px) { .career-positions__frame { zoom: 0.95; } }

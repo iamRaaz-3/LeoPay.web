@@ -44,10 +44,10 @@ const Positions = () => (
             </div>
             <div className="job-card__row job-card__row--foot">
               <span className="job-card__tag">{job.tag}</span>
-              <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" className="job-card__apply">
+              <span className="job-card__apply">
                 Apply Now
                 <ArrowIcon />
-              </a>
+              </span>
             </div>
           </article>
         ))}
