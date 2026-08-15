@@ -1,0 +1,406 @@
+.blog-card {
+  display: flex;
+  width: 416px;
+  height: 546px;
+  flex-direction: column;
+  background: #FFF;
+  text-decoration: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.blog-card__media {
+  height: 304px;
+  padding: 11px 8px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.blog-card__media-inner {
+  width: 400px;
+  height: 282px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.blog-card__media-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-card__body {
+  height: 242px;
+  padding: 17.5px 30px 21.5px;
+  box-sizing: border-box;
+}
+
+.blog-card__meta {
+  display: flex;
+  width: 184px;
+  height: 34px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.blog-card__tag {
+  display: inline-flex;
+  width: 104px;
+  height: 34px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 48px;
+  background: rgba(0, 186, 133, 0.10);
+  color: #00BA85;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22.4px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.blog-card__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00BA85;
+  flex-shrink: 0;
+}
+
+.blog-card__read {
+  width: 48px;
+  text-align: center;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+}
+
+.blog-card__title {
+  width: 356px;
+  height: 80px;
+  margin: 28px 0 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 26.4px;
+  letter-spacing: -0.3px;
+}
+
+.blog-card__desc {
+  width: 356px;
+  margin: 16px 0 0;
+  color: #505670;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: -0.2px;
+}
+
+.blog-card__more {
+  color: #162755;
+  font-weight: 600;
+}
+
+.related-blogs {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background: #FFF;
+  overflow: hidden;
+}
+
+.related-blogs__frame {
+  position: relative;
+  flex-shrink: 0;
+  width: 1920px;
+  height: 1272px;
+  box-sizing: border-box;
+}
+
+.related-blogs__deco {
+  position: absolute;
+  left: 0;
+  width: 1920px;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.related-blogs__deco--top {
+  top: 0;
+  height: 408px;
+}
+
+.related-blogs__deco--bottom {
+  top: 1008px;
+  height: 264px;
+}
+
+.related-blogs__deco--top-m,
+.related-blogs__deco--bottom-m {
+  display: none;
+}
+
+.related-blogs__head {
+  position: absolute;
+  left: 153px;
+  top: 151px;
+  display: flex;
+  width: 1631px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.related-blogs__badge {
+  display: inline-flex;
+  height: 33px;
+  padding: 0 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: #FFF;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  box-sizing: border-box;
+}
+
+.related-blogs__title {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.related-blogs__title-light {
+  font-weight: 400;
+}
+
+.related-blogs__title-strong {
+  font-weight: 600;
+}
+
+.related-blogs__desc {
+  width: 600px;
+  margin: 0;
+  color: #525870;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.04px;
+  text-align: center;
+}
+
+.related-blogs__track {
+  position: absolute;
+  left: 118px;
+  top: 434px;
+  display: flex;
+  width: 1700px;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.related-blogs__track::-webkit-scrollbar {
+  display: none;
+}
+
+.related-blogs__track .blog-card {
+  flex: 0 0 416px;
+  scroll-snap-align: start;
+  text-decoration: none;
+}
+
+.related-blogs__nav {
+  position: absolute;
+  left: 912px;
+  top: 1074px;
+  display: flex;
+  gap: 16px;
+  z-index: 2;
+}
+
+.related-blogs__arrow {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #0052B4;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.related-blogs__arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+@media (max-width: 1824px) { .related-blogs__frame { zoom: 0.95; } }
+@media (max-width: 1728px) { .related-blogs__frame { zoom: 0.9; } }
+@media (max-width: 1632px) { .related-blogs__frame { zoom: 0.85; } }
+@media (max-width: 1536px) { .related-blogs__frame { zoom: 0.8; } }
+@media (max-width: 1440px) { .related-blogs__frame { zoom: 0.75; } }
+@media (max-width: 1344px) { .related-blogs__frame { zoom: 0.7; } }
+@media (max-width: 1248px) { .related-blogs__frame { zoom: 0.65; } }
+@media (max-width: 1152px) { .related-blogs__frame { zoom: 0.6; } }
+@media (max-width: 1056px) { .related-blogs__frame { zoom: 0.55; } }
+@media (max-width: 960px)  { .related-blogs__frame { zoom: 0.5; } }
+
+@media (max-width: 1919px) and (min-width: 1280px) {
+  .related-blogs__frame { zoom: calc(100vw / 1920px); }
+}
+
+@media (max-width: 1279px) {
+  .related-blogs__frame {
+    zoom: 1;
+    width: 900px;
+    height: auto;
+    padding: 100px 26px 120px;
+  }
+  .related-blogs__deco {
+    width: 100%;
+    height: auto;
+  }
+  .related-blogs__deco--bottom {
+    display: none;
+  }
+  .related-blogs__head {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+  }
+  .related-blogs__track {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 848px;
+    margin: 60px auto 0;
+  }
+  .related-blogs__nav {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 40px auto 0;
+    justify-content: center;
+    width: max-content;
+  }
+}
+
+@media (max-width: 855px) { .related-blogs__frame { zoom: 0.95; } }
+@media (max-width: 810px) { .related-blogs__frame { zoom: 0.9; } }
+@media (max-width: 765px) { .related-blogs__frame { zoom: 0.85; } }
+@media (max-width: 720px) { .related-blogs__frame { zoom: 0.8; } }
+@media (max-width: 675px) { .related-blogs__frame { zoom: 0.75; } }
+@media (max-width: 630px) { .related-blogs__frame { zoom: 0.7; } }
+
+@media (max-width: 1279px) and (min-width: 616px) {
+  .related-blogs__frame { zoom: min(1, calc(100vw / 900px)); }
+}
+
+@media (max-width: 615px) {
+  .related-blogs__frame {
+    zoom: 1;
+    width: 100%;
+    padding: 80px 24px;
+  }
+  .related-blogs__title {
+    width: 100%;
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .related-blogs__desc {
+    width: 100%;
+    font-size: 18px;
+  }
+  .related-blogs__track {
+    width: 416px;
+    max-width: 100%;
+    margin-top: 44px;
+    zoom: min(1, calc((100vw - 48px) / 416px));
+  }
+}
+
+@media (max-width: 480px) {
+  .related-blogs__frame {
+    zoom: calc(100vw / 430px);
+    width: 430px;
+    height: 1097px;
+    padding: 0;
+  }
+  .related-blogs__deco--top,
+  .related-blogs__deco--bottom {
+    display: none;
+  }
+  .related-blogs__deco--top-m,
+  .related-blogs__deco--bottom-m {
+    display: block;
+    left: 0;
+    width: 430px;
+    height: 353px;
+  }
+  .related-blogs__deco--top-m { top: 0; }
+  .related-blogs__deco--bottom-m { top: 744px; }
+  .related-blogs__head {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    width: 430px;
+    margin: 0;
+    gap: 16px;
+  }
+  .related-blogs__title {
+    width: 424px;
+    font-size: 36px;
+    line-height: 48px;
+  }
+  .related-blogs__desc {
+    width: 369px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .related-blogs__track {
+    position: absolute;
+    left: 7px;
+    top: 362px;
+    width: 416px;
+    max-width: none;
+    margin: 0;
+    zoom: 1;
+  }
+  .related-blogs__nav {
+    position: absolute;
+    left: 167px;
+    top: 976px;
+    width: 96px;
+    margin: 0;
+  }
+}

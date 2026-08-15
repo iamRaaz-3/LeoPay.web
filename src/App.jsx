@@ -1,5 +1,5 @@
-import { lazy, Suspense } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { lazy, Suspense, useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar.jsx'
 import Hero from './components/Hero/Hero.jsx'
 import Ticker from './components/Ticker/Ticker.jsx'
@@ -13,6 +13,15 @@ import Footer from './components/Footer/Footer.jsx'
 import Privacy from './pages/Privacy.jsx'
 import Contact from './pages/Contact.jsx'
 import Blog from './pages/Blog.jsx'
+import BlogArticle from './pages/BlogArticle.jsx'
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const ProductPage = lazy(() => import('./pages/products/ProductPage.jsx'))
 
@@ -33,19 +42,23 @@ const Landing = () => (
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/privacy" element={<Privacy />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route
-        path="/products/:slug"
-        element={
-          <Suspense fallback={<div style={{ minHeight: '100vh', background: '#ECF5FC' }} />}>
-            <ProductPage />
-          </Suspense>
-        }
-      />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogArticle />} />
+        <Route
+          path="/products/:slug"
+          element={
+            <Suspense fallback={<div style={{ minHeight: '100vh', background: '#ECF5FC' }} />}>
+              <ProductPage />
+            </Suspense>
+          }
+        />
+      </Routes>
+    </>
   );
 }

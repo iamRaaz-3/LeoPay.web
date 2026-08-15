@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './BlogList.css';
 import blog1 from './assets/blog-1.png';
 import blog2 from './assets/blog-2.png';
@@ -9,6 +10,8 @@ import blog7 from './assets/blog-7.png';
 import blog8 from './assets/blog-8.png';
 import blog9 from './assets/blog-9.png';
 
+const ARTICLE_PATH = '/blog/how-stablecoins-are-transforming-cross-border-payments';
+
 const POSTS = [blog1, blog2, blog3, blog4, blog5, blog6, blog7, blog8, blog9].map((image, i) => ({
   id: i + 1,
   image,
@@ -16,6 +19,7 @@ const POSTS = [blog1, blog2, blog3, blog4, blog5, blog6, blog7, blog8, blog9].ma
   readTime: '6 min',
   title: 'How Stablecoins are transforming Cross-Border Payments',
   desc: 'Explore stablecoin benefits for global payments.',
+  to: ARTICLE_PATH,
 }));
 
 const PAGES = [1, 2, 3, 4, 5];
@@ -37,7 +41,7 @@ const BlogList = () => (
     <div className="blog-list__frame">
       <div className="blog-list__grid">
         {POSTS.map(post => (
-          <article key={post.id} className="blog-card">
+          <Link key={post.id} to={post.to} className="blog-card">
             <div className="blog-card__media">
               <div className="blog-card__media-inner">
                 <img src={post.image} alt="" />
@@ -54,7 +58,7 @@ const BlogList = () => (
                 {post.desc} <span className="blog-card__more">Read more →</span>
               </p>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
 
@@ -75,10 +79,10 @@ const BlogList = () => (
             </button>
           ))}
         </div>
-        <button type="button" className="blog-pagination__step blog-pagination__step--next">
+        <Link to={ARTICLE_PATH} className="blog-pagination__step blog-pagination__step--next">
           <span>Next</span>
           <ChevronRight />
-        </button>
+        </Link>
       </nav>
     </div>
   </section>
