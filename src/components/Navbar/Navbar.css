@@ -22,7 +22,8 @@
 
 .navbar-inner {
   display: flex;
-  width: 1040px;
+  width: 100%;
+  max-width: 1040px;
   height: 74px;
   padding: 16px 24px;
   justify-content: space-between;
@@ -75,6 +76,9 @@
   align-items: center;
   gap: 4px;
   padding: 6px 8px;
+  border: none;
+  background: none;
+  font: inherit;
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.18s;
@@ -254,23 +258,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
-  color: #162755;
-  font-family: 'Britti Sans Trial', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0.04px;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color 0.2s;
-}
-
-.nav-signin:hover {
-  color: #00BA85;
-}
-
-.nav-signin {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -346,6 +333,15 @@
 }
 .hamburger.open span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 1080px) and (min-width: 901px) {
+  .navbar-links {
+    gap: 20px;
+  }
+  .nav-link {
+    padding: 6px 4px;
+  }
 }
 
 @media (max-width: 900px) {
