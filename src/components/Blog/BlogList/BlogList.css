@@ -31,6 +31,7 @@
   height: 546px;
   flex-direction: column;
   background: #FFF;
+  text-decoration: none;
   border-radius: 16px;
   overflow: hidden;
   box-sizing: border-box;
@@ -157,6 +158,7 @@
   padding: 0 16px;
   background: none;
   border: none;
+  text-decoration: none;
   color: #505670;
   font-family: 'Britti Sans Trial', sans-serif;
   font-size: 16px;
@@ -211,11 +213,11 @@
 @media (max-width: 1056px) { .blog-list__frame { zoom: 0.55; } }
 @media (max-width: 960px) { .blog-list__frame { zoom: 0.5; } }
 
-@media (max-width: 1919px) and (min-width: 901px) {
+@media (max-width: 1919px) and (min-width: 1280px) {
   .blog-list__frame { zoom: calc(100vw / 1920px); }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1279px) {
   .blog-list__frame {
     zoom: 1;
     width: 900px;
@@ -253,7 +255,7 @@
 @media (max-width: 675px) { .blog-list__frame { zoom: 0.75; } }
 @media (max-width: 630px) { .blog-list__frame { zoom: 0.7; } }
 
-@media (max-width: 900px) and (min-width: 616px) {
+@media (max-width: 1279px) and (min-width: 616px) {
   .blog-list__frame { zoom: min(1, calc(100vw / 900px)); }
 }
 
