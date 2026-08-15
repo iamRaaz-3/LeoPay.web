@@ -1,9 +1,12 @@
 import './PrivacyHero.css';
-import heroBg from './image 31.png';
+import heroBg from './assets/image 31.png';
+import heroBgMobile from './assets/hero-bg-mobile.png';
 
 const PrivacyHero = () => (
   <section className="prh-section">
     <img src={heroBg} alt="" className="prh-bg-img" aria-hidden="true" />
+    <img src={heroBgMobile} alt="" className="prh-bg-img--mobile" aria-hidden="true" />
+    <div className="prh-tint" aria-hidden="true" />
     <div className="prh-ellipse" aria-hidden="true" />
     <div className="prh-inner">
       <div className="prh-badge">
