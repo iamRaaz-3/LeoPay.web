@@ -8,6 +8,9 @@ import iconTreasury from './assets/nav-icon-treasury.svg';
 import iconAccounts from './assets/nav-icon-accounts.svg';
 import iconApiDocs from './assets/nav-icon-apidocs.svg';
 import iconBlogs from './assets/nav-icon-blogs.svg';
+import iconAbout from './assets/nav-icon-about.svg';
+import iconPrivacy from './assets/nav-icon-privacy.svg';
+import iconCareers from './assets/nav-icon-careers.svg';
 
 const ChevronIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,6 +33,12 @@ const RESOURCE_ITEMS = [
   { icon: iconBlogs,   title: 'Blogs',    desc: 'Insights, updates, and Industry perspectives', to: '/blog' },
 ];
 
+const COMPANY_ITEMS = [
+  { icon: iconAbout,   title: 'About Us',       desc: 'Learn about our mission, vision, and values',     to: '/about' },
+  { icon: iconPrivacy, title: 'Privacy Policy', desc: 'Review our privacy, security, and legal policies', to: '/privacy' },
+  { icon: iconCareers, title: 'Careers',        desc: 'Join our team shaping the future of finance',      to: '/career' },
+];
+
 const NAV_LINKS = [
   { label: 'Products',  dropdown: true },
   { label: 'Resources', dropdown: true },
@@ -44,6 +53,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
   const [dropdownMounted, setDropdownMounted] = useState(false);
   const navRef = useRef(null);
   const closeTimer = useRef(null);
@@ -60,13 +70,22 @@ const Navbar = () => {
   const openProducts = () => {
     clearTimeout(closeTimer.current);
     setResourcesOpen(false);
+    setCompanyOpen(false);
     revealProducts(true);
   };
 
   const openResources = () => {
     clearTimeout(closeTimer.current);
     setProductsOpen(false);
+    setCompanyOpen(false);
     setResourcesOpen(true);
+  };
+
+  const openCompany = () => {
+    clearTimeout(closeTimer.current);
+    setProductsOpen(false);
+    setResourcesOpen(false);
+    setCompanyOpen(true);
   };
 
   const closeMenusDelayed = () => {
@@ -74,33 +93,43 @@ const Navbar = () => {
     closeTimer.current = setTimeout(() => {
       setProductsOpen(false);
       setResourcesOpen(false);
+      setCompanyOpen(false);
     }, 200);
   };
 
   const toggleProducts = () => {
     setResourcesOpen(false);
+    setCompanyOpen(false);
     revealProducts(!productsOpen);
   };
 
   const toggleResources = () => {
     setProductsOpen(false);
+    setCompanyOpen(false);
     setResourcesOpen(v => !v);
+  };
+
+  const toggleCompany = () => {
+    setProductsOpen(false);
+    setResourcesOpen(false);
+    setCompanyOpen(v => !v);
   };
 
   useEffect(() => () => clearTimeout(closeTimer.current), []);
 
   useEffect(() => {
-    if (!productsOpen && !resourcesOpen && !menuOpen) return;
+    if (!productsOpen && !resourcesOpen && !companyOpen && !menuOpen) return;
     const onKeyDown = (e) => {
       if (e.key === 'Escape') {
         setProductsOpen(false);
         setResourcesOpen(false);
+        setCompanyOpen(false);
         setMenuOpen(false);
       }
     };
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
-  }, [productsOpen, resourcesOpen, menuOpen]);
+  }, [productsOpen, resourcesOpen, companyOpen, menuOpen]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -109,12 +138,13 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (!menuOpen && !productsOpen && !resourcesOpen) return;
+    if (!menuOpen && !productsOpen && !resourcesOpen && !companyOpen) return;
     const onClickOutside = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) {
         setMenuOpen(false);
         setProductsOpen(false);
         setResourcesOpen(false);
+        setCompanyOpen(false);
       }
     };
     document.addEventListener('mousedown', onClickOutside);
@@ -123,7 +153,7 @@ const Navbar = () => {
       document.removeEventListener('mousedown', onClickOutside);
       document.removeEventListener('touchstart', onClickOutside);
     };
-  }, [menuOpen, productsOpen, resourcesOpen]);
+  }, [menuOpen, productsOpen, resourcesOpen, companyOpen]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -141,6 +171,7 @@ const Navbar = () => {
     setMenuOpen(false);
     setProductsOpen(false);
     setResourcesOpen(false);
+    setCompanyOpen(false);
   };
 
   return (
@@ -247,7 +278,39 @@ const Navbar = () => {
               })}
             </div>
           </li>
-          {NAV_LINKS.filter(link => link.label !== 'Products' && link.label !== 'Resources').map(link => (
+          <li
+            className={`nav-item-dropdown${companyOpen ? ' open' : ''}`}
+            onMouseEnter={() => canHover() && openCompany()}
+            onMouseLeave={() => canHover() && closeMenusDelayed()}
+          >
+            <a
+              href="#"
+              className="nav-link"
+              aria-haspopup="true"
+              aria-expanded={companyOpen}
+              onClick={(e) => {
+                e.preventDefault();
+                toggleCompany();
+              }}
+            >
+              <span className="nav-link-label" data-label="Company">Company</span>
+              <ChevronIcon />
+            </a>
+            <div className="nav-dropdown nav-dropdown--company">
+              {COMPANY_ITEMS.map(item => (
+                <Link key={item.title} to={item.to} className="nav-dropdown-item" onClick={closeAll}>
+                  <span className="nav-dropdown-icon">
+                    <img src={item.icon} alt="" aria-hidden="true" />
+                  </span>
+                  <span className="nav-dropdown-texts">
+                    <span className="nav-dropdown-title">{item.title}</span>
+                    <span className="nav-dropdown-desc">{item.desc}</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </li>
+          {NAV_LINKS.filter(link => link.label !== 'Products' && link.label !== 'Resources' && link.label !== 'Company').map(link => (
             <li key={link.label}>
               <a href={link.href || '#'} target={link.href ? "_blank" : undefined} rel={link.href ? "noopener noreferrer" : undefined} className="nav-link" onClick={() => setMenuOpen(false)}>
                 <span className="nav-link-label" data-label={link.label}>{link.label}</span>
@@ -276,6 +339,7 @@ const Navbar = () => {
               if (!next) {
                 setProductsOpen(false);
                 setResourcesOpen(false);
+                setCompanyOpen(false);
               }
             }}
           >

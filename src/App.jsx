@@ -14,6 +14,7 @@ import Privacy from './pages/Privacy.jsx'
 import Contact from './pages/Contact.jsx'
 import Blog from './pages/Blog.jsx'
 import BlogArticle from './pages/BlogArticle.jsx'
+import Career from './pages/Career.jsx'
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -50,6 +51,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
+        <Route path="/career" element={<Career />} />
         <Route
           path="/products/:slug"
           element={

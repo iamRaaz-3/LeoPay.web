@@ -171,10 +171,11 @@
   border-radius: 100px;
   background: #FFF;
   color: #162755;
-  font-family: 'Britti Sans Trial', sans-serif;
+  font-family: 'Geist', sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 16.8px;
+  white-space: nowrap;
   box-sizing: border-box;
 }
 

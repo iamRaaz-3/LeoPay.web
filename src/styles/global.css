@@ -4,6 +4,30 @@
    ============================================================ */
 
 @font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Britti Sans Trial';
   src: url('../fonts/BrittiSansTrial-Regular-BF6757bfd47ffbf.otf') format('opentype');
   font-weight: 400;
