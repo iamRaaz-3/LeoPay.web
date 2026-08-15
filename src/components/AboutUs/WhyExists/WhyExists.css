@@ -1,0 +1,175 @@
+.about-why {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-why__frame {
+  position: relative;
+  flex-shrink: 0;
+  width: 1920px;
+  height: 987px;
+  box-sizing: border-box;
+  background: url('./assets/why-bg.png') left top / 100% 100% no-repeat;
+}
+
+.about-why__visual {
+  position: absolute;
+  left: 277px;
+  top: 169px;
+  width: 743px;
+  height: 650px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.about-why__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-why__content {
+  position: absolute;
+  left: 1127px;
+  top: 191px;
+  width: 553px;
+}
+
+.about-why__title {
+  margin: 0;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 61.6px;
+  letter-spacing: -1.8px;
+}
+
+.about-why__lead {
+  color: #162755;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.5px;
+}
+
+.about-why__body {
+  width: 553px;
+  margin: 24px 0 0;
+  color: #505670;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+@media (max-width: 1824px) { .about-why__frame { zoom: 0.95; } }
+@media (max-width: 1728px) { .about-why__frame { zoom: 0.9; } }
+@media (max-width: 1632px) { .about-why__frame { zoom: 0.85; } }
+@media (max-width: 1536px) { .about-why__frame { zoom: 0.8; } }
+@media (max-width: 1440px) { .about-why__frame { zoom: 0.75; } }
+@media (max-width: 1344px) { .about-why__frame { zoom: 0.7; } }
+@media (max-width: 1248px) { .about-why__frame { zoom: 0.65; } }
+@media (max-width: 1152px) { .about-why__frame { zoom: 0.6; } }
+@media (max-width: 1056px) { .about-why__frame { zoom: 0.55; } }
+@media (max-width: 960px)  { .about-why__frame { zoom: 0.5; } }
+
+@media (max-width: 1919px) and (min-width: 1280px) {
+  .about-why__frame { zoom: calc(100vw / 1920px); }
+}
+
+@media (max-width: 1279px) {
+  .about-why__frame {
+    zoom: 1;
+    width: 900px;
+    height: auto;
+    background: none;
+    padding: 100px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+  }
+  .about-why__visual {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 848px;
+    height: 650px;
+  }
+  .about-why__content {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 848px;
+  }
+  .about-why__body { width: 100%; }
+}
+
+@media (max-width: 855px) { .about-why__frame { zoom: 0.95; } }
+@media (max-width: 810px) { .about-why__frame { zoom: 0.9; } }
+@media (max-width: 765px) { .about-why__frame { zoom: 0.85; } }
+@media (max-width: 720px) { .about-why__frame { zoom: 0.8; } }
+@media (max-width: 675px) { .about-why__frame { zoom: 0.75; } }
+@media (max-width: 630px) { .about-why__frame { zoom: 0.7; } }
+
+@media (max-width: 1279px) and (min-width: 616px) {
+  .about-why__frame { zoom: min(1, calc(100vw / 900px)); }
+}
+
+@media (max-width: 615px) {
+  .about-why__frame {
+    zoom: 1;
+    width: 100%;
+    padding: 80px 24px;
+    gap: 40px;
+  }
+  .about-why__visual {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 743 / 650;
+  }
+  .about-why__content { width: 100%; }
+  .about-why__title { font-size: 40px; line-height: 44px; letter-spacing: -1.2px; }
+  .about-why__body { font-size: 18px; line-height: 28px; }
+}
+
+@media (max-width: 480px) {
+  .about-why__frame {
+    zoom: calc(100vw / 430px);
+    width: 430px;
+    height: 998px;
+    padding: 45px 7px 0;
+    background: url('./assets/why-bg-mobile.png') left top / 100% 100% no-repeat;
+    gap: 0;
+    align-items: flex-start;
+  }
+  .about-why__visual {
+    width: 416px;
+    height: 348px;
+    border-radius: 16px;
+  }
+  .about-why__content {
+    width: 360px;
+    margin: 53px 0 0 30px;
+  }
+  .about-why__title {
+    width: 356px;
+    font-size: 40px;
+    line-height: 44.8px;
+    letter-spacing: -1.2px;
+  }
+  .about-why__body {
+    width: 360px;
+    margin-top: 19px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+  }
+}
