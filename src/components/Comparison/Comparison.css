@@ -1,21 +1,21 @@
 
 .comparison-section {
   width: 100%;
-  max-width: 1920px;
-  height: 882px;
+  max-width: calc(1920 * var(--cmp-u));
+  height: calc(882 * var(--cmp-u));
   background-image:
-    linear-gradient(to right, rgba(255,255,255,1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,1) 1px, transparent 1px),
+    url('./assets/comparison-grid.svg'),
     linear-gradient(180deg, #FFF 0%, #E0F4EF 100%);
-  background-size: 80px 100%, 100% 80px, 100% 100%;
-  background-position: 33px 0, 0 35px, 0 0;
+  background-size: calc(1913 * var(--cmp-u)) calc(1913 * var(--cmp-u)), 100% 100%;
+  background-position: calc(3 * var(--cmp-u)) calc(-154 * var(--cmp-u)), 0 0;
+  background-repeat: no-repeat, no-repeat;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 129px;
+  padding-top: calc(140 * var(--cmp-u));
 }
 
 /* ── Container ─────────────────────────────────────────── */
@@ -23,9 +23,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: calc(59 * var(--cmp-u));
   width: 100%;
-  max-width: 1920px;
+  max-width: calc(1920 * var(--cmp-u));
   box-sizing: border-box;
 }
 
@@ -34,7 +34,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: calc(20 * var(--cmp-u));
   width: 100%;
   text-align: center;
 }
@@ -50,19 +50,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 111px;
-  height: 33px;
+  width: calc(111 * var(--cmp-u));
+  height: calc(33 * var(--cmp-u));
   background: #fff;
-  border-radius: 100px;
-  box-shadow: 0px 4px 12px rgba(82, 88, 112, 0.04);
+  border-radius: calc(100 * var(--cmp-u));
+  box-shadow: 0px calc(4 * var(--cmp-u)) calc(12 * var(--cmp-u)) rgba(82, 88, 112, 0.04);
   box-sizing: border-box;
 }
 
 .comparison-badge span {
   font-family: 'Geist', sans-serif;
-  font-size: 14px;
+  font-size: calc(14 * var(--cmp-u));
   font-weight: 500;
-  line-height: 16.8px;
+  line-height: calc(16.8 * var(--cmp-u));
   color: #162755;
   position: relative;
   z-index: 1;
@@ -71,8 +71,8 @@
 .comparison-badge-border {
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 100px;
+  border: calc(1 * var(--cmp-u)) solid rgba(0, 0, 0, 0.15);
+  border-radius: calc(100 * var(--cmp-u));
   z-index: 2;
   pointer-events: none;
 }
@@ -87,10 +87,10 @@
 
 .cmp-heading-light {
   font-family: 'Britti Sans Trial', sans-serif;
-  font-size: 48px;
+  font-size: calc(48 * var(--cmp-u));
   font-weight: 400;
-  line-height: 48px;
-  letter-spacing: -1px;
+  line-height: calc(48 * var(--cmp-u));
+  letter-spacing: calc(-1 * var(--cmp-u));
   color: #162755;
   display: block;
   text-align: center;
@@ -98,10 +98,10 @@
 
 .cmp-heading-bold {
   font-family: 'Britti Sans Trial', sans-serif;
-  font-size: 48px;
+  font-size: calc(48 * var(--cmp-u));
   font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -1px;
+  line-height: calc(48 * var(--cmp-u));
+  letter-spacing: calc(-1 * var(--cmp-u));
   color: #162755;
   display: block;
   text-align: center;
@@ -110,20 +110,20 @@
 /* Subtitle */
 .comparison-subtitle {
   font-family: 'Britti Sans Trial', sans-serif;
-  font-size: 20px;
+  font-size: calc(20 * var(--cmp-u));
   font-weight: 400;
-  line-height: 27px;
-  letter-spacing: 0.04px;
+  line-height: calc(27 * var(--cmp-u));
+  letter-spacing: calc(0.04 * var(--cmp-u));
   color: #525870;
   text-align: center;
-  max-width: 574px;
+  max-width: calc(574 * var(--cmp-u));
   margin: 0;
 }
 
 /* ── Card wrap ─────────────────────────────────────────── */
 .comparison-card-wrap {
   width: 100%;
-  max-width: 1372px;
+  max-width: calc(1372 * var(--cmp-u));
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -134,14 +134,15 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  max-width: 1372px;
-  height: 347px;
-  padding: 10px;
-  gap: 20px;
+  max-width: calc(1372 * var(--cmp-u));
+  height: calc(347 * var(--cmp-u));
+  padding: calc(10 * var(--cmp-u));
+  gap: calc(20 * var(--cmp-u));
   background: #fff;
-  border-radius: 30px;
-  box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.03);
+  border-radius: calc(30 * var(--cmp-u));
+  box-shadow: 0px calc(1 * var(--cmp-u)) calc(20 * var(--cmp-u)) 0px rgba(0, 0, 0, 0.03);
   box-sizing: border-box;
 }
 
@@ -150,37 +151,37 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: calc(30 * var(--cmp-u));
   width: 50%;
-  max-width: 656px;
+  max-width: calc(656 * var(--cmp-u));
   flex-shrink: 1;
-  padding: 19px 20px 20px;
+  padding: calc(20 * var(--cmp-u)) calc(20 * var(--cmp-u)) calc(20 * var(--cmp-u)) calc(30 * var(--cmp-u));
   box-sizing: border-box;
 }
 
 /* Others */
 .cmp-others {
   background: #fff;
-  border-radius: 12px;
-  height: 293px;
+  border-radius: calc(12 * var(--cmp-u));
+  height: calc(293 * var(--cmp-u));
 }
 
 /* LeoPay */
 .cmp-leopay {
   background: #fff;
-  border: 2px solid #00BA85;
-  border-radius: 20px;
-  height: 287px;
-  box-shadow: -12px 0px 12px -3.5px rgba(18, 109, 251, 0.08);
-  margin-right: 20px;
+  border: calc(2 * var(--cmp-u)) solid #00BA85;
+  border-radius: calc(20 * var(--cmp-u));
+  height: calc(287 * var(--cmp-u));
+  box-shadow: calc(-12 * var(--cmp-u)) 0px calc(12 * var(--cmp-u)) calc(-3.5 * var(--cmp-u)) rgba(18, 109, 251, 0.08);
+  padding-right: calc(30 * var(--cmp-u));
 }
 
 /* Column title */
 .cmp-col-title {
   font-family: 'Britti Sans Trial', sans-serif;
-  font-size: 32px;
+  font-size: calc(32 * var(--cmp-u));
   font-weight: 600;
-  line-height: 38.4px;
+  line-height: calc(38.4 * var(--cmp-u));
   color: #162755;
   margin: 0;
 }
@@ -189,15 +190,15 @@
 .cmp-leopay-logo {
   display: flex;
   align-items: center;
-  height: 32px;
+  height: calc(32 * var(--cmp-u));
 }
 
 .cmp-leopay-text {
   font-family: 'Britti Sans Trial', sans-serif;
-  font-size: 36px;
+  font-size: calc(36 * var(--cmp-u));
   font-weight: 600;
-  line-height: 32px;
-  letter-spacing: -1px;
+  line-height: calc(32 * var(--cmp-u));
+  letter-spacing: calc(-1 * var(--cmp-u));
   color: #00BA85;
 }
 
@@ -205,7 +206,7 @@
 .cmp-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: calc(16 * var(--cmp-u));
   list-style: none;
   padding: 0;
   margin: 0;
@@ -216,20 +217,20 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 8px;
+  gap: calc(8 * var(--cmp-u));
   width: 100%;
 }
 
 /* Icon wrap */
 .cmp-icon-wrap {
-  width: 18px;
-  height: 18px;
-  border-radius: 50px;
+  width: calc(18 * var(--cmp-u));
+  height: calc(18 * var(--cmp-u));
+  border-radius: calc(50 * var(--cmp-u));
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: calc(2 * var(--cmp-u));
 }
 
 .x-icon {
@@ -246,13 +247,19 @@
 .cmp-text {
   flex: 1;
   font-family: 'Britti Sans Trial', sans-serif;
-  font-size: 18px;
+  font-size: calc(18 * var(--cmp-u));
+  white-space: pre-line;
   font-weight: 400;
-  line-height: 22.4px;
+  line-height: calc(22.4 * var(--cmp-u));
   color: #505670;
 }
 
 /* ── Responsive ────────────────────────────────────────── */
+
+.comparison-section {
+  --cmp-u: min(1px, 100vw / 1920);
+}
+
 @media (max-width: 1440px) {
   .comparison-section { width: 100%; height: auto; padding-bottom: 80px; overflow: visible; }
   .comparison-card-wrap { width: 100%; padding: 0 24px; box-sizing: border-box; }
@@ -260,45 +267,59 @@
   .cmp-col { width: 50%; height: auto; }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+  .comparison-section {
+    --cmp-u: 1px;
+    height: auto;
+    padding-bottom: 80px;
+  }
+
   .comparison-desktop { flex-direction: column; height: auto; }
   .cmp-col { width: 100%; }
   .cmp-others, .cmp-leopay { height: auto; }
   .cmp-leopay { margin-right: 0; }
-  .cmp-heading-light, .cmp-heading-bold { font-size: 36px; line-height: 40px; }
-  .comparison-subtitle { font-size: 16px; }
+  .cmp-heading-light,
+  .cmp-heading-bold { font-size: 36px; line-height: 48px; }
+  .comparison-subtitle { font-size: 18px; line-height: 27px; }
 }
 
 @media (max-width: 600px) {
   .comparison-section {
     padding-top: 80px;
     padding-bottom: 60px;
+    background-image:
+      url('./assets/comparison-grid-mobile.svg'),
+      linear-gradient(180deg, #FFF 0%, #E0F4EF 100%);
+    background-size: 1048px 1048px, 100% 100%;
+    background-position: -309px 278px, 0 0;
+    background-repeat: no-repeat, no-repeat;
   }
   .comparison-container { gap: 40px; }
   .comparison-desktop {
-    padding: 8px;
-    gap: 12px;
-    border-radius: 20px;
+    padding: 15px;
+    gap: 32px;
+    border-radius: 30px;
   }
   .cmp-col {
-    padding: 16px;
+    padding: 17px;
+    gap: 20px;
   }
-  .cmp-col-title { font-size: 26px; line-height: 32px; }
-  .cmp-leopay-text { font-size: 28px; line-height: 32px; }
-  .cmp-text { font-size: 15px; line-height: 20px; }
-  .cmp-list { gap: 10px; }
-  .cmp-heading-light, .cmp-heading-bold { font-size: 32px; line-height: 38px; }
-  .comparison-subtitle { font-size: 15px; line-height: 22px; }
+
+  .cmp-others {
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .cmp-col-title {
+    color: #000;
+  }
+  .cmp-list { gap: 16px; }
 }
 
 @media (max-width: 480px) {
   .comparison-title-block { gap: 10px; }
   .comparison-container { gap: 36px; }
   .comparison-card-wrap { padding: 0 15px; }
-  .cmp-heading-light, .cmp-heading-bold { font-size: 36px; line-height: 48px; }
-  .comparison-subtitle { font-size: 18px; }
-  .cmp-col-title { font-size: 32px; }
-  .cmp-text { font-size: 18px; }
   .cmp-list { gap: 16px; }
   .cmp-point { gap: 12px; }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Comparison.css";
 
 const OTHER_ITEMS = [
@@ -9,6 +9,8 @@ const OTHER_ITEMS = [
   "Limited Flexibility for High-Volume Cross-Border Operations",
 ];
 
+const MOBILE_QUERY = "(max-width: 600px)";
+
 const LEOPAY_ITEMS = [
   "Unified Global Payments Platform (FX + Payouts in One Place)",
   "Faster Payment Processing with optimized settlement flows",
@@ -16,6 +18,10 @@ const LEOPAY_ITEMS = [
   "Built-in Compliance Support (AML/KYC & regulatory readiness)",
   "Efficient Payment Rails for faster, lower-cost cross-border transactions",
 ];
+
+const LEOPAY_ITEMS_MOBILE = {
+  4: "Efficient Payment Rails for faster, \nlower-cost cross-border transactions",
+};
 
 const XIcon = () => (
   <span className="cmp-icon-wrap x-icon">
@@ -44,7 +50,20 @@ const CheckIcon = () => (
   </span>
 );
 
-const Comparison = () => (
+const Comparison = () => {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.matchMedia(MOBILE_QUERY).matches
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia(MOBILE_QUERY);
+    const onChange = () => setIsMobile(mq.matches);
+    onChange();
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  return (
   <section className="comparison-section">
     <div className="comparison-container">
       <div className="comparison-title-block">
@@ -88,7 +107,9 @@ const Comparison = () => (
               {LEOPAY_ITEMS.map((item, i) => (
                 <li key={i} className="cmp-point">
                   <CheckIcon />
-                  <span className="cmp-text">{item}</span>
+                  <span className="cmp-text">
+                    {(isMobile && LEOPAY_ITEMS_MOBILE[i]) || item}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -97,6 +118,7 @@ const Comparison = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default Comparison;
