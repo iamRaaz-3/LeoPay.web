@@ -1,13 +1,12 @@
 
 .comparison-section {
   width: 100%;
-  max-width: calc(1920 * var(--cmp-u));
   height: calc(882 * var(--cmp-u));
   background-image:
     url('./assets/comparison-grid.svg'),
     linear-gradient(180deg, #FFF 0%, #E0F4EF 100%);
   background-size: calc(1913 * var(--cmp-u)) calc(1913 * var(--cmp-u)), 100% 100%;
-  background-position: calc(3 * var(--cmp-u)) calc(-154 * var(--cmp-u)), 0 0;
+  background-position: 50% calc(-154 * var(--cmp-u)), 0 0;
   background-repeat: no-repeat, no-repeat;
   position: relative;
   overflow: hidden;
