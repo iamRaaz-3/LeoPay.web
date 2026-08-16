@@ -256,8 +256,19 @@
 /* ── Responsive ────────────────────────────────────────── */
 
 .comparison-section {
-  --cmp-u: min(1px, 100vw / 1920);
+  --cmp-u: 1px;
 }
+
+@media (max-width: 1824px) { .comparison-section { --cmp-u: 0.95px; } }
+@media (max-width: 1728px) { .comparison-section { --cmp-u: 0.90px; } }
+@media (max-width: 1632px) { .comparison-section { --cmp-u: 0.85px; } }
+@media (max-width: 1536px) { .comparison-section { --cmp-u: 0.80px; } }
+@media (max-width: 1440px) { .comparison-section { --cmp-u: 0.75px; } }
+@media (max-width: 1344px) { .comparison-section { --cmp-u: 0.70px; } }
+@media (max-width: 1248px) { .comparison-section { --cmp-u: 0.65px; } }
+@media (max-width: 1152px) { .comparison-section { --cmp-u: 0.60px; } }
+@media (max-width: 1056px) { .comparison-section { --cmp-u: 0.55px; } }
+@media (max-width:  960px) { .comparison-section { --cmp-u: 0.50px; } }
 
 @media (max-width: 1440px) {
   .comparison-section { width: 100%; height: auto; padding-bottom: 80px; overflow: visible; }
