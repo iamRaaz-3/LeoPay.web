@@ -10,6 +10,8 @@ const ITEMS = [
   'Best Rates',
 ];
 
+const GROUP_COUNT = 6;
+
 function TickerGroup() {
   return (
     <div className="ticker__group">
@@ -37,10 +39,9 @@ export default function Ticker() {
         <div className="ticker__glow-line ticker__glow-line--bottom" />
       </div>
       <div className="ticker__track">
-        <TickerGroup />
-        <TickerGroup />
-        <TickerGroup />
-        <TickerGroup />
+        {Array.from({ length: GROUP_COUNT }).map((_, i) => (
+          <TickerGroup key={i} />
+        ))}
       </div>
     </div>
   );
