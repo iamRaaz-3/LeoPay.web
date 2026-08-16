@@ -1,11 +1,9 @@
 .hero {
   position: relative;
   width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
   height: 800px;
   background: linear-gradient(180deg, #F5FAFF 0.08%, #C7E8DF 106.42%);
-  border-radius: 16px;
+  border-radius: 0;
   overflow: hidden;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -46,26 +44,27 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 1920px;
+  width: 100%;
   height: 800px;
   gap: 24px;
   pointer-events: none;
 }
 
 .hero__ray {
-  width: 170.4px;
+  flex: 1 0 170.4px;
   height: 800.368px;
-  flex-shrink: 0;
   background: rgba(255, 255, 255, 0.30);
   backdrop-filter: blur(23px);
   -webkit-backdrop-filter: blur(23px);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 33.78%, #000 49.51%, rgba(0, 0, 0, 0.00) 76.58%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 33.78%, #000 49.51%, rgba(0, 0, 0, 0.00) 76.58%);
 }
 
 .hero__fade {
   position: absolute;
   left: 0;
   top: 620px;
-  width: 1920px;
+  width: 100%;
   height: 180px;
   background: #FFF;
   backdrop-filter: blur(25px);
@@ -76,12 +75,20 @@
   z-index: 1;
 }
 
+.hero__stage {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  margin: 0 auto;
+}
+
 .hero__content {
   position: absolute;
-  left: 204px;
+  left: 240px;
   top: 249px;
   display: flex;
-  width: 620px;
+  width: 600px;
   height: 398px;
   flex-direction: column;
   align-items: flex-start;
@@ -91,12 +98,13 @@
 
 .hero__badge {
   display: flex;
-  width: 190px;
+  width: 201px;
   height: 32px;
+  margin: 10.5px 0;
   padding: 10.415px 16px 10.585px 16px;
   justify-content: center;
   align-items: flex-start;
-  gap: 6px;
+  gap: 12px;
   flex-shrink: 0;
   border-radius: 8px;
   background: #162755;
@@ -106,7 +114,7 @@
 
 .hero__badge-text {
   color: #FFF;
-  font-family: 'Geist', sans-serif;
+  font-family: 'Britti Sans Trial', sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
@@ -190,13 +198,11 @@
 
 .hero__btn-overlay {
   position: absolute;
-  left: -1px;
-  top: -1px;
-  width: 141px;
-  height: 42px;
+  inset: -1px;
   background: linear-gradient(180deg, rgba(6, 6, 18, 0.30) 0%, rgba(6, 6, 18, 0.00) 100%);
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.2s ease;
 }
 
 .hero__btn--primary {
@@ -220,6 +226,22 @@
   cursor: pointer;
   border: none;
   box-sizing: border-box;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.hero__btn--primary:hover {
+  background: #009E70;
+  transform: translateY(-2px);
+  box-shadow: 0 1.4px 1px 0 rgba(255, 255, 255, 0.12) inset, 0 6px 14px 0 rgba(6, 6, 18, 0.28);
+}
+
+.hero__btn--primary:hover .hero__btn-overlay {
+  opacity: 1;
+}
+
+.hero__btn--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 1.4px 1px 0 rgba(255, 255, 255, 0.12) inset, 0 1.4px 4px 0 rgba(6, 6, 18, 0.30);
 }
 
 .hero__btn--secondary {
@@ -236,6 +258,18 @@
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.50);
   position: relative;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.hero__btn--secondary:hover .hero__btn-secondary__visual {
+  background: rgba(255, 255, 255, 0.78);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px 0 rgba(6, 6, 18, 0.10);
+}
+
+.hero__btn--secondary:active .hero__btn-secondary__visual {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .hero__btn-secondary__border {
@@ -265,19 +299,45 @@
   align-items: center;
   border-radius: 999px;
   background: #FFF;
+  transition: transform 0.2s ease;
+}
+
+.hero__btn--secondary:hover .hero__btn-icon {
+  transform: translateX(3px);
+}
+
+.hero__btn--primary:focus-visible,
+.hero__btn--secondary:focus-visible {
+  outline: 2px solid #00BA85;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__btn--primary,
+  .hero__btn-overlay,
+  .hero__btn-secondary__visual,
+  .hero__btn-icon {
+    transition: none;
+  }
+
+  .hero__btn--primary:hover,
+  .hero__btn--secondary:hover .hero__btn-secondary__visual,
+  .hero__btn--secondary:hover .hero__btn-icon {
+    transform: none;
+  }
 }
 
 .hero__visual {
   position: absolute;
-  left: 907px;
+  left: 930px;
   top: 198px;
-  width: 804px;
+  width: 750px;
   height: 498.237px;
 }
 
 .hero__ring-group {
   position: absolute;
-  left: 162.82px;
+  left: 130.82px;
   top: 7.52px;
   width: 478.195px;
   height: 478.195px;
@@ -301,7 +361,7 @@
 
 .hero__ring-glow {
   position: absolute;
-  left: 220px;
+  left: 188px;
   top: 66px;
   width: 366px;
   height: 366px;
@@ -343,10 +403,10 @@
   object-fit: cover;
 }
 
-.hero__flag--usa { left: 368px; top: 0px; }
-.hero__flag--ph  { left: 368px; top: 426px; }
-.hero__flag--jp  { left: 532px; top: 80.22px; transform: rotate(-30deg); }
-.hero__flag--vn  { left: 172.22px; top: 298.56px; transform: rotate(-30deg); }
+.hero__flag--usa { left: 336px; top: 0px; }
+.hero__flag--ph  { left: 336px; top: 426px; }
+.hero__flag--id  { left: 513.22px; top: 93.44px; transform: rotate(-30deg); }
+.hero__flag--vn  { left: 140.22px; top: 306.56px; transform: rotate(-30deg); }
 
 .hero__txn-card {
   position: absolute;
@@ -377,10 +437,15 @@
 }
 
 .hero__txn-card--backed {
-  left: 503px;
+  left: 449px;
   top: 310px;
   width: 301px;
   height: 105px;
+  padding: 10px 12px 10px 20px;
+}
+
+.hero__txn-card--backed .hero__txn-coins {
+  margin-left: auto;
 }
 
 .hero__txn-pill {
@@ -451,13 +516,15 @@
 
 .hero__txn-label--left {
   width: auto;
-  min-width: 85px;
-  flex-shrink: 0;
+  min-width: 0;
+  flex-shrink: 1;
+  overflow: hidden;
 }
 
 .hero__txn-coins {
   display: flex;
-  gap: 8px;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .hero__txn-coin-tile {
@@ -466,8 +533,9 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  width: 64px;
+  width: 70px;
   height: 85px;
+  flex-shrink: 0;
   padding: 10px 14px 12px 15px;
   border-radius: 16px;
   border: 1px solid #DAEDF4;
@@ -485,11 +553,12 @@
   letter-spacing: 0.3px;
 }
 
-@media (max-width: 1919.98px) and (min-width: 1440px) {
+@media (max-width: 1919.98px) and (min-width: 1439.98px) {
   .hero {
     width: 100%;
     height: 800px;
   }
+  .hero__badge { margin: 0; }
   .hero__rays {
     width: 100%;
     height: 100%;
@@ -552,7 +621,7 @@
   }
   .hero__flag--usa { left: 330px; top: 0px; }
   .hero__flag--ph  { left: 330px; top: 382px; }
-  .hero__flag--jp  { left: 476px; top: 72px; }
+  .hero__flag--id  { left: 476px; top: 72px; }
   .hero__flag--vn  { left: 154px; top: 267px; }
 
   .hero__txn-card {
@@ -572,6 +641,7 @@
     top: 278px;
     width: 270px;
     height: 94px;
+    padding: 9px 11px 9px 18px;
   }
   .hero__txn-pill {
     gap: 8px;
@@ -598,12 +668,12 @@
     width: 85px;
   }
   .hero__txn-coins {
-    gap: 7px;
+    gap: 5.5px;
   }
   .hero__txn-coin-tile {
     gap: 7px;
-    width: 54px;
-    height: 72px;
+    width: 63px;
+    height: 76px;
     padding: 9px 12px 10px 13px;
     border-radius: 14px;
   }
@@ -613,11 +683,12 @@
   }
 }
 
-@media (max-width: 1439.98px) and (min-width: 1200px) {
+@media (max-width: 1439.98px) and (min-width: 1199.98px) {
   .hero {
     width: 100%;
     height: 720px;
   }
+  .hero__badge { margin: 0; }
   .hero__rays {
     width: 100%;
     height: 100%;
@@ -681,7 +752,7 @@
   }
   .hero__flag--usa { left: 275px; top: 0px; }
   .hero__flag--ph  { left: 275px; top: 318px; }
-  .hero__flag--jp  { left: 397px; top: 60px; }
+  .hero__flag--id  { left: 397px; top: 60px; }
   .hero__flag--vn  { left: 128px; top: 223px; }
 
   .hero__txn-card {
@@ -701,6 +772,7 @@
     top: 231px;
     width: 225px;
     height: 80px;
+    padding: 7px 9px 7px 15px;
   }
   .hero__txn-pill {
     gap: 6px;
@@ -727,12 +799,12 @@
     width: 75px;
   }
   .hero__txn-coins {
-    gap: 6px;
+    gap: 4.5px;
   }
   .hero__txn-coin-tile {
     gap: 6px;
-    width: 50px;
-    height: 66px;
+    width: 52px;
+    height: 64px;
     padding: 8px;
     border-radius: 12px;
   }
@@ -742,11 +814,12 @@
   }
 }
 
-@media (max-width: 1199.98px) and (min-width: 900.02px) {
+@media (max-width: 1199.98px) and (min-width: 900px) {
   .hero {
     width: 100%;
     height: 640px;
   }
+  .hero__badge { margin: 0; }
   .hero__rays {
     width: 100%;
     height: 100%;
@@ -810,7 +883,7 @@
   }
   .hero__flag--usa { left: 229px; top: 0px; }
   .hero__flag--ph  { left: 229px; top: 265px; }
-  .hero__flag--jp  { left: 331px; top: 50px; }
+  .hero__flag--id  { left: 331px; top: 50px; }
   .hero__flag--vn  { left: 107px; top: 186px; }
 
   .hero__txn-card {
@@ -830,6 +903,7 @@
     top: 193px;
     width: 188px;
     height: 70px;
+    padding: 6px 8px 6px 13px;
   }
   .hero__txn-pill {
     gap: 5px;
@@ -856,12 +930,12 @@
     width: 65px;
   }
   .hero__txn-coins {
-    gap: 5px;
+    gap: 3.5px;
   }
   .hero__txn-coin-tile {
     gap: 5px;
-    width: 42px;
-    height: 56px;
+    width: 44px;
+    height: 53px;
     padding: 6px;
     border-radius: 10px;
   }
@@ -871,81 +945,97 @@
   }
 }
 
-@media (max-width: 900px) and (min-width: 480.02px) {
+@media (max-width: 900px) and (min-width: 480px) {
   .hero {
     width: 100%;
     height: auto;
     min-height: 0;
-    border-radius: 16px;
+    border-radius: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px 5% 60px;
+    padding: 130px 52px 48px;
     box-sizing: border-box;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .hero__rays {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('./assets/ipad-hero-bg.png') no-repeat center top;
+    background-size: 100% 100%;
+  }
+
+  .hero__ray {
     display: none;
   }
 
   .hero__fade {
-    display: none;
+    display: block;
+    left: 0;
+    top: auto;
+    bottom: -64px;
+    width: 100%;
+    height: 180px;
   }
+
+  .hero__stage { display: contents; }
 
   .hero__content {
     position: relative;
     left: auto;
     top: auto;
-    width: 100%;
-    max-width: 600px;
+    align-self: flex-start;
+    width: min(620px, 100%);
+    max-width: none;
     height: auto;
-    align-items: center;
-    text-align: center;
-    gap: 18px;
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
   }
 
   .hero__badge {
-    align-self: center;
+    align-self: flex-start;
   }
 
   .hero__heading-wrap {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .hero__heading {
     width: 100%;
-    font-size: clamp(36px, 6.5vw, 56px);
-    line-height: clamp(40px, 7.2vw, 62px);
-    letter-spacing: -1.5px;
-    text-align: center;
+    font-size: clamp(36px, 8.537vw, 70px);
+    line-height: clamp(40px, 9.39vw, 77px);
+    letter-spacing: -2.1px;
+    text-align: left;
   }
 
   .hero__desc-wrap {
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .hero__desc {
     width: 100%;
-    font-size: clamp(15px, 2.2vw, 19px);
-    line-height: clamp(22px, 3.2vw, 28px);
-    text-align: center;
+    font-size: clamp(15px, 2.439vw, 20px);
+    line-height: clamp(22px, 3.293vw, 27px);
+    text-align: left;
     letter-spacing: 0.2px;
   }
 
   .hero__buttons {
     height: auto;
-    gap: 12px 16px;
-    justify-content: center;
+    gap: 12px 20px;
+    justify-content: flex-start;
   }
 
   .hero__visual {
     position: relative;
     left: auto;
     top: auto;
-    margin-top: 40px;
-    width: clamp(320px, 85%, 660px);
+    margin-top: 42px;
+    width: min(695px, 100%);
     height: auto;
     aspect-ratio: 695 / 498.237;
     flex-shrink: 0;
@@ -978,41 +1068,24 @@
   }
 
   .hero__flag--sm {
-    width: clamp(44px, 7.5vw, 72px);
-    height: clamp(44px, 7.5vw, 72px);
+    width: clamp(44px, 8.805vw, 72.237px);
+    height: clamp(44px, 8.805vw, 72.237px);
   }
 
   .hero__flag-icon {
-    width: clamp(26px, 4.5vw, 42px);
-    height: clamp(26px, 4.5vw, 42px);
+    width: clamp(26px, 5.207vw, 42.7px);
+    height: clamp(26px, 5.207vw, 42.7px);
   }
 
-  .hero__flag--usa { left: 46.04%; top: 0px; }
-  .hero__flag--ph  { left: 46.04%; top: 85.5%; }
-  .hero__flag--jp {
-    left: 69.64%;
-    top: 16.1%;
-    width: clamp(56px, 10vw, 98px);
-    height: clamp(56px, 10vw, 98px);
-    transform: none;
-  }
-  .hero__flag--vn {
-    left: 15.97%;
-    top: 58.87%;
-    width: clamp(56px, 10vw, 98px);
-    height: clamp(56px, 10vw, 98px);
-    transform: none;
-  }
-  .hero__flag--jp .hero__flag-icon,
-  .hero__flag--vn .hero__flag-icon {
-    width: clamp(33px, 6vw, 58px);
-    height: clamp(33px, 6vw, 58px);
-  }
+  .hero__flag--usa { left: 46.043%; top: 0px; }
+  .hero__flag--ph  { left: 46.043%; top: 85.5%; }
+  .hero__flag--id { left: 71.544%; top: 18.752%; }
+  .hero__flag--vn { left: 17.874%; top: 61.523%; }
 
   .hero__txn-card {
-    gap: clamp(8px, 1.8vw, 17px);
-    padding: clamp(8px, 1.5vw, 15px) clamp(10px, 2vw, 23px) clamp(8px, 1.5vw, 15px) clamp(8px, 1.3vw, 14px);
-    border-radius: clamp(10px, 2vw, 18px);
+    gap: clamp(8px, 2.073vw, 17px);
+    padding: clamp(8px, 1.829vw, 15px) clamp(10px, 2.805vw, 23px) clamp(8px, 1.829vw, 15px) clamp(8px, 1.707vw, 14px);
+    border-radius: clamp(10px, 2.195vw, 18px);
     height: auto;
     min-height: 0;
     flex-shrink: 0;
@@ -1029,24 +1102,25 @@
     right: 0px;
     top: 54.79%;
     width: clamp(178px, 43.3%, 301px);
+    padding: clamp(6px, 1.22vw, 10px) clamp(8px, 1.463vw, 12px) clamp(6px, 1.22vw, 10px) clamp(10px, 2.439vw, 20px);
   }
 
   .hero__txn-pill {
-    gap: clamp(5px, 1.2vw, 9px);
-    height: auto;
-    padding: clamp(10px, 2vw, 20px) clamp(8px, 1.4vw, 14px);
-    border-radius: clamp(10px, 1.8vw, 16px);
+    gap: clamp(5px, 1.098vw, 9px);
+    height: clamp(50px, 9.146vw, 75px);
+    padding: clamp(10px, 2.439vw, 20px) clamp(8px, 1.707vw, 14px);
+    border-radius: clamp(10px, 1.951vw, 16px);
   }
 
   .hero__txn-logo,
   .hero__txn-coin {
-    width: clamp(20px, 4.5vw, 35px);
-    height: clamp(20px, 4.5vw, 35px);
+    width: clamp(20px, 4.268vw, 35px);
+    height: clamp(20px, 4.268vw, 35px);
   }
 
   .hero__txn-dashes {
-    width: clamp(20px, 4vw, 38px);
-    height: clamp(8px, 1.8vw, 16px);
+    width: clamp(20px, 4.634vw, 38px);
+    height: clamp(8px, 1.951vw, 16px);
   }
 
   .hero__txn-label,
@@ -1058,26 +1132,26 @@
 
   .hero__txn-bold,
   .hero__txn-light {
-    font-size: clamp(12px, 2.6vw, 20px);
-    line-height: clamp(14px, 3vw, 24px);
+    font-size: clamp(12px, 2.439vw, 20px);
+    line-height: clamp(14px, 2.927vw, 24px);
     white-space: nowrap;
   }
 
   .hero__txn-coins {
-    gap: clamp(4px, 1vw, 8px);
+    gap: clamp(3px, 0.732vw, 6px);
   }
 
   .hero__txn-coin-tile {
-    width: clamp(40px, 9vw, 64px);
-    height: clamp(54px, 12vw, 85px);
-    padding: clamp(6px, 1.2vw, 10px) clamp(8px, 1.8vw, 14px) clamp(8px, 1.5vw, 12px) clamp(8px, 1.9vw, 15px);
-    border-radius: clamp(10px, 2vw, 16px);
-    gap: clamp(4px, 1vw, 8px);
+    width: clamp(40px, 8.537vw, 70px);
+    height: clamp(54px, 10.366vw, 85px);
+    padding: clamp(6px, 1.22vw, 10px) clamp(8px, 1.707vw, 14px) clamp(8px, 1.463vw, 12px) clamp(8px, 1.829vw, 15px);
+    border-radius: clamp(10px, 1.951vw, 16px);
+    gap: clamp(4px, 0.976vw, 8px);
   }
 
   .hero__txn-ticker {
-    font-size: clamp(9px, 2vw, 15px);
-    line-height: clamp(12px, 2.5vw, 20px);
+    font-size: clamp(9px, 1.829vw, 15px);
+    line-height: clamp(12px, 2.439vw, 20px);
     white-space: nowrap;
   }
 }
@@ -1091,14 +1165,17 @@
   }
 
   .hero__bg-mobile-wrap {
-    display: flex;
-    width: 737px;
-    height: 932px;
-    justify-content: center;
-    align-items: flex-start;
-    gap: var(--item-spacing-s, 10px);
+    position: absolute;
+    inset: 0;
     mask-image: linear-gradient(180deg, var(--color-black-0, rgba(0, 0, 0, 0.00)) 33.78%, var(--token-c64ab00d-071c-45ba-9bdc-c26d9ab03aca, #000) 49.51%, var(--color-black-0, rgba(0, 0, 0, 0.00)) 76.58%);
     -webkit-mask-image: linear-gradient(180deg, var(--color-black-0, rgba(0, 0, 0, 0.00)) 33.78%, var(--token-c64ab00d-071c-45ba-9bdc-c26d9ab03aca, #000) 49.51%, var(--color-black-0, rgba(0, 0, 0, 0.00)) 76.58%);
+  }
+
+  .hero__bg-mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .hero__fade {
@@ -1110,17 +1187,10 @@
 
   .hero__content {
     left: calc((100% - min(360px, 100% - 70px)) / 2);
-    top: 135.5px;
+    top: 124px;
     width: min(360px, calc(100% - 70px));
     height: auto;
     gap: 20px;
-  }
-
-  .hero__badge {
-    width: 190px;
-    height: 32px;
-    padding: 10.415px 16px 10.585px 16px;
-    margin-bottom: 10px;
   }
 
   .hero__heading {
@@ -1133,6 +1203,7 @@
   .hero__desc-wrap { width: 100%; }
   .hero__desc {
     width: 100%;
+    font-family: 'Inter', sans-serif;
     font-size: clamp(15px, 4.186vw, 18px);
     line-height: clamp(23px, 6.512vw, 28px);
     letter-spacing: -0.5px;
@@ -1141,11 +1212,11 @@
   .hero__buttons { height: auto; padding: 4px 0; }
 
   .hero__visual {
-    left: 13.533%;
-    top: 552.16px;
-    width: 74.169%;
+    left: 11.628%;
+    top: 552px;
+    width: 76.744%;
     height: auto;
-    aspect-ratio: 318.929 / 312.959;
+    aspect-ratio: 330 / 324;
   }
 
   .hero__ring-group {
@@ -1175,29 +1246,31 @@
   }
 
   .hero__flag--sm {
-    width: clamp(50px, 14.851vw, 63.86px);
+    width: clamp(40px, 11.837vw, 50.9px);
     height: auto;
-    padding: 4.1px;
+    padding: clamp(3.6px, 1.06vw, 4.56px);
+    border-radius: clamp(11px, 3.179vw, 13.67px);
   }
-  .hero__flag--usa { left: 5.584%; top: 15.606%; transform: none; }
-  .hero__flag--vn  { left: 72.998%; top: 66.411%; transform: none; }
+  .hero__flag--usa { left: 10.303%; top: 19.367%; transform: none; }
+  .hero__flag--vn  { left: 72.955%; top: 66.590%; transform: none; }
   .hero__flag--ph,
-  .hero__flag--jp {
-    width: clamp(40px, 11.919vw, 51.25px);
+  .hero__flag--id {
+    width: clamp(35px, 10.465vw, 45px);
     height: auto;
-    padding: 3.29px;
+    padding: clamp(3.2px, 0.937vw, 4.03px);
+    border-radius: clamp(10px, 2.812vw, 12.09px);
   }
-  .hero__flag--ph { left: 0.58%; top: 48.537%; transform: none; }
-  .hero__flag--jp { left: 83.032%; top: 38.318%; transform: none; }
+  .hero__flag--ph { left: 4.621%; top: 48.997%; transform: none; }
+  .hero__flag--id { left: 81.364%; top: 39.506%; transform: none; }
 
   .hero__flag--usa .hero__flag-icon,
   .hero__flag--vn .hero__flag-icon {
-    width: clamp(29px, 8.779vw, 37.75px);
+    width: clamp(23px, 6.998vw, 30.09px);
     height: auto;
   }
   .hero__flag--ph .hero__flag-icon,
-  .hero__flag--jp .hero__flag-icon {
-    width: clamp(23px, 7.044vw, 30.29px);
+  .hero__flag--id .hero__flag-icon {
+    width: clamp(20px, 6.186vw, 26.6px);
     height: auto;
   }
 
@@ -1219,6 +1292,7 @@
     top: 0;
     width: clamp(148px, 59.926%, 191.12px);
     height: clamp(52px, 15.505vw, 66.67px);
+    padding: clamp(5px, 1.477vw, 6.35px) clamp(6px, 1.772vw, 7.62px) clamp(5px, 1.477vw, 6.35px) clamp(9px, 2.953vw, 12.7px);
   }
 
   .hero__txn-pill {
@@ -1248,7 +1322,7 @@
     line-height: clamp(12px, 3.544vw, 15.24px);
   }
 
-  .hero__txn-coins { gap: clamp(4px, 1.181vw, 5.08px); }
+  .hero__txn-coins { gap: clamp(3px, 0.886vw, 3.81px); }
 
   .hero__txn-coin-tile {
     width: clamp(35px, 10.337vw, 44.45px);
