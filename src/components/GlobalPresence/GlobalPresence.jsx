@@ -113,7 +113,7 @@ const Coverage = () => (
                 <span className="cov-marker__flag">{m.flag}</span>
                 <span className="cov-marker__code">{m.code}</span>
               </div>
-              <div className="cov-marker__stem" style={{ height: m.stemH }} />
+              <div className="cov-marker__stem" style={{ '--cov-stem': m.stemH }} />
               <div className="cov-marker__dot">
                 <div className="cov-marker__pulse" style={{ animationDelay: m.float }} />
               </div>

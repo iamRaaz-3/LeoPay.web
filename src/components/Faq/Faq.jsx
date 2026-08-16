@@ -9,7 +9,7 @@ const FAQS = [
   },
   {
     q: "Which countries and currencies do you support?",
-    a: "We currently support key corridors including South Asia, Africa, and expanding markets. Local currency settlements are available in PHP, VND, IDR, MYR, THB, INR, CNY, HKD and other major currencies, with new regions being added continuously.",
+    a: "We currently support key corridors including South Asia, Africa, and expanding markets. Local currency settlements are available in PHP, VND, IDR, MYR, THB, CNY, HKD and other major currencies, with new regions being added continuously.",
   },
   {
     q: "Do I need to hold or manage stablecoins?",
@@ -80,34 +80,35 @@ const FAQItem = ({ faq }) => {
 
 const Faq = () => (
   <section id="faqs" className="faq-section">
-    <div className="faq-container">
-      <div className="faq-title-block">
-        <span className="faq-badge">FAQ</span>
-        <div className="faq-heading">
-          <span className="faq-heading-light">Frequently Asked</span>
-          <span className="faq-heading-bold">Questions</span>
+    <div className="faq-inner">
+      <div className="faq-container">
+        <div className="faq-title-block">
+          <span className="faq-badge">FAQ</span>
+          <div className="faq-heading">
+            <span className="faq-heading-light">Frequently Asked</span>
+            <span className="faq-heading-bold">Questions</span>
+          </div>
+          <p className="faq-subtitle faq-subtitle--desktop">
+            From Settlements to Compliance, Here are Answers to the Most
+            <br />
+            Common Questions about LeoPay.
+          </p>
+          <p className="faq-subtitle faq-subtitle--mobile">
+            Get answers to common questions about Leopay&rsquo;s global payment ecosystem.
+          </p>
         </div>
-        <p className="faq-subtitle faq-subtitle--desktop">
-          From Settlements to Compliance, Here are Answers to the Most
-          <br />
-          Common Questions about LeoPay.
-        </p>
-        <p className="faq-subtitle faq-subtitle--mobile">
-          Get answers to common questions about Leopay&rsquo;s global payment ecosystem.
-        </p>
-      </div>
 
-      <div className="faq-list">
-        {FAQS.map((faq, i) => (
-          <FAQItem key={i} faq={faq} />
-        ))}
+        <div className="faq-list">
+          {FAQS.map((faq, i) => (
+            <FAQItem key={i} faq={faq} />
+          ))}
+        </div>
       </div>
-    </div>
-    <div className="faq-bg-bottom">
-      <img src={faqBgBottom} alt="" aria-hidden="true" />
+      <div className="faq-bg-bottom">
+        <img src={faqBgBottom} alt="" aria-hidden="true" />
+      </div>
     </div>
   </section>
-
 );
 
 export default Faq;

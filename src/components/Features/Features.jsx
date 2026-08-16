@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import './Features.css';
-import bgTop from '../../assets/features-bg-top.png';
-import bgBottom from '../../assets/features-bg-bottom.png';
-import bgTopMobile from './assets/features-bg-top-mobile.png';
-import bgBottomMobile from './assets/features-bg-bottom-mobile.png';
+import decoTop from './assets/features-deco-top.png';
+import decoBottom from './assets/features-deco-bottom.png';
+import decoTopMobile from './assets/features-deco-top-mobile.png';
+import decoBottomMobile from './assets/features-deco-bottom-mobile.png';
 import avatarAkash from '../../assets/avatar-akash.png';
 import avatarPuranjit from '../../assets/avatar-puranjit.png';
 import avatarSayli from '../../assets/avatar-sayli.png';
@@ -36,35 +36,56 @@ function NotifTag({ label, className = '', icon }) {
   );
 }
 
+const MOBILE_QUERY = '(max-width: 480px)';
+
+const CARD_COPY = {
+  desktop: [
+    { title: "Optimized FX. \nBetter Outcomes",     desc: "Smarter FX routing with \ncompetitive rates on higher value transactions." },
+    { title: "Customer Centric \nPlatform",         desc: "Intuitive workflows paired with smooth payment experiences for every user interaction." },
+    { title: "Multi-Rail, \nReal-Time Settlement",  desc: "Real-time settlements with \nflexible multi-rail infrastructure for faster payments." },
+    { title: "Lowest Fees. \nHighest Efficiency",   desc: "Reduce costs while increasing operational speed and improving overall efficiency." },
+  ],
+  mobile: [
+    { title: "Optimized FX. Better Outcomes",    desc: "Smarter FX routing and competitive rates for higher transaction value." },
+    { title: "User Centric Platform",            desc: "Designed for intuitive workflows and seamless user payment experiences." },
+    { title: "Multi-Rail, Real-Time Settlement", desc: "Real-time settlements powered by flexible multi-rail payment infrastructure." },
+    { title: "Lowest Fees. Highest Efficiency",  desc: "Reduce costs while improving operational speed and efficiency." },
+  ],
+};
+
 export default function Features() {
   const [isMobile, setIsMobile] = useState(
-    () => typeof window !== 'undefined' && window.innerWidth <= 480
+    () => typeof window !== 'undefined' && window.matchMedia(MOBILE_QUERY).matches
   );
 
   useEffect(() => {
-    const mq = window.matchMedia('(max-width: 480px)');
+    const mq = window.matchMedia(MOBILE_QUERY);
     const onChange = () => setIsMobile(mq.matches);
+    onChange();
     mq.addEventListener('change', onChange);
     return () => mq.removeEventListener('change', onChange);
   }, []);
 
+  const copy = CARD_COPY[isMobile ? 'mobile' : 'desktop'];
+
   return (
     <section className="features">
-      {isMobile ? (
-        <>
-          <img src={bgTopMobile} alt="" className="features__bg-top features__bg-top--mobile" />
-          <img src={bgBottomMobile} alt="" className="features__bg-bottom features__bg-bottom--mobile" />
-        </>
-      ) : (
-        <>
-          <img src={bgTop} alt="" className="features__bg-top" />
-          <img src={bgBottom} alt="" className="features__bg-bottom" />
-        </>
-      )}
+      <img
+        src={isMobile ? decoTopMobile : decoTop}
+        alt=""
+        aria-hidden="true"
+        className="features__deco features__deco--top"
+      />
+      <img
+        src={isMobile ? decoBottomMobile : decoBottom}
+        alt=""
+        aria-hidden="true"
+        className="features__deco features__deco--bottom"
+      />
       <div className="features__content">
         {/* Header */}
         <div className="features__header">
-          <div className="features__badge">Features</div>
+          <div className="features__badge">{isMobile ? 'Comparison' : 'Features'}</div>
           <h2 className="features__heading">
             <div className="features__heading-inner">
               <span className="features__heading--light">Lowest Costs,</span>
@@ -101,8 +122,8 @@ export default function Features() {
           </div>
           <div className="feat-card__text">
             <div className="feat-card__text-body">
-              <p className="feat-card__title">Optimized FX. Better Outcomes</p>
-              <p className="feat-card__desc">Smarter FX routing and competitive rates for higher transaction value.</p>
+              <p className="feat-card__title">{copy[0].title}</p>
+              <p className="feat-card__desc">{copy[0].desc}</p>
             </div>
           </div>
         </div>
@@ -162,8 +183,8 @@ export default function Features() {
           </div>
           <div className="feat-card__text">
             <div className="feat-card__text-body">
-              <p className="feat-card__title">User Centric Platform</p>
-              <p className="feat-card__desc">Designed for intuitive workflows and seamless user payment experiences.</p>
+              <p className="feat-card__title">{copy[1].title}</p>
+              <p className="feat-card__desc">{copy[1].desc}</p>
             </div>
           </div>
         </div>
@@ -271,44 +292,44 @@ export default function Features() {
           </div>
           <div className="feat-card__text">
             <div className="feat-card__text-body">
-              <p className="feat-card__title">Multi-Rail, Real-Time Settlement</p>
-              <p className="feat-card__desc">Real-time settlements powered by flexible multi-rail payment infrastructure.</p>
+              <p className="feat-card__title">{copy[2].title}</p>
+              <p className="feat-card__desc">{copy[2].desc}</p>
             </div>
           </div>
         </div>
 
         {/* Card 4 */}
         <div className="feat-card">
-          {/* Variant 2 — 290×205 visual frame */}
-          <div className="feat-c4-visual">
-            {/* Chart:mask-group — 360×200, overflows left */}
-            <div className="feat-c4-chart"></div>
-            {/* Notification Card 1 */}
-            <div className="feat-c4-notif">
-              <div className="feat-rail-card feat-rail-card--c4">
-                <div className="feat-rail-card__border" />
-                <div className="feat-rail-card__content">
-                  <div className="feat-rail-card__icon feat-rail-card__icon--c4">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{flexShrink:0}}>
-                      <g clipPath="url(#clip-c4-nc1)">
-                        <path d="M12.2222 8.44434C9.64889 8.44434 7.55554 6.35101 7.55554 3.77768C7.55554 3.16256 7.68176 2.57679 7.89954 2.03901C7.38665 2.07723 6.88531 2.15101 6.41154 2.2879C6.19998 2.09323 5.96087 1.90745 5.67198 1.74923C4.56709 1.1439 3.50043 1.24168 2.96443 1.3519C2.75465 1.39545 2.57865 1.53679 2.49154 1.73234C2.40443 1.9279 2.41598 2.15279 2.52265 2.33856L3.48531 4.00523C3.00976 4.48256 2.61509 5.02568 2.32798 5.62123L1.02932 5.7839C0.695979 5.82568 0.445313 6.10923 0.445313 6.44523L0.445313 9.55633C0.445313 9.89233 0.695979 10.1759 1.02932 10.2177L2.32798 10.3803C2.7102 11.1732 3.28087 11.8746 3.98309 12.4461L4.22754 14.5226C4.26665 14.8586 4.55109 15.1119 4.88976 15.1119H6.44531C6.7982 15.1119 7.09065 14.8363 7.11109 14.4843L7.14665 13.8843C7.56709 13.959 8.00087 14.0008 8.4462 14.0008C8.89155 14.0008 9.32533 13.9599 9.74578 13.8843L9.78133 14.4843C9.80178 14.8363 10.0942 15.1119 10.4471 15.1119H12.0027C12.3404 15.1119 12.6249 14.8586 12.6649 14.5226L12.9093 12.4461C14.2596 11.3474 15.1147 9.76433 15.1147 8.00079C15.1147 7.81145 15.1022 7.62568 15.0836 7.44079C14.2916 8.06034 13.3076 8.44523 12.2258 8.44523L12.2222 8.44434ZM5.55554 7.11101C5.18754 7.11101 4.88887 6.81234 4.88887 6.44434C4.88887 6.07634 5.18754 5.77768 5.55554 5.77768C5.92354 5.77768 6.2222 6.07634 6.2222 6.44434C6.2222 6.81234 5.92354 7.11101 5.55554 7.11101Z" fill="white" fillOpacity="0.4"/>
-                        <path d="M12.222 0.444336C10.3838 0.444336 8.88867 1.93945 8.88867 3.77767C8.88867 5.61589 10.3838 7.111 12.222 7.111C14.0602 7.111 15.5553 5.61589 15.5553 3.77767C15.5553 1.93945 14.0602 0.444336 12.222 0.444336ZM12.8887 4.44434C12.8887 4.81234 12.59 5.111 12.222 5.111C11.854 5.111 11.5553 4.81234 11.5553 4.44434L11.5553 3.111C11.5553 2.743 11.854 2.44434 12.222 2.44434C12.59 2.44434 12.8887 2.743 12.8887 3.111L12.8887 4.44434Z" fill="white"/>
-                      </g>
-                      <defs>
-                        <clipPath id="clip-c4-nc1">
-                          <rect width="16" height="16" fill="white"/>
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </div>
-                  <div className="feat-rail-card__text">
-                    <div className="feat-rail-card__text-inner">
-                      <span className="feat-rail-card__label">Lowest fees</span>
-                    </div>
+          {/* Notification Card 1 */}
+          <div className="feat-c4-notif">
+            <div className="feat-rail-card feat-rail-card--c4">
+              <div className="feat-rail-card__border" />
+              <div className="feat-rail-card__content">
+                <div className="feat-rail-card__icon feat-rail-card__icon--c4">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{flexShrink:0}}>
+                    <g clipPath="url(#clip-c4-nc1)">
+                      <path d="M12.2222 8.44434C9.64889 8.44434 7.55554 6.35101 7.55554 3.77768C7.55554 3.16256 7.68176 2.57679 7.89954 2.03901C7.38665 2.07723 6.88531 2.15101 6.41154 2.2879C6.19998 2.09323 5.96087 1.90745 5.67198 1.74923C4.56709 1.1439 3.50043 1.24168 2.96443 1.3519C2.75465 1.39545 2.57865 1.53679 2.49154 1.73234C2.40443 1.9279 2.41598 2.15279 2.52265 2.33856L3.48531 4.00523C3.00976 4.48256 2.61509 5.02568 2.32798 5.62123L1.02932 5.7839C0.695979 5.82568 0.445313 6.10923 0.445313 6.44523L0.445313 9.55633C0.445313 9.89233 0.695979 10.1759 1.02932 10.2177L2.32798 10.3803C2.7102 11.1732 3.28087 11.8746 3.98309 12.4461L4.22754 14.5226C4.26665 14.8586 4.55109 15.1119 4.88976 15.1119H6.44531C6.7982 15.1119 7.09065 14.8363 7.11109 14.4843L7.14665 13.8843C7.56709 13.959 8.00087 14.0008 8.4462 14.0008C8.89155 14.0008 9.32533 13.9599 9.74578 13.8843L9.78133 14.4843C9.80178 14.8363 10.0942 15.1119 10.4471 15.1119H12.0027C12.3404 15.1119 12.6249 14.8586 12.6649 14.5226L12.9093 12.4461C14.2596 11.3474 15.1147 9.76433 15.1147 8.00079C15.1147 7.81145 15.1022 7.62568 15.0836 7.44079C14.2916 8.06034 13.3076 8.44523 12.2258 8.44523L12.2222 8.44434ZM5.55554 7.11101C5.18754 7.11101 4.88887 6.81234 4.88887 6.44434C4.88887 6.07634 5.18754 5.77768 5.55554 5.77768C5.92354 5.77768 6.2222 6.07634 6.2222 6.44434C6.2222 6.81234 5.92354 7.11101 5.55554 7.11101Z" fill="white" fillOpacity="0.4"/>
+                      <path d="M12.222 0.444336C10.3838 0.444336 8.88867 1.93945 8.88867 3.77767C8.88867 5.61589 10.3838 7.111 12.222 7.111C14.0602 7.111 15.5553 5.61589 15.5553 3.77767C15.5553 1.93945 14.0602 0.444336 12.222 0.444336ZM12.8887 4.44434C12.8887 4.81234 12.59 5.111 12.222 5.111C11.854 5.111 11.5553 4.81234 11.5553 4.44434L11.5553 3.111C11.5553 2.743 11.854 2.44434 12.222 2.44434C12.59 2.44434 12.8887 2.743 12.8887 3.111L12.8887 4.44434Z" fill="white"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip-c4-nc1">
+                        <rect width="16" height="16" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div className="feat-rail-card__text">
+                  <div className="feat-rail-card__text-inner">
+                    <span className="feat-rail-card__label">Lowest fees</span>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          {/* Variant 2 — 290×205 visual frame */}
+          <div className="feat-c4-visual">
+            {/* Chart:mask-group — 360×200, overflows left */}
+            <div className="feat-c4-chart"></div>
             {/* Metric */}
             <div className="feat-c4-stat">
               <div className="feat-c4-stat__label">
@@ -329,9 +350,8 @@ export default function Features() {
           </div>
           <div className="feat-card__text">
             <div className="feat-card__text-body">
-              <p className="feat-card__title">Lowest Fees. Highest Efficiency</p>
-              <p className="feat-card__desc feat-card__desc--desktop">Smarter FX routing and competitive rates for higher transaction value.</p>
-              <p className="feat-card__desc feat-card__desc--mobile">Reduce costs while improving operational speed and efficiency.</p>
+              <p className="feat-card__title">{copy[3].title}</p>
+              <p className="feat-card__desc">{copy[3].desc}</p>
             </div>
           </div>
         </div>
