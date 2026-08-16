@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import './FastestWay.css';
+
+const MOBILE_QUERY = '(max-width: 600px)';
 import fwBgGrid from './assets/fw-bg-grid.png';
 import fwBgTopMobile from './assets/fw-bg-top-mobile.png';
 import fwBgBottomMobile from './assets/fw-bg-bottom-mobile.png';
@@ -52,14 +54,14 @@ const AvailIcon = () => (
 );
 
 const othersStats = [
-  { val: '3 Days',   icon: <TimeIcon />,  label: 'Settlement Time', desc: 'Transfers slowed by \nmultiple intermediary banks' },
+  { val: '3 Days',   icon: <TimeIcon />,  label: 'Settlement Time', desc: 'Transfers slowed by multiple intermediary banks', descMobile: 'Transfers slowed by \nmultiple intermediary banks' },
   { val: '5%',       icon: <CostIcon />,  label: 'Total Cost',      desc: 'Higher costs due to layered processing fees models' },
-  { val: 'Limited',  icon: <AvailIcon />, label: 'Availability',    desc: 'Limited to standard \nbusiness working hours' },
+  { val: 'Limited',  icon: <AvailIcon />, label: 'Availability',    desc: 'Limited to standard business working hours', descMobile: 'Limited to standard \nbusiness working hours' },
 ];
 
 const leopayStats = [
   { val: '<60s',  icon: <TimeIcon />,  label: 'Settlement Time', desc: 'Direct transfers with minimal intermediaries involved' },
-  { val: '0%',    icon: <CostIcon />,  label: 'Total Cost',      desc: 'Zero-Cost transfers through smart routing system' },
+  { val: '0%',    icon: <CostIcon />,  label: 'Total Cost',      desc: 'Zero-Cost transfers through smart routing\nsystem', descMobile: 'Zero-Cost transfers through smart routing system' },
   { val: '24x7',  icon: <AvailIcon />, label: 'Availability',    desc: 'Always available with uninterrupted global access' },
 ];
 
@@ -86,12 +88,13 @@ const StatCol = ({ val, icon, label, desc, variant }) => (
 
 const FastestWay = () => {
   const [isMobile, setIsMobile] = useState(
-    () => typeof window !== 'undefined' && window.innerWidth <= 600
+    () => typeof window !== 'undefined' && window.matchMedia(MOBILE_QUERY).matches
   );
 
   useEffect(() => {
-    const mq = window.matchMedia('(max-width: 600px)');
+    const mq = window.matchMedia(MOBILE_QUERY);
     const onChange = () => setIsMobile(mq.matches);
+    onChange();
     mq.addEventListener('change', onChange);
     return () => mq.removeEventListener('change', onChange);
   }, []);
@@ -143,7 +146,7 @@ const FastestWay = () => {
           <div className="fw-card fw-card--others">
             <div className="fw-card-stats">
               {othersStats.map((s) => (
-                <StatCol key={s.label} {...s} variant="others" />
+                <StatCol key={s.label} {...s} desc={isMobile && s.descMobile ? s.descMobile : s.desc} variant="others" />
               ))}
             </div>
             {!isMobile && (
@@ -185,7 +188,7 @@ const FastestWay = () => {
           <div className="fw-card fw-card--leopay">
             <div className="fw-card-stats">
               {leopayStats.map((s) => (
-                <StatCol key={s.label} {...s} variant="leopay" />
+                <StatCol key={s.label} {...s} desc={isMobile && s.descMobile ? s.descMobile : s.desc} variant="leopay" />
               ))}
             </div>
             {!isMobile && (
