@@ -64,7 +64,7 @@ const Comparison = () => {
   }, []);
 
   return (
-  <section className="comparison-section">
+  <section id="comparison" className="comparison-section">
     <div className="comparison-container">
       <div className="comparison-title-block">
         <div className="comparison-badge-wrap">
