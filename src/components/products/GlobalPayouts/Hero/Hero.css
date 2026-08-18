@@ -39,16 +39,16 @@
 
 .gp-hero__stage {
   position: absolute;
-  left: 204px;
-  top: 175px;
-  width: 1532px;
-  height: 578px;
+  left: 245px;
+  top: 221px;
+  width: 1430px;
+  height: 529.6px;
 }
 
 .gp-hero__content {
   position: absolute;
   left: 0;
-  top: 78px;
+  top: 70.2px;
   width: 620px;
   display: flex;
   flex-direction: column;
@@ -121,7 +121,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 18.5px 0;
+  padding: 28.5px 0 5.5px;
 }
 
 
@@ -129,52 +129,52 @@
 
 .gp-hero__visual {
   position: absolute;
-  left: 756px;
+  left: 718.9px;
   top: 0;
-  width: 776px;
-  height: 578px;
+  width: 711.1px;
+  height: 529.6px;
   pointer-events: none;
   user-select: none;
 }
 
 .gp-hero__globe {
   position: absolute;
-  left: 85px;
+  left: 77.9px;
   top: 0;
-  width: 578px;
-  height: 578px;
+  width: 529.6px;
+  height: 529.6px;
 }
 
 .gp-hero__txn {
   position: absolute;
-  width: 400px;
-  height: 150px;
+  width: 366.5px;
+  height: 137.4px;
 }
 
 .gp-hero__txn--1 {
   left: 0;
-  top: 78px;
+  top: 71.5px;
 }
 
 .gp-hero__txn--2 {
-  left: 376px;
-  top: 297px;
+  left: 344.6px;
+  top: 272.1px;
 }
 
 .gp-hero__txn-content {
   position: absolute;
-  left: 12.5px;
-  top: 13px;
-  width: 375px;
-  height: 129px;
+  left: 11.5px;
+  top: 11.9px;
+  width: 343.6px;
+  height: 118.2px;
 }
 
 .gp-hero__txn-card {
   position: absolute;
   left: 0;
   top: 0;
-  width: 375px;
-  height: 125px;
+  width: 343.6px;
+  height: 114.5px;
   background: #FFFFFF;
   border-radius: 16px;
   box-shadow: 0 0 7px rgba(32, 41, 76, 0.09), 0 0 10px rgba(32, 41, 76, 0.07), 0 0 14px rgba(32, 41, 76, 0.05);
@@ -185,7 +185,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 17px 19.5px 0 27.5px;
+  padding: 15.6px 17.9px 0 25.2px;
 }
 
 .gp-hero__txn-name {
@@ -218,7 +218,7 @@
 .gp-hero__txn-divider {
   position: absolute;
   left: 0;
-  top: 49px;
+  top: 44.9px;
   width: 100%;
   height: 2px;
   background: #E9F5FF;
@@ -226,8 +226,8 @@
 
 .gp-hero__txn-amount {
   position: absolute;
-  left: 27.5px;
-  top: 76.9px;
+  left: 25.2px;
+  top: 70.5px;
   display: flex;
   min-width: 89px;
   flex-direction: column;
@@ -243,15 +243,15 @@
 
 .gp-hero__txn-pill {
   position: absolute;
-  left: 214.5px;
-  top: 65px;
+  left: 196.6px;
+  top: 59.6px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 140px;
-  height: 40px;
-  padding: 5px;
-  gap: 14px;
+  width: 128.3px;
+  height: 36.7px;
+  padding: 4.6px;
+  gap: 12.8px;
   border-radius: 100px;
   box-sizing: border-box;
 }
@@ -268,14 +268,14 @@
 
 .gp-hero__txn-coin,
 .gp-hero__txn-flag {
-  width: 30px;
-  height: 30px;
+  width: 27.5px;
+  height: 27.5px;
   flex-shrink: 0;
 }
 
 .gp-hero__txn-dash {
-  width: 42px;
-  height: 8px;
+  width: 38.5px;
+  height: 7.3px;
   flex-shrink: 0;
 }
 
@@ -283,9 +283,9 @@
   position: absolute;
   display: flex;
   align-items: center;
-  width: 144px;
-  height: 69px;
-  padding: 0 15px 0 12px;
+  width: 131.9px;
+  height: 63.2px;
+  padding: 0 13.7px 0 11px;
   background: #FFFFFF;
   border-radius: 18px;
   box-shadow: 0 4.91px 18.66px rgba(0, 0, 0, 0.11);
@@ -293,32 +293,32 @@
 }
 
 .gp-hero__chip--1 {
-  left: 494px;
-  top: 131px;
+  left: 452.7px;
+  top: 120px;
 }
 
 .gp-hero__chip--2 {
-  left: 85px;
-  top: 360px;
+  left: 77.9px;
+  top: 329.9px;
 }
 
 .gp-hero__chip-coin {
-  width: 35px;
-  height: 35px;
+  width: 32.1px;
+  height: 32.1px;
   flex-shrink: 0;
 }
 
 .gp-hero__chip-bank {
-  width: 36px;
-  height: 36px;
+  width: 33px;
+  height: 33px;
   flex-shrink: 0;
 }
 
 .gp-hero__chip-dash {
-  width: 19.642px;
+  width: 18px;
   height: auto;
   flex-shrink: 0;
-  margin: 0 11px 0 15px;
+  margin: 0 10.1px 0 13.7px;
 }
 
 @media (max-width: 1824px) {
