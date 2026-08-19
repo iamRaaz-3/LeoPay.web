@@ -1,6 +1,9 @@
 
 .footer-desktop {
   --fo-u: 1px;
+  /* Tall enough for .footer-brand-outer's content plus its 40u bottom padding,
+     so the email lines clear the divider drawn at the row's bottom edge. */
+  --fo-row-h: calc(384 * var(--fo-u));
   width: 100%;
   background: linear-gradient(180deg, #f2f7f7 0%, #eff4f8 100%);
   padding-top: calc(168.7 * var(--fo-u));
@@ -52,7 +55,7 @@
   position: absolute;
   bottom: -0.48px;
   width: 1px;
-  height: calc(360.26 * var(--fo-u));
+  height: calc(var(--fo-row-h) + 0.46 * var(--fo-u));
   background: #E0E0E0;
   box-shadow: 1px 0 0 0 #FFF;
   pointer-events: none;
@@ -67,9 +70,9 @@
   background: #E0E0E0;
   box-shadow: 1px 0 0 0 #FFF;
 }
-.fl-sep-brand { top: 0; left: calc(521 * var(--fo-u)); height: calc(360.26 * var(--fo-u)); }
-.fl-sep-home  { top: 0; left: calc(747 * var(--fo-u)); height: calc(360.48 * var(--fo-u)); }
-.fl-sep-help  { top: 0; left: calc(973 * var(--fo-u)); height: calc(360.48 * var(--fo-u)); }
+.fl-sep-brand { top: 0; left: calc(521 * var(--fo-u)); height: calc(var(--fo-row-h) + 0.46 * var(--fo-u)); }
+.fl-sep-home  { top: 0; left: calc(747 * var(--fo-u)); height: calc(var(--fo-row-h) + 0.68 * var(--fo-u)); }
+.fl-sep-help  { top: 0; left: calc(973 * var(--fo-u)); height: calc(var(--fo-row-h) + 0.68 * var(--fo-u)); }
 
 .fl-dot {
   width: 9px;
@@ -84,14 +87,14 @@
 }
 .fl-dot-tl { top: -4px;  left: -4px;   }
 .fl-dot-tr { top: -4px;  left: calc(1260 * var(--fo-u) - 5px); }
-.fl-dot-bl { top: calc(359.8 * var(--fo-u) - 4.8px); left: -4px; }
-.fl-dot-br { top: calc(359.8 * var(--fo-u) - 4.8px); left: calc(1260 * var(--fo-u) - 5px); }
+.fl-dot-bl { top: calc(var(--fo-row-h) - 4.8px); left: -4px; }
+.fl-dot-br { top: calc(var(--fo-row-h) - 4.8px); left: calc(1260 * var(--fo-u) - 5px); }
 
 .footer-top-row {
   display: flex;
   align-items: flex-start;
   padding: 0 calc(60 * var(--fo-u));
-  height: calc(359.8 * var(--fo-u));
+  height: var(--fo-row-h);
   box-sizing: border-box;
   position: relative;
   z-index: 2;
