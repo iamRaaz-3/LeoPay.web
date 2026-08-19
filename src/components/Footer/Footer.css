@@ -4,6 +4,8 @@
   /* Tall enough for .footer-brand-outer's content plus its 40u bottom padding,
      so the email lines clear the divider drawn at the row's bottom edge. */
   --fo-row-h: calc(384 * var(--fo-u));
+  /* Single footer text colour; the mobile footer already uses this value. */
+  --fo-text: #162755;
   width: 100%;
   background: linear-gradient(180deg, #f2f7f7 0%, #eff4f8 100%);
   padding-top: calc(168.7 * var(--fo-u));
@@ -164,7 +166,7 @@
 }
 
 .footer-logo-text {
-  color: #162755;
+  color: var(--fo-text);
   font-family: 'Britti Sans Trial', sans-serif;
   font-size: calc(36 * var(--fo-u));
   font-style: normal;
@@ -178,7 +180,7 @@
   font-size: calc(16 * var(--fo-u));
   font-weight: 400;
   line-height: calc(26 * var(--fo-u));
-  color: #262626;
+  color: var(--fo-text);
   margin: 0;
   align-self: stretch;
 }
@@ -216,13 +218,13 @@
   font-size: calc(13.7 * var(--fo-u));
   font-weight: 400;
   line-height: calc(21 * var(--fo-u));
-  color: #4d4d4d;
+  color: var(--fo-text);
   margin: 0;
 }
 
 .footer-company-email {
   display: inline;
-  color: #162755;
+  color: var(--fo-text);
   font-family: Inter, 'Plus Jakarta Sans', sans-serif;
   font-size: calc(13.8 * var(--fo-u));
   font-style: normal;
@@ -260,7 +262,7 @@
   font-weight: 600;
   font-size: calc(14 * var(--fo-u));
   line-height: calc(23 * var(--fo-u));
-  color: #000000;
+  color: var(--fo-text);
   margin: 0;
 }
 
@@ -281,7 +283,7 @@
   font-size: calc(14 * var(--fo-u));
   line-height: calc(23 * var(--fo-u));
   font-weight: 400;
-  color: #4d4d4d;
+  color: var(--fo-text);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -319,7 +321,7 @@
   height: calc(44 * var(--fo-u));
   border-radius: 50%;
   background: #FFFFFF;
-  color: #4d4d4d;
+  color: var(--fo-text);
   text-decoration: none;
   transition: color 0.2s, background 0.2s;
 }
@@ -335,7 +337,7 @@
   font-weight: 400;
   line-height: calc(22.5 * var(--fo-u));
   letter-spacing: 0.5px;
-  color: #4d4d4d;
+  color: var(--fo-text);
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.2s;
