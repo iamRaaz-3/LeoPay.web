@@ -462,6 +462,12 @@
   flex-shrink: 0;
 }
 
+.feat-notif__logo {
+  width: calc(16 * var(--ft-u));
+  height: calc(16 * var(--ft-u));
+  flex-shrink: 0;
+}
+
 .feat-notif__dot {
   display: flex;
   width: calc(25.917 * var(--ft-u));

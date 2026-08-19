@@ -25,8 +25,8 @@ function NotifTag({ label, className = '', icon }) {
       <div className="feat-notif__content">
         <span className="feat-notif__dot">
           {icon || (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ transform: 'rotate(0.469deg)' }}>
-              <path d="M-5.59623e-10 2.00052C-2.50342e-10 0.894915 0.893285 0 2.00104 0L5.99896 0C7.10672 0 8 0.894915 8 2.00052L8 5.92855C8 5.95219 8 5.97584 8 5.99948C8 7.10091 8.89329 7.99583 9.99688 8H10.001H13.999C15.1067 8 16 8.89492 16 10.0005L16 13.9995C16 15.1051 15.1067 16 13.999 16H10.001C8.89329 16 8 15.1051 8 13.9995L8 10.0005C8 9.99357 8 9.98731 8 9.98175C7.98959 8.88866 7.10047 8 5.99896 8C5.9948 8 5.98994 8 5.98438 8H2.00104C0.893285 8 -1.98757e-09 7.10509 -1.67829e-09 5.99948L-5.59623e-10 2.00052Z" fill="white"/>
+            <svg className="feat-notif__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" style={{ transform: 'rotate(0.469deg)' }}>
+              <path d="M0 1.25A1.25 1.25 0 0 1 1.25 0H6.75A1.25 1.25 0 0 1 8 1.25V8H14.75A1.25 1.25 0 0 1 16 9.25V14.75A1.25 1.25 0 0 1 14.75 16H9.25A1.25 1.25 0 0 1 8 14.75V8H1.25A1.25 1.25 0 0 1 0 6.75Z" fill="white"/>
             </svg>
           )}
         </span>
