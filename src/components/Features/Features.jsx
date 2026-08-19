@@ -4,9 +4,9 @@ import decoTop from './assets/features-deco-top.png';
 import decoBottom from './assets/features-deco-bottom.png';
 import decoTopMobile from './assets/features-deco-top-mobile.png';
 import decoBottomMobile from './assets/features-deco-bottom-mobile.png';
-import avatarAkash from '../../assets/avatar-akash.png';
-import avatarPuranjit from '../../assets/avatar-puranjit.png';
-import avatarSayli from '../../assets/avatar-sayli.png';
+import avatarVictor from '../../assets/avatar-victor.png';
+import avatarJohny from '../../assets/avatar-johny.png';
+import avatarShristy from '../../assets/avatar-shristy.png';
 
 const bars = [
   { height: 76.86  },
@@ -135,7 +135,7 @@ export default function Features() {
               <div className="feat-users-inner">
                 <div className="feat-user--3">
                   <div className="feat-user__row">
-                    <img className="feat-user__avatar" src={avatarPuranjit} alt="Johny Smith" />
+                    <img className="feat-user__avatar" src={avatarJohny} alt="Johny Smith" />
                     <div className="feat-user__info">
                       <div className="feat-user__info-text">
                         <div className="feat-user__name-block">
@@ -150,7 +150,7 @@ export default function Features() {
                 </div>
                 <div className="feat-user--2">
                   <div className="feat-user__row">
-                    <img className="feat-user__avatar" src={avatarAkash} alt="Victor Jones" />
+                    <img className="feat-user__avatar" src={avatarVictor} alt="Victor Jones" />
                     <div className="feat-user__info">
                       <div className="feat-user__info-text">
                         <div className="feat-user__name-block">
@@ -165,7 +165,7 @@ export default function Features() {
                 </div>
                 <div className="feat-user">
                   <div className="feat-user__row">
-                    <img className="feat-user__avatar" src={avatarSayli} alt="Shristy Bhadani" />
+                    <img className="feat-user__avatar" src={avatarShristy} alt="Shristy Bhadani" />
                     <div className="feat-user__info">
                       <div className="feat-user__info-text">
                         <div className="feat-user__name-block">
