@@ -41,7 +41,7 @@ const PrivacyHero = () => (
       </p>
       <div className="prh-updated-wrap">
         <div className="prh-updated">
-          <span className="prh-updated-text">Last Updated: 20.03.2026</span>
+          <span className="prh-updated-text">Last Updated: 19.08.2026</span>
         </div>
       </div>
     </div>
