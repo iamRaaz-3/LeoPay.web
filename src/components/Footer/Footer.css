@@ -260,8 +260,9 @@
 .footer-col-heading {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
   font-weight: 600;
-  font-size: calc(14 * var(--fo-u));
-  line-height: calc(23 * var(--fo-u));
+  font-size: calc(13.9 * var(--fo-u));
+  line-height: calc(22.5 * var(--fo-u));
+  letter-spacing: 0.5px;
   color: var(--fo-text);
   margin: 0;
 }
