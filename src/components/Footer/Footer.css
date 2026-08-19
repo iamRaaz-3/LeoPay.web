@@ -177,9 +177,9 @@
 
 .footer-tagline {
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
-  font-size: calc(16 * var(--fo-u));
+  font-size: calc(15.5 * var(--fo-u));
   font-weight: 400;
-  line-height: calc(26 * var(--fo-u));
+  line-height: calc(25.5 * var(--fo-u));
   color: var(--fo-text);
   margin: 0;
   align-self: stretch;
@@ -281,8 +281,9 @@
   align-items: center;
   gap: calc(8 * var(--fo-u));
   font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
-  font-size: calc(14 * var(--fo-u));
-  line-height: calc(23 * var(--fo-u));
+  font-size: calc(13.7 * var(--fo-u));
+  line-height: calc(22.5 * var(--fo-u));
+  letter-spacing: 0.5px;
   font-weight: 400;
   color: var(--fo-text);
   text-decoration: none;
@@ -298,9 +299,10 @@
   background: #1a1a1a;
   color: #FFFFFF;
   border-radius: 100px;
-  font-family: 'Geist', sans-serif;
-  font-size: calc(10 * var(--fo-u));
-  line-height: calc(16 * var(--fo-u));
+  font-family: Inter, 'Plus Jakarta Sans', sans-serif;
+  font-size: calc(10.3 * var(--fo-u));
+  line-height: calc(16.5 * var(--fo-u));
+  letter-spacing: -0.11px;
   font-weight: 500;
 }
 
@@ -338,7 +340,8 @@
   font-weight: 400;
   line-height: calc(22.5 * var(--fo-u));
   letter-spacing: 0.5px;
-  color: var(--fo-text);
+  /* Figma uses a muted grey here, not --fo-text. */
+  color: #4D4D4D;
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.2s;
