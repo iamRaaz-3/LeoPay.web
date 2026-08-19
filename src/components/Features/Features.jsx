@@ -4,9 +4,9 @@ import decoTop from './assets/features-deco-top.png';
 import decoBottom from './assets/features-deco-bottom.png';
 import decoTopMobile from './assets/features-deco-top-mobile.png';
 import decoBottomMobile from './assets/features-deco-bottom-mobile.png';
-import avatarAkash from '../../assets/avatar-akash.png';
-import avatarPuranjit from '../../assets/avatar-puranjit.png';
-import avatarSayli from '../../assets/avatar-sayli.png';
+import avatarVictor from '../../assets/avatar-victor.png';
+import avatarJohny from '../../assets/avatar-johny.png';
+import avatarShristy from '../../assets/avatar-shristy.png';
 
 const bars = [
   { height: 76.86  },
@@ -135,11 +135,11 @@ export default function Features() {
               <div className="feat-users-inner">
                 <div className="feat-user--3">
                   <div className="feat-user__row">
-                    <img className="feat-user__avatar" src={avatarPuranjit} alt="Puranjit Patra" />
+                    <img className="feat-user__avatar" src={avatarJohny} alt="Johny Smith" />
                     <div className="feat-user__info">
                       <div className="feat-user__info-text">
                         <div className="feat-user__name-block">
-                          <span className="feat-user__name">Puranjit Patra</span>
+                          <span className="feat-user__name">Johny Smith</span>
                           <div className="feat-user__status-wrap">
                             <span className="feat-user__status">USDC transferred.</span>
                           </div>
@@ -150,11 +150,11 @@ export default function Features() {
                 </div>
                 <div className="feat-user--2">
                   <div className="feat-user__row">
-                    <img className="feat-user__avatar" src={avatarAkash} alt="Akash Gupta" />
+                    <img className="feat-user__avatar" src={avatarVictor} alt="Victor Jones" />
                     <div className="feat-user__info">
                       <div className="feat-user__info-text">
                         <div className="feat-user__name-block">
-                          <span className="feat-user__name">Akash Gupta</span>
+                          <span className="feat-user__name">Victor Jones</span>
                           <div className="feat-user__status-wrap">
                             <span className="feat-user__status">Onboarded on 14-03-2026</span>
                           </div>
@@ -165,11 +165,11 @@ export default function Features() {
                 </div>
                 <div className="feat-user">
                   <div className="feat-user__row">
-                    <img className="feat-user__avatar" src={avatarSayli} alt="Sayli Saxena" />
+                    <img className="feat-user__avatar" src={avatarShristy} alt="Shristy Bhadani" />
                     <div className="feat-user__info">
                       <div className="feat-user__info-text">
                         <div className="feat-user__name-block">
-                          <span className="feat-user__name">Sayli Saxena</span>
+                          <span className="feat-user__name">Shristy Bhadani</span>
                           <div className="feat-user__status-wrap">
                             <span className="feat-user__status">KYC Verified on 17-04-2026</span>
                           </div>
