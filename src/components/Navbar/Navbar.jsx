@@ -317,7 +317,6 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-cta">
-          <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" className="nav-signin">Sign in</a>
           <a href="https://calendly.com/leopayofficial" target="_blank" rel="noopener noreferrer" className="nav-getstarted">Get Started</a>
 
           <button

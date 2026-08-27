@@ -254,29 +254,6 @@
   margin-left: 12px;
 }
 
-.nav-signin {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Britti Sans Trial', 'Plus Jakarta Sans', sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%;
-  color: #000000;
-  text-align: center;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  white-space: nowrap;
-  transition: background 0.18s;
-  gap: 10px;
-}
-
-.nav-signin:hover {
-  background: rgba(0,0,0,0.04);
-}
-
 .nav-getstarted {
   font-family: 'Britti Sans Trial', sans-serif;
   font-size: 18px;
@@ -441,7 +418,6 @@
     display: flex;
   }
 
-  .nav-signin,
   .nav-getstarted {
     display: none;
   }
