@@ -42,7 +42,7 @@ const Cta = () => (
           </p>
           </div>
           <div className="abc-buttons">
-            <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" className="abc-btn">
+            <a href="https://calendly.com/leopayofficial" target="_blank" rel="noopener noreferrer" className="abc-btn">
               Get Started Now
               <ArrowIcon />
             </a>

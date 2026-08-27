@@ -310,7 +310,7 @@ const Navbar = () => {
             </li>
           ))}
           <li className="mobile-menu-getstarted">
-            <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" onClick={closeAll}>
+            <a href="https://calendly.com/leopayofficial" target="_blank" rel="noopener noreferrer" onClick={closeAll}>
               Get Started
             </a>
           </li>
@@ -318,7 +318,7 @@ const Navbar = () => {
 
         <div className="navbar-cta">
           <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" className="nav-signin">Sign in</a>
-          <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" className="nav-getstarted">Get Started</a>
+          <a href="https://calendly.com/leopayofficial" target="_blank" rel="noopener noreferrer" className="nav-getstarted">Get Started</a>
 
           <button
             className={`hamburger${menuOpen ? ' open' : ''}`}

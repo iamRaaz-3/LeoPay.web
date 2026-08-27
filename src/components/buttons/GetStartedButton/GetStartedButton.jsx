@@ -1,7 +1,7 @@
 import './GetStartedButton.css';
 
 const GetStartedButton = ({
-  href = 'https://dash.leopay.tech/signin',
+  href = 'https://calendly.com/leopayofficial',
   label = 'Get Started',
   className = 'btn-get-started',
   type,
