@@ -26,7 +26,7 @@ const Intro = () => (
               cost-effective payment infrastructure has become increasingly important
             </span>
           </p>
-          <a href="https://dash.leopay.tech/signin" target="_blank" rel="noopener noreferrer" className="career-intro__btn">
+          <a href="https://calendly.com/leopayofficial" target="_blank" rel="noopener noreferrer" className="career-intro__btn">
             Get started
             <ArrowIcon />
           </a>

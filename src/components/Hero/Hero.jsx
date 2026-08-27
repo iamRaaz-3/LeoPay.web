@@ -103,7 +103,7 @@ export default function Hero() {
           <div className="hero__buttons">
             <div className="hero__btn-wrap">
               <a
-                href="https://dash.leopay.tech/signin"
+                href="https://calendly.com/leopayofficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero__btn hero__btn--primary"
