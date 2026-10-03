@@ -1,0 +1,254 @@
+.job-apply {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 80px 24px 120px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #FFF 0%, #E0F4EF 100%);
+}
+
+.job-apply__inner {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.job-apply__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 32px;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22.4px;
+  text-decoration: none;
+}
+
+.job-apply__back:hover {
+  text-decoration: underline;
+}
+
+.job-apply__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 480px;
+  gap: 48px;
+  align-items: start;
+}
+
+.job-apply__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 14px;
+  line-height: 16.8px;
+}
+
+.job-apply__tag {
+  display: inline-flex;
+  height: 38px;
+  padding: 0 16px;
+  margin-right: 6px;
+  align-items: center;
+  border-radius: 40px;
+  background: rgba(0, 186, 133, 0.10);
+  color: #00BA85;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.job-apply__divider {
+  width: 1px;
+  height: 14px;
+  background: #162755;
+}
+
+.job-apply__heading,
+.job-apply__card-title {
+  margin: 0 0 12px;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 26.4px;
+  letter-spacing: -0.2px;
+}
+
+.job-apply__heading:not(:first-of-type) {
+  margin-top: 36px;
+}
+
+.job-apply__text,
+.job-apply__list {
+  margin: 0;
+  color: #505670;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.job-apply__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 20px;
+}
+
+.job-apply__card {
+  padding: 32px;
+  box-sizing: border-box;
+  background: #FFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px 0 rgba(82, 88, 112, 0.04);
+}
+
+.job-apply__form,
+.job-apply__success {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.job-apply__card-title {
+  margin-bottom: 4px;
+}
+
+.job-apply__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.job-apply__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.8px;
+}
+
+.job-apply__field input,
+.job-apply__field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  border: 1px solid rgba(82, 88, 112, 0.20);
+  border-radius: 8px;
+  background: #FFF;
+  color: #162755;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.job-apply__field textarea {
+  resize: vertical;
+}
+
+.job-apply__field input:focus,
+.job-apply__field textarea:focus {
+  border-color: #00BA85;
+}
+
+.job-apply__hint {
+  color: #505670;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.job-apply__hint--ok {
+  color: #00BA85;
+}
+
+.job-apply__file {
+  position: relative;
+  display: flex;
+  height: 48px;
+  align-items: center;
+  padding: 0 14px;
+  box-sizing: border-box;
+  border: 1px dashed rgba(82, 88, 112, 0.35);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.job-apply__file input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.job-apply__file-label {
+  overflow: hidden;
+  color: #505670;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.job-apply__submit {
+  display: inline-flex;
+  height: 50px;
+  margin-top: 8px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 100px;
+  background: #162755;
+  color: #FFF;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22.4px;
+  letter-spacing: -0.2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.job-apply__submit:hover {
+  background: #0F1C40;
+}
+
+.job-apply__submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.job-apply__error {
+  margin: 0;
+  color: #D92D20;
+  font-family: 'Britti Sans Trial', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media (max-width: 1023px) {
+  .job-apply__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-apply {
+    padding: 48px 16px 80px;
+  }
+  .job-apply__card {
+    padding: 24px;
+  }
+  .job-apply__row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -15,6 +15,7 @@ import Contact from './pages/Contact.jsx'
 import Blog from './pages/Blog.jsx'
 import BlogArticle from './pages/BlogArticle.jsx'
 import Career from './pages/Career.jsx'
+import JobApply from './pages/JobApply.jsx'
 import AboutUs from './pages/AboutUs.jsx'
 
 const ScrollToTop = () => {
@@ -53,6 +54,7 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/career/:id" element={<JobApply />} />
         <Route path="/about" element={<AboutUs />} />
         <Route
           path="/products/:slug"
