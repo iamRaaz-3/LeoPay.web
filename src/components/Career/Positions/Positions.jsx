@@ -1,13 +1,6 @@
+import { Link } from 'react-router-dom';
+import { JOBS } from '../jobs.js';
 import './Positions.css';
-
-const JOBS = Array.from({ length: 5 }, (_, i) => ({
-  id: i + 1,
-  title: 'Sales Development Representative (SDR)',
-  desc: 'Engage potential customers, qualify leads, and support the sales pipeline.',
-  location: 'USA',
-  type: 'Full time',
-  tag: 'Product Design',
-}));
 
 const ArrowIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -44,10 +37,10 @@ const Positions = () => (
             </div>
             <div className="job-card__row job-card__row--foot">
               <span className="job-card__tag">{job.tag}</span>
-              <span className="job-card__apply">
+              <Link to={`/career/${job.id}`} className="job-card__apply">
                 Apply Now
                 <ArrowIcon />
-              </span>
+              </Link>
             </div>
           </article>
         ))}
