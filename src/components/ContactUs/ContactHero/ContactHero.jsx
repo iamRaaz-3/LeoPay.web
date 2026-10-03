@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './ContactHero.css';
 import GetStartedButton from '../../buttons/GetStartedButton/GetStartedButton.jsx';
 
@@ -13,36 +14,87 @@ const BadgeIconRight = () => (
   </svg>
 );
 
-const ContactHero = () => (
-  <section className="contact-hero">
-    <div className="contact-hero__inner">
-      <div className="contact-hero__glow contact-hero__glow--1" aria-hidden="true" />
-      <div className="contact-hero__glow contact-hero__glow--2" aria-hidden="true" />
-      <div className="contact-hero__head">
-        <div className="contact-hero__badge-wrap">
-          <span className="contact-hero__badge">
-            <BadgeIconLeft />
-            WE ARE HERE TO HELP
-            <BadgeIconRight />
-          </span>
-        </div>
-        <h1 className="contact-hero__title">
-          <span className="contact-hero__title-line">Ready to move money smarter?</span>
-          <span className="contact-hero__title-line contact-hero__title-line--light">Let&apos;s Connect.</span>
-        </h1>
-      </div>
+const FORM_ENDPOINT = import.meta.env.VITE_CONTACT_FORM_URL;
 
-      <form className="contact-hero__form" onSubmit={e => e.preventDefault()}>
-        <div className="contact-hero__row">
-          <input type="text" className="contact-hero__field" placeholder="Your Name" aria-label="Your Name" />
-          <input type="email" className="contact-hero__field" placeholder="Email Address" aria-label="Email Address" />
-          <input type="tel" className="contact-hero__field" placeholder="Phone Number (optional)" aria-label="Phone Number (optional)" />
+const ContactHero = () => {
+  const [status, setStatus] = useState('idle');
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    if (status === 'sending') return;
+    if (!FORM_ENDPOINT) {
+      setStatus('error');
+      return;
+    }
+    const form = e.currentTarget;
+    setStatus('sending');
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && String(data.success) === 'true') {
+        form.reset();
+        setStatus('sent');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  return (
+    <section className="contact-hero">
+      <div className="contact-hero__inner">
+        <div className="contact-hero__glow contact-hero__glow--1" aria-hidden="true" />
+        <div className="contact-hero__glow contact-hero__glow--2" aria-hidden="true" />
+        <div className="contact-hero__head">
+          <div className="contact-hero__badge-wrap">
+            <span className="contact-hero__badge">
+              <BadgeIconLeft />
+              WE ARE HERE TO HELP
+              <BadgeIconRight />
+            </span>
+          </div>
+          <h1 className="contact-hero__title">
+            <span className="contact-hero__title-line">Ready to move money smarter?</span>
+            <span className="contact-hero__title-line contact-hero__title-line--light">Let&apos;s Connect.</span>
+          </h1>
         </div>
-        <textarea className="contact-hero__field contact-hero__field--message" placeholder="Message" aria-label="Message" />
-        <GetStartedButton label="Leave a message" className="contact-hero__submit" />
-      </form>
-    </div>
-  </section>
-);
+  
+        <form className="contact-hero__form" onSubmit={handleSubmit}>
+          <input type="hidden" name="_subject" value="New message from the Contact Us page" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" tabIndex="-1" autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
+          <div className="contact-hero__row">
+            <input type="text" name="name" required className="contact-hero__field" placeholder="Your Name" aria-label="Your Name" />
+            <input type="email" name="email" required className="contact-hero__field" placeholder="Email Address" aria-label="Email Address" />
+            <input type="tel" name="phone" className="contact-hero__field" placeholder="Phone Number (optional)" aria-label="Phone Number (optional)" />
+          </div>
+          <textarea name="message" required className="contact-hero__field contact-hero__field--message" placeholder="Message" aria-label="Message" />
+          <GetStartedButton
+            type="submit"
+            label={status === 'sending' ? 'Sending…' : 'Leave a message'}
+            className="contact-hero__submit"
+          />
+          {status === 'sent' && (
+            <p className="contact-hero__status" role="status">
+              Thanks for reaching out! We&apos;ll get back to you soon.
+            </p>
+          )}
+          {status === 'error' && (
+            <p className="contact-hero__status contact-hero__status--error" role="alert">
+              Your message couldn&apos;t be sent. Please try again in a moment.
+            </p>
+          )}
+        </form>
+      </div>
+    </section>
+  );
+};
 
 export default ContactHero;
